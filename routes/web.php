@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FrontController;
+
+use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,22 +15,10 @@ use App\Http\Controllers\FrontController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/welcome',[FrontController::class,'index']);
-Route::get('/hi',[FrontController::class,'hi']);
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/contact', function(){
-    return view('contact');
+Route::get('/', function (){
+    return "This site is under construction...";
 });
+Route::get('/admin', [AdminDashboardController::class, 'dashboard'])->name('admin.dashboard');
 
-Route::get('/about', function(){
-    return('About Us');
-});
-Route::get('/hello', function(){
-    return ("Hello World");
-});
-Route::get('/login',function(){
-    return ('Login Registation Form');
-});
+Route::get('/admin/product-list', [ProductController::class, 'index'])->name('admin.product.list');
