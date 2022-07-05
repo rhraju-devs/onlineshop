@@ -31,6 +31,14 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 
 We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
+### Data Table Jquery Package for pagination and search in table
+    -**[YoutubeLink](https://www.youtube.com/watch?v=a2ZTvWsC_yc)**
+
+### Summernote for Text Edition
+    -**[YoutubeLink](https://www.youtube.com/watch?v=rxd_SqnJ8Q0)**
+    -**[Website](https://www.summernote.org)**
+
+       
 ### Premium Partners
 
 - **[Vehikl](https://vehikl.com/)**

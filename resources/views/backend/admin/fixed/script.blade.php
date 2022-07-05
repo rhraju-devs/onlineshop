@@ -8,3 +8,4 @@
 
     <!-- custom-chart js -->
     <script src="{{url('backend/assets/js/pages/dashboard-main.js')}}"></script>
+

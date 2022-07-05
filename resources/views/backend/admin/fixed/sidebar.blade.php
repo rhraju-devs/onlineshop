@@ -36,11 +36,61 @@
                                     class="feather icon-layout"></i></span><span class="pcoded-mtext">Product</span></a>
                         <ul class="pcoded-submenu">
                             <li><a href="{{route('admin.product.list')}}">Product List</a></li>
-                            <li><a href="">Add Product</a></li>
-                            <li><a href="">Edit Product</a></li>
-                            <li><a href="">Single  Product</a></li>
+                            <li><a href="{{route('admin.product.create')}}">Add Product</a></li>
+                            <li><a href="#!">Edit Product</a></li>
+                            <li><a href="#!">Single  Product</a></li>
                         </ul>
                     </li>
+
+                    <!-- //Category Section -->
+                    <li class="nav-item pcoded-hasmenu">
+                        <a href="#!" class="nav-link "><span class="pcoded-micon"><i
+                                    class="feather icon-layout"></i></span><span class="pcoded-mtext">Category</span></a>
+                        <ul class="pcoded-submenu">
+                            <li><a href="{{route('admin.category.list')}}">Category List</a></li>
+                            <li><a href="{{route('admin.category.create')}}">Add Category</a></li>
+                            <li><a href="#!">Edit Category</a></li>
+                        </ul>
+                    </li>
+
+                    <!--End Sub Category section -->
+                    <!-- //brand section -->
+                    <li class="nav-item pcoded-hasmenu">
+                        <a href="#!" class="nav-link "><span class="pcoded-micon"><i
+                                    class="feather icon-layout"></i></span><span class="pcoded-mtext">Brand</span></a>
+                        <ul class="pcoded-submenu">
+                            <li><a href="{{route('admin.brand.list')}}">Brand List</a></li>
+                            <li><a href="{{route('admin.brand.create')}}">Add Brand</a></li>
+                            <li><a href="#!">Edit Brand</a></li>
+                        </ul>
+                    </li>
+
+
+
+                    <!--Customer and Vendor -->
+                    <li class="nav-item pcoded-menu-caption">
+                        <label>Customer &amp; Vendor</label>
+                    </li>
+                    <li class="nav-item pcoded-hasmenu">
+                        <a href="#!" class="nav-link "><span class="pcoded-micon"><i
+                                    class="feather icon-box"></i></span><span class="pcoded-mtext">Customer</span></a>
+                        <ul class="pcoded-submenu">
+                            <li><a href="">Customer List</a></li>
+                            <li><a href="">Customer Add</a></li>
+                            <li><a href="">Customer Edit</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item pcoded-hasmenu">
+                        <a href="#!" class="nav-link "><span class="pcoded-micon"><i
+                                    class="feather icon-box"></i></span><span class="pcoded-mtext">Vendor</span></a>
+                        <ul class="pcoded-submenu">
+                            <li><a href="">Vendor List</a></li>
+                            <li><a href="">Vendor Add</a></li>
+                            <li><a href="">Vendor Edit</a></li>
+                        </ul>
+                    </li>
+                <!-- Customer and Vendor -->
+
                     <li class="nav-item pcoded-hasmenu">
                         <a href="#!" class="nav-link "><span class="pcoded-micon"><i
                                     class="feather icon-layout"></i></span><span class="pcoded-mtext">Page
@@ -50,6 +100,10 @@
                             <li><a href="layout-horizontal.html" target="_blank">Horizontal</a></li>
                         </ul>
                     </li>
+
+
+
+
                     <li class="nav-item pcoded-menu-caption">
                         <label>UI Element</label>
                     </li>

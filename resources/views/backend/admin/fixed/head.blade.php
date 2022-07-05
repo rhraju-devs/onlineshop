@@ -11,3 +11,4 @@
 <link rel="icon" href="{{url('backend/assets/images/favicon.ico')}}" type="image/x-icon">
 <!-- vendor css -->
 <link rel="stylesheet" href="{{url('backend/assets/css/style.css')}}">
+

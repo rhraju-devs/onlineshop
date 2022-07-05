@@ -3,6 +3,7 @@
 
 <head>
     @include('backend.admin.fixed.head')
+    @yield('css')
 </head>
 
 <body class="">
@@ -59,6 +60,7 @@
     </div>
 
     @include('backend.admin.fixed.script')
+    @stack('scripts')
 </body>
 
 </html>
