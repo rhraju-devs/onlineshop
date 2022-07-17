@@ -49,13 +49,12 @@
                 <div class="col-md-6 col-lg-6">
                     <div class="mb-3">
                         <label for="category" class="form-label">Category Name :<span class="text-danger"> *</span></label>
-                        <input type="text" class="form-control" id="category" name="product_category">
-                            <!-- <select class="form-select" aria-label="Default select example">
-                        <option selected>Select Author Name</option>
+                        <select name="product_category" class="form-select" aria-label="Default select example">
+                        <option selected>Select Category</option>
+
                         <option value="1">Admin Name</option>
-                        <option value="2">Customer Name</option>
-                        <option value="3">Vendor Name</option>
-                        </select> -->
+                        
+                        </select>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6">

@@ -1,3 +1,6 @@
+<!-- use App\Http\Controllers\Controller;
+use App\Models\Product;
+use Illuminate\Http\Request; -->
 <nav class="pcoded-navbar menu-light ">
         <div class="navbar-wrapper  ">
             <div class="navbar-content scroll-div ">
@@ -33,7 +36,8 @@
                     <!-- //product Section -->
                     <li class="nav-item pcoded-hasmenu">
                         <a href="#!" class="nav-link "><span class="pcoded-micon"><i
-                                    class="feather icon-layout"></i></span><span class="pcoded-mtext">Product</span></a>
+                                    class="feather icon-layout"></i></span><span class="pcoded-mtext">Product</span><span
+                                class="badge badge-primary ml-3">2</span></a>
                         <ul class="pcoded-submenu">
                             <li><a href="{{route('admin.product.list')}}">Product List</a></li>
                             <li><a href="{{route('admin.product.create')}}">Add Product</a></li>
@@ -49,7 +53,7 @@
                         <ul class="pcoded-submenu">
                             <li><a href="{{route('admin.category.list')}}">Category List</a></li>
                             <li><a href="{{route('admin.category.create')}}">Add Category</a></li>
-                            <li><a href="#!">Edit Category</a></li>
+                            <li><a href="">Edit Category</a></li>
                         </ul>
                     </li>
 

@@ -5,33 +5,35 @@
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
 @endsection
 @section('admin_dashboard_content')
+
 <div style="background-color: #fff;" class="row">
     <div class="col-md-12 col-lg-12">
         <a class="btn btn-outline-info align-right" href="{{route('admin.category.list')}}">Category List</a>
     </div>
 
     <div class="col-md-12 col-lg-12">
-        <h1>Create Category</h1>
+        <h1>Edit Category</h1>
     </div>
 
     <div class="col-md-12 col-lg-12">
 
-        <form class="m-3" action="{{route('admin.category.store')}}" method="post">
+        <form class="m-3" action="{{route('admin.category.update', $category->id)}}" method="post">
             @csrf
+            @method('PUT')
             <div class="mb-3">
                 <label for="name" class="form-label">Category Name :<span class="text-danger"> *</span></label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Enter Category Name">
+                <input type="text" class="form-control" id="name" name="name" value="{{$category->name}}">
             </div>
 
             <div class="mb-3">
                 <label for="description" class="form-label">Category Description :<span class="text-danger"> *</span></label>
                 <textarea id="summernote1" name="description" class="form-control" id="description" class="form-control"
-                    placeholder="Enter Category Description"></textarea>
+                    value="{{$category->description}}"></textarea>
             </div>
             <div class="mb-3">
                 <label for="summary" class="form-label">Category Summary :<span class="text-danger"> *</span></label>
                 <textarea id="summernote2" name="summary" class="form-control" id="summary"
-                    placeholder="Enter Category Summary"></textarea>
+                    value="{{$category->summary}}"></textarea>
             </div>
 
             <div class="mb-3">
@@ -45,10 +47,10 @@
                     <label class="input-group-text" for="category_name">Options</label>
                 </div>
                 <select name='parent_name' class="custom-select" id="">
-                    <option selected disabled>Choose Parent Category</option>
-                    @foreach($categories as $category)
+                    <option selected >Choose Parent Category</option>
+                     @foreach($category as $data)
                     <option value="{{$category->id}}">{{$category->name}}</option>
-                    @endforeach
+                     @endforeach
                 </select>
             </div>
 
@@ -83,7 +85,6 @@
     </div>
 </div>
 @endsection
-
 @push('scripts')
     <!-- Summernote -->
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
@@ -91,12 +92,14 @@
         $(document).ready(function() {
             $('#summernote1').summernote({
                 height : 200,
+                placeholder: 'Enter your text',
             });
             $('.dropdrown-toggle').dropdown();   
         });
         $(document).ready(function() {
             $('#summernote2').summernote({
                 height : 200,
+                placeholder: 'Enter your text',
             });
             $('.dropdrown-toggle').dropdown();   
         });
