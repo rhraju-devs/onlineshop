@@ -15,19 +15,19 @@ return new class extends Migration
     {
         Schema::create('vendors', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('fullname');
+            $table->string('username');
             $table->string('email')->unique();
             $table->string('password');
-            $table->text('description');
-            $table->string('address');
-            $table->integer('zip');
             $table->string('phone');
             $table->string('photo')->nullable();
+            $table->string('address');
+            $table->text('vendor_description');
+            $table->integer('zip');
             $table->string('fax');
             $table->string('products');
             $table->string('services');
-            $table->string('insurence_num');
-            $table->string('license_num');
+            $table->string('license_num')->nullable;
             $table->text('information');
             $table->enum('status', ['active', 'inactive'])->default('active');
             $table->timestamps();

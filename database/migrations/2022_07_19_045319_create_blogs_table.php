@@ -13,16 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('sub_categories', function (Blueprint $table) {
+        Schema::create('blogs', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->string('slug')->unique();
+            $table->text('summary');
+            $table->longText('description');
             $table->string('photo')->nullable();
-            $table->boolean('is_parent')->default(true);
-            $table->mediumText('summary')->nullable();
-            $table->unsignedBigInteger('parent_id')->nullable();
-            $table->enum('status',['active','inactive'])->default('active');
-            $table->foreign('parent_id')->references('id')->on('categories')->onDelete('SET NULL');
+            $table->enum('status', ['active', 'inactive'])->default('active');
             $table->timestamps();
         });
     }
@@ -34,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sub_categories');
+        Schema::dropIfExists('blogs');
     }
 };

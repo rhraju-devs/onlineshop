@@ -12,45 +12,67 @@ class CategoryController extends Controller
     public function list()
     {
         // $categories = Category::paginate(10);
-        $categories = Category::all();
+        $categories = Category::with('parentCategory')->orderBy('id','desc')->get();
         return view('backend.admin.category.index', compact('categories'));
     }
     public function create()
     {
-        $categories = Category::all();
-        return view('backend.admin.category.create',compact('categories'));
+        $parent_category = Category::where('is_parent',1)->orderBy('name', 'ASC')->get();
+        return view('backend.admin.category.create',compact('parent_category'));
     }
     public function store(Request $request)
     {
-        // dd($request->all());
+
+        $request->validate([
+            'name' => 'string|required',
+            'summary' => 'string|required',
+            'description' => 'string|required',
+            'is_parent' => 'sometimes|in:1',
+            'parent_id' => 'nullable', 
+            'status' => 'required|in:active,inactive',
+            'photo' => 'nullable',
+        ]);
+
+
         Category::create([
             'name' => $request->name,
             'slug' =>Str::slug( $request->name),
             'parent_id' => $request->parent_id,
+            'is_parent' => $request->is_parent,
             'description' => $request->description,
             'summary' => $request->summary,
             'photo' => $request->photo,
             'status' => $request->status,
-            'parent_name' => $request->parent_name,
         ]);
+                // dd($request->all());
         return redirect()->route('admin.category.list');
     }
 
     public function edit($id){
         $category = Category::find($id);
-        return view('backend.admin.category.edit', compact('category'));
+        $parent_category = Category::where('is_parent',1)->orderBy('name', 'ASC')->get();
+        return view('backend.admin.category.edit', compact('category', 'parent_category'));
     }
 
     public function update(Request $request, $id){
         $category = Category::find($id);
+        $request->validate([
+            'name' => 'string|required',
+            'summary' => 'string|required',
+            'description' => 'string|required',
+            'is_parent' => 'sometimes|in:1',
+            'parent_id' => 'nullable', 
+            'status' => 'required|in:active,inactive',
+            'photo' => 'nullable',
+        ]);
         $category -> update([
             'name' => $request->name,
             'parent_id' => $request->parent_id,
+            'is_parent' => $request->is_parent,
             'description' => $request->description,
             'summary' => $request->summary,
             'photo' => $request->photo,
             'status' => $request->status,
-            'parent_name' => $request->parent_name,
         ]);
         return redirect()->route('admin.category.list');
     }
@@ -58,5 +80,11 @@ class CategoryController extends Controller
     public function delete($id){
         $categories = Category::find($id)->delete();
         return redirect()->back();
+    }
+
+    public function show($id){
+        $category = Category::with('parentCategory')->orderBy('id','desc')->find($id);
+        
+        return view('backend.admin.category.show', compact('category'));
     }
 }

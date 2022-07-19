@@ -3,13 +3,17 @@
 
 @endsection
 @section('admin_dashboard_content')
-    <div class="row">
+
+
+
+
+<div class="row">
             <!-- [ sample-page ] start -->
             <div class="col-sm-12">
                 <div class="card">
 
                     <div class="card-header">
-                        <h5>Brand</h5> 
+                        <h5>Product</h5> 
                         <div class="card-header-right">
                             <div class="btn-group card-option">
                                 <button type="button" class="btn dropdown-toggle btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -31,10 +35,10 @@
                                 <div class="card-body">
                                     <div class="row my-4">
                                         <div class="col-md-6 col-lg-6">
-                                            <span class="mb-4 text-left">Brand Details</span>
+                                            <span class="mb-4 float-left"><strong>Product Details</strong></span>
                                         </div>
                                         <div class="col-md-6 col-lg-6">
-                                            <a class="text-right btn btn-outline-info" href="{{route('admin.brand.list')}}">Brand List</a>
+                                            <a class="float-right btn btn-outline-info" href="{{route('admin.product.list')}}">Product List</a>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -130,9 +134,37 @@
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div class="col-lg-6 mx-auto">
-                                            <h4>Brand Name : </h4>
-                                            <h3 class="mt-lg-0 mt-4">{{$brands->name}}</h3>
+                                            <h6 class="mb-0 mt-3">Product Name</h6>
+                                            <h5>{{$product->product_name}}</h5>
+                                            <div class="div">
+                                            <br>
+                                            <h6 class="mb-0 mt-3">Product Price</h6>
+                                            <h5>{{$product->product_price}}</h5>
+                                            <div class="div">
+                                                @if(($product->product_quantity)>0)
+                                                    <span class="badge badge-success">In Stock</span>
+                                                @else
+                                                    <span class="badge badge-success">Out of Stock</span>
+                                                @endif
+                                            </div>
+
+                                            <br>
+                                            <h3>Quantity</h3>
+                                            <h5>{{$product->product_quantity}}</h5>
+                                            <br>
+                                            <h6 class="mb-0 mt-3">Product Parent Category</h6>
+                                            <h5>{{optional($product->category)->name}}</h5>
+                                            <br>
+                                            <h6 class="mb-0 mt-3">Product Sub Category</h6>
+                                            <h5>{{optional($product->subcategory)->name}}</h5>
+                                            <br>
+                                            <h6 class="mb-0 mt-3">Product Brand</h6>
+                                            <h5>{{optional($product->brand)->name}}</h5>
+                                            <br>
+                                            <h6 class="mb-0 mt-3">Product weight</h6>
+                                            <h5>{{$product->product_weight}}</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -147,10 +179,10 @@
                                     </ul>
                                     <div class="tab-content" id="myTabContent">
                                         <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="home-tab">
-                                            <p class="mb-0">{!! $brands->description !!}</p>
+                                            <p class="mb-0">{!! $product->product_description !!}</p>
                                         </div>
                                         <div class="tab-pane fade" id="summary" role="tabpanel" aria-labelledby="profile-tab">
-                                            <p class="mb-0">{!! $brands->summary !!}</p>
+                                            <p class="mb-0">{!! $product->product_summary !!}</p>
                                         </div>
                                     </div>
                                 </div>

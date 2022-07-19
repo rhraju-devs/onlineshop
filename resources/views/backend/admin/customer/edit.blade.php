@@ -7,7 +7,6 @@
 @section('admin_dashboard_content')
 
 <div class="row">
-    <!-- [ sample-page ] start -->
     <div class="col-sm-12">
         <div class="card">
 
@@ -21,7 +20,7 @@
                         </button>
                         <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
                             <li class="dropdown-item full-card"><a href="#!"><span><i class="feather icon-maximize"></i>
-                                        maximize</span><span style="display:none"><i class="feather icon-minimize"></i>
+                                        Maximize</span><span style="display:none"><i class="feather icon-minimize"></i>
                                         Restore</span></a></li>
                             <li class="dropdown-item minimize-card"><a href="#!"><span><i
                                             class="feather icon-minus"></i> collapse</span><span style="display:none"><i
@@ -51,60 +50,59 @@
 
                             <div class="row">
                                 <div class="col-md-12 col-lg-12">
-                                    <form class="m-3" action="{{route('admin.category.store')}}" method="post">
+                                    <form class="m-3" action="" method="">
                                         @csrf
                                         <div class="mb-3">
-                                            <label for="name" class="form-label">Category Name :<span
+                                            <label for="fullname" class="form-label">Full Name :<span
                                                     class="text-danger"> *</span></label>
-                                            <input type="text" class="form-control" id="name" name="name"
-                                                placeholder="Enter Category Name">
+                                            <input type="text" class="form-control" id="fullname" name="fullname"
+                                                placeholder="Enter Full Name">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="username" class="form-label">User Name :<span
+                                                    class="text-danger"> *</span></label>
+                                            <input type="text" class="form-control" id="username" name="username"
+                                                placeholder="Enter User Name">
                                         </div>
 
                                         <div class="mb-3">
-                                            <label for="description" class="form-label">Category Description :<span
+                                            <label for="email" class="form-label">Email :<span
                                                     class="text-danger"> *</span></label>
-                                            <textarea id="summernote1" name="description" class="form-control"
-                                                id="description" class="form-control"
-                                                placeholder="Enter Category Description"></textarea>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="summary" class="form-label">Category Summary :<span
-                                                    class="text-danger"> *</span></label>
-                                            <textarea id="summernote2" name="summary" class="form-control" id="summary"
-                                                placeholder="Enter Category Summary"></textarea>
+                                            <input type="email" class="form-control" id="email" name="email"
+                                                placeholder="Enter Email Address">
                                         </div>
 
                                         <div class="mb-3">
-                                            <label for="is_parent" class="form-label">Is Parent :<span
-                                                    class="text-danger"> * </span></label>
-                                            <input type="checkbox" name="is_parent" id="is_parent" value="1" checked>Yes
-                                        </div>
-
-                                        <div class="input-group mb-3 d-none" id="parent_cat_div">
-                                            <label for="category_name" class="form-label">Parent Category :<span
+                                            <label for="password" class="form-label">Password :<span
                                                     class="text-danger"> *</span></label>
-                                            <div class="input-group-prepend">
-                                                <label class="input-group-text" for="category_name">Options</label>
-                                            </div>
-                                            <select name='parent_id' class="custom-select" id="category_name">
-                                                <option selected disabled>Choose Parent Category</option>
-                                                @foreach($parent_category as $pcat)
-                                                <option value="{{$pcat->id}}">{{$pcat->name}}</option>
-                                                @endforeach
-                                            </select>
+                                            <input type="password" class="form-control" id="password" name="password"
+                                                placeholder="Enter Password">
                                         </div>
 
+                                        <div class="mb-3">
+                                            <label for="photo" class="form-label">Photo :<span
+                                                    class="text-danger"> *</span></label>
+                                            <input type="file" class="form-control" id="photo" name="photo"
+                                                placeholder="Photo">
+                                        </div>
 
+                                        <div class="mb-3">
+                                            <label for="phone" class="form-label">Phone :<span
+                                                    class="text-danger"> *</span></label>
+                                            <input type="tel" class="form-control" id="phone" name="phone"
+                                                placeholder="phone">
+                                        </div>
+                                    
                                         <div class="row">
                                             <div class="col-md-4 col-lg-4">
                                                 <div class="input-group mb-3">
-                                                    <label for="status" class="form-label">Category Status :<span
+                                                    <label for="status" class="form-label">Customer Status :<span
                                                             class="text-danger"> *</span></label>
                                                     <div class="input-group-prepend">
                                                         <label class="input-group-text" for="status">Options</label>
                                                     </div>
                                                     <select name='status' class="custom-select" id="status">
-                                                        <option selected>Choose...</option>
+                                                        <option selected>Status</option>
                                                         <option value="active">Active</option>
                                                         <option value="inactive">Inactive</option>
                                                     </select>
@@ -112,15 +110,7 @@
                                             </div>
 
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-6 col-lg-6">
-                                                <div class="mb-3">
-                                                    <label for="photo" class="form-label">Category Photos :<span
-                                                            class="text-danger"> *</span></label>
-                                                    <input type="file" class="form-control" id="photo" name="photo">
-                                                </div>
-                                            </div>
-                                        </div>
+
 
                                         <button type="reset" class="btn btn-primary">Cancel</button>
                                         <button type="submit" class="btn btn-primary">Submit</button>
@@ -157,18 +147,5 @@
     });
 
 </script>
-<script>
-    $('#is_parent').change(function (e) {
-        e.preventDefault();
-        var is_checked = $('#is_parent').prop('checked');
-        // alert(is_checked);
-        if (is_checked) {
-            $('#parent_cat_div').addClass('d-none');
-            $('#parent_cat_div').val('');
-        } else {
-            $('#parent_cat_div').removeClass('d-none');
-        }
-    });
 
-</script>
 @endpush

@@ -13,17 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('customers', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('slug')->unique();
-            $table->longText('description');
-            $table->text('summary');
+            $table->string('fullname');
+            $table->string('username');
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->string('phone');
             $table->string('photo')->nullable();
-            $table->boolean('is_parent')->nullable();
-            $table->unsignedBigInteger('parent_id')->nullable();
+            $table->string('address');
             $table->enum('status', ['active', 'inactive'])->default('active');
-            $table->foreign('parent_id')->references('id')->on('categories')->onDelete('SET NULL');
             $table->timestamps();
         });
     }
@@ -35,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('customers');
     }
 };

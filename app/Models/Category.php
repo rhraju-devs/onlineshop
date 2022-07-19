@@ -10,4 +10,9 @@ class Category extends Model
     protected $guarded =[];
     // protected $fillable = ['name','slug', 'description', 'summary', 'photo', 'status','parent_id'];
     use HasFactory;
+
+    public function parentCategory()
+    {
+        return $this->belongsTo(Category::class, 'parent_id','id');
+    }
 }

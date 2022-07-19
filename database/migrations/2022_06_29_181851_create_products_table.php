@@ -17,12 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string('product_name');
             $table->longText('product_description');
-            $table->text('product_summary');
+            $table->string('product_summary');
             $table->string('product_photo')->nullable();
             $table->string('product_category')->nullable();
             $table->string('product_sub_category')->nullable();
             $table->string('product_brand')->nullable();
-            $table->double('product_quantity')->nullable();
+            $table->double('product_quantity');
             $table->double('product_price');
             $table->double('product_weight');
             $table->enum('status',['active', 'inactive'])->default('active');

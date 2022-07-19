@@ -41,8 +41,6 @@ use Illuminate\Http\Request; -->
                         <ul class="pcoded-submenu">
                             <li><a href="{{route('admin.product.list')}}">Product List</a></li>
                             <li><a href="{{route('admin.product.create')}}">Add Product</a></li>
-                            <li><a href="#!">Edit Product</a></li>
-                            <li><a href="#!">Single  Product</a></li>
                         </ul>
                     </li>
 
@@ -53,7 +51,6 @@ use Illuminate\Http\Request; -->
                         <ul class="pcoded-submenu">
                             <li><a href="{{route('admin.category.list')}}">Category List</a></li>
                             <li><a href="{{route('admin.category.create')}}">Add Category</a></li>
-                            <li><a href="">Edit Category</a></li>
                         </ul>
                     </li>
 
@@ -65,13 +62,12 @@ use Illuminate\Http\Request; -->
                         <ul class="pcoded-submenu">
                             <li><a href="{{route('admin.brand.list')}}">Brand List</a></li>
                             <li><a href="{{route('admin.brand.create')}}">Add Brand</a></li>
-                            <li><a href="#!">Edit Brand</a></li>
                         </ul>
                     </li>
 
 
 
-                    <!--Customer and Vendor -->
+                    <!--Customer and Vendor Start -->
                     <li class="nav-item pcoded-menu-caption">
                         <label>Customer &amp; Vendor</label>
                     </li>
@@ -81,7 +77,6 @@ use Illuminate\Http\Request; -->
                         <ul class="pcoded-submenu">
                             <li><a href="">Customer List</a></li>
                             <li><a href="">Customer Add</a></li>
-                            <li><a href="">Customer Edit</a></li>
                         </ul>
                     </li>
                     <li class="nav-item pcoded-hasmenu">
@@ -90,10 +85,9 @@ use Illuminate\Http\Request; -->
                         <ul class="pcoded-submenu">
                             <li><a href="">Vendor List</a></li>
                             <li><a href="">Vendor Add</a></li>
-                            <li><a href="">Vendor Edit</a></li>
                         </ul>
                     </li>
-                <!-- Customer and Vendor -->
+                <!-- Customer and Vendor end -->
 
                     <li class="nav-item pcoded-hasmenu">
                         <a href="#!" class="nav-link "><span class="pcoded-micon"><i

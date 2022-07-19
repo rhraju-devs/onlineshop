@@ -9,7 +9,7 @@
                 <div class="card">
 
                     <div class="card-header">
-                        <h5>Brand</h5> 
+                        <h5>Category</h5> 
                         <div class="card-header-right">
                             <div class="btn-group card-option">
                                 <button type="button" class="btn dropdown-toggle btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -31,14 +31,14 @@
                                 <div class="card-body">
                                     <div class="row my-4">
                                         <div class="col-md-6 col-lg-6">
-                                            <span class="mb-4 text-left">Brand Details</span>
+                                            <h4 class="mb-4 float-left">Category Details</h4>
                                         </div>
                                         <div class="col-md-6 col-lg-6">
-                                            <a class="text-right btn btn-outline-info" href="{{route('admin.brand.list')}}">Brand List</a>
+                                            <a class="float-right btn btn-outline-info" href="{{route('admin.category.list')}}">Category List</a>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-xl-5 col-lg-6 text-center">
+                                        <div class="col-xl-6 col-lg-6 text-center">
                                             <img class="w-100 border-radius-lg shadow-lg mx-auto"
                                                 src="../../../assets/img/products/product-details-1.jpg" alt="chair">
                                             <div class="my-gallery d-flex mt-4 pt-2" itemscope
@@ -131,8 +131,23 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-6 mx-auto">
-                                            <h4>Brand Name : </h4>
-                                            <h3 class="mt-lg-0 mt-4">{{$brands->name}}</h3>
+                                            <div class="row">
+                                                <div class="col-md-6 col-lg-6">
+                                                    <h5>Category Name : </h5>
+                                                    <h3 class="mt-lg-0 mt-4">{{$category->name}}</h3>
+                                                </div>
+
+                                                <div class="col-md-6 col-lg-6">
+                                                    <h5>Is Parent : </h5>
+                                                    <h3 class="mt-lg-0 mt-4">{{$category->is_parent === 1 ? 'Yes' : 'No'}}</h3>
+                                                </div>
+                                            </div>
+                                            <div class="row my-3">
+                                                <div class="col-md-12 col-lg-12">
+                                                    <h5>Parent Category Name : </h5>
+                                                    <h3>{{optional($category->parentCategory)->name}}</h3>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -147,10 +162,10 @@
                                     </ul>
                                     <div class="tab-content" id="myTabContent">
                                         <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="home-tab">
-                                            <p class="mb-0">{!! $brands->description !!}</p>
+                                            <p class="mb-0">{!! $category->description !!}</p>
                                         </div>
                                         <div class="tab-pane fade" id="summary" role="tabpanel" aria-labelledby="profile-tab">
-                                            <p class="mb-0">{!! $brands->summary !!}</p>
+                                            <p class="mb-0">{!! $category->summary !!}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -162,7 +177,7 @@
             </div>
             <!-- [ sample-page ] end -->
     </div>
-
+        <!-- [ Main Content ] end -->
 @endsection
 
 @push('scripts')
