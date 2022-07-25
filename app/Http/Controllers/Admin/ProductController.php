@@ -26,18 +26,37 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
+        $productImage = null;
+        if($request->hasFile('product_photo')){
+            $productImage = uniqid('product_' . strtotime(date('Ymdhmis')), true) . '_' . $request->file('product_photo')->getClientOriginalName();
+            $request->file('product_photo')->storeAs('/uploads/products/', $productImage);
+        }
+        $request->validate([
+            'product_name' => 'string|required',
+            'product_description' => 'string|required',
+            'product_summary' => 'string|required',
+            'product_photo' => 'nullable',
+            'product_category' => 'nullable', 
+            'product_sub_category'=>'nullable',
+            'product_brand'=>'nullable',
+            'product_quantity'=>'numeric|required',
+            'product_price'=>'numeric|required',
+            'product_status' => 'required',
+            'product_weight' => 'numeric|required',
+        ]);
+
         Product::create([
             'product_name' => $request->product_name,
             'product_description' => $request->product_description,
             'product_summary' => $request->product_summary,
-            'product_photo' => $request->product_photo,
+            'product_photo' => $productImage,
             'product_category' => $request->product_category,
             'product_sub_category' => $request->product_sub_category,
             'product_brand' => $request->product_brand,
             'product_quantity' => $request->product_quantity,
             'product_price' => $request->product_price,
             'product_weight' => $request->product_weight,
-            'status' => $request->status,
+            'status' => $request->product_status,
         ]);
         // dd($request);
         return redirect()->route('admin.product.list');
@@ -54,6 +73,11 @@ class ProductController extends Controller
 
     public function update(Request $request, $id){
 // dd($request);
+        $productImage = null;
+        if($request->hasFile('product_photo')){
+            $productImage = uniqid('products_' . strtotime(date('Ymdhsis')), true) . '_' . $request->file('product_photo')->getClientOriginalName();
+            $request->file('product_photo')->storeAs('/uploads/products/', $productImage);
+        }
         $product = Product::find($id);
         // dd($product);
 
@@ -76,7 +100,7 @@ class ProductController extends Controller
             'product_name' => $request->product_name,
             'product_description' => $request->product_description,
             'product_summary' => $request->product_summary,
-            'product_photo' => $request->product_photo,
+            'product_photo' => $productImage,
             'product_category' => $request->product_category,
             'product_sub_category' => $request->product_sub_category,
             'product_brand' => $request->product_brand,

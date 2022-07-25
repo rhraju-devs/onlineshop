@@ -13,10 +13,18 @@ return [
     |
     */
 
+    //changing setting
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users',
+        'passwords' => 'customers',
     ],
+
+
+    //default setting
+    // 'defaults' => [
+    //     'guard' => 'web',
+    //     'passwords' => 'users',
+    // ],
 
     /*
     |--------------------------------------------------------------------------
@@ -35,12 +43,27 @@ return [
     |
     */
 
+    //changing setting
     'guards' => [
+        'vendors' => [
+            'driver' => 'session', 
+            'provider' => 'vendors'
+        ],
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'customers',
         ],
+
     ],
+
+
+    // default setting
+    // 'guards' => [
+    //     'web' => [
+    //         'driver' => 'session',
+    //         'provider' => 'users',
+    //     ],
+    // ],
 
     /*
     |--------------------------------------------------------------------------
@@ -59,11 +82,28 @@ return [
     |
     */
 
+    //changing here
     'providers' => [
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+        'vendors' => [
+            'driver' => 'eloquent', 
+            'model' => App\Models\Vendor::class,
         ],
+        'customers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Customer::class,
+        ],
+
+
+
+        //detault setting
+        // 'providers' => [
+        //     'users' => [
+        //         'driver' => 'eloquent',
+        //         'model' => App\Models\User::class,
+        //     ],
+
+
+
 
         // 'users' => [
         //     'driver' => 'database',
@@ -87,12 +127,22 @@ return [
     */
 
     'passwords' => [
-        'users' => [
-            'provider' => 'users',
+        'customers' => [
+            'provider' => 'customers',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
         ],
+       
+
+        //default setting
+        // 'passwords' => [
+        //     'users' => [
+        //         'provider' => 'users',
+        //         'table' => 'password_resets',
+        //         'expire' => 60,
+        //         'throttle' => 60,
+        //     ],
     ],
 
     /*

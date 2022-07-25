@@ -11,7 +11,7 @@
         <div class="card">
 
             <div class="card-header">
-                <h5>Category</h5>
+                <h5>Customer</h5>
                 <div class="card-header-right">
                     <div class="btn-group card-option">
                         <button type="button" class="btn dropdown-toggle btn-icon" data-toggle="dropdown"
@@ -41,7 +41,7 @@
                             <div class="row">
                                 <div class="col-md-6 col-lg-6">
                                     <a class="btn btn-outline-info float-left"
-                                        href="{{route('admin.category.list')}}">Category List</a>
+                                        href="{{route('admin.customer.list')}}">Customer List</a>
                                 </div>
                                 <div class="col-md-6 col-lg-6 float-right">
 
@@ -50,47 +50,67 @@
 
                             <div class="row">
                                 <div class="col-md-12 col-lg-12">
-                                    <form class="m-3" action="" method="">
+                                    @if(count($errors) > 0 )
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            <ul class="p-0 m-0" style="list-style: none;">
+                                                @foreach($errors->all() as $error)
+                                                <li>{{$error}}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
+                                    <form class="m-3" action="{{route('admin.customer.update', $customer->id)}}" method="POST" enctype="multipart/form-data">
                                         @csrf
+                                        @method('PUT')
                                         <div class="mb-3">
                                             <label for="fullname" class="form-label">Full Name :<span
                                                     class="text-danger"> *</span></label>
                                             <input type="text" class="form-control" id="fullname" name="fullname"
-                                                placeholder="Enter Full Name">
+                                                value="{{$customer->fullname}}">
                                         </div>
                                         <div class="mb-3">
                                             <label for="username" class="form-label">User Name :<span
                                                     class="text-danger"> *</span></label>
                                             <input type="text" class="form-control" id="username" name="username"
-                                                placeholder="Enter User Name">
+                                            value="{{$customer->username}}">
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="address" class="form-label">Address :<span
+                                                    class="text-danger"> *</span></label>
+                                            <input type="text" class="form-control" id="address" name="address"
+                                            value="{{$customer->address}}">
                                         </div>
 
                                         <div class="mb-3">
                                             <label for="email" class="form-label">Email :<span
                                                     class="text-danger"> *</span></label>
                                             <input type="email" class="form-control" id="email" name="email"
-                                                placeholder="Enter Email Address">
+                                            value="{{$customer->email}}">
                                         </div>
 
                                         <div class="mb-3">
                                             <label for="password" class="form-label">Password :<span
                                                     class="text-danger"> *</span></label>
                                             <input type="password" class="form-control" id="password" name="password"
-                                                placeholder="Enter Password">
+                                            value="{{$customer->password}}">
                                         </div>
 
                                         <div class="mb-3">
                                             <label for="photo" class="form-label">Photo :<span
                                                     class="text-danger"> *</span></label>
                                             <input type="file" class="form-control" id="photo" name="photo"
-                                                placeholder="Photo">
+                                            value="{{$customer->photo}}">
                                         </div>
 
                                         <div class="mb-3">
                                             <label for="phone" class="form-label">Phone :<span
                                                     class="text-danger"> *</span></label>
                                             <input type="tel" class="form-control" id="phone" name="phone"
-                                                placeholder="phone">
+                                            value="{{$customer->phone}}">
                                         </div>
                                     
                                         <div class="row">
@@ -102,9 +122,9 @@
                                                         <label class="input-group-text" for="status">Options</label>
                                                     </div>
                                                     <select name='status' class="custom-select" id="status">
-                                                        <option selected>Status</option>
-                                                        <option value="active">Active</option>
-                                                        <option value="inactive">Inactive</option>
+                                                        <option>Status</option>
+                                                        <option @if($customer->status == 'active') selected @endif value="active">Active</option>
+                                                        <option @if($customer->status == 'inactive') selected @endif value="inactive">Inactive</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -130,22 +150,6 @@
 @endsection
 
 @push('scripts')
-<!-- Summernote -->
-<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#summernote1').summernote({
-            height: 200,
-        });
-        $('.dropdrown-toggle').dropdown();
-    });
-    $(document).ready(function () {
-        $('#summernote2').summernote({
-            height: 200,
-        });
-        $('.dropdrown-toggle').dropdown();
-    });
 
-</script>
 
 @endpush

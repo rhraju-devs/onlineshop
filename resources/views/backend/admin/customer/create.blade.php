@@ -11,7 +11,7 @@
         <div class="card">
 
             <div class="card-header">
-                <h5>Category</h5>
+                <h5>Customer</h5>
                 <div class="card-header-right">
                     <div class="btn-group card-option">
                         <button type="button" class="btn dropdown-toggle btn-icon" data-toggle="dropdown"
@@ -41,7 +41,7 @@
                             <div class="row">
                                 <div class="col-md-6 col-lg-6">
                                     <a class="btn btn-outline-info float-left"
-                                        href="{{route('admin.category.list')}}">Category List</a>
+                                        href="{{route('admin.customer.list')}}">Customer List</a>
                                 </div>
                                 <div class="col-md-6 col-lg-6 float-right">
 
@@ -50,7 +50,22 @@
 
                             <div class="row">
                                 <div class="col-md-12 col-lg-12">
-                                    <form class="m-3" action="" method="">
+                                <h1>Create Post</h1>
+ 
+                                @if(count($errors) > 0 )
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <ul class="p-0 m-0" style="list-style: none;">
+                                            @foreach($errors->all() as $error)
+                                            <li>{{$error}}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+
+                                    <form class="m-3" action="{{route('admin.customer.store')}}" method="POST" enctype="multipart/form-data">
                                         @csrf
                                         <div class="mb-3">
                                             <label for="fullname" class="form-label">Full Name :<span
@@ -91,6 +106,13 @@
                                                     class="text-danger"> *</span></label>
                                             <input type="tel" class="form-control" id="phone" name="phone"
                                                 placeholder="phone">
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label for="address" class="form-label">Address :<span
+                                                    class="text-danger"> *</span></label>
+                                            <input type="text" class="form-control" id="address" name="address"
+                                                placeholder="Address">
                                         </div>
                                     
                                         <div class="row">

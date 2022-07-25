@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('summary');
+            $table->string('blog_category');
             $table->longText('description');
             $table->string('photo')->nullable();
             $table->enum('status', ['active', 'inactive'])->default('active');

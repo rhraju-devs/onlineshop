@@ -35,10 +35,10 @@
                             <div class="card-body">
                                 <div class="row my-3">
                                     <div class="col-md-6 col-lg-6">
-                                        <a class="btn btn-outline-info float-left" href="{{route('admin.category.create')}}">Add Category</a>
+                                        <a class="btn btn-outline-info float-left" href="">Add Category</a>
                                     </div>
                                     <div class="col-md-6 col-lg-6 float-right">
-                                    <p class="fw-bold float-right">Total Category : {{$categories->count()}}</p>
+                                    <p class="fw-bold float-right">Total Category : </p>
                                     </div>      
                                 </div>
 
@@ -61,26 +61,26 @@
                                             </tr>
                                         </thead>
                                         <tbody class="table-group-divider">
-                                            @foreach($categories as $key=>$category)
+
                                                 <tr>
-                                                    <td scope="col">{{$key+1}}</td>
-                                                    <td scope="col">{{$category->name}}</td>
-                                                    <td scope="col">{{$category->slug}}</td>
-                                                    <td scope="col">{!! $category->description !!}</td>
-                                                    <td scope="col">{!! $category->summary !!}</td>
-                                                    <td scope="col">{{$category->photo}}</td>
-                                                    <td scope="col">{{$category->is_parent === 1 ? 'Yes' : 'No'}}</td>
-                                                    <td scope="col">{{optional($category->parentCategory)->name}}</td>
-                                                    <td scope="col">{{$category->status}}</td>
-                                                    <td scope="col">{{$category->created_at}}</td>
-                                                    <td scope="col">{{$category->updated_at}}</td>
+                                                    <td scope="col"></td>
+                                                    <td scope="col"></td>
+                                                    <td scope="col"></td>
+                                                    <td scope="col"></td>
+                                                    <td scope="col"></td>
+                                                    <td scope="col"></td>
+                                                    <td scope="col"></td>
+                                                    <td scope="col"></td>
+                                                    <td scope="col"></td>
+                                                    <td scope="col"></td>
+                                                    <td scope="col"></td>
                                                     <td>
-                                                        <a href="{{route('admin.category.show', $category->id)}}" data-toggle="tooltip" title="View" data-placement="bottom" class="btn btn-outline-success btn-sm"><img src="{{url('icon/eye.svg')}}" alt="" srcset=""></a>
-                                                        <a href="{{route('admin.category.edit', $category->id)}}" data-toggle="tooltip" title="Edit" data-placement="bottom" class="btn btn-outline-warning btn-sm"><img src="{{url('icon/edit.svg')}}" alt="" srcset=""></a>
-                                                        <a href="{{route('admin.category.delete', $category->id)}}" data-toggle="tooltip" title="Delete" data-placement="bottom" class="btn btn-outline-danger btn-sm"><img src="{{url('icon/delete.svg')}}" alt="" srcset=""></a>
+                                                        <a href="" data-toggle="tooltip" title="View" data-placement="bottom" class="btn btn-outline-success btn-sm"><img src="{{url('icon/eye.svg')}}" alt="" srcset=""></a>
+                                                        <a href="" data-toggle="tooltip" title="Edit" data-placement="bottom" class="btn btn-outline-warning btn-sm"><img src="{{url('icon/edit.svg')}}" alt="" srcset=""></a>
+                                                        <a href="" data-toggle="tooltip" title="Delete" data-placement="bottom" class="btn btn-outline-danger btn-sm"><img src="{{url('icon/delete.svg')}}" alt="" srcset=""></a>
                                                     </td>
                                                 </tr>
-                                            @endforeach
+
                                         </tbody>
                                         <tfoot>
                                             <tr>

@@ -4,12 +4,11 @@
 @endsection
 @section('admin_dashboard_content')
     <div class="row">
-            <!-- [ sample-page ] start -->
             <div class="col-sm-12">
                 <div class="card">
 
                     <div class="card-header">
-                        <h5>Category</h5> 
+                        <h5>Vendor</h5> 
                         <div class="card-header-right">
                             <div class="btn-group card-option">
                                 <button type="button" class="btn dropdown-toggle btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -31,10 +30,10 @@
                                 <div class="card-body">
                                     <div class="row my-4">
                                         <div class="col-md-6 col-lg-6">
-                                            <h4 class="mb-4 float-left">Category Details</h4>
+                                            <h4 class="mb-4 float-left">Vendor Details</h4>
                                         </div>
                                         <div class="col-md-6 col-lg-6">
-                                            <a class="float-right btn btn-outline-info" href="{{route('admin.category.list')}}">Category List</a>
+                                            <a class="float-right btn btn-outline-info" href="{{route('admin.vendor.list')}}">Vendor List</a>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -133,21 +132,47 @@
                                         <div class="col-lg-6 mx-auto">
                                             <div class="row">
                                                 <div class="col-md-6 col-lg-6">
-                                                    <h5>Category Name : </h5>
-                                                    <h3 class="mt-lg-0 mt-4">{{$category->name}}</h3>
+                                                    <h5>Full Name : </h5>
+                                                    <h3 class="mt-lg-0 mt-4">{{$vendor->fullname}}</h3>
                                                 </div>
 
                                                 <div class="col-md-6 col-lg-6">
-                                                    <h5>Is Parent : </h5>
-                                                    <h3 class="mt-lg-0 mt-4">{{$category->is_parent === 1 ? 'Yes' : 'No'}}</h3>
+                                                    <h5>User Name : </h5>
+                                                    <h3 class="mt-lg-0 mt-4">{{$vendor->username}}</h3>
                                                 </div>
-                                            </div>
-                                            <div class="row my-3">
-                                                <div class="col-md-12 col-lg-12">
-                                                    <h5>Parent Category Name : </h5>
-                                                    <h3>{{optional($category->parentCategory)->name}}</h3>
+
+                                                <div class="col-md-6 col-lg-6">
+                                                    <h5>Email : </h5>
+                                                    <h3 class="mt-lg-0 mt-4">{{$vendor->email}}</h3>
                                                 </div>
+
+                                                <div class="col-md-6 col-lg-6">
+                                                    <h5>Phone : </h5>
+                                                    <h3 class="mt-lg-0 mt-4">{{$vendor->phone}}</h3>
+                                                </div>
+
+                                                <div class="col-md-6 col-lg-6">
+                                                    <h5>Address : </h5>
+                                                    <h3 class="mt-lg-0 mt-4">{{$vendor->address}}</h3>
+                                                </div>
+
+                                                <div class="col-md-6 col-lg-6">
+                                                    <h5>Zip Code : </h5>
+                                                    <h3 class="mt-lg-0 mt-4">{{$vendor->zip}}</h3>
+                                                </div>
+
+                                                <div class="col-md-6 col-lg-6">
+                                                    <h5>License Number : </h5>
+                                                    <h3 class="mt-lg-0 mt-4">{{$vendor->license_num}}</h3>
+                                                </div>
+
+                                                <div class="col-md-6 col-lg-6">
+                                                    <h5>Status : </h5>
+                                                    <h3 class="mt-lg-0 mt-4">{{$vendor->status}}</h3>
+                                                </div>
+
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -162,10 +187,10 @@
                                     </ul>
                                     <div class="tab-content" id="myTabContent">
                                         <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="home-tab">
-                                            <p class="mb-0">{!! $category->description !!}</p>
+                                            <p class="mb-0">{!! $vendor->vendor_description !!}</p>
                                         </div>
                                         <div class="tab-pane fade" id="summary" role="tabpanel" aria-labelledby="profile-tab">
-                                            <p class="mb-0">{!! $category->summary !!}</p>
+                                            <p class="mb-0">Vendor Have no Summary Details</p>
                                         </div>
                                     </div>
                                 </div>

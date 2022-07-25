@@ -42,7 +42,21 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12 col-lg-12">
-                                        <form class="m-3" action="{{route('admin.category.update', $category->id)}}" method="post">
+
+                                        @if(count($errors) > 0 )
+                                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                <ul class="p-0 m-0" style="list-style: none;">
+                                                    @foreach($errors->all() as $error)
+                                                    <li>{{$error}}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endif
+                                        
+                                        <form class="m-3" action="{{route('admin.category.update', $category->id)}}" enctype="multipart/form-data" method="post">
                                             @csrf
                                             @method('PUT')
                                             <div class="mb-3">
@@ -87,9 +101,9 @@
                                                             <label class="input-group-text" for="status">Options</label>
                                                         </div>
                                                         <select name='status' class="custom-select" id="status">
-                                                            <option selected>Choose...</option>
-                                                            <option value="active">Active</option>
-                                                            <option value="inactive">Inactive</option>
+                                                            <!-- <option selected>Choose...</option> -->
+                                                            <option @if ($category->status == 'active') 'selected' @endif value="active">Active</option>
+                                                            <option @if ($category->status == 'inactive') 'selected' @endif value="inactive">Inactive</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -99,7 +113,7 @@
                                                 <div class="col-md-6 col-lg-6">
                                                         <div class="mb-3">
                                                             <label for="photo" class="form-label">Category Photos :<span class="text-danger"> *</span></label>
-                                                            <input type="file" class="form-control" id="photo" name="photo">
+                                                            <input type="file" class="form-control" id="photo" name="photo" value>
                                                         </div>
                                                     </div>
                                             </div>

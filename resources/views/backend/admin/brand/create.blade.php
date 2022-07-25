@@ -45,7 +45,20 @@
                                     <div class="row">
                                         <div class="col-md-12 col-lg-12">
 
-                                            <form class="m-3" action="{{route('admin.brand.store')}}" method="post">
+                                            @if(count($errors) > 0 )
+                                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                    <ul class="p-0 m-0" style="list-style: none;">
+                                                        @foreach($errors->all() as $error)
+                                                        <li>{{$error}}</li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
+                                            @endif
+
+                                            <form class="m-3" action="{{route('admin.brand.store')}}" method="post" enctype="multipart/form-data">
                                                 @csrf
                                                 <div class="mb-3">
                                                     <label for="name" class="form-label">Brand Name :<span class="text-danger"> *</span></label>

@@ -22,6 +22,13 @@ class CategoryController extends Controller
     }
     public function store(Request $request)
     {
+        $categoryImage = null;
+        if($request->hasFile($categoryImage)){
+            $categoryImage = uniqid('category_' . strtotime(date('Ymdhsis')), true) . '_' . $request->file('photo')->getClientOriginalName();
+            $request->file('photo')->storeAs('/uploads/category', $categoryImage);
+        }
+
+        // dd($request->all());
 
         $request->validate([
             'name' => 'string|required',
@@ -33,6 +40,7 @@ class CategoryController extends Controller
             'photo' => 'nullable',
         ]);
 
+        // dd($request->all());
 
         Category::create([
             'name' => $request->name,
@@ -41,7 +49,7 @@ class CategoryController extends Controller
             'is_parent' => $request->is_parent,
             'description' => $request->description,
             'summary' => $request->summary,
-            'photo' => $request->photo,
+            'photo' => $categoryImage,
             'status' => $request->status,
         ]);
                 // dd($request->all());
@@ -55,6 +63,12 @@ class CategoryController extends Controller
     }
 
     public function update(Request $request, $id){
+        $categoryImage = null;
+        if($request->hasFile($categoryImage)){
+            $categoryImage = uniqid('category_' . strtotime(date('Ymdhsis')), true) . '_' . $request->file('photo')->getClientOriginalName();
+            $request->file('photo')->storeAs('/uploads/category', $categoryImage);
+        }
+
         $category = Category::find($id);
         $request->validate([
             'name' => 'string|required',
@@ -71,7 +85,7 @@ class CategoryController extends Controller
             'is_parent' => $request->is_parent,
             'description' => $request->description,
             'summary' => $request->summary,
-            'photo' => $request->photo,
+            'photo' => $categoryImage,
             'status' => $request->status,
         ]);
         return redirect()->route('admin.category.list');

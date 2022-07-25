@@ -44,7 +44,7 @@
                                     <div class="row">
                                         <div class="col-xl-5 col-lg-6 text-center">
                                             <img class="w-100 border-radius-lg shadow-lg mx-auto"
-                                                src="../../../assets/img/products/product-details-1.jpg" alt="chair">
+                                                src="{{url('/uploads/products/' . $product->product_photo)}}" alt="{{$product->product_photo . 'photo'}}">
                                             <div class="my-gallery d-flex mt-4 pt-2" itemscope
                                                 itemtype="http://schema.org/ImageGallery">
                                                 <figure itemprop="associatedMedia" itemscope

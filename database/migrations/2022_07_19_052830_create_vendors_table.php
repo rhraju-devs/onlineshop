@@ -24,11 +24,8 @@ return new class extends Migration
             $table->string('address');
             $table->text('vendor_description');
             $table->integer('zip');
-            $table->string('fax');
-            $table->string('products');
-            $table->string('services');
+            $table->string('product');
             $table->string('license_num')->nullable;
-            $table->text('information');
             $table->enum('status', ['active', 'inactive'])->default('active');
             $table->timestamps();
         });

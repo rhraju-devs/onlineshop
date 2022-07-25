@@ -35,10 +35,10 @@
                             <div class="card-body">
                                 <div class="row my-3">
                                     <div class="col-md-6 col-lg-6">
-                                        <a class="btn btn-outline-info float-left" href="">Add Customer</a>
+                                        <a class="btn btn-outline-info float-left" href="{{route('admin.customer.create')}}">Add Customer</a>
                                     </div>
                                     <div class="col-md-6 col-lg-6 float-right">
-                                    <p class="fw-bold float-right">Total Customer :</p>
+                                    <p class="fw-bold float-right">Total Customer : {{$customers->count()}}</p>
                                     </div>      
                                 </div>
 
@@ -58,20 +58,20 @@
                                             </tr>
                                         </thead>
                                         <tbody class="table-group-divider">
-                                            @foreach($categories as $key=>$category)
+                                            @foreach($customers as $key=>$customer)
                                                 <tr>
-                                                    <td scope="col"></td>
-                                                    <td scope="col"></td>
-                                                    <td scope="col"></td>
-                                                    <td scope="col"></td>
-                                                    <td scope="col"></td>
-                                                    <td scope="col"></td>
-                                                    <td scope="col"></td>
-                                                    <td scope="col"></td>
+                                                    <td scope="col">{{$key+1}}</td>
+                                                    <td scope="col">{{$customer->fullname}}</td>
+                                                    <td scope="col">{{$customer->username}}</td>
+                                                    <td scope="col">{{$customer->email}}</td>
+                                                    <td scope="col">{{$customer->photo}}</td>
+                                                    <td scope="col">{{$customer->phone}}</td>
+                                                    <td scope="col">{{$customer->address}}</td>
+                                                    <td scope="col">{{$customer->status}}</td>
                                                     <td>
                                                         <a href="" data-toggle="tooltip" title="View" data-placement="bottom" class="btn btn-outline-success btn-sm"><img src="{{url('icon/eye.svg')}}" alt="" srcset=""></a>
-                                                        <a href="" data-toggle="tooltip" title="Edit" data-placement="bottom" class="btn btn-outline-warning btn-sm"><img src="{{url('icon/edit.svg')}}" alt="" srcset=""></a>
-                                                        <a href="" data-toggle="tooltip" title="Delete" data-placement="bottom" class="btn btn-outline-danger btn-sm"><img src="{{url('icon/delete.svg')}}" alt="" srcset=""></a>
+                                                        <a href="{{route('admin.customer.edit', $customer->id)}}" data-toggle="tooltip" title="Edit" data-placement="bottom" class="btn btn-outline-warning btn-sm"><img src="{{url('icon/edit.svg')}}" alt="" srcset=""></a>
+                                                        <a href="{{route('admin.customer.delete', $customer->id)}}" data-toggle="tooltip" title="Delete" data-placement="bottom" class="btn btn-outline-danger btn-sm"><img src="{{url('icon/delete.svg')}}" alt="" srcset=""></a>
                                                     </td>
                                                 </tr>
                                             @endforeach

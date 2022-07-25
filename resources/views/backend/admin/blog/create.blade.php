@@ -12,7 +12,7 @@
         <div class="card">
 
             <div class="card-header">
-                <h5>Category</h5>
+                <h5>Blog</h5>
                 <div class="card-header-right">
                     <div class="btn-group card-option">
                         <button type="button" class="btn dropdown-toggle btn-icon" data-toggle="dropdown"
@@ -42,7 +42,7 @@
                             <div class="row">
                                 <div class="col-md-6 col-lg-6">
                                     <a class="btn btn-outline-info float-left"
-                                        href="{{route('admin.category.list')}}">Category List</a>
+                                        href="">Blog List</a>
                                 </div>
                                 <div class="col-md-6 col-lg-6 float-right">
 
@@ -51,54 +51,74 @@
 
                             <div class="row">
                                 <div class="col-md-12 col-lg-12">
-                                    <form class="m-3" action="{{route('admin.category.store')}}" method="post">
+                                    <form class="m-3" action="" method="post">
                                         @csrf
                                         <div class="mb-3">
-                                            <label for="name" class="form-label">Category Name :<span
+                                            <label for="name" class="form-label">Blog Title:<span
                                                     class="text-danger"> *</span></label>
                                             <input type="text" class="form-control" id="name" name="name"
                                                 placeholder="Enter Category Name">
                                         </div>
 
                                         <div class="mb-3">
-                                            <label for="description" class="form-label">Category Description :<span
+                                            <label for="description" class="form-label">Blog Description :<span
                                                     class="text-danger"> *</span></label>
                                             <textarea id="summernote1" name="description" class="form-control"
                                                 id="description" class="form-control"
-                                                placeholder="Enter Category Description"></textarea>
+                                                placeholder="Enter Blog Description"></textarea>
                                         </div>
+
                                         <div class="mb-3">
-                                            <label for="summary" class="form-label">Category Summary :<span
+                                            <label for="summary" class="form-label">Blog Summary :<span
                                                     class="text-danger"> *</span></label>
                                             <textarea id="summernote2" name="summary" class="form-control" id="summary"
-                                                placeholder="Enter Category Summary"></textarea>
+                                                placeholder="Enter Blog Summary"></textarea>
                                         </div>
 
-                                        <div class="mb-3">
-                                            <label for="is_parent" class="form-label">Is Parent :<span
-                                                    class="text-danger"> * </span></label>
-                                            <input type="checkbox" name="is_parent" id="is_parent" value="1" checked>Yes
-                                        </div>
-
-                                        <div class="input-group mb-3 d-none" id="parent_cat_div">
-                                            <label for="category_name" class="form-label">Parent Category :<span
-                                                    class="text-danger"> *</span></label>
-                                            <div class="input-group-prepend">
-                                                <label class="input-group-text" for="category_name">Options</label>
+                                        <div class="row">
+                                            <div class="col-md-6 col-lg-6">
+                                                <div class="mb-3">
+                                                    <label for="photo" class="form-label">Blog Feature Photos :<span
+                                                            class="text-danger"> *</span></label>
+                                                    <input type="file" class="form-control" id="photo" name="photo">
+                                                </div>
                                             </div>
-                                            <select name='parent_id' class="custom-select" id="category_name">
-                                                <option selected disabled>Choose Parent Category</option>
-                                                @foreach($parent_category as $pcat)
-                                                <option value="{{$pcat->id}}">{{$pcat->name}}</option>
-                                                @endforeach
-                                            </select>
                                         </div>
 
+                                        <div class="row">
+                                            <div class="col-md-6 col-lg-6">
+                                                <div class="mb-3">
+                                                    <label for="category" class="form-label">Blog Parent Category Name :<span
+                                                            class="text-danger"> *</span></label>
+                                                    <select name="product_category" class="form-select"
+                                                        aria-label="Default select example">
+                                                        <option selected>Select Blog Category</option>
 
+                                                        <option value=""></option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-6">
+                                                <div class="mb-3">
+                                                    <label for="sub_category" class="form-label">Blog Sub-Category Name
+                                                        :<span class="text-danger"> *</span></label>
+                                                    <select name="product_sub_category" id="sub_category"
+                                                        class="form-select" aria-label="Default select example">
+                                                        <option selected>Select Blog Sub-Category</option>
+
+                                                        <option value=""></option>
+
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        
                                         <div class="row">
                                             <div class="col-md-4 col-lg-4">
                                                 <div class="input-group mb-3">
-                                                    <label for="status" class="form-label">Category Status :<span
+                                                    <label for="status" class="form-label">Blog Status :<span
                                                             class="text-danger"> *</span></label>
                                                     <div class="input-group-prepend">
                                                         <label class="input-group-text" for="status">Options</label>
@@ -111,15 +131,6 @@
                                                 </div>
                                             </div>
 
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6 col-lg-6">
-                                                <div class="mb-3">
-                                                    <label for="photo" class="form-label">Category Photos :<span
-                                                            class="text-danger"> *</span></label>
-                                                    <input type="file" class="form-control" id="photo" name="photo">
-                                                </div>
-                                            </div>
                                         </div>
 
                                         <button type="reset" class="btn btn-primary">Cancel</button>
@@ -134,7 +145,7 @@
 
         </div>
     </div>
-    <!-- [ sample-page ] end -->
+
 </div>
 
 @endsection
@@ -154,20 +165,6 @@
             height: 200,
         });
         $('.dropdrown-toggle').dropdown();
-    });
-
-</script>
-<script>
-    $('#is_parent').change(function (e) {
-        e.preventDefault();
-        var is_checked = $('#is_parent').prop('checked');
-        // alert(is_checked);
-        if (is_checked) {
-            $('#parent_cat_div').addClass('d-none');
-            $('#parent_cat_div').val('');
-        } else {
-            $('#parent_cat_div').removeClass('d-none');
-        }
     });
 
 </script>

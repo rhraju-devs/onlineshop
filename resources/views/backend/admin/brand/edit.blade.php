@@ -1,9 +1,9 @@
 @extends('backend.master')
 
 @section('css')
-    <!-- Summernote -->
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+<!-- Summernote -->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
 @endsection
 
 @section('admin_dashboard_content')
@@ -13,8 +13,8 @@
             <a class="btn btn-outline-info align-right" href="{{route('admin.brand.list')}}">Brand List</a>
         </div>
         <div class="col-md-6 col-lg-6">
-        <p class="fw-bold">Total Brand : {{$brands->count()}}</p>
-        </div>      
+            <p class="fw-bold">Total Brand : {{$brands->count()}}</p>
+        </div>
     </div>
 
     <div class="col-md-12 col-lg-12">
@@ -23,7 +23,21 @@
 
     <div class="col-md-12 col-lg-12">
 
-        <form class="m-3" action="{{route('admin.brand.update', $brands->id)}}" method="post">
+        @if(count($errors) > 0 )
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <ul class="p-0 m-0" style="list-style: none;">
+                @foreach($errors->all() as $error)
+                <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+
+        <form class="m-3" action="{{route('admin.brand.update', $brands->id)}}" method="post"
+            enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="mb-3">
@@ -32,7 +46,8 @@
             </div>
 
             <div class="mb-3">
-                <label for="description" class="form-label">Brand Description :<span class="text-danger"> *</span></label>
+                <label for="description" class="form-label">Brand Description :<span class="text-danger">
+                        *</span></label>
                 <textarea id="summernote2" name="description" class="form-control" id="description" class="form-control"
                     value="{{$brands->description}}">{{$brands->description}}</textarea>
             </div>
@@ -51,43 +66,46 @@
                 </div>
                 <div class="col-md-6 col-lg-6">
                     <div class="mb-3">
-                        <label for="photo" class="form-label">brand Status :<span class="text-danger"> *</span></label>
+                        <label for="status" class="form-label">Brand Status :<span class="text-danger"> *</span></label>
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="status">Options</label>
                         </div>
                         <select name='status' class="custom-select" id="status">
-                            <option selected>Choose...</option>
-                            <option value="active">Active</option>
-                            <option value="inactive">Inactive</option>
+                            <!-- <option selected>Choose...</option> -->
+                            <option @if($brands->status == 'active') selected @endif value="active">Active</option>
+                            <option @if($brands->status == 'inactive') selected @endif value="inactive">Inactive
+                            </option>
                         </select>
                     </div>
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+            <button type="reset" class="btn btn-primary btn-lg">Cancel</button>
+            <button type="submit" class="btn btn-primary btn-lg">Update</button>
         </form>
     </div>
 </div>
 @endsection
 
 @push('scripts')
-    <!-- Summernote -->
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#summernote1').summernote({
-                height : 200,
-            });
-            $('.dropdrown-toggle').dropdown();   
+<!-- Summernote -->
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#summernote1').summernote({
+            height: 200,
         });
-        $(document).ready(function() {
-            $('#summernote2').summernote({
-                height : 200,
-            });
-            $('.dropdrown-toggle').dropdown();   
+        $('.dropdrown-toggle').dropdown();
+    });
+    $(document).ready(function () {
+        $('#summernote2').summernote({
+            height: 200,
         });
-    </script>
+        $('.dropdrown-toggle').dropdown();
+    });
+
+</script>
 
 @endpush

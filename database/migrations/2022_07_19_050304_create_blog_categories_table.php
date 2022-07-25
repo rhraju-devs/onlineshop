@@ -15,12 +15,15 @@ return new class extends Migration
     {
         Schema::create('blog_categories', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->string('slug')->unique();
-            $table->text('summary');
             $table->longText('description');
+            $table->text('summary');
             $table->string('photo')->nullable();
-            $table->string('blog_category');
-            $table->enum('status', ['active', 'inactive']);
+            $table->boolean('is_parent')->nullable();
+            $table->unsignedBigInteger('parent_id')->nullable();
+            $table->enum('status', ['active', 'inactive'])->default('active');
+            $table->foreign('parent_id')->references('id')->on('blog_categories')->onDelete('SET NULL');
             $table->timestamps();
         });
     }

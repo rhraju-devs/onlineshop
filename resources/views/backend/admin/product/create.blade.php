@@ -57,7 +57,20 @@
 
                                 <div class="col-md-12 col-lg-12">
 
-                                    <form class="m-3" action="{{route('admin.product.store')}}" method="post">
+                                    @if(count($errors) > 0 )
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            <ul class="p-0 m-0" style="list-style: none;">
+                                                @foreach($errors->all() as $error)
+                                                <li>{{$error}}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
+
+                                    <form class="m-3" action="{{route('admin.product.store')}}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <div class="mb-3">
                                             <label for="name" class="form-label">Product Name :<span
@@ -110,7 +123,7 @@
                                                             class="text-danger"> *</span></label>
                                                     <select name="product_category" class="form-select"
                                                         aria-label="Default select example">
-                                                        <option selected disabled>Select Category</option>
+                                                        <option selected>Select Category</option>
                                                         @foreach($categories as $category)
                                                         <option value="{{$category->id}}">{{$category->name}}</option>
                                                         @endforeach
@@ -123,7 +136,7 @@
                                                         :<span class="text-danger"> *</span></label>
                                                     <select name="product_sub_category" id="sub_category"
                                                         class="form-select" aria-label="Default select example">
-                                                        <option selected disabled>Select Sub-Category</option>
+                                                        <option selected>Select Sub-Category</option>
                                                         @foreach($subcategories as $category)
                                                         <option value="{{$category->id}}">{{$category->name}}</option>
                                                         @endforeach

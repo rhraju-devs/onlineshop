@@ -13,17 +13,17 @@
             <div class="card">
 
                 <div class="card-header">
-                    <h5>Category</h5> 
+                    <h5>Vendor</h5> 
                     <div class="card-header-right">
                         <div class="btn-group card-option">
                             <button type="button" class="btn dropdown-toggle btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="feather icon-more-horizontal"></i>
                             </button>
                             <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
-                                <li class="dropdown-item full-card"><a href="#!"><span><i class="feather icon-maximize"></i> maximize</span><span style="display:none"><i class="feather icon-minimize"></i> Restore</span></a></li>
-                                <li class="dropdown-item minimize-card"><a href="#!"><span><i class="feather icon-minus"></i> collapse</span><span style="display:none"><i class="feather icon-plus"></i> expand</span></a></li>
-                                <li class="dropdown-item reload-card"><a href="#!"><i class="feather icon-refresh-cw"></i> reload</a></li>
-                                <li class="dropdown-item close-card"><a href="#!"><i class="feather icon-trash"></i> remove</a></li>
+                                <li class="dropdown-item full-card"><a href="#!"><span><i class="feather icon-maximize"></i> Maximize</span><span style="display:none"><i class="feather icon-minimize"></i> Restore</span></a></li>
+                                <li class="dropdown-item minimize-card"><a href="#!"><span><i class="feather icon-minus"></i> Collapse</span><span style="display:none"><i class="feather icon-plus"></i> Expand</span></a></li>
+                                <li class="dropdown-item reload-card"><a href="#!"><i class="feather icon-refresh-cw"></i> Reload</a></li>
+                                <li class="dropdown-item close-card"><a href="#!"><i class="feather icon-trash"></i> Remove</a></li>
                             </ul>
                         </div>
                     </div>
@@ -35,10 +35,10 @@
                             <div class="card-body">
                                 <div class="row my-3">
                                     <div class="col-md-6 col-lg-6">
-                                        <a class="btn btn-outline-info float-left" href="{{route('admin.category.create')}}">Add Category</a>
+                                        <a class="btn btn-outline-info float-left" href="{{route('admin.vendor.create')}}">Add Vendor</a>
                                     </div>
                                     <div class="col-md-6 col-lg-6 float-right">
-                                    <p class="fw-bold float-right">Total Category : {{$categories->count()}}</p>
+                                    <p class="fw-bold float-right">Total Vendor : {{$vendors->count()}}</p>
                                     </div>      
                                 </div>
 
@@ -47,37 +47,40 @@
                                         <thead>
                                             <tr>
                                                 <th scope="col">S.L</th>
-                                                <th scope="col">Name</th>
-                                                <th scope="col">Slug</th>
+                                                <th scope="col">Full Name</th>
+                                                <th scope="col">User Name</th>
+                                                <th scope="col">Eamil</th>
+                                                <th scope="col">Photo</th>
+                                                <th scope="col">Phone</th>
+                                                <th scope="col">Address</th>
                                                 <th scope="col">Description</th>
-                                                <th scope="col">Summary</th>
-                                                <th scope="col">Image</th>
-                                                <th scope="col">Is Parent</th>
-                                                <th scope="col">Parent Name</th>
+                                                <th scope="col">Product</th>
+                                                <th scope="col">License No.</th>
                                                 <th scope="col">Status</th>
-                                                <th scope="col">Created At</th>
-                                                <th scope="col">Updated At</th>
                                                 <th scope="col">Action</th>
                                             </tr>
                                         </thead>
                                         <tbody class="table-group-divider">
-                                            @foreach($categories as $key=>$category)
-                                                <tr>
-                                                    <td scope="col">{{$key+1}}</td>
-                                                    <td scope="col">{{$category->name}}</td>
-                                                    <td scope="col">{{$category->slug}}</td>
-                                                    <td scope="col">{!! $category->description !!}</td>
-                                                    <td scope="col">{!! $category->summary !!}</td>
-                                                    <td scope="col">{{$category->photo}}</td>
-                                                    <td scope="col">{{$category->is_parent === 1 ? 'Yes' : 'No'}}</td>
-                                                    <td scope="col">{{optional($category->parentCategory)->name}}</td>
-                                                    <td scope="col">{{$category->status}}</td>
-                                                    <td scope="col">{{$category->created_at}}</td>
-                                                    <td scope="col">{{$category->updated_at}}</td>
+                                            @foreach($vendors as $key=>$vendor)
+                                            <tr>
+                                                <td>{{$key+1}}</td>
+                                                <td>{{$vendor->fullname}}</td>
+                                                <td>{{$vendor->username}}</td>
+                                                <td>{{$vendor->email}}</td>
+                                                <td>{{$vendor->photo}}</td>
+                                                <td>{{$vendor->phone}}</td>
+                                                <td>{{$vendor->address}}</td>
+                                                <td>{{$vendor->vendor_description}}</td>
+                                                <td>{{$vendor->product}}</td>
+
+                                                <td>{{$vendor->license_num}}</td>
+                                                <td>{{$vendor->status}}</td>
                                                     <td>
-                                                        <a href="{{route('admin.category.show', $category->id)}}" data-toggle="tooltip" title="View" data-placement="bottom" class="btn btn-outline-success btn-sm"><img src="{{url('icon/eye.svg')}}" alt="" srcset=""></a>
-                                                        <a href="{{route('admin.category.edit', $category->id)}}" data-toggle="tooltip" title="Edit" data-placement="bottom" class="btn btn-outline-warning btn-sm"><img src="{{url('icon/edit.svg')}}" alt="" srcset=""></a>
-                                                        <a href="{{route('admin.category.delete', $category->id)}}" data-toggle="tooltip" title="Delete" data-placement="bottom" class="btn btn-outline-danger btn-sm"><img src="{{url('icon/delete.svg')}}" alt="" srcset=""></a>
+                                                        <a href="{{route('admin.vendor.show', $vendor->id)}}" data-toggle="tooltip" title="View" data-placement="bottom" class="btn btn-outline-success btn-sm"><img src="{{url('icon/eye.svg')}}" alt="" srcset=""></a>
+
+                                                        <a href="{{route('admin.vendor.edit', $vendor->id)}}" data-toggle="tooltip" title="Edit" data-placement="bottom" class="btn btn-outline-warning btn-sm"><img src="{{url('icon/edit.svg')}}" alt="" srcset=""></a>
+
+                                                        <a href="{{route('admin.vendor.delete', $vendor->id)}}" data-toggle="tooltip" title="Delete" data-placement="bottom" class="btn btn-outline-danger btn-sm"><img src="{{url('icon/delete.svg')}}" alt="" srcset=""></a>
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -85,16 +88,16 @@
                                         <tfoot>
                                             <tr>
                                                 <th scope="col">S.L</th>
-                                                <th scope="col">Name</th>
-                                                <th scope="col">Slug</th>
+                                                <th scope="col">Full Name</th>
+                                                <th scope="col">User Name</th>
+                                                <th scope="col">Eamil</th>
+                                                <th scope="col">Photo</th>
+                                                <th scope="col">Phone</th>
+                                                <th scope="col">Address</th>
                                                 <th scope="col">Description</th>
-                                                <th scope="col">Summary</th>
-                                                <th scope="col">Image</th>
-                                                <th scope="col">Is Parent</th>
-                                                <th scope="col">Parent Name</th>
+                                                <th scope="col">Product</th>
+                                                <th scope="col">License No.</th>
                                                 <th scope="col">Status</th>
-                                                <th scope="col">Created At</th>
-                                                <th scope="col">Updated At</th>
                                                 <th scope="col">Action</th>
                                             </tr>
                                         </tfoot>
@@ -107,7 +110,6 @@
 
             </div>
         </div>
-        <!-- [ sample-page ] end -->
     </div>
 
 

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('phone');
             $table->string('photo')->nullable();
+            $table->rememberToken();
             $table->string('address');
             $table->enum('status', ['active', 'inactive'])->default('active');
             $table->timestamps();

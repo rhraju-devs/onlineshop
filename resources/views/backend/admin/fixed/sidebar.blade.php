@@ -75,19 +75,30 @@ use Illuminate\Http\Request; -->
                         <a href="#!" class="nav-link "><span class="pcoded-micon"><i
                                     class="feather icon-box"></i></span><span class="pcoded-mtext">Customer</span></a>
                         <ul class="pcoded-submenu">
-                            <li><a href="">Customer List</a></li>
-                            <li><a href="">Customer Add</a></li>
+                            <li><a href="{{route('admin.customer.list')}}">Customer List</a></li>
+                            <li><a href="{{route('admin.customer.create')}}">Customer Add</a></li>
                         </ul>
                     </li>
                     <li class="nav-item pcoded-hasmenu">
                         <a href="#!" class="nav-link "><span class="pcoded-micon"><i
                                     class="feather icon-box"></i></span><span class="pcoded-mtext">Vendor</span></a>
                         <ul class="pcoded-submenu">
-                            <li><a href="">Vendor List</a></li>
-                            <li><a href="">Vendor Add</a></li>
+                            <li><a href="{{route('admin.vendor.list')}}">Vendor List</a></li>
+                            <li><a href="{{route('admin.vendor.create')}}">Vendor Add</a></li>
                         </ul>
                     </li>
                 <!-- Customer and Vendor end -->
+
+                <!-- Setting Start -->
+                <li class="nav-item pcoded-menu-caption">
+                        <label>Setting</label>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('admin.setting.details')}}" class="nav-link "><span class="pcoded-micon"><i
+                                    class="feather icon-file-text"></i></span><span
+                                class="pcoded-mtext">Setting</span></a>
+                    </li>
+                <!-- Setting End -->
 
                     <li class="nav-item pcoded-hasmenu">
                         <a href="#!" class="nav-link "><span class="pcoded-micon"><i

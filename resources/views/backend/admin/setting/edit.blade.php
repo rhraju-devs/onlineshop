@@ -12,7 +12,7 @@
             <div class="card">
 
                 <div class="card-header">
-                    <h5>Category</h5> 
+                    <h5>Setting</h5> 
                     <div class="card-header-right">
                         <div class="btn-group card-option">
                             <button type="button" class="btn dropdown-toggle btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -34,7 +34,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-6 col-lg-6">
-                                        <a class="btn btn-outline-info float-left" href="{{route('admin.category.list')}}">Category List</a>
+                                        <a class="btn btn-outline-info float-left" href="{{route('admin.setting.details')}}">Setting Details</a>
                                     </div>
                                     <div class="col-md-6 col-lg-6 float-right">
 
@@ -42,66 +42,69 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12 col-lg-12">
-                                        <form class="m-3" action="{{route('admin.category.update', $category->id)}}" method="post">
+
+                                        @if(count($errors) > 0 )
+                                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                <ul class="p-0 m-0" style="list-style: none;">
+                                                    @foreach($errors->all() as $error)
+                                                    <li>{{$error}}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endif
+
+                                        <form class="m-3" action="{{route('admin.setting.update', $setting->id)}}" method="POST" enctype="multipart/form-data">
                                             @csrf
                                             @method('PUT')
                                             <div class="mb-3">
-                                                <label for="name" class="form-label">Category Name :<span class="text-danger"> *</span></label>
-                                                <input type="text" class="form-control" id="name" name="name" value="{{$category->name}}">
+                                                <label for="phone" class="form-label">Phone Number :<span
+                                                        class="text-danger"> *</span></label>
+                                                <input type="text" class="form-control" id="phone" name="phone"
+                                                    value="{{$setting->phone}}">
                                             </div>
 
                                             <div class="mb-3">
-                                                <label for="description" class="form-label">Category Description :<span class="text-danger"> *</span></label>
-                                                <textarea id="summernote1" name="description" class="form-control" id="description" class="form-control">{{$category->description}}</textarea>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="summary" class="form-label">Category Summary :<span class="text-danger"> *</span></label>
-                                                <textarea id="summernote2" name="summary" class="form-control" id="summary"
-                                                    >{{$category->summary}}</textarea>
+                                                <label for="email" class="form-label">Email :<span
+                                                        class="text-danger"> *</span></label>
+                                                <input type="email" class="form-control" id="email" name="email"
+                                                    value="{{$setting->email}}">
                                             </div>
 
                                             <div class="mb-3">
-                                                <label for="is_parent" class="form-label">Is Parent :<span class="text-danger"> * </span></label>
-                                                <input type="checkbox" name="is_parent" id="is_parent" value="1" checked>Yes
+                                                <label for="address" class="form-label">Address :<span
+                                                        class="text-danger"> *</span></label>
+                                                <input type="text" class="form-control" id="address" name="address"
+                                                    value="{{$setting->address}}">
                                             </div>
 
-                                            <div class="input-group mb-3 d-none" id="parent_cat_div">
-                                                <label for="category_name" class="form-label">Parent Category :<span class="text-danger"> *</span></label>
-                                                <div class="input-group-prepend">
-                                                    <label class="input-group-text" for="category_name">Options</label>
-                                                </div>
-                                                <select name='parent_id' class="custom-select" id="category_name">
-                                                    <option selected disabled>Choose Parent Category</option>
-                                                    @foreach($parent_category as $pcat)
-                                                    <option value="{{$pcat->id}}">{{$pcat->name}}</option>
-                                                    @endforeach
-                                                </select>
+                                            <div class="mb-3">
+                                                <label  class="form-label">Website Description :<span
+                                                        class="text-danger"> *</span></label>
+                                                <textarea id="summernote1" name="discription" class="form-control"
+                                                    ">{{$setting->discription}}</textarea>
                                             </div>
 
-
-                                            <div class="row">
-                                                <div class="col-md-4 col-lg-4">
-                                                    <div class="input-group mb-3">
-                                                    <label for="status" class="form-label">Category Status :<span class="text-danger"> *</span></label>
-                                                        <div class="input-group-prepend">
-                                                            <label class="input-group-text" for="status">Options</label>
-                                                        </div>
-                                                        <select name='status' class="custom-select" id="status">
-                                                            <option selected>Choose...</option>
-                                                            <option value="active">Active</option>
-                                                            <option value="inactive">Inactive</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-
-                                            </div>
                                             <div class="row">
                                                 <div class="col-md-6 col-lg-6">
-                                                        <div class="mb-3">
-                                                            <label for="photo" class="form-label">Category Photos :<span class="text-danger"> *</span></label>
-                                                            <input type="file" class="form-control" id="photo" name="photo">
-                                                        </div>
+                                                    <div class="mb-3">
+                                                        <label for="photo" class="form-label">Website Feature  Photos :<span
+                                                                class="text-danger"> *</span></label>
+                                                        <input type="file" class="form-control" id="photo" name="photo" value="{{$setting->photo}}">
                                                     </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-6 col-lg-6">
+                                                    <div class="mb-3">
+                                                        <label for="logo" class="form-label">Website Logo:<span
+                                                                class="text-danger"> *</span></label>
+                                                        <input type="file" class="form-control" id="logo" name="logo" value="{{$setting->logo}}">
+                                                    </div>
+                                                </div>
                                             </div>
 
                                             <button type="reset" class="btn btn-primary">Cancel</button>
@@ -127,12 +130,6 @@
     <script>
         $(document).ready(function() {
             $('#summernote1').summernote({
-                height : 200,
-            });
-            $('.dropdrown-toggle').dropdown();   
-        });
-        $(document).ready(function() {
-            $('#summernote2').summernote({
                 height : 200,
             });
             $('.dropdrown-toggle').dropdown();   

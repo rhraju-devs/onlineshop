@@ -2,1896 +2,2509 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="76x76" href="../../../assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="../../../assets/img/favicon.png">
-    <title>
-        Material Dashboard 2 PRO by Creative Tim
-    </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, user-scalable=1"
+        name="viewport" />
+    <meta name="csrf-token" content="yeftDDC2qQST3d9gNxKOIJojRKfL2gQ9ZUeSxpwh">
 
-
-    <link rel="canonical" href="https://www.creative-tim.com/product/material-dashboard-pro" />
-
-    <meta name="keywords"
-        content="creative tim, html dashboard, html css dashboard, web dashboard, bootstrap 5 dashboard, bootstrap 5, css3 dashboard, bootstrap 5 admin, material dashboard bootstrap 5 dashboard, frontend, responsive bootstrap 5 dashboard, material design, material dashboard bootstrap 5 dashboard">
-    <meta name="description"
-        content="Material Dashboard PRO is a beautiful Bootstrap 5 admin dashboard with a large number of components, designed to look beautiful, clean and organized. If you are looking for a tool to manage dates about your business, this dashboard is the thing for you.">
-
-    <meta name="twitter:card" content="product">
-    <meta name="twitter:site" content="@creativetim">
-    <meta name="twitter:title" content="Material Dashboard PRO by Creative Tim">
-    <meta name="twitter:description"
-        content="Material Dashboard PRO is a beautiful Bootstrap 5 admin dashboard with a large number of components, designed to look beautiful, clean and organized. If you are looking for a tool to manage dates about your business, this dashboard is the thing for you.">
-    <meta name="twitter:creator" content="@creativetim">
-    <meta name="twitter:image"
-        content="https://s3.amazonaws.com/creativetim_bucket/products/51/original/opt_mdp_bs5_thumbnail.jpg">
-
-    <meta property="fb:app_id" content="655968634437471">
-    <meta property="og:title" content="Material Dashboard PRO by Creative Tim" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url"
-        content="https://demos.creative-tim.com/material-dashboard-pro/pages/dashboards/default.html" />
-    <meta property="og:image"
-        content="https://s3.amazonaws.com/creativetim_bucket/products/51/original/opt_mdp_bs5_thumbnail.jpg" />
-    <meta property="og:description"
-        content="Material Dashboard PRO is a beautiful Bootstrap 5 admin dashboard with a large number of components, designed to look beautiful, clean and organized. If you are looking for a tool to manage dates about your business, this dashboard is the thing for you." />
-    <meta property="og:site_name" content="Creative Tim" />
-
-    <link rel="stylesheet" type="text/css"
-        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
-
-    <link href="../../../assets/css/nucleo-icons.css" rel="stylesheet" />
-    <link href="../../../assets/css/nucleo-svg.css" rel="stylesheet" />
-
-    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-
-    <link id="pagestyle" href="../../../assets/css/material-dashboard.min.css?v=3.0.5" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,600,700&subset=latin,latin-ext" rel="stylesheet"
+        type="text/css">
 
     <style>
-        .async-hide {
-            opacity: 0 !important
+        :root {
+            --primary-font: 'Muli', sans-serif;
+            --primary-color: #fab528;
+            --heading-color: #000;
+            --text-color: #000;
+            --primary-button-color: #000;
+            --top-header-background-color: #f7f7f7;
+            --middle-header-background-color: #fff;
+            --bottom-header-background-color: #fff;
+            --header-text-color: #000;
+            --header-text-secondary-color: rgba(0, 0, 0, 0.5);
+            --header-deliver-color: rgba(0, 0, 0, 0.15);
+            --footer-text-color: #555;
+            --footer-heading-color: #555;
+            --footer-hover-color: #fab528;
+            --footer-border-color: #dee2e6;
         }
 
     </style>
-    <script>
-        (function (a, s, y, n, c, h, i, d, e) {
-            s.className += ' ' + y;
-            h.start = 1 * new Date;
-            h.end = i = function () {
-                s.className = s.className.replace(RegExp(' ?' + y), '')
-            };
-            (a[n] = a[n] || []).hide = h;
-            setTimeout(function () {
-                i();
-                h.end = null
-            }, c);
-            h.timeout = c;
-        })(window, document.documentElement, 'async-hide', 'dataLayer', 4000, {
-            'GTM-K9BGS8K': true
-        });
+    <link rel="shortcut icon" href="https://farmart.botble.com/storage/general/favicon.png">
+    <title>Farmart - Laravel Ecommerce system</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-42586526-15"
+        type="b33e4263afc5606e2221b1ae-text/javascript"></script>
+    <script type="b33e4263afc5606e2221b1ae-text/javascript">
+        "use strict";
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-42586526-15');
 
     </script>
+    <meta property="og:site_name" content="">
+    <meta property="og:title" content="Farmart - Laravel Ecommerce system">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="https://farmart.botble.com">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://farmart.botble.com/storage/general/open-graph-image.png">
+    <meta name="twitter:title" content="Farmart - Laravel Ecommerce system">
+    <meta name="twitter:description" content="">
+    <style>
+        .grecaptcha-badge {
+            visibility: hidden;
+        }
 
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-        ga('create', 'UA-46172202-22', 'auto', {
-            allowLinker: true
-        });
-        ga('set', 'anonymizeIp', true);
-        ga('require', 'GTM-K9BGS8K');
-        ga('require', 'displayfeatures');
-        ga('require', 'linker');
-        ga('linker:autoLink', ["2checkout.com", "avangate.com"]);
+    </style>
+    <link media="all" type="text/css" rel="stylesheet"
+        href="https://farmart.botble.com/vendor/core/plugins/cookie-consent/css/cookie-consent.css?v=1.0.0">
+    <link media="all" type="text/css" rel="stylesheet"
+        href="https://farmart.botble.com/themes/farmart/plugins/bootstrap/css/bootstrap.min.css">
+    <link media="all" type="text/css" rel="stylesheet"
+        href="https://farmart.botble.com/themes/farmart/fonts/Linearicons/Linearicons/Font/demo-files/demo.css">
+    <link media="all" type="text/css" rel="stylesheet"
+        href="https://farmart.botble.com/themes/farmart/plugins/slick/slick.css">
+    <link media="all" type="text/css" rel="stylesheet"
+        href="https://farmart.botble.com/themes/farmart/plugins/nouislider/nouislider.min.css">
+    <link media="all" type="text/css" rel="stylesheet"
+        href="https://farmart.botble.com/themes/farmart/plugins/light-gallery/css/lightgallery.min.css">
+    <link media="all" type="text/css" rel="stylesheet"
+        href="https://farmart.botble.com/themes/farmart/css/style.css?v=1.1.7">
+    <script type="application/ld+json">
+        {
+            "@context": "https:\/\/schema.org",
+            "@type": "Organization",
+            "name": "Farmart - Laravel Ecommerce system",
+            "url": "https:\/\/farmart.botble.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/farmart.botble.com\/storage\/general\/logo.png"
+            }
+        }
 
     </script>
-
-
-    <script>
-        (function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-NKDMSK6');
-
-    </script>
-
+    <link rel="alternate" href="https://farmart.botble.com/vi" hreflang="vi" />
 </head>
 
-<body class="g-sidenav-show  bg-gray-200">
-
-
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-
-    <aside
-        class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark"
-        id="sidenav-main">
-        <div class="sidenav-header">
-            <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
-                aria-hidden="true" id="iconSidenav"></i>
-            <a class="navbar-brand m-0"
-                href=" https://demos.creative-tim.com/material-dashboard-pro/pages/dashboards/analytics.html "
-                target="_blank">
-                <img src="../../../assets/img/logo-ct.png" class="navbar-brand-img h-100" alt="main_logo">
-                <span class="ms-1 font-weight-bold text-white">Material Dashboard 2 PRO</span>
-            </a>
-        </div>
-        <hr class="horizontal light mt-0 mb-2">
-        <div class="collapse navbar-collapse  w-auto h-auto" id="sidenav-collapse-main">
-            <ul class="navbar-nav">
-                <li class="nav-item mb-2 mt-0">
-                    <a data-bs-toggle="collapse" href="#ProfileNav" class="nav-link text-white"
-                        aria-controls="ProfileNav" role="button" aria-expanded="false">
-                        <img src="../../../assets/img/team-3.jpg" class="avatar">
-                        <span class="nav-link-text ms-2 ps-1">Brooklyn Alice</span>
-                    </a>
-                    <div class="collapse" id="ProfileNav" style="">
-                        <ul class="nav ">
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="../../../pages/pages/profile/overview.html">
-                                    <span class="sidenav-mini-icon"> MP </span>
-                                    <span class="sidenav-normal  ms-3  ps-1"> My Profile </span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white " href="../../../pages/pages/account/settings.html">
-                                    <span class="sidenav-mini-icon"> S </span>
-                                    <span class="sidenav-normal  ms-3  ps-1"> Settings </span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white " href="../../../pages/authentication/signin/basic.html">
-                                    <span class="sidenav-mini-icon"> L </span>
-                                    <span class="sidenav-normal  ms-3  ps-1"> Logout </span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <hr class="horizontal light mt-0">
-                <li class="nav-item">
-                    <a data-bs-toggle="collapse" href="#dashboardsExamples" class="nav-link text-white "
-                        aria-controls="dashboardsExamples" role="button" aria-expanded="false">
-                        <i class="material-icons-round opacity-10">dashboard</i>
-                        <span class="nav-link-text ms-2 ps-1">Dashboards</span>
-                    </a>
-                    <div class="collapse " id="dashboardsExamples">
-                        <ul class="nav ">
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " href="../../../pages/dashboards/analytics.html">
-                                    <span class="sidenav-mini-icon"> A </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Analytics </span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " href="../../../pages/dashboards/discover.html">
-                                    <span class="sidenav-mini-icon"> D </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Discover </span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " href="../../../pages/dashboards/sales.html">
-                                    <span class="sidenav-mini-icon"> S </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Sales </span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " href="../../../pages/dashboards/automotive.html">
-                                    <span class="sidenav-mini-icon"> A </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Automotive </span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " href="../../../pages/dashboards/smart-home.html">
-                                    <span class="sidenav-mini-icon"> S </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Smart Home </span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item mt-3">
-                    <h6 class="ps-4  ms-2 text-uppercase text-xs font-weight-bolder text-white">PAGES</h6>
-                </li>
-                <li class="nav-item">
-                    <a data-bs-toggle="collapse" href="#pagesExamples" class="nav-link text-white "
-                        aria-controls="pagesExamples" role="button" aria-expanded="false">
-                        <i
-                            class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}">image</i>
-                        <span class="nav-link-text ms-2 ps-1">Pages</span>
-                    </a>
-                    <div class="collapse " id="pagesExamples">
-                        <ul class="nav ">
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
-                                    href="#profileExample">
-                                    <span class="sidenav-mini-icon"> P </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Profile <b class="caret"></b></span>
-                                </a>
-                                <div class="collapse " id="profileExample">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/pages/profile/overview.html">
-                                                <span class="sidenav-mini-icon"> P </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Profile Overview </span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/pages/profile/projects.html">
-                                                <span class="sidenav-mini-icon"> A </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> All Projects </span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/pages/profile/messages.html">
-                                                <span class="sidenav-mini-icon"> M </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Messages </span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
-                                    href="#usersExample">
-                                    <span class="sidenav-mini-icon"> U </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Users <b class="caret"></b></span>
-                                </a>
-                                <div class="collapse " id="usersExample">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/pages/users/reports.html">
-                                                <span class="sidenav-mini-icon"> R </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Reports </span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/pages/users/new-user.html">
-                                                <span class="sidenav-mini-icon"> N </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> New User </span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
-                                    href="#accountExample">
-                                    <span class="sidenav-mini-icon"> A </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Account <b class="caret"></b></span>
-                                </a>
-                                <div class="collapse " id="accountExample">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/pages/account/settings.html">
-                                                <span class="sidenav-mini-icon"> S </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Settings </span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/pages/account/billing.html">
-                                                <span class="sidenav-mini-icon"> B </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Billing </span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/pages/account/invoice.html">
-                                                <span class="sidenav-mini-icon"> I </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Invoice </span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/pages/account/security.html">
-                                                <span class="sidenav-mini-icon"> S </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Security </span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
-                                    href="#projectsExample">
-                                    <span class="sidenav-mini-icon"> P </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Projects <b class="caret"></b></span>
-                                </a>
-                                <div class="collapse " id="projectsExample">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/pages/projects/general.html">
-                                                <span class="sidenav-mini-icon"> G </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> General </span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/pages/projects/timeline.html">
-                                                <span class="sidenav-mini-icon"> T </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Timeline </span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/pages/projects/new-project.html">
-                                                <span class="sidenav-mini-icon"> N </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> New Project </span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
-                                    href="#vrExamples">
-                                    <span class="sidenav-mini-icon"> V </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Virtual Reality <b
-                                            class="caret"></b></span>
-                                </a>
-                                <div class="collapse " id="vrExamples">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/pages/vr/vr-default.html">
-                                                <span class="sidenav-mini-icon"> V </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> VR Default </span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white " href="../../../pages/pages/vr/vr-info.html">
-                                                <span class="sidenav-mini-icon"> V </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> VR Info </span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " href="../../../pages/pages/pricing-page.html">
-                                    <span class="sidenav-mini-icon"> P </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Pricing Page </span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " href="../../../pages/pages/rtl-page.html">
-                                    <span class="sidenav-mini-icon"> R </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> RTL </span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " href="../../../pages/pages/widgets.html">
-                                    <span class="sidenav-mini-icon"> W </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Widgets </span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " href="../../../pages/pages/charts.html">
-                                    <span class="sidenav-mini-icon"> C </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Charts </span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " href="../../../pages/pages/sweet-alerts.html">
-                                    <span class="sidenav-mini-icon"> S </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Sweet Alerts </span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " href="../../../pages/pages/notifications.html">
-                                    <span class="sidenav-mini-icon"> N </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Notifications </span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a data-bs-toggle="collapse" href="#applicationsExamples" class="nav-link text-white "
-                        aria-controls="applicationsExamples" role="button" aria-expanded="false">
-                        <i
-                            class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}">apps</i>
-                        <span class="nav-link-text ms-2 ps-1">Applications</span>
-                    </a>
-                    <div class="collapse " id="applicationsExamples">
-                        <ul class="nav ">
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " href="../../../pages/applications/crm.html">
-                                    <span class="sidenav-mini-icon"> C </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> CRM </span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " href="../../../pages/applications/kanban.html">
-                                    <span class="sidenav-mini-icon"> K </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Kanban </span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " href="../../../pages/applications/wizard.html">
-                                    <span class="sidenav-mini-icon"> W </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Wizard </span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " href="../../../pages/applications/datatables.html">
-                                    <span class="sidenav-mini-icon"> D </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> DataTables </span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " href="../../../pages/applications/calendar.html">
-                                    <span class="sidenav-mini-icon"> C </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Calendar </span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " href="../../../pages/applications/stats.html">
-                                    <span class="sidenav-mini-icon"> S </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Stats </span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a data-bs-toggle="collapse" href="#ecommerceExamples" class="nav-link text-white active"
-                        aria-controls="ecommerceExamples" role="button" aria-expanded="false">
-                        <i
-                            class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}">shopping_basket</i>
-                        <span class="nav-link-text ms-2 ps-1">Ecommerce</span>
-                    </a>
-                    <div class="collapse  show " id="ecommerceExamples">
-                        <ul class="nav ">
-                            <li class="nav-item ">
-                                <a class="nav-link text-white  active " data-bs-toggle="collapse" aria-expanded="false"
-                                    href="#productsExample">
-                                    <span class="sidenav-mini-icon"> P </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Products <b class="caret"></b></span>
-                                </a>
-                                <div class="collapse show" id="productsExample">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/ecommerce/products/new-product.html">
-                                                <span class="sidenav-mini-icon"> N </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> New Product </span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/ecommerce/products/edit-product.html">
-                                                <span class="sidenav-mini-icon"> E </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Edit Product </span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white active"
-                                                href="../../../pages/ecommerce/products/product-page.html">
-                                                <span class="sidenav-mini-icon"> P </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Product Page </span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/ecommerce/products/products-list.html">
-                                                <span class="sidenav-mini-icon"> P </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Products List </span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
-                                    href="#ordersExample">
-                                    <span class="sidenav-mini-icon"> O </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Orders <b class="caret"></b></span>
-                                </a>
-                                <div class="collapse " id="ordersExample">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/ecommerce/orders/list.html">
-                                                <span class="sidenav-mini-icon"> O </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Order List </span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/ecommerce/orders/details.html">
-                                                <span class="sidenav-mini-icon"> O </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Order Details </span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " href="../../../pages/ecommerce/referral.html">
-                                    <span class="sidenav-mini-icon"> R </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Referral </span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a data-bs-toggle="collapse" href="#authExamples" class="nav-link text-white "
-                        aria-controls="authExamples" role="button" aria-expanded="false">
-                        <i
-                            class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}">content_paste</i>
-                        <span class="nav-link-text ms-2 ps-1">Authentication</span>
-                    </a>
-                    <div class="collapse " id="authExamples">
-                        <ul class="nav ">
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
-                                    href="#signinExample">
-                                    <span class="sidenav-mini-icon"> S </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Sign In <b class="caret"></b></span>
-                                </a>
-                                <div class="collapse " id="signinExample">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/authentication/signin/basic.html">
-                                                <span class="sidenav-mini-icon"> B </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Basic </span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/authentication/signin/cover.html">
-                                                <span class="sidenav-mini-icon"> C </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Cover </span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/authentication/signin/illustration.html">
-                                                <span class="sidenav-mini-icon"> I </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Illustration </span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
-                                    href="#signupExample">
-                                    <span class="sidenav-mini-icon"> S </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Sign Up <b class="caret"></b></span>
-                                </a>
-                                <div class="collapse " id="signupExample">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/authentication/signup/basic.html">
-                                                <span class="sidenav-mini-icon"> B </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Basic </span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/authentication/signup/cover.html">
-                                                <span class="sidenav-mini-icon"> C </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Cover </span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/authentication/signup/illustration.html">
-                                                <span class="sidenav-mini-icon"> I </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Illustration </span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
-                                    href="#resetExample">
-                                    <span class="sidenav-mini-icon"> R </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Reset Password <b
-                                            class="caret"></b></span>
-                                </a>
-                                <div class="collapse " id="resetExample">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/authentication/reset/basic.html">
-                                                <span class="sidenav-mini-icon"> B </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Basic </span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/authentication/reset/cover.html">
-                                                <span class="sidenav-mini-icon"> C </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Cover </span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/authentication/reset/illustration.html">
-                                                <span class="sidenav-mini-icon"> I </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Illustration </span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
-                                    href="#lockExample">
-                                    <span class="sidenav-mini-icon"> L </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Lock <b class="caret"></b></span>
-                                </a>
-                                <div class="collapse " id="lockExample">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/authentication/lock/basic.html">
-                                                <span class="sidenav-mini-icon"> B </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Basic </span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/authentication/lock/cover.html">
-                                                <span class="sidenav-mini-icon"> C </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Cover </span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/authentication/lock/illustration.html">
-                                                <span class="sidenav-mini-icon"> I </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Illustration </span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
-                                    href="#StepExample">
-                                    <span class="sidenav-mini-icon"> 2 </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> 2-Step Verification <b
-                                            class="caret"></b></span>
-                                </a>
-                                <div class="collapse " id="StepExample">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/authentication/verification/basic.html">
-                                                <span class="sidenav-mini-icon"> B </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Basic </span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/authentication/verification/cover.html">
-                                                <span class="sidenav-mini-icon"> C </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Cover </span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/authentication/verification/illustration.html">
-                                                <span class="sidenav-mini-icon"> I </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Illustration </span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
-                                    href="#errorExample">
-                                    <span class="sidenav-mini-icon"> E </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Error <b class="caret"></b></span>
-                                </a>
-                                <div class="collapse " id="errorExample">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/authentication/error/404.html">
-                                                <span class="sidenav-mini-icon"> E </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Error 404 </span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="../../../pages/authentication/error/500.html">
-                                                <span class="sidenav-mini-icon"> E </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Error 500 </span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <hr class="horizontal light" />
-                    <h6 class="ps-4  ms-2 text-uppercase text-xs font-weight-bolder text-white">DOCS</h6>
-                </li>
-                <li class="nav-item">
-                    <a data-bs-toggle="collapse" href="#basicExamples" class="nav-link text-white "
-                        aria-controls="basicExamples" role="button" aria-expanded="false">
-                        <i
-                            class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}">upcoming</i>
-                        <span class="nav-link-text ms-2 ps-1">Basic</span>
-                    </a>
-                    <div class="collapse " id="basicExamples">
-                        <ul class="nav ">
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
-                                    href="#gettingStartedExample">
-                                    <span class="sidenav-mini-icon"> G </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Getting Started <b
-                                            class="caret"></b></span>
-                                </a>
-                                <div class="collapse " id="gettingStartedExample">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="https://www.creative-tim.com/learning-lab/bootstrap/quick-start/material-dashboard"
-                                                target="_blank">
-                                                <span class="sidenav-mini-icon"> Q </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Quick Start </span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="https://www.creative-tim.com/learning-lab/bootstrap/license/material-dashboard"
-                                                target="_blank">
-                                                <span class="sidenav-mini-icon"> L </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> License </span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="https://www.creative-tim.com/learning-lab/bootstrap/overview/material-dashboard"
-                                                target="_blank">
-                                                <span class="sidenav-mini-icon"> C </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Contents </span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="https://www.creative-tim.com/learning-lab/bootstrap/build-tools/material-dashboard"
-                                                target="_blank">
-                                                <span class="sidenav-mini-icon"> B </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Build Tools </span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
-                                    href="#foundationExample">
-                                    <span class="sidenav-mini-icon"> F </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Foundation <b class="caret"></b></span>
-                                </a>
-                                <div class="collapse " id="foundationExample">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="https://www.creative-tim.com/learning-lab/bootstrap/colors/material-dashboard"
-                                                target="_blank">
-                                                <span class="sidenav-mini-icon"> C </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Colors </span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="https://www.creative-tim.com/learning-lab/bootstrap/grid/material-dashboard"
-                                                target="_blank">
-                                                <span class="sidenav-mini-icon"> G </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Grid </span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="https://www.creative-tim.com/learning-lab/bootstrap/typography/material-dashboard"
-                                                target="_blank">
-                                                <span class="sidenav-mini-icon"> T </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Typography </span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white "
-                                                href="https://www.creative-tim.com/learning-lab/bootstrap/icons/material-dashboard"
-                                                target="_blank">
-                                                <span class="sidenav-mini-icon"> I </span>
-                                                <span class="sidenav-normal  ms-2  ps-1"> Icons </span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a data-bs-toggle="collapse" href="#componentsExamples" class="nav-link text-white "
-                        aria-controls="componentsExamples" role="button" aria-expanded="false">
-                        <i
-                            class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}">view_in_ar</i>
-                        <span class="nav-link-text ms-2 ps-1">Components</span>
-                    </a>
-                    <div class="collapse " id="componentsExamples">
-                        <ul class="nav ">
-                            <li class="nav-item ">
-                                <a class="nav-link text-white "
-                                    href="https://www.creative-tim.com/learning-lab/bootstrap/alerts/material-dashboard"
-                                    target="_blank">
-                                    <span class="sidenav-mini-icon"> A </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Alerts </span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white "
-                                    href="https://www.creative-tim.com/learning-lab/bootstrap/badge/material-dashboard"
-                                    target="_blank">
-                                    <span class="sidenav-mini-icon"> B </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Badge </span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white "
-                                    href="https://www.creative-tim.com/learning-lab/bootstrap/buttons/material-dashboard"
-                                    target="_blank">
-                                    <span class="sidenav-mini-icon"> B </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Buttons </span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white "
-                                    href="https://www.creative-tim.com/learning-lab/bootstrap/cards/material-dashboard"
-                                    target="_blank">
-                                    <span class="sidenav-mini-icon"> C </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Card </span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white "
-                                    href="https://www.creative-tim.com/learning-lab/bootstrap/carousel/material-dashboard"
-                                    target="_blank">
-                                    <span class="sidenav-mini-icon"> C </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Carousel </span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white "
-                                    href="https://www.creative-tim.com/learning-lab/bootstrap/collapse/material-dashboard"
-                                    target="_blank">
-                                    <span class="sidenav-mini-icon"> C </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Collapse </span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white "
-                                    href="https://www.creative-tim.com/learning-lab/bootstrap/dropdowns/material-dashboard"
-                                    target="_blank">
-                                    <span class="sidenav-mini-icon"> D </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Dropdowns </span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white "
-                                    href="https://www.creative-tim.com/learning-lab/bootstrap/forms/material-dashboard"
-                                    target="_blank">
-                                    <span class="sidenav-mini-icon"> F </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Forms </span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white "
-                                    href="https://www.creative-tim.com/learning-lab/bootstrap/modal/material-dashboard"
-                                    target="_blank">
-                                    <span class="sidenav-mini-icon"> M </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Modal </span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white "
-                                    href="https://www.creative-tim.com/learning-lab/bootstrap/navs/material-dashboard"
-                                    target="_blank">
-                                    <span class="sidenav-mini-icon"> N </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Navs </span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white "
-                                    href="https://www.creative-tim.com/learning-lab/bootstrap/navbar/material-dashboard"
-                                    target="_blank">
-                                    <span class="sidenav-mini-icon"> N </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Navbar </span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white "
-                                    href="https://www.creative-tim.com/learning-lab/bootstrap/pagination/material-dashboard"
-                                    target="_blank">
-                                    <span class="sidenav-mini-icon"> P </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Pagination </span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white "
-                                    href="https://www.creative-tim.com/learning-lab/bootstrap/popovers/material-dashboard"
-                                    target="_blank">
-                                    <span class="sidenav-mini-icon"> P </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Popovers </span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white "
-                                    href="https://www.creative-tim.com/learning-lab/bootstrap/progress/material-dashboard"
-                                    target="_blank">
-                                    <span class="sidenav-mini-icon"> P </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Progress </span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white "
-                                    href="https://www.creative-tim.com/learning-lab/bootstrap/spinners/material-dashboard"
-                                    target="_blank">
-                                    <span class="sidenav-mini-icon"> S </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Spinners </span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white "
-                                    href="https://www.creative-tim.com/learning-lab/bootstrap/tables/material-dashboard"
-                                    target="_blank">
-                                    <span class="sidenav-mini-icon"> T </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Tables </span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-white "
-                                    href="https://www.creative-tim.com/learning-lab/bootstrap/tooltips/material-dashboard"
-                                    target="_blank">
-                                    <span class="sidenav-mini-icon"> T </span>
-                                    <span class="sidenav-normal  ms-2  ps-1"> Tooltips </span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link"
-                        href="https://github.com/creativetimofficial/ct-material-dashboard-pro/blob/master/CHANGELOG.md"
-                        target="_blank">
-                        <i
-                            class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}">receipt_long</i>
-                        <span class="nav-link-text ms-2 ps-1">Changelog</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </aside>
-    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
-
-        <nav class="navbar navbar-main navbar-expand-lg position-sticky mt-4 top-1 px-0 mx-4 shadow-none border-radius-xl z-index-sticky"
-            id="navbarBlur" data-scroll="true">
-            <div class="container-fluid py-1 px-3">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-                        <li class="breadcrumb-item text-sm">
-                            <a class="opacity-3 text-dark" href="javascript:;">
-                                <svg width="12px" height="12px" class="mb-1" viewBox="0 0 45 40" version="1.1"
-                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                    <title>shop </title>
-                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                        <g transform="translate(-1716.000000, -439.000000)" fill="#252f40"
-                                            fill-rule="nonzero">
-                                            <g transform="translate(1716.000000, 291.000000)">
-                                                <g transform="translate(0.000000, 148.000000)">
-                                                    <path
-                                                        d="M46.7199583,10.7414583 L40.8449583,0.949791667 C40.4909749,0.360605034 39.8540131,0 39.1666667,0 L7.83333333,0 C7.1459869,0 6.50902508,0.360605034 6.15504167,0.949791667 L0.280041667,10.7414583 C0.0969176761,11.0460037 -1.23209662e-05,11.3946378 -1.23209662e-05,11.75 C-0.00758042603,16.0663731 3.48367543,19.5725301 7.80004167,19.5833333 L7.81570833,19.5833333 C9.75003686,19.5882688 11.6168794,18.8726691 13.0522917,17.5760417 C16.0171492,20.2556967 20.5292675,20.2556967 23.494125,17.5760417 C26.4604562,20.2616016 30.9794188,20.2616016 33.94575,17.5760417 C36.2421905,19.6477597 39.5441143,20.1708521 42.3684437,18.9103691 C45.1927731,17.649886 47.0084685,14.8428276 47.0000295,11.75 C47.0000295,11.3946378 46.9030823,11.0460037 46.7199583,10.7414583 Z">
-                                                    </path>
-                                                    <path
-                                                        d="M39.198,22.4912623 C37.3776246,22.4928106 35.5817531,22.0149171 33.951625,21.0951667 L33.92225,21.1107282 C31.1430221,22.6838032 27.9255001,22.9318916 24.9844167,21.7998837 C24.4750389,21.605469 23.9777983,21.3722567 23.4960833,21.1018359 L23.4745417,21.1129513 C20.6961809,22.6871153 17.4786145,22.9344611 14.5386667,21.7998837 C14.029926,21.6054643 13.533337,21.3722507 13.0522917,21.1018359 C11.4250962,22.0190609 9.63246555,22.4947009 7.81570833,22.4912623 C7.16510551,22.4842162 6.51607673,22.4173045 5.875,22.2911849 L5.875,44.7220845 C5.875,45.9498589 6.7517757,46.9451667 7.83333333,46.9451667 L19.5833333,46.9451667 L19.5833333,33.6066734 L27.4166667,33.6066734 L27.4166667,46.9451667 L39.1666667,46.9451667 C40.2482243,46.9451667 41.125,45.9498589 41.125,44.7220845 L41.125,22.2822926 C40.4887822,22.4116582 39.8442868,22.4815492 39.198,22.4912623 Z">
-                                                    </path>
-                                                </g>
-                                            </g>
-                                        </g>
-                                    </g>
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a>
-                        </li>
-                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Product Page</li>
-                    </ol>
-                    <h6 class="font-weight-bolder mb-0">Product Page</h6>
-                </nav>
-                <div class="sidenav-toggler sidenav-toggler-inner d-xl-block d-none ">
-                    <a href="javascript:;" class="nav-link text-body p-0">
-                        <div class="sidenav-toggler-inner">
-                            <i class="sidenav-toggler-line"></i>
-                            <i class="sidenav-toggler-line"></i>
-                            <i class="sidenav-toggler-line"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
-                    <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-                        <div class="input-group input-group-outline">
-                            <label class="form-label">Search here</label>
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                    <ul class="navbar-nav  justify-content-end">
-                        <li class="nav-item">
-                            <a href="../../../pages/authentication/signin/illustration.html"
-                                class="nav-link text-body p-0 position-relative" target="_blank">
-                                <i class="material-icons me-sm-1">
-                                    account_circle
-                                </i>
-                            </a>
-                        </li>
-                        <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
-                            <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
-                                <div class="sidenav-toggler-inner">
-                                    <i class="sidenav-toggler-line"></i>
-                                    <i class="sidenav-toggler-line"></i>
-                                    <i class="sidenav-toggler-line"></i>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="nav-item px-3">
-                            <a href="javascript:;" class="nav-link text-body p-0">
-                                <i class="material-icons fixed-plugin-button-nav cursor-pointer">
-                                    settings
-                                </i>
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown pe-2">
-                            <a href="javascript:;" class="nav-link text-body p-0 position-relative"
-                                id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="material-icons cursor-pointer">
-                                    notifications
-                                </i>
-                                <span
-                                    class="position-absolute top-5 start-100 translate-middle badge rounded-pill bg-danger border border-white small py-1 px-2">
-                                    <span class="small">11</span>
-                                    <span class="visually-hidden">unread notifications</span>
-                                </span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end p-2 me-sm-n4"
-                                aria-labelledby="dropdownMenuButton">
-                                <li class="mb-2">
-                                    <a class="dropdown-item border-radius-md" href="javascript:;">
-                                        <div class="d-flex align-items-center py-1">
-                                            <span class="material-icons">email</span>
-                                            <div class="ms-2">
-                                                <h6 class="text-sm font-weight-normal my-auto">
-                                                    Check new messages
-                                                </h6>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="mb-2">
-                                    <a class="dropdown-item border-radius-md" href="javascript:;">
-                                        <div class="d-flex align-items-center py-1">
-                                            <span class="material-icons">podcasts</span>
-                                            <div class="ms-2">
-                                                <h6 class="text-sm font-weight-normal my-auto">
-                                                    Manage podcast session
-                                                </h6>
-                                            </div>
-                                        </div>
+<body>
+    <div class="preloader" id="preloader">
+        <div class="preloader-loading"></div>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none;">
+        <symbol id="svg-icon-check-circle" fill="currentColor" viewbox="0 0 16 16">
+            <path
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-star" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg"
+            viewbox="0 0 24 24">
+            <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+            </polygon>
+        </symbol>
+        <symbol id="svg-icon-wishlist" aria-hidden="true" role="img" focusable="false" viewBox="0 0 512 512">
+            <path
+                d="M462.3 62.7c-54.5-46.4-136-38.7-186.6 13.5L256 96.6l-19.7-20.3C195.5 34.1 113.2 8.7 49.7 62.7c-62.8 53.6-66.1 149.8-9.9 207.8l193.5 199.8c6.2 6.4 14.4 9.7 22.6 9.7 8.2 0 16.4-3.2 22.6-9.7L472 270.5c56.4-58 53.1-154.2-9.7-207.8zm-13.1 185.6L256.4 448.1 62.8 248.3c-38.4-39.6-46.4-115.1 7.7-161.2 54.8-46.8 119.2-12.9 142.8 11.5l42.7 44.1 42.7-44.1c23.2-24 88.2-58 142.8-11.5 54 46 46.1 121.5 7.7 161.2z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-wishlisted" aria-hidden="true" role="img" focusable="false" viewBox="0 0 512 512">
+            <path
+                d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-cart" aria-hidden="true" role="img" focusable="false" viewbox="0 0 1024 1024">
+            <path
+                d="M409.6 1024c-56.464 0-102.4-45.936-102.4-102.4s45.936-102.4 102.4-102.4 102.4 45.936 102.4 102.4-45.936 102.4-102.4 102.4zM409.6 870.4c-28.232 0-51.2 22.968-51.2 51.2s22.968 51.2 51.2 51.2 51.2-22.968 51.2-51.2-22.968-51.2-51.2-51.2z">
+            </path>
+            <path
+                d="M768 1024c-56.464 0-102.4-45.936-102.4-102.4s45.936-102.4 102.4-102.4 102.4 45.936 102.4 102.4-45.936 102.4-102.4 102.4zM768 870.4c-28.232 0-51.2 22.968-51.2 51.2s22.968 51.2 51.2 51.2 51.2-22.968 51.2-51.2-22.968-51.2-51.2-51.2z">
+            </path>
+            <path
+                d="M898.021 228.688c-12.859-15.181-32.258-23.888-53.221-23.888h-626.846l-5.085-30.506c-6.72-40.315-43.998-71.894-84.869-71.894h-51.2c-14.138 0-25.6 11.462-25.6 25.6s11.462 25.6 25.6 25.6h51.2c15.722 0 31.781 13.603 34.366 29.112l85.566 513.395c6.718 40.314 43.997 71.893 84.867 71.893h512c14.139 0 25.6-11.461 25.6-25.6s-11.461-25.6-25.6-25.6h-512c-15.722 0-31.781-13.603-34.366-29.11l-12.63-75.784 510.206-44.366c39.69-3.451 75.907-36.938 82.458-76.234l34.366-206.194c3.448-20.677-1.952-41.243-14.813-56.424zM862.331 276.694l-34.366 206.194c-2.699 16.186-20.043 32.221-36.39 33.645l-514.214 44.714-50.874-305.246h618.314c5.968 0 10.995 2.054 14.155 5.782 3.157 3.73 4.357 9.024 3.376 14.912z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-increase" aria-hidden="true" role="img" focusable="false" viewbox="0 0 32 32">
+            <path
+                d="M29.6 16h-13.6v-13.6c0-0.442-0.358-0.8-0.8-0.8s-0.8 0.358-0.8 0.8v13.6h-13.6c-0.442 0-0.8 0.358-0.8 0.8s0.358 0.8 0.8 0.8h13.6v13.6c0 0.442 0.358 0.8 0.8 0.8s0.8-0.358 0.8-0.8v-13.6h13.6c0.442 0 0.8-0.358 0.8-0.8s-0.358-0.8-0.8-0.8z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-decrease" aria-hidden="true" role="img" focusable="false" viewbox="0 0 32 32">
+            <path
+                d="M29.6 17.6h-28.8c-0.442 0-0.8-0.358-0.8-0.8s0.358-0.8 0.8-0.8h28.8c0.442 0 0.8 0.358 0.8 0.8s-0.358 0.8-0.8 0.8z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-quick-view" aria-hidden="true" role="img" focusable="false" viewbox="0 0 32 32">
+            <path
+                d="M12.566 11.434l-9.834-9.834h6.069c0.442 0 0.8-0.358 0.8-0.8s-0.358-0.8-0.8-0.8h-8c-0.442 0-0.8 0.358-0.8 0.8v8c0 0.442 0.358 0.8 0.8 0.8s0.8-0.358 0.8-0.8v-6.069l9.834 9.834c0.156 0.156 0.361 0.234 0.566 0.234s0.409-0.078 0.566-0.234c0.312-0.312 0.312-0.819 0-1.131zM31.2 0h-8c-0.442 0-0.8 0.358-0.8 0.8s0.358 0.8 0.8 0.8h6.069l-9.834 9.834c-0.313 0.312-0.313 0.819 0 1.131 0.156 0.156 0.361 0.234 0.566 0.234s0.409-0.078 0.566-0.234l9.834-9.834v6.069c0 0.442 0.358 0.8 0.8 0.8s0.8-0.358 0.8-0.8v-8c0-0.442-0.358-0.8-0.8-0.8zM12.566 19.434c-0.312-0.312-0.819-0.312-1.131 0l-9.834 9.834v-6.069c0-0.442-0.358-0.8-0.8-0.8s-0.8 0.358-0.8 0.8v8c0 0.442 0.358 0.8 0.8 0.8h8c0.442 0 0.8-0.358 0.8-0.8s-0.358-0.8-0.8-0.8h-6.069l9.834-9.834c0.312-0.312 0.312-0.819 0-1.131zM31.2 22.4c-0.442 0-0.8 0.358-0.8 0.8v6.069l-9.834-9.834c-0.312-0.312-0.819-0.312-1.131 0s-0.312 0.819 0 1.131l9.834 9.834h-6.069c-0.442 0-0.8 0.358-0.8 0.8s0.358 0.8 0.8 0.8h8c0.442 0 0.8-0.358 0.8-0.8v-8c0-0.442-0.358-0.8-0.8-0.8z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-compare" aria-hidden="true" role="img" focusable="false" viewbox="0 0 32 32">
+            <path
+                d="M27.766 5.034l-4.8-4.8c-0.312-0.312-0.819-0.312-1.131 0s-0.312 0.819 0 1.131l3.434 3.434h-21.269c-1.323 0-2.4 1.077-2.4 2.4v14.4c0 0.442 0.358 0.8 0.8 0.8s0.8-0.358 0.8-0.8v-14.4c0-0.441 0.359-0.8 0.8-0.8h21.269l-3.434 3.434c-0.312 0.312-0.312 0.819 0 1.131 0.156 0.156 0.361 0.234 0.566 0.234s0.409-0.078 0.566-0.234l4.8-4.8c0.312-0.312 0.312-0.819 0-1.131zM28 9.6c-0.442 0-0.8 0.358-0.8 0.8v14.4c0 0.441-0.359 0.8-0.8 0.8h-21.269l3.434-3.434c0.312-0.312 0.312-0.819 0-1.131s-0.819-0.312-1.131 0l-4.8 4.8c-0.312 0.312-0.312 0.819 0 1.131l4.8 4.8c0.156 0.156 0.361 0.234 0.566 0.234s0.409-0.078 0.566-0.234c0.312-0.312 0.312-0.819 0-1.131l-3.434-3.434h21.269c1.323 0 2.4-1.077 2.4-2.4v-14.4c0-0.442-0.358-0.8-0.8-0.8z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-chevron-left" aria-hidden="true" role="img" focusable="false" viewBox="0 0 32 32">
+            <path
+                d="M22.4 32c0.205 0 0.409-0.078 0.566-0.234 0.312-0.312 0.312-0.819 0-1.131l-13.834-13.834 13.834-13.834c0.312-0.312 0.312-0.819 0-1.131s-0.819-0.312-1.131 0l-14.4 14.4c-0.312 0.312-0.312 0.819 0 1.131l14.4 14.4c0.156 0.156 0.361 0.234 0.566 0.234z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-chevron-right" viewBox="0 0 32 32">
+            <path
+                d="M8 32c-0.205 0-0.409-0.078-0.566-0.234-0.312-0.312-0.312-0.819 0-1.131l13.834-13.834-13.834-13.834c-0.312-0.312-0.312-0.819 0-1.131s0.819-0.312 1.131 0l14.4 14.4c0.312 0.312 0.312 0.819 0 1.131l-14.4 14.4c-0.156 0.156-0.361 0.234-0.566 0.234z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-chevron-down" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-facebook" viewBox="0 0 32 32">
+            <path d="M19 6h5v-6h-5c-3.86 0-7 3.14-7 7v3h-4v6h4v16h6v-16h5l1-6h-6v-3c0-0.542 0.458-1 1-1z"></path>
+        </symbol>
+        <symbol id="svg-icon-twitter" viewBox="0 0 32 32">
+            <path
+                d="M32 7.075c-1.175 0.525-2.444 0.875-3.769 1.031 1.356-0.813 2.394-2.1 2.887-3.631-1.269 0.75-2.675 1.3-4.169 1.594-1.2-1.275-2.906-2.069-4.794-2.069-3.625 0-6.563 2.938-6.563 6.563 0 0.512 0.056 1.012 0.169 1.494-5.456-0.275-10.294-2.888-13.531-6.862-0.563 0.969-0.887 2.1-0.887 3.3 0 2.275 1.156 4.287 2.919 5.463-1.075-0.031-2.087-0.331-2.975-0.819 0 0.025 0 0.056 0 0.081 0 3.181 2.263 5.838 5.269 6.437-0.55 0.15-1.131 0.231-1.731 0.231-0.425 0-0.831-0.044-1.237-0.119 0.838 2.606 3.263 4.506 6.131 4.563-2.25 1.762-5.075 2.813-8.156 2.813-0.531 0-1.050-0.031-1.569-0.094 2.913 1.869 6.362 2.95 10.069 2.95 12.075 0 18.681-10.006 18.681-18.681 0-0.287-0.006-0.569-0.019-0.85 1.281-0.919 2.394-2.075 3.275-3.394z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-linkedin" viewBox="0 0 32 32">
+            <path
+                d="M12 12h5.535v2.837h0.079c0.77-1.381 2.655-2.837 5.464-2.837 5.842 0 6.922 3.637 6.922 8.367v9.633h-5.769v-8.54c0-2.037-0.042-4.657-3.001-4.657-3.005 0-3.463 2.218-3.463 4.509v8.688h-5.767v-18z">
+            </path>
+            <path d="M2 12h6v18h-6v-18z"></path>
+            <path d="M8 7c0 1.657-1.343 3-3 3s-3-1.343-3-3c0-1.657 1.343-3 3-3s3 1.343 3 3z"></path>
+        </symbol>
+        <symbol id="svg-icon-pinterest" viewBox="0 0 20 28">
+            <path
+                d="M0 9.328c0-5.766 5.281-9.328 10.625-9.328 4.906 0 9.375 3.375 9.375 8.547 0 4.859-2.484 10.25-8.016 10.25-1.313 0-2.969-0.656-3.609-1.875-1.188 4.703-1.094 5.406-3.719 9l-0.219 0.078-0.141-0.156c-0.094-0.984-0.234-1.953-0.234-2.938 0-3.187 1.469-7.797 2.188-10.891-0.391-0.797-0.5-1.766-0.5-2.641 0-1.578 1.094-3.578 2.875-3.578 1.313 0 2.016 1 2.016 2.234 0 2.031-1.375 3.938-1.375 5.906 0 1.344 1.109 2.281 2.406 2.281 3.594 0 4.703-5.187 4.703-7.953 0-3.703-2.625-5.719-6.172-5.719-4.125 0-7.313 2.969-7.313 7.156 0 2.016 1.234 3.047 1.234 3.531 0 0.406-0.297 1.844-0.812 1.844-0.078 0-0.187-0.031-0.266-0.047-2.234-0.672-3.047-3.656-3.047-5.703z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-instagram" viewBox="0 0 20 28">
+            <path
+                d="M16 14c0-2.203-1.797-4-4-4s-4 1.797-4 4 1.797 4 4 4 4-1.797 4-4zM18.156 14c0 3.406-2.75 6.156-6.156 6.156s-6.156-2.75-6.156-6.156 2.75-6.156 6.156-6.156 6.156 2.75 6.156 6.156zM19.844 7.594c0 0.797-0.641 1.437-1.437 1.437s-1.437-0.641-1.437-1.437 0.641-1.437 1.437-1.437 1.437 0.641 1.437 1.437zM12 4.156c-1.75 0-5.5-0.141-7.078 0.484-0.547 0.219-0.953 0.484-1.375 0.906s-0.688 0.828-0.906 1.375c-0.625 1.578-0.484 5.328-0.484 7.078s-0.141 5.5 0.484 7.078c0.219 0.547 0.484 0.953 0.906 1.375s0.828 0.688 1.375 0.906c1.578 0.625 5.328 0.484 7.078 0.484s5.5 0.141 7.078-0.484c0.547-0.219 0.953-0.484 1.375-0.906s0.688-0.828 0.906-1.375c0.625-1.578 0.484-5.328 0.484-7.078s0.141-5.5-0.484-7.078c-0.219-0.547-0.484-0.953-0.906-1.375s-0.828-0.688-1.375-0.906c-1.578-0.625-5.328-0.484-7.078-0.484zM24 14c0 1.656 0.016 3.297-0.078 4.953-0.094 1.922-0.531 3.625-1.937 5.031s-3.109 1.844-5.031 1.937c-1.656 0.094-3.297 0.078-4.953 0.078s-3.297 0.016-4.953-0.078c-1.922-0.094-3.625-0.531-5.031-1.937s-1.844-3.109-1.937-5.031c-0.094-1.656-0.078-3.297-0.078-4.953s-0.016-3.297 0.078-4.953c0.094-1.922 0.531-3.625 1.937-5.031s3.109-1.844 5.031-1.937c1.656-0.094 3.297-0.078 4.953-0.078s3.297-0.016 4.953 0.078c1.922 0.094 3.625 0.531 5.031 1.937s1.844 3.109 1.937 5.031c0.094 1.656 0.078 3.297 0.078 4.953z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-youtube" viewBox="0 0 32 32">
+            <path
+                d="M31.681 9.6c0 0-0.313-2.206-1.275-3.175-1.219-1.275-2.581-1.281-3.206-1.356-4.475-0.325-11.194-0.325-11.194-0.325h-0.012c0 0-6.719 0-11.194 0.325-0.625 0.075-1.987 0.081-3.206 1.356-0.963 0.969-1.269 3.175-1.269 3.175s-0.319 2.588-0.319 5.181v2.425c0 2.587 0.319 5.181 0.319 5.181s0.313 2.206 1.269 3.175c1.219 1.275 2.819 1.231 3.531 1.369 2.563 0.244 10.881 0.319 10.881 0.319s6.725-0.012 11.2-0.331c0.625-0.075 1.988-0.081 3.206-1.356 0.962-0.969 1.275-3.175 1.275-3.175s0.319-2.587 0.319-5.181v-2.425c-0.006-2.588-0.325-5.181-0.325-5.181zM12.694 20.15v-8.994l8.644 4.513-8.644 4.481z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-list" aria-hidden="true" role="img" focusable="false" viewBox="0 0 1024 1024">
+            <path class="path1"
+                d="M896 307.2h-768c-14.138 0-25.6-11.462-25.6-25.6s11.462-25.6 25.6-25.6h768c14.139 0 25.6 11.462 25.6 25.6s-11.461 25.6-25.6 25.6z">
+            </path>
+            <path class="path2"
+                d="M896 563.2h-768c-14.138 0-25.6-11.461-25.6-25.6s11.462-25.6 25.6-25.6h768c14.139 0 25.6 11.461 25.6 25.6s-11.461 25.6-25.6 25.6z">
+            </path>
+            <path class="path3"
+                d="M896 819.2h-768c-14.138 0-25.6-11.461-25.6-25.6s11.462-25.6 25.6-25.6h768c14.139 0 25.6 11.461 25.6 25.6s-11.461 25.6-25.6 25.6z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-grid" aria-hidden="true" role="img" focusable="false" viewBox="0 0 32 32">
+            <path
+                d="M5.6 30.4h-3.2c-1.323 0-2.4-1.077-2.4-2.4v-3.2c0-1.323 1.077-2.4 2.4-2.4h3.2c1.323 0 2.4 1.077 2.4 2.4v3.2c0 1.323-1.077 2.4-2.4 2.4zM2.4 24c-0.441 0-0.8 0.359-0.8 0.8v3.2c0 0.441 0.359 0.8 0.8 0.8h3.2c0.441 0 0.8-0.359 0.8-0.8v-3.2c0-0.441-0.359-0.8-0.8-0.8h-3.2zM16.8 30.4h-3.2c-1.323 0-2.4-1.077-2.4-2.4v-3.2c0-1.323 1.077-2.4 2.4-2.4h3.2c1.323 0 2.4 1.077 2.4 2.4v3.2c0 1.323-1.077 2.4-2.4 2.4zM13.6 24c-0.441 0-0.8 0.359-0.8 0.8v3.2c0 0.441 0.359 0.8 0.8 0.8h3.2c0.441 0 0.8-0.359 0.8-0.8v-3.2c0-0.441-0.359-0.8-0.8-0.8h-3.2zM28 30.4h-3.2c-1.323 0-2.4-1.077-2.4-2.4v-3.2c0-1.323 1.077-2.4 2.4-2.4h3.2c1.323 0 2.4 1.077 2.4 2.4v3.2c0 1.323-1.077 2.4-2.4 2.4zM24.8 24c-0.441 0-0.8 0.359-0.8 0.8v3.2c0 0.441 0.359 0.8 0.8 0.8h3.2c0.441 0 0.8-0.359 0.8-0.8v-3.2c0-0.441-0.359-0.8-0.8-0.8h-3.2zM5.6 19.2h-3.2c-1.323 0-2.4-1.077-2.4-2.4v-3.2c0-1.323 1.077-2.4 2.4-2.4h3.2c1.323 0 2.4 1.077 2.4 2.4v3.2c0 1.323-1.077 2.4-2.4 2.4zM2.4 12.8c-0.441 0-0.8 0.359-0.8 0.8v3.2c0 0.441 0.359 0.8 0.8 0.8h3.2c0.441 0 0.8-0.359 0.8-0.8v-3.2c0-0.441-0.359-0.8-0.8-0.8h-3.2zM16.8 19.2h-3.2c-1.323 0-2.4-1.077-2.4-2.4v-3.2c0-1.323 1.077-2.4 2.4-2.4h3.2c1.323 0 2.4 1.077 2.4 2.4v3.2c0 1.323-1.077 2.4-2.4 2.4zM13.6 12.8c-0.441 0-0.8 0.359-0.8 0.8v3.2c0 0.441 0.359 0.8 0.8 0.8h3.2c0.441 0 0.8-0.359 0.8-0.8v-3.2c0-0.441-0.359-0.8-0.8-0.8h-3.2zM28 19.2h-3.2c-1.323 0-2.4-1.077-2.4-2.4v-3.2c0-1.323 1.077-2.4 2.4-2.4h3.2c1.323 0 2.4 1.077 2.4 2.4v3.2c0 1.323-1.077 2.4-2.4 2.4zM24.8 12.8c-0.441 0-0.8 0.359-0.8 0.8v3.2c0 0.441 0.359 0.8 0.8 0.8h3.2c0.441 0 0.8-0.359 0.8-0.8v-3.2c0-0.441-0.359-0.8-0.8-0.8h-3.2zM5.6 8h-3.2c-1.323 0-2.4-1.077-2.4-2.4v-3.2c0-1.323 1.077-2.4 2.4-2.4h3.2c1.323 0 2.4 1.077 2.4 2.4v3.2c0 1.323-1.077 2.4-2.4 2.4zM2.4 1.6c-0.441 0-0.8 0.359-0.8 0.8v3.2c0 0.441 0.359 0.8 0.8 0.8h3.2c0.441 0 0.8-0.359 0.8-0.8v-3.2c0-0.441-0.359-0.8-0.8-0.8h-3.2zM16.8 8h-3.2c-1.323 0-2.4-1.077-2.4-2.4v-3.2c0-1.323 1.077-2.4 2.4-2.4h3.2c1.323 0 2.4 1.077 2.4 2.4v3.2c0 1.323-1.077 2.4-2.4 2.4zM13.6 1.6c-0.441 0-0.8 0.359-0.8 0.8v3.2c0 0.441 0.359 0.8 0.8 0.8h3.2c0.441 0 0.8-0.359 0.8-0.8v-3.2c0-0.441-0.359-0.8-0.8-0.8h-3.2zM28 8h-3.2c-1.323 0-2.4-1.077-2.4-2.4v-3.2c0-1.323 1.077-2.4 2.4-2.4h3.2c1.323 0 2.4 1.077 2.4 2.4v3.2c0 1.323-1.077 2.4-2.4 2.4zM24.8 1.6c-0.441 0-0.8 0.359-0.8 0.8v3.2c0 0.441 0.359 0.8 0.8 0.8h3.2c0.441 0 0.8-0.359 0.8-0.8v-3.2c0-0.441-0.359-0.8-0.8-0.8h-3.2z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-close" viewBox="0 0 32 32">
+            <path
+                d="M0 9.6c0-0.205 0.078-0.409 0.234-0.566 0.312-0.312 0.819-0.312 1.131 0l13.834 13.834 13.834-13.834c0.312-0.312 0.819-0.312 1.131 0s0.312 0.819 0 1.131l-14.4 14.4c-0.312 0.312-0.819 0.312-1.131 0l-14.4-14.4c-0.156-0.156-0.234-0.361-0.234-0.566z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-chevron-right" viewbox="0 0 1024 1024">
+            <path class="path1"
+                d="M256 1024c-6.552 0-13.102-2.499-18.101-7.499-9.998-9.997-9.998-26.206 0-36.203l442.698-442.698-442.698-442.699c-9.998-9.997-9.998-26.206 0-36.203s26.206-9.998 36.203 0l460.8 460.8c9.998 9.997 9.998 26.206 0 36.203l-460.8 460.8c-5 5-11.55 7.499-18.102 7.499z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-trash" aria-hidden="true" role="img" focusable="false" viewBox="0 0 32 32">
+            <path
+                d="M24.8 3.2h-5.6v-0.8c0-1.323-1.077-2.4-2.4-2.4h-3.2c-1.323 0-2.4 1.077-2.4 2.4v0.8h-5.6c-1.323 0-2.4 1.077-2.4 2.4v1.6c0 1.043 0.669 1.932 1.6 2.262v20.138c0 1.323 1.077 2.4 2.4 2.4h16c1.323 0 2.4-1.077 2.4-2.4v-20.138c0.931-0.33 1.6-1.22 1.6-2.262v-1.6c0-1.323-1.077-2.4-2.4-2.4zM12.8 2.4c0-0.441 0.359-0.8 0.8-0.8h3.2c0.441 0 0.8 0.359 0.8 0.8v0.8h-4.8v-0.8zM23.2 30.4h-16c-0.441 0-0.8-0.359-0.8-0.8v-20h17.6v20c0 0.441-0.359 0.8-0.8 0.8zM25.6 7.2c0 0.441-0.359 0.8-0.8 0.8h-19.2c-0.441 0-0.8-0.359-0.8-0.8v-1.6c0-0.441 0.359-0.8 0.8-0.8h19.2c0.441 0 0.8 0.359 0.8 0.8v1.6zM20 11.2c-0.442 0-0.8 0.358-0.8 0.8v16c0 0.442 0.358 0.8 0.8 0.8s0.8-0.358 0.8-0.8v-16c0-0.442-0.358-0.8-0.8-0.8zM15.2 11.2c-0.442 0-0.8 0.358-0.8 0.8v16c0 0.442 0.358 0.8 0.8 0.8s0.8-0.358 0.8-0.8v-16c0-0.442-0.358-0.8-0.8-0.8zM10.4 11.2c-0.442 0-0.8 0.358-0.8 0.8v16c0 0.442 0.358 0.8 0.8 0.8s0.8-0.358 0.8-0.8v-16c0-0.442-0.358-0.8-0.8-0.8z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-search" aria-hidden="true" role="img" focusable="false" viewbox="0 0 32 32">
+            <path
+                d="M30.19 30.659l-9.509-10.374c2.143-2.242 3.32-5.173 3.32-8.286 0-3.205-1.248-6.219-3.515-8.485s-5.28-3.515-8.485-3.515-6.219 1.248-8.485 3.515-3.515 5.28-3.515 8.485 1.248 6.219 3.515 8.485 5.28 3.515 8.485 3.515c2.761 0 5.38-0.927 7.501-2.633l9.509 10.373c0.158 0.172 0.374 0.259 0.59 0.259 0.193 0 0.387-0.070 0.54-0.21 0.326-0.299 0.348-0.805 0.049-1.13zM1.6 12c0-5.735 4.665-10.4 10.4-10.4s10.4 4.665 10.4 10.4-4.665 10.4-10.4 10.4-10.4-4.665-10.4-10.4z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-filter" aria-hidden="true" role="img" focusable="false" viewBox="0 0 32 32">
+            <path
+                d="M4 32c-0.442 0-0.8-0.358-0.8-0.8v-12.8c0-0.442 0.358-0.8 0.8-0.8s0.8 0.358 0.8 0.8v12.8c0 0.442-0.358 0.8-0.8 0.8zM4 9.6c-0.442 0-0.8-0.358-0.8-0.8v-8c0-0.442 0.358-0.8 0.8-0.8s0.8 0.358 0.8 0.8v8c0 0.442-0.358 0.8-0.8 0.8zM5.6 16h-3.2c-1.323 0-2.4-1.077-2.4-2.4s1.077-2.4 2.4-2.4h3.2c1.323 0 2.4 1.077 2.4 2.4s-1.077 2.4-2.4 2.4zM2.4 12.8c-0.441 0-0.8 0.359-0.8 0.8s0.359 0.8 0.8 0.8h3.2c0.441 0 0.8-0.359 0.8-0.8s-0.359-0.8-0.8-0.8h-3.2zM15.2 32c-0.442 0-0.8-0.358-0.8-0.8v-6.4c0-0.442 0.358-0.8 0.8-0.8s0.8 0.358 0.8 0.8v6.4c0 0.442-0.358 0.8-0.8 0.8zM15.2 16c-0.442 0-0.8-0.358-0.8-0.8v-14.4c0-0.442 0.358-0.8 0.8-0.8s0.8 0.358 0.8 0.8v14.4c0 0.442-0.358 0.8-0.8 0.8zM16.8 22.4h-3.2c-1.323 0-2.4-1.077-2.4-2.4s1.077-2.4 2.4-2.4h3.2c1.323 0 2.4 1.077 2.4 2.4s-1.077 2.4-2.4 2.4zM13.6 19.2c-0.441 0-0.8 0.359-0.8 0.8s0.359 0.8 0.8 0.8h3.2c0.441 0 0.8-0.359 0.8-0.8s-0.359-0.8-0.8-0.8h-3.2zM26.4 32c-0.442 0-0.8-0.358-0.8-0.8v-16c0-0.442 0.358-0.8 0.8-0.8s0.8 0.358 0.8 0.8v16c0 0.442-0.358 0.8-0.8 0.8zM26.4 6.4c-0.442 0-0.8-0.358-0.8-0.8v-4.8c0-0.442 0.358-0.8 0.8-0.8s0.8 0.358 0.8 0.8v4.8c0 0.442-0.358 0.8-0.8 0.8zM28 12.8h-3.2c-1.323 0-2.4-1.077-2.4-2.4s1.077-2.4 2.4-2.4h3.2c1.323 0 2.4 1.077 2.4 2.4s-1.077 2.4-2.4 2.4zM24.8 9.6c-0.441 0-0.8 0.359-0.8 0.8s0.359 0.8 0.8 0.8h3.2c0.441 0 0.8-0.359 0.8-0.8s-0.359-0.8-0.8-0.8h-3.2z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-arrow-right" aria-hidden="true" role="img" focusable="false" viewbox="0 0 1024 1024">
+            <path class="path1"
+                d="M990.901 519.499l-307.2-307.2c-9.997-9.997-26.206-9.997-36.203 0-9.998 9.998-9.998 26.206 0 36.205l263.498 263.496h-834.195c-14.138 0-25.6 11.461-25.6 25.6s11.462 25.6 25.6 25.6h834.195l-263.496 263.499c-9.998 9.997-9.998 26.206 0 36.203 4.998 4.998 11.549 7.498 18.101 7.498s13.102-2.499 18.101-7.499l307.2-307.2c9.998-9.997 9.998-26.205 0-36.202z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-arrow-left" aria-hidden="true" role="img" focusable="false" viewBox="0 0 32 32">
+            <path
+                d="M1.034 16.234l9.6-9.6c0.312-0.312 0.819-0.312 1.131 0s0.312 0.819 0 1.131l-8.234 8.234h26.069c0.442 0 0.8 0.358 0.8 0.8s-0.358 0.8-0.8 0.8h-26.069l8.234 8.234c0.312 0.312 0.312 0.819 0 1.131-0.156 0.156-0.361 0.234-0.566 0.234s-0.409-0.078-0.566-0.234l-9.6-9.6c-0.312-0.312-0.312-0.819 0-1.131z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-home" aria-hidden="true" role="img" focusable="false" viewBox="0 0 32 32">
+            <path
+                d="M31.793 19.463l-14.127-15.614c-0.439-0.485-1.031-0.753-1.667-0.753-0 0 0 0 0 0-0.636 0-1.228 0.267-1.667 0.753l-14.127 15.614c-0.296 0.328-0.271 0.834 0.056 1.13 0.153 0.139 0.345 0.207 0.536 0.207 0.218 0 0.436-0.089 0.594-0.263l3.407-3.765v12.829c0 1.323 1.077 2.4 2.4 2.4h17.6c1.323 0 2.4-1.077 2.4-2.4v-12.829l3.407 3.765c0.296 0.328 0.802 0.353 1.13 0.056s0.353-0.802 0.056-1.13zM19.2 30.4h-6.4v-7.2c0-0.441 0.359-0.8 0.8-0.8h4.8c0.441 0 0.8 0.359 0.8 0.8v7.2zM25.6 29.6c0 0.441-0.359 0.8-0.8 0.8h-4v-7.2c0-1.323-1.077-2.4-2.4-2.4h-4.8c-1.323 0-2.4 1.077-2.4 2.4v7.2h-4c-0.441 0-0.8-0.359-0.8-0.8v-14.597l9.12-10.080c0.132-0.146 0.303-0.226 0.48-0.226s0.348 0.080 0.48 0.226l9.12 10.080v14.597z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-refresh" aria-hidden="true" role="img" focusable="false" viewBox="0 0 1024 1024">
+            <path class="path1"
+                d="M1016.501 442.698c-9.997-9.997-26.206-9.997-36.203 0l-58.832 58.832c-2.63-105.486-44.947-204.27-119.835-279.16-77.362-77.365-180.222-119.97-289.63-119.97-152.28 0-291.122 83.699-362.342 218.435-6.606 12.499-1.83 27.989 10.669 34.597 12.498 6.606 27.989 1.83 34.597-10.669 62.33-117.914 183.826-191.163 317.077-191.163 194.014 0 352.501 154.966 358.224 347.619l-58.522-58.522c-9.997-9.997-26.206-9.997-36.203 0-9.998 9.998-9.998 26.206 0 36.205l102.4 102.4c4.998 4.998 11.549 7.498 18.101 7.498s13.102-2.499 18.101-7.499l102.4-102.4c9.998-9.997 9.998-26.205 0-36.203z">
+            </path>
+            <path class="path2"
+                d="M863.674 668.566c-12.502-6.603-27.99-1.832-34.597 10.669-62.328 117.915-183.826 191.165-317.077 191.165-194.016 0-352.502-154.966-358.224-347.621l58.522 58.522c5 5 11.55 7.499 18.102 7.499s13.102-2.499 18.102-7.499c9.997-9.997 9.997-26.206 0-36.203l-102.4-102.4c-9.998-9.997-26.206-9.997-36.205 0l-102.4 102.4c-9.997 9.997-9.997 26.206 0 36.203s26.206 9.997 36.205 0l58.83-58.832c2.63 105.488 44.946 204.272 119.835 279.162 77.365 77.363 180.224 119.97 289.632 119.97 152.28 0 291.12-83.699 362.342-218.435 6.608-12.501 1.829-27.99-10.669-34.598z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path
+                d="M438.6 105.4C451.1 117.9 451.1 138.1 438.6 150.6L182.6 406.6C170.1 419.1 149.9 419.1 137.4 406.6L9.372 278.6C-3.124 266.1-3.124 245.9 9.372 233.4C21.87 220.9 42.13 220.9 54.63 233.4L159.1 338.7L393.4 105.4C405.9 92.88 426.1 92.88 438.6 105.4H438.6z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-store" aria-hidden="true" role="img" focusable="false" viewBox="0 0 32 32">
+            <path
+                d="M28.8 15.2v-1.6c0-0.124-0.029-0.247-0.084-0.358l-3.2-6.4c-0.136-0.271-0.413-0.442-0.716-0.442h-19.2c-0.303 0-0.58 0.171-0.716 0.442l-3.2 6.4c-0.056 0.111-0.084 0.234-0.084 0.358v1.6c0 1.306 0.629 2.467 1.6 3.198v10.402h-0.8c-0.442 0-0.8 0.358-0.8 0.8s0.358 0.8 0.8 0.8h25.6c0.442 0 0.8-0.358 0.8-0.8s-0.358-0.8-0.8-0.8h-0.8v-10.402c0.971-0.73 1.6-1.892 1.6-3.198zM18.4 17.6c-1.323 0-2.4-1.077-2.4-2.4v-0.8h4.8v0.8c0 1.323-1.077 2.4-2.4 2.4zM3.2 15.2v-0.8h4.8v0.8c0 1.323-1.077 2.4-2.4 2.4s-2.4-1.077-2.4-2.4zM14.4 8v4.8h-4.575l1.2-4.8h3.375zM19.375 8l1.2 4.8h-4.575v-4.8h3.375zM9.6 14.4h4.8v0.8c0 1.323-1.077 2.4-2.4 2.4s-2.4-1.077-2.4-2.4v-0.8zM22.4 14.4h4.8v0.8c0 1.323-1.077 2.4-2.4 2.4s-2.4-1.077-2.4-2.4v-0.8zM26.706 12.8h-4.481l-1.2-4.8h3.281l2.4 4.8zM6.094 8h3.281l-1.2 4.8h-4.481l2.4-4.8zM4.8 19.12c0.259 0.053 0.526 0.080 0.8 0.080 1.307 0 2.47-0.63 3.2-1.603 0.73 0.973 1.893 1.603 3.2 1.603s2.47-0.63 3.2-1.603c0.577 0.769 1.425 1.324 2.4 1.522v9.681h-12.8v-9.68zM25.6 28.8h-6.4v-9.68c0.975-0.199 1.823-0.754 2.4-1.522 0.73 0.973 1.893 1.603 3.2 1.603 0.274 0 0.541-0.028 0.8-0.081v9.681zM22.4 23.2c0 0.442-0.358 0.8-0.8 0.8s-0.8-0.358-0.8-0.8c0-0.442 0.358-0.8 0.8-0.8s0.8 0.358 0.8 0.8zM7.2 24c-0.205 0-0.409-0.078-0.566-0.234-0.312-0.312-0.312-0.819 0-1.131l1.6-1.6c0.312-0.312 0.819-0.312 1.131 0s0.312 0.819 0 1.131l-1.6 1.6c-0.156 0.156-0.361 0.234-0.566 0.234zM8.8 27.2c-0.205 0-0.409-0.078-0.566-0.234-0.312-0.312-0.312-0.819 0-1.131l4.8-4.8c0.312-0.312 0.819-0.312 1.131 0s0.312 0.819 0 1.131l-4.8 4.8c-0.156 0.156-0.361 0.234-0.566 0.234zM13.6 27.2c-0.205 0-0.409-0.078-0.566-0.234-0.312-0.312-0.312-0.819 0-1.131l1.6-1.6c0.312-0.312 0.819-0.312 1.131 0s0.312 0.819 0 1.131l-1.6 1.6c-0.156 0.156-0.361 0.234-0.566 0.234z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-phone" viewBox="0 0 32 32">
+            <path
+                d="M25.6 32c-2.834 0-5.849-0.803-8.96-2.387-2.869-1.46-5.703-3.552-8.196-6.048s-4.581-5.332-6.040-8.203c-1.581-3.113-2.383-6.128-2.383-8.962 0-1.837 1.711-3.611 2.447-4.288 1.058-0.974 2.722-2.111 3.931-2.111 0.601 0 1.306 0.393 2.219 1.238 0.681 0.63 1.446 1.485 2.213 2.471 0.462 0.594 2.768 3.633 2.768 5.091 0 1.196-1.352 2.027-2.782 2.906-0.553 0.34-1.125 0.691-1.538 1.023-0.441 0.354-0.52 0.54-0.533 0.582 1.519 3.785 6.161 8.427 9.944 9.943 0.034-0.011 0.221-0.084 0.581-0.534 0.331-0.414 0.683-0.985 1.023-1.538 0.88-1.431 1.71-2.782 2.906-2.782 1.458 0 4.497 2.306 5.091 2.768 0.986 0.767 1.841 1.532 2.471 2.213 0.845 0.912 1.238 1.617 1.238 2.218 0 1.209-1.137 2.879-2.11 3.941-0.678 0.739-2.453 2.459-4.29 2.459zM6.39 1.6c-0.429 0.008-1.582 0.533-2.837 1.688-1.191 1.097-1.931 2.289-1.931 3.111 0 10.766 13.222 24 23.978 24 0.821 0 2.013-0.744 3.11-1.941 1.156-1.261 1.681-2.419 1.69-2.849-0.052-0.304-0.893-1.486-3.195-3.259-1.979-1.524-3.584-2.34-3.997-2.351-0.029 0.009-0.208 0.077-0.571 0.538-0.316 0.401-0.654 0.951-0.98 1.482-0.896 1.458-1.743 2.836-2.973 2.836-0.198 0-0.394-0.038-0.581-0.113-4.199-1.68-9.166-6.646-10.846-10.846-0.202-0.504-0.234-1.294 0.758-2.193 0.528-0.478 1.258-0.927 1.964-1.361 0.531-0.327 1.081-0.664 1.482-0.98 0.461-0.363 0.53-0.542 0.538-0.571-0.011-0.413-0.827-2.018-2.351-3.997-1.772-2.302-2.955-3.143-3.259-3.195z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-home" viewBox="0 0 32 32">
+            <path
+                d="M0.8 19.2c-0.191 0-0.383-0.068-0.536-0.207-0.328-0.296-0.353-0.802-0.056-1.13l14.127-15.614c0.439-0.485 1.031-0.753 1.667-0.753 0 0 0 0 0 0 0.636 0 1.227 0.267 1.667 0.753l14.127 15.614c0.296 0.328 0.271 0.834-0.056 1.13s-0.834 0.271-1.13-0.056l-14.127-15.614c-0.132-0.146-0.302-0.226-0.48-0.226s-0.348 0.080-0.48 0.226l-14.127 15.614c-0.158 0.175-0.375 0.263-0.594 0.263zM24.8 32h-6.4c-0.442 0-0.8-0.358-0.8-0.8v-5.6h-3.2v5.6c0 0.442-0.358 0.8-0.8 0.8h-6.4c-1.323 0-2.4-1.077-2.4-2.4v-12.8c0-0.442 0.358-0.8 0.8-0.8s0.8 0.358 0.8 0.8v12.8c0 0.441 0.359 0.8 0.8 0.8h5.6v-5.6c0-0.442 0.358-0.8 0.8-0.8h4.8c0.442 0 0.8 0.358 0.8 0.8v5.6h5.6c0.441 0 0.8-0.359 0.8-0.8v-12.8c0-0.442 0.358-0.8 0.8-0.8s0.8 0.358 0.8 0.8v12.8c0 1.323-1.077 2.4-2.4 2.4z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-mail" viewBox="0 0 32 32">
+            <path
+                d="M28 9.6h-25.6c-1.323 0-2.4 1.077-2.4 2.4v14.4c0 1.323 1.077 2.4 2.4 2.4h25.6c1.323 0 2.4-1.077 2.4-2.4v-14.4c0-1.323-1.077-2.4-2.4-2.4zM28 11.2c0.047 0 0.093 0.005 0.139 0.013l-12.051 8.034c-0.464 0.31-1.311 0.31-1.775 0l-12.051-8.034c0.045-0.008 0.091-0.013 0.139-0.013h25.6zM28 27.2h-25.6c-0.441 0-0.8-0.359-0.8-0.8v-13.705l11.825 7.883c0.498 0.332 1.136 0.498 1.775 0.498s1.277-0.166 1.775-0.498l11.825-7.883v13.705c0 0.441-0.359 0.8-0.8 0.8z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-wishlist" aria-hidden="true" role="img" focusable="false" viewbox="0 0 1024 1024">
+            <path
+                d="M486.4 972.8c-4.283 0-8.566-1.074-12.434-3.222-4.808-2.67-119.088-66.624-235.122-171.376-68.643-61.97-123.467-125.363-162.944-188.418-50.365-80.443-75.901-160.715-75.901-238.584 0-148.218 120.582-268.8 268.8-268.8 50.173 0 103.462 18.805 150.051 52.952 27.251 19.973 50.442 44.043 67.549 69.606 17.107-25.565 40.299-49.634 67.55-69.606 46.589-34.147 99.878-52.952 150.050-52.952 148.218 0 268.8 120.582 268.8 268.8 0 77.869-25.538 158.141-75.901 238.584-39.478 63.054-94.301 126.446-162.944 188.418-116.034 104.754-230.314 168.706-235.122 171.376-3.867 2.149-8.15 3.222-12.434 3.222zM268.8 153.6c-119.986 0-217.6 97.614-217.6 217.6 0 155.624 120.302 297.077 221.224 388.338 90.131 81.504 181.44 138.658 213.976 158.042 32.536-19.384 123.845-76.538 213.976-158.042 100.922-91.261 221.224-232.714 221.224-388.338 0-119.986-97.616-217.6-217.6-217.6-87.187 0-171.856 71.725-193.314 136.096-3.485 10.453-13.267 17.504-24.286 17.504s-20.802-7.051-24.286-17.504c-21.456-64.371-106.125-136.096-193.314-136.096z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-arrow-up" aria-hidden="true" role="img" focusable="false" viewBox="0 0 32 32">
+            <path
+                d="M0 24c0 0.205 0.078 0.409 0.234 0.566 0.312 0.312 0.819 0.312 1.131 0l13.834-13.834 13.834 13.834c0.312 0.312 0.819 0.312 1.131 0s0.312-0.819 0-1.131l-14.4-14.4c-0.312-0.312-0.819-0.312-1.131 0l-14.4 14.4c-0.156 0.156-0.234 0.361-0.234 0.566z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-times" aria-hidden="true" role="img" focusable="false" viewBox="0 0 16 16">
+            <path
+                d="M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-sl-facebook" xmlns="http://www.w3.org/2000/svg" viewBox="126.445 2.281 589 589">
+            <circle cx="420.945" cy="296.781" fill="#3c5a9a" r="294.5" />
+            <path
+                d="m516.704 92.677h-65.239c-38.715 0-81.777 16.283-81.777 72.402.189 19.554 0 38.281 0 59.357h-44.788v71.271h46.174v205.177h84.847v-206.531h56.002l5.067-70.117h-62.531s.14-31.191 0-40.249c0-22.177 23.076-20.907 24.464-20.907 10.981 0 32.332.032 37.813 0v-70.403z"
+                fill="#fff" />
+        </symbol>
+        <symbol id="svg-icon-sl-google" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path fill="#4285F4"
+                d="M20.64 12.2045c0-.6381-.0573-1.2518-.1636-1.8409H12v3.4814h4.8436c-.2086 1.125-.8427 2.0782-1.7959 2.7164v2.2581h2.9087c1.7018-1.5668 2.6836-3.874 2.6836-6.615z">
+            </path>
+            <path fill="#34A853"
+                d="M12 21c2.43 0 4.4673-.806 5.9564-2.1805l-2.9087-2.2581c-.8059.54-1.8368.859-3.0477.859-2.344 0-4.3282-1.5831-5.036-3.7104H3.9574v2.3318C5.4382 18.9832 8.4818 21 12 21z">
+            </path>
+            <path fill="#FBBC05"
+                d="M6.964 13.71c-.18-.54-.2822-1.1168-.2822-1.71s.1023-1.17.2823-1.71V7.9582H3.9573A8.9965 8.9965 0 0 0 3 12c0 1.4523.3477 2.8268.9573 4.0418L6.964 13.71z">
+            </path>
+            <path fill="#EA4335"
+                d="M12 6.5795c1.3214 0 2.5077.4541 3.4405 1.346l2.5813-2.5814C16.4632 3.8918 14.426 3 12 3 8.4818 3 5.4382 5.0168 3.9573 7.9582L6.964 10.29C7.6718 8.1627 9.6559 6.5795 12 6.5795z">
+            </path>
+        </symbol>
+        <symbol id="svg-icon-sl-github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+            <path
+                d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z" />
+        </symbol>
+        <symbol id="svg-icon-sl-linkedin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+            <path fill="#0288d1" d="M24 4A20 20 0 1 0 24 44A20 20 0 1 0 24 4Z" />
+            <path fill="#fff"
+                d="M14 19H18V34H14zM15.988 17h-.022C14.772 17 14 16.11 14 14.999 14 13.864 14.796 13 16.011 13c1.217 0 1.966.864 1.989 1.999C18 16.11 17.228 17 15.988 17zM35 24.5c0-3.038-2.462-5.5-5.5-5.5-1.862 0-3.505.928-4.5 2.344V19h-4v15h4v-8c0-1.657 1.343-3 3-3s3 1.343 3 3v8h4C35 34 35 24.921 35 24.5z" />
+        </symbol>
+        <symbol id="svg-icon-send" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path
+                d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z" />
+        </symbol>
+    </svg>
+    <header class="header header-js-handler" data-sticky="true">
+        <div class="header-top d-none d-lg-block">
+            <div class="container-xxxl">
+                <div class="row align-items-center">
+                    <div class="col-6">
+                        <div class="header-info">
+                            <ul>
+                                <li>
+                                    <a href="https://farmart.botble.com/about-us">
+                                        <span>About Us</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item border-radius-md" href="javascript:;">
-                                        <div class="d-flex align-items-center py-1">
-                                            <span class="material-icons">shopping_cart</span>
-                                            <div class="ms-2">
-                                                <h6 class="text-sm font-weight-normal my-auto">
-                                                    Payment successfully completed
-                                                </h6>
-                                            </div>
-                                        </div>
+                                    <a href="https://farmart.botble.com/wishlist">
+                                        <span>Wishlist</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://farmart.botble.com/orders/tracking">
+                                        <span>Order Tracking</span>
                                     </a>
                                 </li>
                             </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <div class="container-fluid py-4">
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="mb-4">Product Details</h5>
-                            <div class="row">
-                                <div class="col-xl-5 col-lg-6 text-center">
-                                    <img class="w-100 border-radius-lg shadow-lg mx-auto"
-                                        src="../../../assets/img/products/product-details-1.jpg" alt="chair">
-                                    <div class="my-gallery d-flex mt-4 pt-2" itemscope
-                                        itemtype="http://schema.org/ImageGallery">
-                                        <figure itemprop="associatedMedia" itemscope
-                                            itemtype="http://schema.org/ImageObject">
-                                            <a href="../../../assets/img/products/product-details-2.jpg"
-                                                itemprop="contentUrl" data-size="500x600">
-                                                <img class="w-100 min-height-100 max-height-100 border-radius-lg shadow"
-                                                    src="../../../assets/img/products/product-details-2.jpg"
-                                                    alt="Image description" />
-                                            </a>
-                                        </figure>
-                                        <figure class="ms-3" itemprop="associatedMedia" itemscope
-                                            itemtype="http://schema.org/ImageObject">
-                                            <a href="../../../assets/img/products/product-details-3.jpg"
-                                                itemprop="contentUrl" data-size="500x600">
-                                                <img class="w-100 min-height-100 max-height-100 border-radius-lg shadow"
-                                                    src="../../../assets/img/products/product-details-3.jpg"
-                                                    itemprop="thumbnail" alt="Image description" />
-                                            </a>
-                                        </figure>
-                                        <figure class="ms-3" itemprop="associatedMedia" itemscope
-                                            itemtype="http://schema.org/ImageObject">
-                                            <a href="../../../assets/img/products/product-details-4.jpg"
-                                                itemprop="contentUrl" data-size="500x600">
-                                                <img class="w-100 min-height-100 max-height-100 border-radius-lg shadow"
-                                                    src="../../../assets/img/products/product-details-4.jpg"
-                                                    itemprop="thumbnail" alt="Image description" />
-                                            </a>
-                                        </figure>
-                                        <figure class="ms-3" itemprop="associatedMedia" itemscope
-                                            itemtype="http://schema.org/ImageObject">
-                                            <a href="../../../assets/img/products/product-details-5.jpg"
-                                                itemprop="contentUrl" data-size="500x600">
-                                                <img class="w-100 min-height-100 max-height-100 border-radius-lg shadow"
-                                                    src="../../../assets/img/products/product-details-5.jpg"
-                                                    itemprop="thumbnail" alt="Image description" />
-                                            </a>
-                                        </figure>
-                                    </div>
-
-                                    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-                                        <div class="pswp__bg"></div>
-
-                                        <div class="pswp__scroll-wrap">
-
-
-                                            <div class="pswp__container">
-                                                <div class="pswp__item"></div>
-                                                <div class="pswp__item"></div>
-                                                <div class="pswp__item"></div>
-                                            </div>
-
-                                            <div class="pswp__ui pswp__ui--hidden">
-                                                <div class="pswp__top-bar">
-
-                                                    <div class="pswp__counter"></div>
-                                                    <button
-                                                        class="btn btn-white btn-sm pswp__button pswp__button--close">Close
-                                                        (Esc)</button>
-                                                    <button
-                                                        class="btn btn-white btn-sm pswp__button pswp__button--fs">Fullscreen</button>
-                                                    <button
-                                                        class="btn btn-white btn-sm pswp__button pswp__button--arrow--left">Prev
-                                                    </button>
-                                                    <button
-                                                        class="btn btn-white btn-sm pswp__button pswp__button--arrow--right">Next
-                                                    </button>
-
-
-                                                    <div class="pswp__preloader">
-                                                        <div class="pswp__preloader__icn">
-                                                            <div class="pswp__preloader__cut">
-                                                                <div class="pswp__preloader__donut"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                                                    <div class="pswp__share-tooltip"></div>
-                                                </div>
-                                                <div class="pswp__caption">
-                                                    <div class="pswp__caption__center"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-5 mx-auto">
-                                    <h3 class="mt-lg-0 mt-4">Minimal Bar Stool</h3>
-                                    <div class="rating">
-                                        <i class="material-icons text-lg">grade</i>
-                                        <i class="material-icons text-lg">grade</i>
-                                        <i class="material-icons text-lg">grade</i>
-                                        <i class="material-icons text-lg">grade</i>
-                                        <i class="material-icons text-lg">star_outline</i>
-                                    </div>
-                                    <br>
-                                    <h6 class="mb-0 mt-3">Price</h6>
-                                    <h5>$1,419</h5>
-                                    <span class="badge badge-success">In Stock</span>
-                                    <br>
-                                    <label class="mt-4">Description</label>
-                                    <ul>
-                                        <li>The most beautiful curves of this swivel stool adds an elegant touch to any
-                                            environment</li>
-                                        <li>Memory swivel seat returns to original seat position</li>
-                                        <li>Comfortable integrated layered chair seat cushion design</li>
-                                        <li>Fully assembled! No assembly required</li>
-                                    </ul>
-                                    <div class="row mt-4">
-                                        <div class="col-lg-5 mt-lg-0 mt-2">
-                                            <label class="ms-0">Frame Material</label>
-                                            <select class="form-control" name="choices-material" id="choices-material">
-                                                <option value="Choice 1" selected="">Wood</option>
-                                                <option value="Choice 2">Steel</option>
-                                                <option value="Choice 3">Aluminium</option>
-                                                <option value="Choice 4">Carbon</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-lg-5 mt-lg-0 mt-2">
-                                            <label class="ms-0">Color</label>
-                                            <select class="form-control" name="choices-colors" id="choices-colors">
-                                                <option value="Choice 1" selected="">White</option>
-                                                <option value="Choice 2">Gray</option>
-                                                <option value="Choice 3">Black</option>
-                                                <option value="Choice 4">Blue</option>
-                                                <option value="Choice 5">Red</option>
-                                                <option value="Choice 6">Pink</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-lg-2">
-                                            <label class="ms-0">Quantity</label>
-                                            <select class="form-control" name="choices-quantity" id="choices-quantity">
-                                                <option value="Choice 1" selected="">1</option>
-                                                <option value="Choice 2">2</option>
-                                                <option value="Choice 3">3</option>
-                                                <option value="Choice 4">4</option>
-                                                <option value="Choice 5">5</option>
-                                                <option value="Choice 6">6</option>
-                                                <option value="Choice 7">7</option>
-                                                <option value="Choice 8">8</option>
-                                                <option value="Choice 9">9</option>
-                                                <option value="Choice 10">10</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-4">
-                                        <div class="col-lg-5">
-                                            <button class="btn bg-gradient-primary mb-0 mt-lg-auto w-100" type="button"
-                                                name="button">Add to cart</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mt-5">
-                                <div class="col-12">
-                                    <h5 class="ms-3">Other Products</h5>
-                                    <div class="table table-responsive">
-                                        <table class="table align-items-center mb-0">
-                                            <thead>
-                                                <tr>
-                                                    <th
-                                                        class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                        Product</th>
-                                                    <th
-                                                        class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                        Price</th>
-                                                    <th
-                                                        class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                        Review</th>
-                                                    <th
-                                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                        Availability</th>
-                                                    <th
-                                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                        Id</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex px-2 py-1">
-                                                            <div>
-                                                                <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/ecommerce/black-chair.jpg"
-                                                                    class="avatar avatar-md me-3" alt="table image">
-                                                            </div>
-                                                            <div class="d-flex flex-column justify-content-center">
-                                                                <h6 class="mb-0 text-sm">Christopher Knight Home</h6>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <p class="text-sm text-secondary mb-0">$89.53</p>
-                                                    </td>
-                                                    <td>
-                                                        <div class="rating ms-lg-n4">
-                                                            <i class="material-icons text-lg">grade</i>
-                                                            <i class="material-icons text-lg">grade</i>
-                                                            <i class="material-icons text-lg">grade</i>
-                                                            <i class="material-icons text-lg">grade</i>
-                                                            <i class="material-icons text-lg">star_outline</i>
-                                                        </div>
-                                                    </td>
-                                                    <td class="align-middle text-sm">
-                                                        <div class="progress mx-auto">
-                                                            <div class="progress-bar bg-gradient-success"
-                                                                role="progressbar" style="width: 80%" aria-valuenow="80"
-                                                                aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="align-middle text-center">
-                                                        <span class="text-secondary text-sm">230019</span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex px-2 py-1">
-                                                            <div>
-                                                                <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/ecommerce/chair-pink.jpg"
-                                                                    class="avatar avatar-md me-3" alt="table image">
-                                                            </div>
-                                                            <div class="d-flex flex-column justify-content-center">
-                                                                <h6 class="mb-0 text-sm">Bar Height Swivel Barstool</h6>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <p class="text-sm text-secondary mb-0">$99.99</p>
-                                                    </td>
-                                                    <td>
-                                                        <div class="rating ms-lg-n4">
-                                                            <i class="material-icons text-lg">grade</i>
-                                                            <i class="material-icons text-lg">grade</i>
-                                                            <i class="material-icons text-lg">grade</i>
-                                                            <i class="material-icons text-lg">grade</i>
-                                                            <i class="material-icons text-lg">grade</i>
-                                                        </div>
-                                                    </td>
-                                                    <td class="align-middle text-sm">
-                                                        <div class="progress mx-auto">
-                                                            <div class="progress-bar bg-gradient-success"
-                                                                role="progressbar" style="width: 90%" aria-valuenow="90"
-                                                                aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="align-middle text-center">
-                                                        <span class="text-secondary text-sm">87120</span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex px-2 py-1">
-                                                            <div>
-                                                                <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/ecommerce/chair-steel.jpg"
-                                                                    class="avatar avatar-md me-3" alt="table image">
-                                                            </div>
-                                                            <div class="d-flex flex-column justify-content-center">
-                                                                <h6 class="mb-0 text-sm">Signature Design by Ashley</h6>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <p class="text-sm text-secondary mb-0">$129.00</p>
-                                                    </td>
-                                                    <td>
-                                                        <div class="rating ms-lg-n4">
-                                                            <i class="material-icons text-lg">grade</i>
-                                                            <i class="material-icons text-lg">grade</i>
-                                                            <i class="material-icons text-lg">grade</i>
-                                                            <i class="material-icons text-lg">grade</i>
-                                                            <i class="material-icons text-lg">star_outline</i>
-                                                        </div>
-                                                    </td>
-                                                    <td class="align-middle text-sm">
-                                                        <div class="progress mx-auto">
-                                                            <div class="progress-bar bg-gradient-warning"
-                                                                role="progressbar" style="width: 60%" aria-valuenow="60"
-                                                                aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="align-middle text-center">
-                                                        <span class="text-secondary text-sm">412301</span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex px-2 py-1">
-                                                            <div>
-                                                                <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/ecommerce/chair-wood.jpg"
-                                                                    class="avatar avatar-md me-3" alt="table image">
-                                                            </div>
-                                                            <div class="d-flex flex-column justify-content-center">
-                                                                <h6 class="mb-0 text-sm">Modern Square</h6>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <p class="text-sm text-secondary mb-0">$59.99</p>
-                                                    </td>
-                                                    <td>
-                                                        <div class="rating ms-lg-n4">
-                                                            <i class="material-icons text-lg">grade</i>
-                                                            <i class="material-icons text-lg">grade</i>
-                                                            <i class="material-icons text-lg">grade</i>
-                                                            <i class="material-icons text-lg">grade</i>
-                                                            <i class="material-icons text-lg">grade</i>
-                                                        </div>
-                                                    </td>
-                                                    <td class="align-middle text-sm">
-                                                        <div class="progress mx-auto">
-                                                            <div class="progress-bar bg-gradient-warning"
-                                                                role="progressbar" style="width: 40%" aria-valuenow="40"
-                                                                aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="align-middle text-center">
-                                                        <span class="text-secondary text-sm">001992</span>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <footer class="footer py-4  ">
-                <div class="container-fluid">
-                    <div class="row align-items-center justify-content-lg-between">
-                        <div class="col-lg-6 mb-lg-0 mb-4">
-                            <div class="copyright text-center text-sm text-muted text-lg-start">
-                                © <script>
-                                    document.write(new Date().getFullYear())
-
-                                </script>,
-                                made with <i class="fa fa-heart"></i> by
-                                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative
-                                    Tim</a>
-                                for a better web.
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                                <li class="nav-item">
-                                    <a href="https://www.creative-tim.com" class="nav-link text-muted"
-                                        target="_blank">Creative Tim</a>
+                    <div class="col-6">
+                        <div class="header-info header-info-right">
+                            <ul>
+                                <li>
+                                    <span class="language-dropdown-active">
+                                        <img src="https://farmart.botble.com/vendor/core/core/base/images/flags/us.svg"
+                                            title="English" width="16" alt="English">
+                                        English
+                                        <span class="svg-icon">
+                                            <svg>
+                                                <use href="#svg-icon-chevron-down" xlink:href="#svg-icon-chevron-down">
+                                                </use>
+                                            </svg>
+                                        </span>
+                                    </span>
+                                    <ul class="language-dropdown ">
+                                        <li>
+                                            <a href="https://farmart.botble.com/vi">
+                                                <img src="https://farmart.botble.com/vendor/core/core/base/images/flags/vn.svg"
+                                                    title="Tiếng Việt" width="16" alt="Tiếng Việt">
+                                                <span>Tiếng Việt</span>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted"
-                                        target="_blank">About Us</a>
+                                <li>
+                                    <a class="language-dropdown-active" href="#">
+                                        <span>USD</span>
+                                        <span class="svg-icon">
+                                            <svg>
+                                                <use href="#svg-icon-chevron-down" xlink:href="#svg-icon-chevron-down">
+                                                </use>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                    <ul class="language-dropdown">
+                                        <li>
+                                            <a href="https://farmart.botble.com/currency/switch/EUR">
+                                                <span>EUR</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://farmart.botble.com/currency/switch/VND">
+                                                <span>VND</span>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="https://www.creative-tim.com/blog" class="nav-link text-muted"
-                                        target="_blank">Blog</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted"
-                                        target="_blank">License</a>
-                                </li>
+                                <li><a href="https://farmart.botble.com/login">Login / Register</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-            </footer>
-        </div>
-    </main>
-    <div class="fixed-plugin">
-        <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
-            <i class="material-icons py-2">settings</i>
-        </a>
-        <div class="card shadow-lg">
-            <div class="card-header pb-0 pt-3">
-                <div class="float-start">
-                    <h5 class="mt-3 mb-0">Material UI Configurator</h5>
-                    <p>See our dashboard options.</p>
-                </div>
-                <div class="float-end mt-4">
-                    <button class="btn btn-link text-dark p-0 fixed-plugin-close-button">
-                        <i class="material-icons">clear</i>
-                    </button>
-                </div>
-
             </div>
-            <hr class="horizontal dark my-1">
-            <div class="card-body pt-sm-3 pt-0">
-
-                <div>
-                    <h6 class="mb-0">Sidebar Colors</h6>
-                </div>
-                <a href="javascript:void(0)" class="switch-trigger background-color">
-                    <div class="badge-colors my-2 text-start">
-                        <span class="badge filter bg-gradient-primary active" data-color="primary"
-                            onclick="sidebarColor(this)"></span>
-                        <span class="badge filter bg-gradient-dark" data-color="dark"
-                            onclick="sidebarColor(this)"></span>
-                        <span class="badge filter bg-gradient-info" data-color="info"
-                            onclick="sidebarColor(this)"></span>
-                        <span class="badge filter bg-gradient-success" data-color="success"
-                            onclick="sidebarColor(this)"></span>
-                        <span class="badge filter bg-gradient-warning" data-color="warning"
-                            onclick="sidebarColor(this)"></span>
-                        <span class="badge filter bg-gradient-danger" data-color="danger"
-                            onclick="sidebarColor(this)"></span>
+        </div>
+        <div class="header-middle">
+            <div class="container-xxxl">
+                <div class="header-wrapper">
+                    <div class="header-items header__left">
+                        <div class="logo">
+                            <a href="https://farmart.botble.com">
+                                <img src="https://farmart.botble.com/storage/general/logo.png"
+                                    alt="Farmart - Laravel Ecommerce system" />
+                            </a>
+                        </div>
                     </div>
-                </a>
-
-                <div class="mt-3">
-                    <h6 class="mb-0">Sidenav Type</h6>
-                    <p class="text-sm">Choose between 2 different sidenav types.</p>
-                </div>
-                <div class="d-flex">
-                    <button class="btn bg-gradient-dark px-3 mb-2 active" data-class="bg-gradient-dark"
-                        onclick="sidebarType(this)">Dark</button>
-                    <button class="btn bg-gradient-dark px-3 mb-2 ms-2" data-class="bg-transparent"
-                        onclick="sidebarType(this)">Transparent</button>
-                    <button class="btn bg-gradient-dark px-3 mb-2 ms-2" data-class="bg-white"
-                        onclick="sidebarType(this)">White</button>
-                </div>
-                <p class="text-sm d-xl-none d-block mt-2">You can change the sidenav type just on desktop view.</p>
-
-                <div class="mt-3 d-flex">
-                    <h6 class="mb-0">Navbar Fixed</h6>
-                    <div class="form-check form-switch ps-0 ms-auto my-auto">
-                        <input class="form-check-input mt-1 ms-auto" type="checkbox" id="navbarFixed"
-                            onclick="navbarFixed(this)">
+                    <div class="header-items header__center">
+                        <form class="form--quick-search" action="https://farmart.botble.com/products"
+                            data-ajax-url="https://farmart.botble.com/ajax/search-products" method="get">
+                            <div class="form-group--icon" style="display: none">
+                                <div class="product-category-label">
+                                    <span class="text">All Categories</span>
+                                    <span class="svg-icon">
+                                        <svg>
+                                            <use href="#svg-icon-chevron-down" xlink:href="#svg-icon-chevron-down">
+                                            </use>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <select class="form-control product-category-select" name="categories[]">
+                                    <option value="0">All Categories</option>
+                                    <option value="1">Fruits &amp; Vegetables</option>
+                                    <option value="2"> Fruits</option>
+                                    <option value="3"> Apples</option>
+                                    <option value="4"> Bananas</option>
+                                    <option value="5"> Berries</option>
+                                    <option value="6"> Oranges &amp; Easy Peelers</option>
+                                    <option value="7"> Grapes</option>
+                                    <option value="8"> Lemons &amp; Limes</option>
+                                    <option value="9"> Peaches &amp; Nectarines</option>
+                                    <option value="10"> Pears</option>
+                                    <option value="11"> Melon</option>
+                                    <option value="12"> Avocados</option>
+                                    <option value="13"> Plums &amp; Apricots</option>
+                                    <option value="14"> Vegetables</option>
+                                    <option value="15"> Potatoes</option>
+                                    <option value="16"> Carrots &amp; Root Vegetables</option>
+                                    <option value="17"> Broccoli &amp; Cauliflower</option>
+                                    <option value="18"> Cabbage, Spinach &amp; Greens</option>
+                                    <option value="19"> Onions, Leeks &amp; Garlic</option>
+                                    <option value="20"> Mushrooms</option>
+                                    <option value="21"> Tomatoes</option>
+                                    <option value="22"> Beans, Peas &amp; Sweetcorn</option>
+                                    <option value="23"> Freshly Drink Orange Juice</option>
+                                    <option value="24">Breads Sweets</option>
+                                    <option value="25"> Crisps, Snacks &amp; Nuts</option>
+                                    <option value="26"> Crisps &amp; Popcorn</option>
+                                    <option value="27"> Nuts &amp; Seeds</option>
+                                    <option value="28"> Lighter Options</option>
+                                    <option value="29"> Cereal Bars</option>
+                                    <option value="30"> Breadsticks &amp; Pretzels</option>
+                                    <option value="31"> Fruit Snacking</option>
+                                    <option value="32"> Rice &amp; Corn Cakes</option>
+                                    <option value="33"> Protein &amp; Energy Snacks</option>
+                                    <option value="34"> Toddler Snacks</option>
+                                    <option value="35"> Meat Snacks</option>
+                                    <option value="36"> Beans</option>
+                                    <option value="37"> Lentils</option>
+                                    <option value="38"> Chickpeas</option>
+                                    <option value="39"> Tins &amp; Cans</option>
+                                    <option value="40"> Tomatoes</option>
+                                    <option value="41"> Baked Beans, Spaghetti</option>
+                                    <option value="42"> Fish</option>
+                                    <option value="43"> Beans &amp; Pulses</option>
+                                    <option value="44"> Fruit</option>
+                                    <option value="45"> Coconut Milk &amp; Cream</option>
+                                    <option value="46"> Lighter Options</option>
+                                    <option value="47"> Olives</option>
+                                    <option value="48"> Sweetcorn</option>
+                                    <option value="49"> Carrots</option>
+                                    <option value="50"> Peas</option>
+                                    <option value="51"> Mixed Vegetables</option>
+                                    <option value="52">Frozen Seafoods</option>
+                                    <option value="53">Raw Meats</option>
+                                    <option value="54">Wines &amp; Alcohol Drinks</option>
+                                    <option value="55"> Ready Meals</option>
+                                    <option value="56"> Meals for 1</option>
+                                    <option value="57"> Meals for 2</option>
+                                    <option value="58"> Indian</option>
+                                    <option value="59"> Italian</option>
+                                    <option value="60"> Chinese</option>
+                                    <option value="61"> Traditional British</option>
+                                    <option value="62"> Thai &amp; Oriental</option>
+                                    <option value="63"> Mediterranean &amp; Moroccan</option>
+                                    <option value="64"> Mexican &amp; Caribbean</option>
+                                    <option value="65"> Lighter Meals</option>
+                                    <option value="66"> Lunch &amp; Veg Pots</option>
+                                    <option value="67"> Salad &amp; Herbs</option>
+                                    <option value="68"> Salad Bags</option>
+                                    <option value="69"> Cucumber</option>
+                                    <option value="70"> Tomatoes</option>
+                                    <option value="71"> Lettuce</option>
+                                    <option value="72"> Lunch Salad Bowls</option>
+                                    <option value="73"> Lunch Salad Bowls</option>
+                                    <option value="74"> Fresh Herbs</option>
+                                    <option value="75"> Avocados</option>
+                                    <option value="76"> Peppers</option>
+                                    <option value="77"> Coleslaw &amp; Potato Salad</option>
+                                    <option value="78"> Spring Onions</option>
+                                    <option value="79"> Chilli, Ginger &amp; Garlic</option>
+                                    <option value="80">Tea &amp; Coffee</option>
+                                    <option value="81">Milks and Dairies</option>
+                                    <option value="82">Pet Foods</option>
+                                    <option value="83">Food Cupboard</option>
+                                </select>
+                            </div>
+                            <input class="form-control input-search-product" name="q" type="text"
+                                placeholder="I&#039;m shopping for..." autocomplete="off">
+                            <button class="btn" type="submit">
+                                <span class="svg-icon">
+                                    <svg>
+                                        <use href="#svg-icon-search" xlink:href="#svg-icon-search"></use>
+                                    </svg>
+                                </span>
+                            </button>
+                            <div class="panel--search-result"></div>
+                        </form>
+                    </div>
+                    <div class="header-items header__right">
+                        <div class="header__extra header-support">
+                            <div class="header-box-content">
+                                <span>8 800 332 65-66</span>
+                                <p>Support 24/7</p>
+                            </div>
+                        </div>
+                        <div class="header__extra header-compare">
+                            <a class="btn-compare" href="https://farmart.botble.com/compare">
+                                <i class="icon-repeat"></i>
+                                <span class="header-item-counter">2</span>
+                            </a>
+                        </div>
+                        <div class="header__extra header-wishlist">
+                            <a class="btn-wishlist" href="https://farmart.botble.com/wishlist">
+                                <span class="svg-icon">
+                                    <svg>
+                                        <use href="#svg-icon-wishlist" xlink:href="#svg-icon-wishlist"></use>
+                                    </svg>
+                                </span>
+                                <span class="header-item-counter">
+                                    0
+                                </span>
+                            </a>
+                        </div>
+                        <div class="header__extra cart--mini" tabindex="0" role="button">
+                            <div class="header__extra">
+                                <a class="btn-shopping-cart" href="https://farmart.botble.com/cart">
+                                    <span class="svg-icon">
+                                        <svg>
+                                            <use href="#svg-icon-cart" xlink:href="#svg-icon-cart"></use>
+                                        </svg>
+                                    </span>
+                                    <span class="header-item-counter">0</span>
+                                </a>
+                                <span class="cart-text">
+                                    <span class="cart-title">Your Cart</span>
+                                    <span class="cart-price-total">
+                                        <span class="cart-amount">
+                                            <bdi>
+                                                <span>$0.00</span>
+                                            </bdi>
+                                        </span>
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="cart__content" id="cart-mobile">
+                                <div class="backdrop"></div>
+                                <div class="mini-cart-content">
+                                    <div class="widget-shopping-cart-content">
+                                        <div class="panel__header">
+                                            <span class="panel__header-title">Shopping Cart
+                                                <span class="cart-counter">(0)</span>
+                                            </span>
+                                            <a class="close-toggle--sidebar" href="#"
+                                                data-toggle-closest=".cart__content">
+                                                <span class="svg-icon">
+                                                    <svg>
+                                                        <use href="#svg-icon-arrow-right"
+                                                            xlink:href="#svg-icon-arrow-right"></use>
+                                                    </svg>
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <div class="cart__items">
+                                            <div class="cart_no_items py-3 px-3">
+                                                <span class="cart-empty-message">No products in the cart.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <hr class="horizontal dark my-3">
-                <div class="mt-2 d-flex">
-                    <h6 class="mb-0">Sidenav Mini</h6>
-                    <div class="form-check form-switch ps-0 ms-auto my-auto">
-                        <input class="form-check-input mt-1 ms-auto" type="checkbox" id="navbarMinimize"
-                            onclick="navbarMinimize(this)">
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="header-wrapper">
+                <nav class="navigation">
+                    <div class="container-xxxl">
+                        <div class="navigation__left">
+                            <div class="menu--product-categories">
+                                <div class="menu__toggle">
+                                    <span class="svg-icon">
+                                        <svg>
+                                            <use href="#svg-icon-list" xlink:href="#svg-icon-list"></use>
+                                        </svg>
+                                    </span>
+                                    <span class="menu__toggle-title">Shop by Category</span>
+                                </div>
+                                <div class="menu__content">
+                                    <ul class="menu--dropdown">
+                                        <li class="menu-item-has-children has-mega-menu">
+                                            <a href="https://farmart.botble.com/product-categories/fruits-vegetables">
+                                                <i class="icon-star"></i>
+                                                <span class="ms-1">Fruits &amp; Vegetables</span>
+                                                <span class="sub-toggle">
+                                                    <span class="svg-icon">
+                                                        <svg>
+                                                            <use href="#svg-icon-chevron-right"
+                                                                xlink:href="#svg-icon-chevron-right"></use>
+                                                        </svg>
+                                                    </span>
+                                                </span>
+                                            </a>
+                                            <div class="mega-menu">
+                                                <div class="mega-menu__column">
+                                                    <a href="https://farmart.botble.com/product-categories/fruits">
+                                                        <h4>Fruits</h4>
+                                                        <span class="sub-toggle">
+                                                            <span class="svg-icon">
+                                                                <svg>
+                                                                    <use href="#svg-icon-chevron-right"
+                                                                        xlink:href="#svg-icon-chevron-right"></use>
+                                                                </svg>
+                                                            </span>
+                                                        </span>
+                                                    </a>
+                                                    <ul class="mega-menu__list">
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/apples">Apples</a>
+                                                        </li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/bananas">Bananas</a>
+                                                        </li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/berries">Berries</a>
+                                                        </li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/oranges-easy-peelers">Oranges
+                                                                &amp; Easy Peelers</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/grapes">Grapes</a>
+                                                        </li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/lemons-limes">Lemons
+                                                                &amp; Limes</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/peaches-nectarines">Peaches
+                                                                &amp; Nectarines</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/pears">Pears</a>
+                                                        </li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/melon">Melon</a>
+                                                        </li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/avocados">Avocados</a>
+                                                        </li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/plums-apricots">Plums
+                                                                &amp; Apricots</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="mega-menu__column">
+                                                    <a href="https://farmart.botble.com/product-categories/vegetables">
+                                                        <h4>Vegetables</h4>
+                                                        <span class="sub-toggle">
+                                                            <span class="svg-icon">
+                                                                <svg>
+                                                                    <use href="#svg-icon-chevron-right"
+                                                                        xlink:href="#svg-icon-chevron-right"></use>
+                                                                </svg>
+                                                            </span>
+                                                        </span>
+                                                    </a>
+                                                    <ul class="mega-menu__list">
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/potatoes">Potatoes</a>
+                                                        </li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/carrots-root-vegetables">Carrots
+                                                                &amp; Root Vegetables</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/broccoli-cauliflower">Broccoli
+                                                                &amp; Cauliflower</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/cabbage-spinach-greens">Cabbage,
+                                                                Spinach &amp; Greens</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/onions-leeks-garlic">Onions,
+                                                                Leeks &amp; Garlic</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/mushrooms">Mushrooms</a>
+                                                        </li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/tomatoes">Tomatoes</a>
+                                                        </li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/beans-peas-sweetcorn">Beans,
+                                                                Peas &amp; Sweetcorn</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/freshly-drink-orange-juice">Freshly
+                                                                Drink Orange Juice</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="menu-item-has-children has-mega-menu">
+                                            <a href="https://farmart.botble.com/product-categories/breads-sweets">
+                                                <i class="icon-bread"></i>
+                                                <span class="ms-1">Breads Sweets</span>
+                                                <span class="sub-toggle">
+                                                    <span class="svg-icon">
+                                                        <svg>
+                                                            <use href="#svg-icon-chevron-right"
+                                                                xlink:href="#svg-icon-chevron-right"></use>
+                                                        </svg>
+                                                    </span>
+                                                </span>
+                                            </a>
+                                            <div class="mega-menu">
+                                                <div class="mega-menu__column">
+                                                    <a
+                                                        href="https://farmart.botble.com/product-categories/crisps-snacks-nuts">
+                                                        <h4>Crisps, Snacks &amp; Nuts</h4>
+                                                        <span class="sub-toggle">
+                                                            <span class="svg-icon">
+                                                                <svg>
+                                                                    <use href="#svg-icon-chevron-right"
+                                                                        xlink:href="#svg-icon-chevron-right"></use>
+                                                                </svg>
+                                                            </span>
+                                                        </span>
+                                                    </a>
+                                                    <ul class="mega-menu__list">
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/crisps-popcorn">Crisps
+                                                                &amp; Popcorn</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/nuts-seeds">Nuts
+                                                                &amp; Seeds</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/lighter-options">Lighter
+                                                                Options</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/cereal-bars">Cereal
+                                                                Bars</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/breadsticks-pretzels">Breadsticks
+                                                                &amp; Pretzels</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/fruit-snacking">Fruit
+                                                                Snacking</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/rice-corn-cakes">Rice
+                                                                &amp; Corn Cakes</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/protein-energy-snacks">Protein
+                                                                &amp; Energy Snacks</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/toddler-snacks">Toddler
+                                                                Snacks</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/meat-snacks">Meat
+                                                                Snacks</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/beans">Beans</a>
+                                                        </li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/lentils">Lentils</a>
+                                                        </li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/chickpeas">Chickpeas</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="mega-menu__column">
+                                                    <a href="https://farmart.botble.com/product-categories/tins-cans">
+                                                        <h4>Tins &amp; Cans</h4>
+                                                        <span class="sub-toggle">
+                                                            <span class="svg-icon">
+                                                                <svg>
+                                                                    <use href="#svg-icon-chevron-right"
+                                                                        xlink:href="#svg-icon-chevron-right"></use>
+                                                                </svg>
+                                                            </span>
+                                                        </span>
+                                                    </a>
+                                                    <ul class="mega-menu__list">
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/tomatoes">Tomatoes</a>
+                                                        </li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/baked-beans-spaghetti">Baked
+                                                                Beans, Spaghetti</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/fish">Fish</a>
+                                                        </li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/beans-pulses">Beans
+                                                                &amp; Pulses</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/fruit">Fruit</a>
+                                                        </li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/coconut-milk-cream">Coconut
+                                                                Milk &amp; Cream</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/lighter-options">Lighter
+                                                                Options</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/olives">Olives</a>
+                                                        </li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/sweetcorn">Sweetcorn</a>
+                                                        </li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/carrots">Carrots</a>
+                                                        </li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/peas">Peas</a>
+                                                        </li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/mixed-vegetables">Mixed
+                                                                Vegetables</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="https://farmart.botble.com/product-categories/frozen-seafoods">
+                                                <i class="icon-hamburger"></i>
+                                                <span class="ms-1">Frozen Seafoods</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://farmart.botble.com/product-categories/raw-meats">
+                                                <i class="icon-steak"></i>
+                                                <span class="ms-1">Raw Meats</span>
+                                            </a>
+                                        </li>
+                                        <li class="menu-item-has-children has-mega-menu">
+                                            <a
+                                                href="https://farmart.botble.com/product-categories/wines-alcohol-drinks">
+                                                <i class="icon-glass"></i>
+                                                <span class="ms-1">Wines &amp; Alcohol Drinks</span>
+                                                <span class="sub-toggle">
+                                                    <span class="svg-icon">
+                                                        <svg>
+                                                            <use href="#svg-icon-chevron-right"
+                                                                xlink:href="#svg-icon-chevron-right"></use>
+                                                        </svg>
+                                                    </span>
+                                                </span>
+                                            </a>
+                                            <div class="mega-menu">
+                                                <div class="mega-menu__column">
+                                                    <a href="https://farmart.botble.com/product-categories/ready-meals">
+                                                        <h4>Ready Meals</h4>
+                                                        <span class="sub-toggle">
+                                                            <span class="svg-icon">
+                                                                <svg>
+                                                                    <use href="#svg-icon-chevron-right"
+                                                                        xlink:href="#svg-icon-chevron-right"></use>
+                                                                </svg>
+                                                            </span>
+                                                        </span>
+                                                    </a>
+                                                    <ul class="mega-menu__list">
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/meals-for-1">Meals
+                                                                for 1</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/meals-for-2">Meals
+                                                                for 2</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/indian">Indian</a>
+                                                        </li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/italian">Italian</a>
+                                                        </li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/chinese">Chinese</a>
+                                                        </li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/traditional-british">Traditional
+                                                                British</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/thai-oriental">Thai
+                                                                &amp; Oriental</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/mediterranean-moroccan">Mediterranean
+                                                                &amp; Moroccan</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/mexican-caribbean">Mexican
+                                                                &amp; Caribbean</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/lighter-meals">Lighter
+                                                                Meals</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/lunch-veg-pots">Lunch
+                                                                &amp; Veg Pots</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="mega-menu__column">
+                                                    <a href="https://farmart.botble.com/product-categories/salad-herbs">
+                                                        <h4>Salad &amp; Herbs</h4>
+                                                        <span class="sub-toggle">
+                                                            <span class="svg-icon">
+                                                                <svg>
+                                                                    <use href="#svg-icon-chevron-right"
+                                                                        xlink:href="#svg-icon-chevron-right"></use>
+                                                                </svg>
+                                                            </span>
+                                                        </span>
+                                                    </a>
+                                                    <ul class="mega-menu__list">
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/salad-bags">Salad
+                                                                Bags</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/cucumber">Cucumber</a>
+                                                        </li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/tomatoes">Tomatoes</a>
+                                                        </li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/lettuce">Lettuce</a>
+                                                        </li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/lunch-salad-bowls">Lunch
+                                                                Salad Bowls</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/lunch-salad-bowls">Lunch
+                                                                Salad Bowls</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/fresh-herbs">Fresh
+                                                                Herbs</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/avocados">Avocados</a>
+                                                        </li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/peppers">Peppers</a>
+                                                        </li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/coleslaw-potato-salad">Coleslaw
+                                                                &amp; Potato Salad</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/spring-onions">Spring
+                                                                Onions</a></li>
+                                                        <li><a
+                                                                href="https://farmart.botble.com/product-categories/chilli-ginger-garlic">Chilli,
+                                                                Ginger &amp; Garlic</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="https://farmart.botble.com/product-categories/tea-coffee">
+                                                <i class="icon-teacup"></i>
+                                                <span class="ms-1">Tea &amp; Coffee</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://farmart.botble.com/product-categories/milks-and-dairies">
+                                                <i class="icon-coffee-cup"></i>
+                                                <span class="ms-1">Milks and Dairies</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://farmart.botble.com/product-categories/pet-foods">
+                                                <i class="icon-hotdog"></i>
+                                                <span class="ms-1">Pet Foods</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://farmart.botble.com/product-categories/food-cupboard">
+                                                <i class="icon-cheese"></i>
+                                                <span class="ms-1">Food Cupboard</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="navigation__center">
+                            <ul class="menu">
+                                <li>
+                                    <a href="https://farmart.botble.com/products/smart-watches">
+                                        <i class="icon icon-flash-auto"></i> Special Prices
+                                    </a>
+                                </li>
+                                <li class=" menu-item-has-children   ">
+                                    <a href="#">
+                                        Pages
+                                        <span class="sub-toggle">
+                                            <span class="svg-icon">
+                                                <svg>
+                                                    <use href="#svg-icon-chevron-down"
+                                                        xlink:href="#svg-icon-chevron-down"></use>
+                                                </svg>
+                                            </span>
+                                        </span>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a href="https://farmart.botble.com/about-us">
+                                                About us
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://farmart.botble.com/terms-of-use">
+                                                Terms Of Use
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://farmart.botble.com/terms-conditions">
+                                                Terms &amp; Conditions
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://farmart.botble.com/refund-policy">
+                                                Refund Policy
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://farmart.botble.com/coming-soon">
+                                                Coming soon
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class=" menu-item-has-children   ">
+                                    <a href="https://farmart.botble.com/products">
+                                        Shop
+                                        <span class="sub-toggle">
+                                            <span class="svg-icon">
+                                                <svg>
+                                                    <use href="#svg-icon-chevron-down"
+                                                        xlink:href="#svg-icon-chevron-down"></use>
+                                                </svg>
+                                            </span>
+                                        </span>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a href="https://farmart.botble.com/products">
+                                                All products
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://farmart.botble.com/product-categories/potatoes">
+                                                Products Of Category
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://farmart.botble.com/products/beat-headphone">
+                                                Product Single
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="https://farmart.botble.com/stores">
+                                        Stores
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://farmart.botble.com/blog">
+                                        Blog
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://farmart.botble.com/faqs">
+                                        FAQs
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://farmart.botble.com/contact">
+                                        Contact
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="navigation__right">
+                            <div class="header-recently-viewed"
+                                data-url="https://farmart.botble.com/ajax/recently-viewed-products" role="button">
+                                <h3 class="recently-title">
+                                    <span class="svg-icon recent-icon">
+                                        <svg>
+                                            <use href="#svg-icon-refresh" xlink:href="#svg-icon-refresh"></use>
+                                        </svg>
+                                    </span>
+                                    Recently Viewed
+                                </h3>
+                                <div class="recently-viewed-inner container-xxxl">
+                                    <div class="recently-viewed-content">
+                                        <div class="loading--wrapper">
+                                            <div class="loading"></div>
+                                        </div>
+                                        <div class="recently-viewed-products"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="header-mobile header-js-handler" data-sticky="true">
+            <div class="header-items-mobile header-items-mobile--left">
+                <div class="menu-mobile">
+                    <div class="menu-box-title">
+                        <div class="icon menu-icon toggle--sidebar" href="#menu-mobile">
+                            <span class="svg-icon">
+                                <svg>
+                                    <use href="#svg-icon-list" xlink:href="#svg-icon-list"></use>
+                                </svg>
+                            </span>
+                        </div>
                     </div>
                 </div>
-                <hr class="horizontal dark my-3">
-                <div class="mt-2 d-flex">
-                    <h6 class="mb-0">Light / Dark</h6>
-                    <div class="form-check form-switch ps-0 ms-auto my-auto">
-                        <input class="form-check-input mt-1 ms-auto" type="checkbox" id="dark-version"
-                            onclick="darkMode(this)">
-                    </div>
-                </div>
-                <hr class="horizontal dark my-sm-4">
-                <a class="btn bg-gradient-primary w-100"
-                    href="https://www.creative-tim.com/product/material-dashboard-pro">Buy now</a>
-                <a class="btn bg-gradient-info w-100"
-                    href="https://www.creative-tim.com/product/material-dashboard">Free demo</a>
-                <a class="btn btn-outline-dark w-100"
-                    href="https://www.creative-tim.com/learning-lab/bootstrap/overview/material-dashboard">View
-                    documentation</a>
-                <div class="w-100 text-center">
-                    <a class="github-button" href="https://github.com/creativetimofficial/material-dashboard"
-                        data-icon="octicon-star" data-size="large" data-show-count="true"
-                        aria-label="Star creativetimofficial/material-dashboard on GitHub">Star</a>
-                    <h6 class="mt-3">Thank you for sharing!</h6>
-                    <a href="https://twitter.com/intent/tweet?text=Check%20Material%20UI%20Dashboard%20PRO%20made%20by%20%40CreativeTim%20%23webdesign%20%23dashboard%20%23bootstrap5&amp;url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fsoft-ui-dashboard-pro"
-                        class="btn btn-dark mb-0 me-2" target="_blank">
-                        <i class="fab fa-twitter me-1" aria-hidden="true"></i> Tweet
+            </div>
+            <div class="header-items-mobile header-items-mobile--center">
+                <div class="logo">
+                    <a href="https://farmart.botble.com">
+                        <img src="https://farmart.botble.com/storage/general/logo.png"
+                            alt="Farmart - Laravel Ecommerce system" width="155" />
                     </a>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/material-dashboard-pro"
-                        class="btn btn-dark mb-0 me-2" target="_blank">
-                        <i class="fab fa-facebook-square me-1" aria-hidden="true"></i> Share
+                </div>
+            </div>
+            <div class="header-items-mobile header-items-mobile--right">
+                <div class="search-form--mobile search-form--mobile-right search-panel">
+                    <a class="open-search-panel toggle--sidebar" href="#search-mobile">
+                        <span class="svg-icon">
+                            <svg>
+                                <use href="#svg-icon-search" xlink:href="#svg-icon-search"></use>
+                            </svg>
+                        </span>
                     </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="main-content">
+        <div>
+            <div class="section-content section-content__slider lazyload"
+                data-bg="https://farmart.botble.com/storage/general/slider-bg.jpg">
+                <div class="container-xxxl">
+                    <div class="row gx-0 gx-md-4">
+                        <div class=" col-md-8 ">
+                            <div class="section-slides-wrapper my-3">
+                                <div class="slide-body slick-slides-carousel"
+                                    data-slick="{&quot;autoplay&quot;:true,&quot;infinite&quot;:true,&quot;autoplaySpeed&quot;:5000,&quot;speed&quot;:1000,&quot;slidesToShow&quot;:1,&quot;slidesToScroll&quot;:1,&quot;appendArrows&quot;:&quot;.arrows-wrapper&quot;,&quot;fade&quot;:true}">
+                                    <div class="slide-item">
+                                        <div class="slide-item__image">
+                                            <a href="https://farmart.botble.com/products">
+                                                <picture>
+                                                    <source srcset="https://farmart.botble.com/storage/sliders/01.jpg"
+                                                        media="(min-width: 1200px)" />
+                                                    <source srcset="https://farmart.botble.com/storage/sliders/01.jpg"
+                                                        media="(min-width: 768px)" />
+                                                    <source
+                                                        srcset="https://farmart.botble.com/storage/sliders/01-sm.jpg"
+                                                        media="(max-width: 767px)" />
+                                                    <img src="https://farmart.botble.com/storage/general/placeholder.png"
+                                                        alt="Slider 1" />
+                                                </picture>
+                                            </a> </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <div class="slide-item__image">
+                                            <a href="https://farmart.botble.com/products">
+                                                <picture>
+                                                    <source srcset="https://farmart.botble.com/storage/sliders/02.jpg"
+                                                        media="(min-width: 1200px)" />
+                                                    <source srcset="https://farmart.botble.com/storage/sliders/02.jpg"
+                                                        media="(min-width: 768px)" />
+                                                    <source
+                                                        srcset="https://farmart.botble.com/storage/sliders/02-sm.jpg"
+                                                        media="(max-width: 767px)" />
+                                                    <img src="https://farmart.botble.com/storage/general/placeholder.png"
+                                                        alt="Slider 2" />
+                                                </picture>
+                                            </a> </div>
+                                    </div>
+                                </div>
+                                <div class="arrows-wrapper"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="section-banner-wrapper my-3">
+                                <div class="banner-medium">
+                                    <div class="banner-item__image">
+                                        <a href="https://farmart.botble.com/ads-click/VC2C8Q1UGCBG" target="_blank"><img
+                                                src="https://farmart.botble.com/storage/general/placeholder.png"
+                                                class="lazyload"
+                                                data-src="https://farmart.botble.com/storage/promotion/1.jpg"
+                                                alt="Top Slider Image 1"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="widget-product-categories pt-5 pb-2">
+                <div class="container-xxxl">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row align-items-center mb-2 widget-header">
+                                <h2 class="col-auto mb-0 py-2">Browse by Category</h2>
+                            </div>
+                            <featured-product-categories-component
+                                url="https://farmart.botble.com/ajax/featured-product-categories"
+                                slick_config="{&quot;rtl&quot;:false,&quot;appendArrows&quot;:&quot;.arrows-wrapper&quot;,&quot;arrows&quot;:true,&quot;dots&quot;:false,&quot;autoplay&quot;:false,&quot;infinite&quot;:false,&quot;autoplaySpeed&quot;:3000,&quot;speed&quot;:800,&quot;slidesToShow&quot;:8,&quot;slidesToScroll&quot;:1,&quot;responsive&quot;:[{&quot;breakpoint&quot;:1700,&quot;settings&quot;:{&quot;slidesToShow&quot;:7}},{&quot;breakpoint&quot;:1500,&quot;settings&quot;:{&quot;slidesToShow&quot;:6}},{&quot;breakpoint&quot;:1199,&quot;settings&quot;:{&quot;slidesToShow&quot;:5}},{&quot;breakpoint&quot;:1024,&quot;settings&quot;:{&quot;slidesToShow&quot;:4}},{&quot;breakpoint&quot;:767,&quot;settings&quot;:{&quot;arrows&quot;:false,&quot;dots&quot;:true,&quot;slidesToShow&quot;:2,&quot;slidesToScroll&quot;:2}}]}">
+                            </featured-product-categories-component>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="widget-featured-brands py-5">
+                <div class="container-xxxl">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row align-items-center mb-2 widget-header">
+                                <h2 class="col-auto mb-0 py-2">Featured Brands</h2>
+                            </div>
+                            <featured-brands-component url="https://farmart.botble.com/ajax/featured-brands"
+                                slick_config="{&quot;rtl&quot;:false,&quot;appendArrows&quot;:&quot;.arrows-wrapper&quot;,&quot;arrows&quot;:true,&quot;dots&quot;:false,&quot;autoplay&quot;:false,&quot;infinite&quot;:false,&quot;autoplaySpeed&quot;:3000,&quot;speed&quot;:800,&quot;slidesToShow&quot;:4,&quot;slidesToScroll&quot;:1,&quot;responsive&quot;:[{&quot;breakpoint&quot;:1024,&quot;settings&quot;:{&quot;slidesToShow&quot;:2}},{&quot;breakpoint&quot;:767,&quot;settings&quot;:{&quot;arrows&quot;:false,&quot;dots&quot;:true,&quot;slidesToShow&quot;:2,&quot;slidesToScroll&quot;:1}}]}">
+                            </featured-brands-component>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="widget-product-deals-day py-5">
+                <div class="container-xxxl">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row align-items-center mb-2 widget-header">
+                                <h2 class="col-auto mb-0 py-2">Top Saver Today</h2>
+                                <div class="ps-4 col-auto py-2 d-none d-md-block">
+                                    <a href="https://farmart.botble.com/products">
+                                        <span class="link-text">All Offers
+                                            <span class="svg-icon">
+                                                <svg>
+                                                    <use href="#svg-icon-chevron-right"
+                                                        xlink:href="#svg-icon-chevron-right"></use>
+                                                </svg>
+                                            </span>
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="countdown-wrapper col-auto ps-md-5 py-2">
+                                    <div class="header-countdown row align-items-center justify-content-center gx-2">
+                                        <div class="ends-text col-auto">
+                                            <div class="d-flex align-items-center justify-content-center">
+                                                <span class="svg-icon">
+                                                    <i class="icon icon-speed-fast"></i>
+                                                </span>Expires in:
+                                            </div>
+                                        </div>
+                                        <div class="expire-countdown col-auto" data-expire="2298915">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <flash-sale-products-component url="https://farmart.botble.com/ajax/get-flash-sale/1"
+                                slick_config="{&quot;rtl&quot;:false,&quot;appendArrows&quot;:&quot;.arrows-wrapper&quot;,&quot;arrows&quot;:true,&quot;dots&quot;:false,&quot;autoplay&quot;:false,&quot;infinite&quot;:false,&quot;autoplaySpeed&quot;:3000,&quot;speed&quot;:800,&quot;slidesToShow&quot;:6,&quot;slidesToScroll&quot;:1,&quot;swipeToSlide&quot;:true,&quot;responsive&quot;:[{&quot;breakpoint&quot;:1400,&quot;settings&quot;:{&quot;slidesToShow&quot;:5}},{&quot;breakpoint&quot;:1199,&quot;settings&quot;:{&quot;slidesToShow&quot;:4}},{&quot;breakpoint&quot;:1024,&quot;settings&quot;:{&quot;slidesToShow&quot;:3}},{&quot;breakpoint&quot;:767,&quot;settings&quot;:{&quot;arrows&quot;:true,&quot;dots&quot;:false,&quot;slidesToShow&quot;:2,&quot;slidesToScroll&quot;:2}}]}">
+                            </flash-sale-products-component>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="widget-products-with-category py-5 bg-light">
+                <div class="container-xxxl">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row align-items-center mb-2 widget-header">
+                                <h2 class="col-auto mb-0 py-2">Just Landing</h2>
+                            </div>
+                            <product-category-products-component limit=""
+                                :category="{&quot;id&quot;:23,&quot;name&quot;:&quot;Freshly Drink Orange Juice&quot;,&quot;url&quot;:&quot;https:\/\/farmart.botble.com\/product-categories\/freshly-drink-orange-juice&quot;,&quot;slug&quot;:&quot;freshly-drink-orange-juice&quot;,&quot;image&quot;:&quot;https:\/\/farmart.botble.com\/vendor\/core\/core\/base\/images\/placeholder.png&quot;,&quot;thumbnail&quot;:&quot;https:\/\/farmart.botble.com\/vendor\/core\/core\/base\/images\/placeholder.png&quot;}"
+                                :children="[]" url="https://farmart.botble.com/ajax/product-categories/products"
+                                all="https://farmart.botble.com/product-categories/freshly-drink-orange-juice"
+                                slick_config="{&quot;rtl&quot;:false,&quot;appendArrows&quot;:&quot;.arrows-wrapper&quot;,&quot;arrows&quot;:true,&quot;dots&quot;:false,&quot;autoplay&quot;:false,&quot;infinite&quot;:false,&quot;autoplaySpeed&quot;:3000,&quot;speed&quot;:800,&quot;slidesToShow&quot;:6,&quot;slidesToScroll&quot;:1,&quot;swipeToSlide&quot;:true,&quot;responsive&quot;:[{&quot;breakpoint&quot;:1400,&quot;settings&quot;:{&quot;slidesToShow&quot;:5}},{&quot;breakpoint&quot;:1199,&quot;settings&quot;:{&quot;slidesToShow&quot;:4}},{&quot;breakpoint&quot;:1024,&quot;settings&quot;:{&quot;slidesToShow&quot;:3}},{&quot;breakpoint&quot;:767,&quot;settings&quot;:{&quot;arrows&quot;:true,&quot;dots&quot;:false,&quot;slidesToShow&quot;:2,&quot;slidesToScroll&quot;:2}}]}">
+                            </product-category-products-component>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="widget-featured-banners py-5">
+                <div class="container-xxxl">
+                    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 justify-content-center">
+                        <div class="col">
+                            <div class="featured-banner-item img-fluid-eq my-2">
+                                <div class="img-fluid-eq__dummy"></div>
+                                <div class="img-fluid-eq__wrap">
+                                    <a href="https://farmart.botble.com/ads-click/IZ6WU8KUALYD" target="_blank"
+                                        rel="noreferrer noopener"><img
+                                            src="https://farmart.botble.com/storage/general/placeholder.png"
+                                            class="lazyload"
+                                            data-src="https://farmart.botble.com/storage/promotion/2.png"
+                                            alt="Homepage middle 1"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="featured-banner-item img-fluid-eq my-2">
+                                <div class="img-fluid-eq__dummy"></div>
+                                <div class="img-fluid-eq__wrap">
+                                    <a href="https://farmart.botble.com/ads-click/ILSFJVYFGCPZ" target="_blank"
+                                        rel="noreferrer noopener"><img
+                                            src="https://farmart.botble.com/storage/general/placeholder.png"
+                                            class="lazyload"
+                                            data-src="https://farmart.botble.com/storage/promotion/3.png"
+                                            alt="Homepage middle 2"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="featured-banner-item img-fluid-eq my-2">
+                                <div class="img-fluid-eq__dummy"></div>
+                                <div class="img-fluid-eq__wrap">
+                                    <a href="https://farmart.botble.com/ads-click/ZDOZUZZIU7FT" target="_blank"
+                                        rel="noreferrer noopener"><img
+                                            src="https://farmart.botble.com/storage/general/placeholder.png"
+                                            class="lazyload"
+                                            data-src="https://farmart.botble.com/storage/promotion/4.png"
+                                            alt="Homepage middle 3"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="widget-products-with-category py-5 bg-light">
+                <div class="container-xxxl">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row align-items-center mb-2 widget-header">
+                                <h2 class="col-auto mb-0 py-2">Featured products</h2>
+                            </div>
+                            <featured-products-component url="https://farmart.botble.com/ajax/featured-products"
+                                limit=""
+                                slick_config="{&quot;rtl&quot;:false,&quot;appendArrows&quot;:&quot;.arrows-wrapper&quot;,&quot;arrows&quot;:true,&quot;dots&quot;:false,&quot;autoplay&quot;:false,&quot;infinite&quot;:false,&quot;autoplaySpeed&quot;:3000,&quot;speed&quot;:800,&quot;slidesToShow&quot;:6,&quot;slidesToScroll&quot;:1,&quot;swipeToSlide&quot;:true,&quot;responsive&quot;:[{&quot;breakpoint&quot;:1400,&quot;settings&quot;:{&quot;slidesToShow&quot;:5}},{&quot;breakpoint&quot;:1199,&quot;settings&quot;:{&quot;slidesToShow&quot;:4}},{&quot;breakpoint&quot;:1024,&quot;settings&quot;:{&quot;slidesToShow&quot;:3}},{&quot;breakpoint&quot;:767,&quot;settings&quot;:{&quot;arrows&quot;:true,&quot;dots&quot;:false,&quot;slidesToShow&quot;:2,&quot;slidesToScroll&quot;:2}}]}">
+                            </featured-products-component>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="widget-products-with-category py-5 bg-light">
+                <div class="container-xxxl">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row align-items-center mb-2 widget-header">
+                                <h2 class="col-auto mb-0 py-2">Essential Products</h2>
+                            </div>
+                            <product-collections-component title="Essential Products"
+                                :product_collections="[{&quot;id&quot;:1,&quot;name&quot;:&quot;New Arrival&quot;,&quot;slug&quot;:&quot;new-arrival&quot;},{&quot;id&quot;:2,&quot;name&quot;:&quot;Best Sellers&quot;,&quot;slug&quot;:&quot;best-sellers&quot;},{&quot;id&quot;:3,&quot;name&quot;:&quot;Special Offer&quot;,&quot;slug&quot;:&quot;special-offer&quot;}]"
+                                url="https://farmart.botble.com/ajax/products" all="https://farmart.botble.com/products"
+                                slick_config="{&quot;rtl&quot;:false,&quot;appendArrows&quot;:&quot;.arrows-wrapper&quot;,&quot;arrows&quot;:true,&quot;dots&quot;:false,&quot;autoplay&quot;:false,&quot;infinite&quot;:false,&quot;autoplaySpeed&quot;:3000,&quot;speed&quot;:800,&quot;slidesToShow&quot;:6,&quot;slidesToScroll&quot;:1,&quot;swipeToSlide&quot;:true,&quot;responsive&quot;:[{&quot;breakpoint&quot;:1400,&quot;settings&quot;:{&quot;slidesToShow&quot;:5}},{&quot;breakpoint&quot;:1199,&quot;settings&quot;:{&quot;slidesToShow&quot;:4}},{&quot;breakpoint&quot;:1024,&quot;settings&quot;:{&quot;slidesToShow&quot;:3}},{&quot;breakpoint&quot;:767,&quot;settings&quot;:{&quot;arrows&quot;:true,&quot;dots&quot;:false,&quot;slidesToShow&quot;:2,&quot;slidesToScroll&quot;:2}}]}">
+                            </product-collections-component>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="widget-products-with-category py-5 bg-light">
+                <div class="container-xxxl">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row align-items-center mb-2 widget-header">
+                                <h2 class="col-auto mb-0 py-2">Cabbage, Spinach &amp; Greens</h2>
+                            </div>
+                            <product-category-products-component limit=""
+                                :category="{&quot;id&quot;:18,&quot;name&quot;:&quot;Cabbage, Spinach &amp; Greens&quot;,&quot;url&quot;:&quot;https:\/\/farmart.botble.com\/product-categories\/cabbage-spinach-greens&quot;,&quot;slug&quot;:&quot;cabbage-spinach-greens&quot;,&quot;image&quot;:&quot;https:\/\/farmart.botble.com\/vendor\/core\/core\/base\/images\/placeholder.png&quot;,&quot;thumbnail&quot;:&quot;https:\/\/farmart.botble.com\/vendor\/core\/core\/base\/images\/placeholder.png&quot;}"
+                                :children="[]" url="https://farmart.botble.com/ajax/product-categories/products"
+                                all="https://farmart.botble.com/product-categories/cabbage-spinach-greens"
+                                slick_config="{&quot;rtl&quot;:false,&quot;appendArrows&quot;:&quot;.arrows-wrapper&quot;,&quot;arrows&quot;:true,&quot;dots&quot;:false,&quot;autoplay&quot;:false,&quot;infinite&quot;:false,&quot;autoplaySpeed&quot;:3000,&quot;speed&quot;:800,&quot;slidesToShow&quot;:6,&quot;slidesToScroll&quot;:1,&quot;swipeToSlide&quot;:true,&quot;responsive&quot;:[{&quot;breakpoint&quot;:1400,&quot;settings&quot;:{&quot;slidesToShow&quot;:5}},{&quot;breakpoint&quot;:1199,&quot;settings&quot;:{&quot;slidesToShow&quot;:4}},{&quot;breakpoint&quot;:1024,&quot;settings&quot;:{&quot;slidesToShow&quot;:3}},{&quot;breakpoint&quot;:767,&quot;settings&quot;:{&quot;arrows&quot;:true,&quot;dots&quot;:false,&quot;slidesToShow&quot;:2,&quot;slidesToScroll&quot;:2}}]}">
+                            </product-category-products-component>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="widget-blog py-5 lazyload">
+                <div class="container-xxxl">
+                    <div class="row">
+                        <div class=" col-lg-8  py-4 py-lg-0">
+                            <div class="row justify-content-between align-items-center">
+                                <h2 class="col-auto mb-0 py-2">Health Daily</h2>
+                                <a class="col-auto" href="https://farmart.botble.com/blog">
+                                    <span class="link-text">All Articles
+                                        <span class="svg-icon">
+                                            <svg>
+                                                <use href="#svg-icon-chevron-right"
+                                                    xlink:href="#svg-icon-chevron-right"></use>
+                                            </svg>
+                                        </span>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="col slick-slides-carousel widget-blog-container"
+                                data-slick="{&quot;arrows&quot;:false,&quot;dots&quot;:false,&quot;autoplay&quot;:false,&quot;infinite&quot;:false,&quot;autoplaySpeed&quot;:3000,&quot;speed&quot;:800,&quot;slidesToShow&quot;:2,&quot;slidesToScroll&quot;:1,&quot;responsive&quot;:[{&quot;breakpoint&quot;:1024,&quot;settings&quot;:{&quot;slidesToShow&quot;:2}},{&quot;breakpoint&quot;:767,&quot;settings&quot;:{&quot;arrows&quot;:false,&quot;dots&quot;:true,&quot;slidesToShow&quot;:1}}]}">
+                                <article class="post-item-wrapper">
+                                    <div class="card post-item__inner">
+                                        <div class="row g-0">
+                                            <div class="col-md-4 post-item__image">
+                                                <a class="img-fluid-eq"
+                                                    href="https://farmart.botble.com/blog/4-expert-tips-on-how-to-choose-the-right-mens-wallet">
+                                                    <div class="img-fluid-eq__dummy"></div>
+                                                    <div class="img-fluid-eq__wrap">
+                                                        <img class="lazyload"
+                                                            alt="4 Expert Tips On How To Choose The Right Men’s Wallet"
+                                                            src="https://farmart.botble.com/storage/general/placeholder.png"
+                                                            data-src="https://farmart.botble.com/storage/news/1.jpg">
+                                                    </div>
+                                                </a></div>
+                                            <div class="col-md-8 post-item__content">
+                                                <div>
+                                                    <div class="entry-meta">
+                                                        <div class="entry-meta-author">
+                                                            <span>By</span>
+                                                            <strong>System Admin</strong>
+                                                        </div>
+                                                        <div class="entry-meta-categories">
+                                                            <span>in</span>
+                                                            <a
+                                                                href="https://farmart.botble.com/blog/fashion">Fashion</a>
+                                                        </div>
+                                                        <div class="entry-meta-date">
+                                                            <span>on</span>
+                                                            <time>Jun 14, 2022</time>
+                                                        </div>
+                                                    </div>
+                                                    <div class="entry-title mb-3 mt-2">
+                                                        <h4><a
+                                                                href="https://farmart.botble.com/blog/4-expert-tips-on-how-to-choose-the-right-mens-wallet">4
+                                                                Expert Tips On How To Choose The Right Men’s Wallet</a>
+                                                        </h4>
+                                                    </div>
+                                                    <div class="entry-description">
+                                                        <p>You should pay more attention when you choose your wallets.
+                                                            There are a lot of them on the market with...</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="post-item-wrapper">
+                                    <div class="card post-item__inner">
+                                        <div class="row g-0">
+                                            <div class="col-md-4 post-item__image">
+                                                <a class="img-fluid-eq"
+                                                    href="https://farmart.botble.com/blog/sexy-clutches-how-to-buy-wear-a-designer-clutch-bag">
+                                                    <div class="img-fluid-eq__dummy"></div>
+                                                    <div class="img-fluid-eq__wrap">
+                                                        <img class="lazyload"
+                                                            alt="Sexy Clutches: How to Buy &amp; Wear a Designer Clutch Bag"
+                                                            src="https://farmart.botble.com/storage/general/placeholder.png"
+                                                            data-src="https://farmart.botble.com/storage/news/2.jpg">
+                                                    </div>
+                                                </a></div>
+                                            <div class="col-md-8 post-item__content">
+                                                <div>
+                                                    <div class="entry-meta">
+                                                        <div class="entry-meta-author">
+                                                            <span>By</span>
+                                                            <strong>System Admin</strong>
+                                                        </div>
+                                                        <div class="entry-meta-categories">
+                                                            <span>in</span>
+                                                            <a
+                                                                href="https://farmart.botble.com/blog/fashion">Fashion</a>
+                                                        </div>
+                                                        <div class="entry-meta-date">
+                                                            <span>on</span>
+                                                            <time>Jun 14, 2022</time>
+                                                        </div>
+                                                    </div>
+                                                    <div class="entry-title mb-3 mt-2">
+                                                        <h4><a
+                                                                href="https://farmart.botble.com/blog/sexy-clutches-how-to-buy-wear-a-designer-clutch-bag">Sexy
+                                                                Clutches: How to Buy &amp; Wear a Designer Clutch
+                                                                Bag</a></h4>
+                                                    </div>
+                                                    <div class="entry-description">
+                                                        <p>You should pay more attention when you choose your wallets.
+                                                            There are a lot of them on the market with...</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 py-4 py-lg-0">
+                            <div class="widget-wrapper widget-mobile-apps h-100 lazyload"
+                                data-bg="https://farmart.botble.com/storage/general/app-bg.png">
+                                <div class="widget-header text-center me-0">
+                                    <h2>Shop faster with Farmart App</h2>
+                                </div>
+                                <div class="widget-subtitle text-center">
+                                    <p class="my-3">Available on both iOS &amp; Android</p>
+                                    <div>
+                                        <a href="#">
+                                            <img class="my-4 mx-2 lazyload"
+                                                data-src="https://farmart.botble.com/storage/general/app-ios.png">
+                                        </a>
+                                        <a href="#">
+                                            <img class="my-4 mx-2 lazyload"
+                                                data-src="https://farmart.botble.com/storage/general/app-android.png">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <footer id="footer">
+        <div class="footer-info border-top">
+            <div class="container-xxxl py-3">
+                <div class="row row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-2 justify-content-center my-4 g-2">
+                    <div class="col py-2">
+                        <div class="site-info__item d-flex align-items-center">
+                            <div class="site-info__image me-3">
+                                <img class="lazyload"
+                                    data-src="https://farmart.botble.com/storage/general/icon-rocket.png"
+                                    alt="Free Shipping">
+                            </div>
+                            <div class="site-info__content">
+                                <div class="site-info__title h4 fw-bold">Free Shipping</div>
+                                <div class="site-info__desc">For all orders over $200</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col py-2">
+                        <div class="site-info__item d-flex align-items-center">
+                            <div class="site-info__image me-3">
+                                <img class="lazyload"
+                                    data-src="https://farmart.botble.com/storage/general/icon-reload.png"
+                                    alt="1 &amp; 1 Returns">
+                            </div>
+                            <div class="site-info__content">
+                                <div class="site-info__title h4 fw-bold">1 &amp; 1 Returns</div>
+                                <div class="site-info__desc">Cancellation after 1 day</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col py-2">
+                        <div class="site-info__item d-flex align-items-center">
+                            <div class="site-info__image me-3">
+                                <img class="lazyload"
+                                    data-src="https://farmart.botble.com/storage/general/icon-protect.png"
+                                    alt="100% Secure Payment">
+                            </div>
+                            <div class="site-info__content">
+                                <div class="site-info__title h4 fw-bold">100% Secure Payment</div>
+                                <div class="site-info__desc">Guarantee secure payments</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col py-2">
+                        <div class="site-info__item d-flex align-items-center">
+                            <div class="site-info__image me-3">
+                                <img class="lazyload"
+                                    data-src="https://farmart.botble.com/storage/general/icon-support.png"
+                                    alt="24/7 Dedicated Support">
+                            </div>
+                            <div class="site-info__content">
+                                <div class="site-info__title h4 fw-bold">24/7 Dedicated Support</div>
+                                <div class="site-info__desc">Anywhere &amp; anytime</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col py-2">
+                        <div class="site-info__item d-flex align-items-center">
+                            <div class="site-info__image me-3">
+                                <img class="lazyload" data-src="https://farmart.botble.com/storage/general/icon-tag.png"
+                                    alt="Daily Offers">
+                            </div>
+                            <div class="site-info__content">
+                                <div class="site-info__title h4 fw-bold">Daily Offers</div>
+                                <div class="site-info__desc">Discount up to 70% OFF</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-widgets">
+            <div class="container-xxxl">
+                <div class="row border-top py-5">
+                    <div class="col-xl-3">
+                        <div class="widget mb-5 mb-md-0">
+                            <h5 class="fw-bold widget-title mb-4">Farmart – Your Online Foods &amp; Grocery</h5>
+                            <div class="widget-description mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                elit. Sed finibus viverra iaculis. Etiam vulputate et justo eget scelerisque.</div>
+                            <ul class="ps-0 mt-3 mb-0">
+                                <li class="py-2">
+                                    <span class="svg-icon me-2">
+                                        <svg>
+                                            <use href="#svg-icon-phone" xlink:href="#svg-icon-phone"></use>
+                                        </svg>
+                                    </span>
+                                    <span>Hotline 24/7:
+                                        <h4 class="ms-4 mt-2"><a href="tel:(+965) 7492-4277">(+965) 7492-4277</a></h4>
+                                    </span>
+                                </li>
+                                <li class="py-2">
+                                    <span class="svg-icon me-2">
+                                        <svg>
+                                            <use href="#svg-icon-home" xlink:href="#svg-icon-home"></use>
+                                        </svg>
+                                    </span>
+                                    <span>959 Homestead Street Eastlake, NYC</span>
+                                </li>
+                                <li class="py-2">
+                                    <span class="svg-icon me-2">
+                                        <svg>
+                                            <use href="#svg-icon-mail" xlink:href="#svg-icon-mail"></use>
+                                        </svg>
+                                    </span>
+                                    <span><a
+                                            href="/cdn-cgi/l/email-protection#0b787e7b7b64797f4b6d6a79666a797f25686466"><span
+                                                class="__cf_email__"
+                                                data-cfemail="5724222727382523173136253a3625237934383a">[email&#160;protected]</span></a></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-2">
+                        <div class="col mb-5">
+                            <div class="widget widget-custom-menu">
+                                <h5 class="fw-bold widget-title mb-4">Useful Links</h5>
+                                <ul class="ps-0">
+                                    <li>
+                                        <a href="https://farmart.botble.com/terms-of-use">
+                                            <span>Terms Of Use</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://farmart.botble.com/terms-conditions">
+                                            <span>Terms &amp; Conditions</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://farmart.botble.com/refund-policy">
+                                            <span>Refund Policy</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://farmart.botble.com/faqs">
+                                            <span>FAQs</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://farmart.botble.com/nothing">
+                                            <span>404 Page</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2">
+                        <div class="col mb-5">
+                            <div class="widget widget-custom-menu">
+                                <h5 class="fw-bold widget-title mb-4">Help Center</h5>
+                                <ul class="ps-0">
+                                    <li>
+                                        <a href="https://farmart.botble.com/about-us">
+                                            <span>About us</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://farmart.botble.com/affiliate">
+                                            <span>Affiliate</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://farmart.botble.com/career">
+                                            <span>Career</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://farmart.botble.com/contact">
+                                            <span>Contact us</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2">
+                        <div class="col mb-5">
+                            <div class="widget widget-custom-menu">
+                                <h5 class="fw-bold widget-title mb-4">Business</h5>
+                                <ul class="ps-0">
+                                    <li>
+                                        <a href="https://farmart.botble.com/blog">
+                                            <span>Our blog</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://farmart.botble.com/cart">
+                                            <span>Cart</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://farmart.botble.com/customer/overview">
+                                            <span>My account</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://farmart.botble.com/products">
+                                            <span>Shop</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3">
+                        <div class="widget mb-5">
+                            <h4 class="fw-bold widget-title mb-4">Newsletter</h4>
+                            <div class="widget-description pb-3 mb-4">Register now to get updates on promotions and
+                                coupon. Don’t worry! We not spam</div>
+                            <div class="form-widget">
+                                <form class="subscribe-form" method="POST"
+                                    action="https://farmart.botble.com/newsletter/subscribe">
+                                    <input type="hidden" name="_token" value="yeftDDC2qQST3d9gNxKOIJojRKfL2gQ9ZUeSxpwh">
+                                    <div class="form-fields">
+                                        <div class="input-group">
+                                            <div class="input-group-text">
+                                                <span class="svg-icon">
+                                                    <svg>
+                                                        <use href="#svg-icon-mail" xlink:href="#svg-icon-mail"></use>
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                            <input class="form-control shadow-none" name="email" type="email"
+                                                placeholder="Your email...">
+                                            <button class="btn btn-outline-secondary" type="submit">Subscribe</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-xxxl">
+            <div class="footer__links" id="footer-links">
+                <footer-product-categories-component name="Consumer Electric"
+                    url="https://farmart.botble.com/ajax/get-product-categories?categories%5B0%5D=18&amp;categories%5B1%5D=2&amp;categories%5B2%5D=3&amp;categories%5B3%5D=4&amp;categories%5B4%5D=5&amp;categories%5B5%5D=6&amp;categories%5B6%5D=7">
+                </footer-product-categories-component>
+                <footer-product-categories-component name="Clothing &amp; Apparel"
+                    url="https://farmart.botble.com/ajax/get-product-categories?categories%5B0%5D=8&amp;categories%5B1%5D=9&amp;categories%5B2%5D=10&amp;categories%5B3%5D=11&amp;categories%5B4%5D=12">
+                </footer-product-categories-component>
+                <footer-product-categories-component name="Home, Garden &amp; Kitchen"
+                    url="https://farmart.botble.com/ajax/get-product-categories?categories%5B0%5D=13&amp;categories%5B1%5D=14&amp;categories%5B2%5D=15&amp;categories%5B3%5D=16&amp;categories%5B4%5D=17">
+                </footer-product-categories-component>
+                <footer-product-categories-component name="Health &amp; Beauty"
+                    url="https://farmart.botble.com/ajax/get-product-categories?categories%5B0%5D=20&amp;categories%5B1%5D=21&amp;categories%5B2%5D=22&amp;categories%5B3%5D=23&amp;categories%5B4%5D=24">
+                </footer-product-categories-component>
+                <footer-product-categories-component name="Computer &amp; Technologies"
+                    url="https://farmart.botble.com/ajax/get-product-categories?categories%5B0%5D=25&amp;categories%5B1%5D=26&amp;categories%5B2%5D=27&amp;categories%5B3%5D=28&amp;categories%5B4%5D=29&amp;categories%5B5%5D=19">
+                </footer-product-categories-component>
+            </div>
+        </div>
+        <div class="container-xxxl">
+            <div class="row border-top py-4">
+                <div class="col-lg-3 col-md-4 py-3">
+                    <div class="copyright d-flex justify-content-center justify-content-md-start">
+                        <span>© 2022 Farmart. All Rights Reserved.</span>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-4 py-3">
+                    <div class="footer-payments d-flex justify-content-center">
+                        <img class="lazyload" data-src="https://farmart.botble.com/storage/general/footer-payments.png"
+                            alt="footer-payments">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 py-3">
+                    <div class="footer-socials d-flex justify-content-md-end justify-content-center">
+                        <p class="me-3 mb-0">Stay connected:</p>
+                        <div class="footer-socials-container">
+                            <ul class="ps-0 mb-0">
+                                <li class="d-inline-block ps-1 my-1">
+                                    <a target="_blank" href="https://www.facebook.com/" title="Facebook">
+                                        <img class="lazyload"
+                                            data-src="https://farmart.botble.com/storage/general/facebook.png"
+                                            alt="Facebook" />
+                                    </a>
+                                </li>
+                                <li class="d-inline-block ps-1 my-1">
+                                    <a target="_blank" href="https://www.twitter.com/" title="Twitter">
+                                        <img class="lazyload"
+                                            data-src="https://farmart.botble.com/storage/general/twitter.png"
+                                            alt="Twitter" />
+                                    </a>
+                                </li>
+                                <li class="d-inline-block ps-1 my-1">
+                                    <a target="_blank" href="https://www.instagram.com/" title="Instagram">
+                                        <img class="lazyload"
+                                            data-src="https://farmart.botble.com/storage/general/instagram.png"
+                                            alt="Instagram" />
+                                    </a>
+                                </li>
+                                <li class="d-inline-block ps-1 my-1">
+                                    <a target="_blank" href="https://www.pinterest.com/" title="Pinterest">
+                                        <img class="lazyload"
+                                            data-src="https://farmart.botble.com/storage/general/pinterest.png"
+                                            alt="Pinterest" />
+                                    </a>
+                                </li>
+                                <li class="d-inline-block ps-1 my-1">
+                                    <a target="_blank" href="https://www.youtube.com/" title="Youtube">
+                                        <img class="lazyload"
+                                            data-src="https://farmart.botble.com/storage/general/youtube.png"
+                                            alt="Youtube" />
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="panel--sidebar" id="navigation-mobile">
+        <div class="panel__header">
+            <span class="svg-icon close-toggle--sidebar">
+                <svg>
+                    <use href="#svg-icon-arrow-left" xlink:href="#svg-icon-arrow-left"></use>
+                </svg>
+            </span>
+            <h3>Categories</h3>
+        </div>
+        <div class="panel__content">
+            <ul class="menu--mobile">
+                <li class="menu-item-has-children has-mega-menu">
+                    <a href="https://farmart.botble.com/product-categories/fruits-vegetables">
+                        <i class="icon-star"></i>
+                        <span class="ms-1">Fruits &amp; Vegetables</span>
+                        <span class="sub-toggle">
+                            <span class="svg-icon">
+                                <svg>
+                                    <use href="#svg-icon-chevron-right" xlink:href="#svg-icon-chevron-right"></use>
+                                </svg>
+                            </span>
+                        </span>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu__column">
+                            <a href="https://farmart.botble.com/product-categories/fruits">
+                                <h4>Fruits</h4>
+                                <span class="sub-toggle">
+                                    <span class="svg-icon">
+                                        <svg>
+                                            <use href="#svg-icon-chevron-right" xlink:href="#svg-icon-chevron-right">
+                                            </use>
+                                        </svg>
+                                    </span>
+                                </span>
+                            </a>
+                            <ul class="mega-menu__list">
+                                <li><a href="https://farmart.botble.com/product-categories/apples">Apples</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/bananas">Bananas</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/berries">Berries</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/oranges-easy-peelers">Oranges
+                                        &amp; Easy Peelers</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/grapes">Grapes</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/lemons-limes">Lemons &amp;
+                                        Limes</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/peaches-nectarines">Peaches
+                                        &amp; Nectarines</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/pears">Pears</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/melon">Melon</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/avocados">Avocados</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/plums-apricots">Plums &amp;
+                                        Apricots</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu__column">
+                            <a href="https://farmart.botble.com/product-categories/vegetables">
+                                <h4>Vegetables</h4>
+                                <span class="sub-toggle">
+                                    <span class="svg-icon">
+                                        <svg>
+                                            <use href="#svg-icon-chevron-right" xlink:href="#svg-icon-chevron-right">
+                                            </use>
+                                        </svg>
+                                    </span>
+                                </span>
+                            </a>
+                            <ul class="mega-menu__list">
+                                <li><a href="https://farmart.botble.com/product-categories/potatoes">Potatoes</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/carrots-root-vegetables">Carrots
+                                        &amp; Root Vegetables</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/broccoli-cauliflower">Broccoli
+                                        &amp; Cauliflower</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/cabbage-spinach-greens">Cabbage,
+                                        Spinach &amp; Greens</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/onions-leeks-garlic">Onions,
+                                        Leeks &amp; Garlic</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/mushrooms">Mushrooms</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/tomatoes">Tomatoes</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/beans-peas-sweetcorn">Beans,
+                                        Peas &amp; Sweetcorn</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/freshly-drink-orange-juice">Freshly
+                                        Drink Orange Juice</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="menu-item-has-children has-mega-menu">
+                    <a href="https://farmart.botble.com/product-categories/breads-sweets">
+                        <i class="icon-bread"></i>
+                        <span class="ms-1">Breads Sweets</span>
+                        <span class="sub-toggle">
+                            <span class="svg-icon">
+                                <svg>
+                                    <use href="#svg-icon-chevron-right" xlink:href="#svg-icon-chevron-right"></use>
+                                </svg>
+                            </span>
+                        </span>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu__column">
+                            <a href="https://farmart.botble.com/product-categories/crisps-snacks-nuts">
+                                <h4>Crisps, Snacks &amp; Nuts</h4>
+                                <span class="sub-toggle">
+                                    <span class="svg-icon">
+                                        <svg>
+                                            <use href="#svg-icon-chevron-right" xlink:href="#svg-icon-chevron-right">
+                                            </use>
+                                        </svg>
+                                    </span>
+                                </span>
+                            </a>
+                            <ul class="mega-menu__list">
+                                <li><a href="https://farmart.botble.com/product-categories/crisps-popcorn">Crisps &amp;
+                                        Popcorn</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/nuts-seeds">Nuts &amp;
+                                        Seeds</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/lighter-options">Lighter
+                                        Options</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/cereal-bars">Cereal Bars</a>
+                                </li>
+                                <li><a href="https://farmart.botble.com/product-categories/breadsticks-pretzels">Breadsticks
+                                        &amp; Pretzels</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/fruit-snacking">Fruit
+                                        Snacking</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/rice-corn-cakes">Rice &amp;
+                                        Corn Cakes</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/protein-energy-snacks">Protein
+                                        &amp; Energy Snacks</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/toddler-snacks">Toddler
+                                        Snacks</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/meat-snacks">Meat Snacks</a>
+                                </li>
+                                <li><a href="https://farmart.botble.com/product-categories/beans">Beans</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/lentils">Lentils</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/chickpeas">Chickpeas</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu__column">
+                            <a href="https://farmart.botble.com/product-categories/tins-cans">
+                                <h4>Tins &amp; Cans</h4>
+                                <span class="sub-toggle">
+                                    <span class="svg-icon">
+                                        <svg>
+                                            <use href="#svg-icon-chevron-right" xlink:href="#svg-icon-chevron-right">
+                                            </use>
+                                        </svg>
+                                    </span>
+                                </span>
+                            </a>
+                            <ul class="mega-menu__list">
+                                <li><a href="https://farmart.botble.com/product-categories/tomatoes">Tomatoes</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/baked-beans-spaghetti">Baked
+                                        Beans, Spaghetti</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/fish">Fish</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/beans-pulses">Beans &amp;
+                                        Pulses</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/fruit">Fruit</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/coconut-milk-cream">Coconut
+                                        Milk &amp; Cream</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/lighter-options">Lighter
+                                        Options</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/olives">Olives</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/sweetcorn">Sweetcorn</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/carrots">Carrots</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/peas">Peas</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/mixed-vegetables">Mixed
+                                        Vegetables</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://farmart.botble.com/product-categories/frozen-seafoods">
+                        <i class="icon-hamburger"></i>
+                        <span class="ms-1">Frozen Seafoods</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://farmart.botble.com/product-categories/raw-meats">
+                        <i class="icon-steak"></i>
+                        <span class="ms-1">Raw Meats</span>
+                    </a>
+                </li>
+                <li class="menu-item-has-children has-mega-menu">
+                    <a href="https://farmart.botble.com/product-categories/wines-alcohol-drinks">
+                        <i class="icon-glass"></i>
+                        <span class="ms-1">Wines &amp; Alcohol Drinks</span>
+                        <span class="sub-toggle">
+                            <span class="svg-icon">
+                                <svg>
+                                    <use href="#svg-icon-chevron-right" xlink:href="#svg-icon-chevron-right"></use>
+                                </svg>
+                            </span>
+                        </span>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu__column">
+                            <a href="https://farmart.botble.com/product-categories/ready-meals">
+                                <h4>Ready Meals</h4>
+                                <span class="sub-toggle">
+                                    <span class="svg-icon">
+                                        <svg>
+                                            <use href="#svg-icon-chevron-right" xlink:href="#svg-icon-chevron-right">
+                                            </use>
+                                        </svg>
+                                    </span>
+                                </span>
+                            </a>
+                            <ul class="mega-menu__list">
+                                <li><a href="https://farmart.botble.com/product-categories/meals-for-1">Meals for 1</a>
+                                </li>
+                                <li><a href="https://farmart.botble.com/product-categories/meals-for-2">Meals for 2</a>
+                                </li>
+                                <li><a href="https://farmart.botble.com/product-categories/indian">Indian</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/italian">Italian</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/chinese">Chinese</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/traditional-british">Traditional
+                                        British</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/thai-oriental">Thai &amp;
+                                        Oriental</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/mediterranean-moroccan">Mediterranean
+                                        &amp; Moroccan</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/mexican-caribbean">Mexican
+                                        &amp; Caribbean</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/lighter-meals">Lighter
+                                        Meals</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/lunch-veg-pots">Lunch &amp;
+                                        Veg Pots</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu__column">
+                            <a href="https://farmart.botble.com/product-categories/salad-herbs">
+                                <h4>Salad &amp; Herbs</h4>
+                                <span class="sub-toggle">
+                                    <span class="svg-icon">
+                                        <svg>
+                                            <use href="#svg-icon-chevron-right" xlink:href="#svg-icon-chevron-right">
+                                            </use>
+                                        </svg>
+                                    </span>
+                                </span>
+                            </a>
+                            <ul class="mega-menu__list">
+                                <li><a href="https://farmart.botble.com/product-categories/salad-bags">Salad Bags</a>
+                                </li>
+                                <li><a href="https://farmart.botble.com/product-categories/cucumber">Cucumber</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/tomatoes">Tomatoes</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/lettuce">Lettuce</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/lunch-salad-bowls">Lunch
+                                        Salad Bowls</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/lunch-salad-bowls">Lunch
+                                        Salad Bowls</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/fresh-herbs">Fresh Herbs</a>
+                                </li>
+                                <li><a href="https://farmart.botble.com/product-categories/avocados">Avocados</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/peppers">Peppers</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/coleslaw-potato-salad">Coleslaw
+                                        &amp; Potato Salad</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/spring-onions">Spring
+                                        Onions</a></li>
+                                <li><a href="https://farmart.botble.com/product-categories/chilli-ginger-garlic">Chilli,
+                                        Ginger &amp; Garlic</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://farmart.botble.com/product-categories/tea-coffee">
+                        <i class="icon-teacup"></i>
+                        <span class="ms-1">Tea &amp; Coffee</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://farmart.botble.com/product-categories/milks-and-dairies">
+                        <i class="icon-coffee-cup"></i>
+                        <span class="ms-1">Milks and Dairies</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://farmart.botble.com/product-categories/pet-foods">
+                        <i class="icon-hotdog"></i>
+                        <span class="ms-1">Pet Foods</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://farmart.botble.com/product-categories/food-cupboard">
+                        <i class="icon-cheese"></i>
+                        <span class="ms-1">Food Cupboard</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="panel--sidebar" id="menu-mobile">
+        <div class="panel__header">
+            <span class="svg-icon close-toggle--sidebar">
+                <svg>
+                    <use href="#svg-icon-arrow-left" xlink:href="#svg-icon-arrow-left"></use>
+                </svg>
+            </span>
+            <h3>Menu</h3>
+        </div>
+        <div class="panel__content">
+            <ul class="menu--mobile">
+                <li>
+                    <a href="https://farmart.botble.com/products/smart-watches">
+                        <i class="icon icon-flash-auto"></i> Special Prices
+                    </a>
+                </li>
+                <li class=" menu-item-has-children   ">
+                    <a href="#">
+                        Pages
+                        <span class="sub-toggle">
+                            <span class="svg-icon">
+                                <svg>
+                                    <use href="#svg-icon-chevron-down" xlink:href="#svg-icon-chevron-down"></use>
+                                </svg>
+                            </span>
+                        </span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="https://farmart.botble.com/about-us">
+                                About us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://farmart.botble.com/terms-of-use">
+                                Terms Of Use
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://farmart.botble.com/terms-conditions">
+                                Terms &amp; Conditions
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://farmart.botble.com/refund-policy">
+                                Refund Policy
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://farmart.botble.com/coming-soon">
+                                Coming soon
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" menu-item-has-children   ">
+                    <a href="https://farmart.botble.com/products">
+                        Shop
+                        <span class="sub-toggle">
+                            <span class="svg-icon">
+                                <svg>
+                                    <use href="#svg-icon-chevron-down" xlink:href="#svg-icon-chevron-down"></use>
+                                </svg>
+                            </span>
+                        </span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="https://farmart.botble.com/products">
+                                All products
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://farmart.botble.com/product-categories/potatoes">
+                                Products Of Category
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://farmart.botble.com/products/beat-headphone">
+                                Product Single
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="https://farmart.botble.com/stores">
+                        Stores
+                    </a>
+                </li>
+                <li>
+                    <a href="https://farmart.botble.com/blog">
+                        Blog
+                    </a>
+                </li>
+                <li>
+                    <a href="https://farmart.botble.com/faqs">
+                        FAQs
+                    </a>
+                </li>
+                <li>
+                    <a href="https://farmart.botble.com/contact">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+            <ul class="menu--mobile">
+                <li>
+                    <a href="https://farmart.botble.com/about-us">
+                        About Us
+                    </a>
+                </li>
+                <li>
+                    <a href="https://farmart.botble.com/wishlist">
+                        Wishlist
+                    </a>
+                </li>
+                <li>
+                    <a href="https://farmart.botble.com/orders/tracking">
+                        Order Tracking
+                    </a>
+                </li>
+            </ul>
+            <ul class="menu--mobile">
+                <li class="menu-item-has-children">
+                    <a href="#">
+                        <span>USD</span>
+                        <span class="sub-toggle">
+                            <span class="svg-icon">
+                                <svg>
+                                    <use href="#svg-icon-chevron-down" xlink:href="#svg-icon-chevron-down"></use>
+                                </svg>
+                            </span>
+                        </span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="https://farmart.botble.com/currency/switch/EUR"><span>EUR</span></a></li>
+                        <li><a href="https://farmart.botble.com/currency/switch/VND"><span>VND</span></a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="#">
+                        <img src="https://farmart.botble.com/vendor/core/core/base/images/flags/us.svg" title="English"
+                            width="16" alt="English">
+                        English
+                        <span class="sub-toggle">
+                            <span class="svg-icon">
+                                <svg>
+                                    <use href="#svg-icon-chevron-down" xlink:href="#svg-icon-chevron-down"></use>
+                                </svg>
+                            </span>
+                        </span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="https://farmart.botble.com/vi">
+                                <img src="https://farmart.botble.com/vendor/core/core/base/images/flags/vn.svg"
+                                    title="Tiếng Việt" width="16" alt="Tiếng Việt"> <span>Tiếng Việt</span> </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="panel--sidebar panel--sidebar__right" id="search-mobile">
+        <div class="panel__header">
+            <form class="form--quick-search w-100" action="https://farmart.botble.com/products"
+                data-ajax-url="https://farmart.botble.com/ajax/search-products" method="get">
+                <div class="search-inner-content">
+                    <div class="text-search">
+                        <div class="search-wrapper">
+                            <input class="search-field input-search-product" name="q" type="text"
+                                placeholder="Search something..." autocomplete="off">
+                            <button class="btn" type="submit">
+                                <span class="svg-icon">
+                                    <svg>
+                                        <use href="#svg-icon-search" xlink:href="#svg-icon-search"></use>
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
+                        <a class="close-search-panel close-toggle--sidebar" href="#">
+                            <span class="svg-icon">
+                                <svg>
+                                    <use href="#svg-icon-times" xlink:href="#svg-icon-times"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="panel--search-result"></div>
+            </form>
+        </div>
+    </div>
+    <div class="footer-mobile">
+        <ul class="menu--footer">
+            <li>
+                <a href="https://farmart.botble.com">
+                    <i class="icon-home3"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a class="toggle--sidebar" href="#navigation-mobile">
+                    <i class="icon-list"></i>
+                    <span>Category</span>
+                </a>
+            </li>
+            <li>
+                <a class="toggle--sidebar" href="#cart-mobile">
+                    <i class="icon-cart">
+                        <span class="cart-counter">0</span>
+                    </i>
+                    <span>Cart</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://farmart.botble.com/wishlist">
+                    <i class="icon-heart"></i>
+                    <span>Wishlist</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://farmart.botble.com/customer/overview">
+                    <i class="icon-user"></i>
+                    <span>Account</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="modal fade" id="product-quick-view-modal" tabindex="-1" aria-labelledby="product-quick-view-label"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-xl">
+            <div class="modal-content position-relative">
+                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-body">
+                    <div class="product-modal-content py-5">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-loading"></div>
+    </div>
+    <div class="toast position-fixed end-0 m-3" id="toast-notifications" role="alert" aria-live="assertive"
+        aria-atomic="true" data-bs-delay="10000" style="z-index: 9999">
+        <div class="d-flex">
+            <div class="toast-body d-flex align-items-center">
+                <i class="mx-2 icon-"></i>
+                <div class="toast-message text-break"></div>
+            </div>
+            <button class="btn-close m-2 p-3 m-auto me-2" type="button" data-bs-dismiss="toast"
+                aria-label="Close"></button>
+        </div>
+    </div>
+    <div class="panel-overlay-layer"></div>
+    <div id="back2top">
+        <span class="svg-icon">
+            <svg>
+                <use href="#svg-icon-arrow-up" xlink:href="#svg-icon-arrow-up"></use>
+            </svg>
+        </span>
+    </div>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script type="b33e4263afc5606e2221b1ae-text/javascript">
+        'use strict';
 
-    <script src="../../../assets/js/core/popper.min.js"></script>
-    <script src="../../../assets/js/core/bootstrap.min.js"></script>
-    <script src="../../../assets/js/plugins/perfect-scrollbar.min.js"></script>
-    <script src="../../../assets/js/plugins/smooth-scrollbar.min.js"></script>
-    <script src="../../../assets/js/plugins/choices.min.js"></script>
-    <script src="../../../assets/js/plugins/photoswipe.min.js"></script>
-    <script src="../../../assets/js/plugins/photoswipe-ui-default.min.js"></script>
-    <script>
-        if (document.getElementById('choices-quantity')) {
-            var element = document.getElementById('choices-quantity');
-            const example = new Choices(element, {
-                searchEnabled: false,
-                itemSelectText: ''
-            });
-        };
-
-        if (document.getElementById('choices-material')) {
-            var element = document.getElementById('choices-material');
-            const example = new Choices(element, {
-                searchEnabled: false,
-                itemSelectText: ''
-            });
-        };
-
-        if (document.getElementById('choices-colors')) {
-            var element = document.getElementById('choices-colors');
-            const example = new Choices(element, {
-                searchEnabled: false,
-                itemSelectText: ''
-            });
-        };
-
-        // Gallery Carousel
-        if (document.getElementById('products-carousel')) {
-            var myCarousel = document.querySelector('#products-carousel')
-            var carousel = new bootstrap.Carousel(myCarousel)
+        window.trans = {
+            "View All": "View All",
+            "No reviews!": "No reviews!",
         }
 
-
-        // Products gallery
-
-        var initPhotoSwipeFromDOM = function (gallerySelector) {
-
-            // parse slide data (url, title, size ...) from DOM elements
-            // (children of gallerySelector)
-            var parseThumbnailElements = function (el) {
-                var thumbElements = el.childNodes,
-                    numNodes = thumbElements.length,
-                    items = [],
-                    figureEl,
-                    linkEl,
-                    size,
-                    item;
-
-                for (var i = 0; i < numNodes; i++) {
-
-                    figureEl = thumbElements[i]; // <figure> element
-                    // include only element nodes
-                    if (figureEl.nodeType !== 1) {
-                        continue;
-                    }
-
-                    linkEl = figureEl.children[0]; // <a> element
-
-                    size = linkEl.getAttribute('data-size').split('x');
-
-                    // create slide object
-                    item = {
-                        src: linkEl.getAttribute('href'),
-                        w: parseInt(size[0], 10),
-                        h: parseInt(size[1], 10)
-                    };
-
-                    if (figureEl.children.length > 1) {
-                        // <figcaption> content
-                        item.title = figureEl.children[1].innerHTML;
-                    }
-
-                    if (linkEl.children.length > 0) {
-                        // <img> thumbnail element, retrieving thumbnail url
-                        item.msrc = linkEl.children[0].getAttribute('src');
-                    }
-
-                    item.el = figureEl; // save link to element for getThumbBoundsFn
-                    items.push(item);
-                }
-
-                return items;
-            };
-
-            // find nearest parent element
-            var closest = function closest(el, fn) {
-                return el && (fn(el) ? el : closest(el.parentNode, fn));
-            };
-
-            // triggers when user clicks on thumbnail
-            var onThumbnailsClick = function (e) {
-                e = e || window.event;
-                e.preventDefault ? e.preventDefault() : e.returnValue = false;
-
-                var eTarget = e.target || e.srcElement;
-
-                // find root element of slide
-                var clickedListItem = closest(eTarget, function (el) {
-                    return (el.tagName && el.tagName.toUpperCase() === 'FIGURE');
-                });
-
-                if (!clickedListItem) {
-                    return;
-                }
-
-                // find index of clicked item by looping through all child nodes
-                // alternatively, you may define index via data- attribute
-                var clickedGallery = clickedListItem.parentNode,
-                    childNodes = clickedListItem.parentNode.childNodes,
-                    numChildNodes = childNodes.length,
-                    nodeIndex = 0,
-                    index;
-
-                for (var i = 0; i < numChildNodes; i++) {
-                    if (childNodes[i].nodeType !== 1) {
-                        continue;
-                    }
-
-                    if (childNodes[i] === clickedListItem) {
-                        index = nodeIndex;
-                        break;
-                    }
-                    nodeIndex++;
-                }
-
-
-
-                if (index >= 0) {
-                    // open PhotoSwipe if valid index found
-                    openPhotoSwipe(index, clickedGallery);
-                }
-                return false;
-            };
-
-            // parse picture index and gallery index from URL (#&pid=1&gid=2)
-            var photoswipeParseHash = function () {
-                var hash = window.location.hash.substring(1),
-                    params = {};
-
-                if (hash.length < 5) {
-                    return params;
-                }
-
-                var vars = hash.split('&');
-                for (var i = 0; i < vars.length; i++) {
-                    if (!vars[i]) {
-                        continue;
-                    }
-                    var pair = vars[i].split('=');
-                    if (pair.length < 2) {
-                        continue;
-                    }
-                    params[pair[0]] = pair[1];
-                }
-
-                if (params.gid) {
-                    params.gid = parseInt(params.gid, 10);
-                }
-
-                return params;
-            };
-
-            var openPhotoSwipe = function (index, galleryElement, disableAnimation, fromURL) {
-                var pswpElement = document.querySelectorAll('.pswp')[0],
-                    gallery,
-                    options,
-                    items;
-
-                items = parseThumbnailElements(galleryElement);
-
-                // define options (if needed)
-                options = {
-
-                    // define gallery index (for URL)
-                    galleryUID: galleryElement.getAttribute('data-pswp-uid'),
-
-                    getThumbBoundsFn: function (index) {
-                        // See Options -> getThumbBoundsFn section of documentation for more info
-                        var thumbnail = items[index].el.getElementsByTagName('img')[
-                            0], // find thumbnail
-                            pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
-                            rect = thumbnail.getBoundingClientRect();
-
-                        return {
-                            x: rect.left,
-                            y: rect.top + pageYScroll,
-                            w: rect.width
-                        };
-                    }
-
-                };
-
-                // PhotoSwipe opened from URL
-                if (fromURL) {
-                    if (options.galleryPIDs) {
-                        // parse real index when custom PIDs are used
-                        // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
-                        for (var j = 0; j < items.length; j++) {
-                            if (items[j].pid == index) {
-                                options.index = j;
-                                break;
-                            }
-                        }
-                    } else {
-                        // in URL indexes start from 1
-                        options.index = parseInt(index, 10) - 1;
-                    }
-                } else {
-                    options.index = parseInt(index, 10);
-                }
-
-                // exit if index not found
-                if (isNaN(options.index)) {
-                    return;
-                }
-
-                if (disableAnimation) {
-                    options.showAnimationDuration = 0;
-                }
-
-                // Pass data to PhotoSwipe and initialize it
-                gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
-                gallery.init();
-            };
-
-            // loop through all gallery elements and bind events
-            var galleryElements = document.querySelectorAll(gallerySelector);
-
-            for (var i = 0, l = galleryElements.length; i < l; i++) {
-                galleryElements[i].setAttribute('data-pswp-uid', i + 1);
-                galleryElements[i].onclick = onThumbnailsClick;
-            }
-
-            // Parse URL and open gallery if it contains #&pid=3&gid=1
-            var hashData = photoswipeParseHash();
-            if (hashData.pid && hashData.gid) {
-                openPhotoSwipe(hashData.pid, galleryElements[hashData.gid - 1], true, true);
+        window.siteConfig = {
+            "url": "https://farmart.botble.com",
+            "img_placeholder": "https://farmart.botble.com/storage/general/placeholder.png",
+            "countdown_text": {
+                "days": "days",
+                "hours": "hours",
+                "minutes": "mins",
+                "seconds": "secs"
             }
         };
 
-        // execute above function
-        initPhotoSwipeFromDOM('.my-gallery');
+        siteConfig.ajaxCart = "https://farmart.botble.com/ajax/cart";
+        siteConfig.cartUrl = "https://farmart.botble.com/cart";
 
     </script>
-
-    <script src="../../../assets/js/plugins/dragula/dragula.min.js"></script>
-    <script src="../../../assets/js/plugins/jkanban/jkanban.js"></script>
-    <script>
-        var win = navigator.platform.indexOf('Win') > -1;
-        if (win && document.querySelector('#sidenav-scrollbar')) {
-            var options = {
-                damping: '0.5'
-            }
-            Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-        }
-
-    </script>
-
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-
-    <script src="../../../assets/js/material-dashboard.min.js?v=3.0.5"></script>
+    <script src="https://farmart.botble.com/themes/farmart/plugins/jquery-3.6.0.min.js"
+        type="b33e4263afc5606e2221b1ae-text/javascript"></script>
+    <script src="https://farmart.botble.com/themes/farmart/plugins/popper.min.js"
+        type="b33e4263afc5606e2221b1ae-text/javascript"></script>
+    <script src="https://farmart.botble.com/themes/farmart/plugins/bootstrap/js/bootstrap.min.js"
+        type="b33e4263afc5606e2221b1ae-text/javascript"></script>
+    <script src="https://farmart.botble.com/themes/farmart/plugins/slick/slick.min.js"
+        type="b33e4263afc5606e2221b1ae-text/javascript"></script>
+    <script src="https://farmart.botble.com/themes/farmart/plugins/nouislider/nouislider.min.js"
+        type="b33e4263afc5606e2221b1ae-text/javascript"></script>
+    <script src="https://farmart.botble.com/themes/farmart/plugins/light-gallery/js/lightgallery.min.js"
+        type="b33e4263afc5606e2221b1ae-text/javascript"></script>
+    <script src="https://farmart.botble.com/themes/farmart/plugins/lazyload/lazyload.min.js"
+        type="b33e4263afc5606e2221b1ae-text/javascript"></script>
+    <script src="https://farmart.botble.com/themes/farmart/plugins/expire-countdown.js?v=1.1.7"
+        type="b33e4263afc5606e2221b1ae-text/javascript"></script>
+    <script src="https://farmart.botble.com/themes/farmart/plugins/scrollbar.js"
+        type="b33e4263afc5606e2221b1ae-text/javascript"></script>
+    <script src="https://farmart.botble.com/themes/farmart/js/main.js?v=1.1.7"
+        type="b33e4263afc5606e2221b1ae-text/javascript"></script>
+    <script src="https://farmart.botble.com/themes/farmart/js/app.js?v=1.1.7"
+        type="b33e4263afc5606e2221b1ae-text/javascript"></script>
+    <script src="https://farmart.botble.com/vendor/core/plugins/ecommerce/js/change-product-swatches.js?v=1.1.7"
+        type="b33e4263afc5606e2221b1ae-text/javascript"></script>
+    <script src="https://farmart.botble.com/vendor/core/plugins/cookie-consent/js/cookie-consent.js?v=1.0.0"
+        type="b33e4263afc5606e2221b1ae-text/javascript"></script>
+    <div class="js-cookie-consent cookie-consent cookie-consent-full-width"
+        style="background-color: #000 !important; color: #fff !important;">
+        <div class="cookie-consent-body" style="max-width: 1170px;">
+            <span class="cookie-consent__message">
+                Your experience on this site will be improved by allowing cookies
+                <a href="https://farmart.botble.com/cookie-policy">Cookie Policy</a>
+            </span>
+            <button class="js-cookie-consent-agree cookie-consent__agree"
+                style="background-color: #000 !important; color: #fff !important; border: 1px solid #fff !important;">
+                Allow cookies
+            </button>
+        </div>
+    </div>
+    <div data-site-cookie-name="cookie_for_consent"></div>
+    <div data-site-cookie-lifetime="7300"></div>
+    <div data-site-cookie-domain="farmart.botble.com"></div>
+    <div data-site-session-secure=""></div>
+    <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
+        data-cf-settings="b33e4263afc5606e2221b1ae-|49" defer=""></script>
 </body>
 
 </html>

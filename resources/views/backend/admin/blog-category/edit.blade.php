@@ -7,12 +7,12 @@
 @section('admin_dashboard_content')
 
     <div class="row">
-        <!-- [ sample-page ] start -->
+
         <div class="col-sm-12">
             <div class="card">
 
                 <div class="card-header">
-                    <h5>Category</h5> 
+                    <h5>Blog Category</h5> 
                     <div class="card-header-right">
                         <div class="btn-group card-option">
                             <button type="button" class="btn dropdown-toggle btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -34,7 +34,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-6 col-lg-6">
-                                        <a class="btn btn-outline-info float-left" href="{{route('admin.category.list')}}">Category List</a>
+                                        <a class="btn btn-outline-info float-left" href="">Category List</a>
                                     </div>
                                     <div class="col-md-6 col-lg-6 float-right">
 
@@ -42,22 +42,22 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12 col-lg-12">
-                                        <form class="m-3" action="{{route('admin.category.update', $category->id)}}" method="post">
+                                        <form class="m-3" action="" method="post">
                                             @csrf
                                             @method('PUT')
                                             <div class="mb-3">
                                                 <label for="name" class="form-label">Category Name :<span class="text-danger"> *</span></label>
-                                                <input type="text" class="form-control" id="name" name="name" value="{{$category->name}}">
+                                                <input type="text" class="form-control" id="name" name="name" value="">
                                             </div>
 
                                             <div class="mb-3">
                                                 <label for="description" class="form-label">Category Description :<span class="text-danger"> *</span></label>
-                                                <textarea id="summernote1" name="description" class="form-control" id="description" class="form-control">{{$category->description}}</textarea>
+                                                <textarea id="summernote1" name="description" class="form-control" id="description" class="form-control"></textarea>
                                             </div>
                                             <div class="mb-3">
                                                 <label for="summary" class="form-label">Category Summary :<span class="text-danger"> *</span></label>
                                                 <textarea id="summernote2" name="summary" class="form-control" id="summary"
-                                                    >{{$category->summary}}</textarea>
+                                                    ></textarea>
                                             </div>
 
                                             <div class="mb-3">
@@ -72,9 +72,9 @@
                                                 </div>
                                                 <select name='parent_id' class="custom-select" id="category_name">
                                                     <option selected disabled>Choose Parent Category</option>
-                                                    @foreach($parent_category as $pcat)
-                                                    <option value="{{$pcat->id}}">{{$pcat->name}}</option>
-                                                    @endforeach
+
+                                                    <option value=""></option>
+
                                                 </select>
                                             </div>
 
