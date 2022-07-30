@@ -35,7 +35,6 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-
                                     <div class="row my-3">
                                         <div class="col-md-6 col-lg-6">
                                             <a class="btn btn-outline-info" href="{{route('admin.brand.create')}}">Add Brand</a>

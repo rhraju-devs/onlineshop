@@ -3,7 +3,7 @@
 
     <div class="m-header">
         <a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a>
-        <a href="#!" class="b-brand">
+        <a href="{{url('/')}}" class="b-brand">
             <!-- ========   change your logo hear   ============ -->
             <img src="{{url('backend/assets/images/online.png')}}" alt="" class="logo">
             <img src="{{url('backend/assets/images/logo-icon.png')}}" alt="" class="logo-thumb">
@@ -102,10 +102,11 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right profile-notification">
                         <div class="pro-head">
-                            <img src="{{url('backend/assets/images/user/avatar-1.jpg')}}" class="img-radius"
-                                alt="User-Profile-Image">
-                            <span>Soeng Souy</span>
-                            <a href="auth-signin.html" class="dud-logout" title="Logout">
+                        <!-- url('/uploads/customers/' . auth()->user()->photo) -->
+                            <img style="width: 50px; height:50px" src="{{url('/uploads/customers/' . auth()->user()->photo)}}" class="img-radius"
+                                alt="{{auth()->user()->photo}}">
+                            <span>{{auth()->user()->fullname}}</span>
+                            <a href="{{route('admin.logout')}}" class="dud-logout" title="Logout">
                                 <i class="feather icon-log-out"></i>
                             </a>
                         </div>

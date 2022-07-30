@@ -67,6 +67,11 @@
                                             </div>
 
                                             <div class="mb-3">
+                                                <label for="tel_number" class="form-label">Tel Number :<span class="text-danger"> * </span></label>
+                                                <input type="number" name="tel_number" id="tel_number" value="{{$setting->tel_number}}" class="form-control">
+                                            </div>
+
+                                            <div class="mb-3">
                                                 <label for="email" class="form-label">Email :<span
                                                         class="text-danger"> *</span></label>
                                                 <input type="email" class="form-control" id="email" name="email"

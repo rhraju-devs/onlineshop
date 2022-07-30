@@ -7,10 +7,11 @@ use Illuminate\Http\Request; -->
 
                 <div class="">
                     <div class="main-menu-header">
-                        <img class="img-radius" src="{{url('backend/assets/images/user/avatar-2.jpg')}}"
-                            alt="User-Profile-Image">
+                    <!-- url('/uploads/customers/' . auth()->user()->photo) -->
+                        <img class="img-radius" src="{{url('/uploads/customers/' . auth()->user()->photo)}}" class="img-radius"
+                                alt="auth()->user()->photo">
                         <div class="user-details">
-                            <div id="more-details">UX Designer <i class="fa fa-caret-down"></i></div>
+                            <div id="more-details"><i class="fa fa-caret-down"></i>{{auth()->user()->fullname}}</div>
                         </div>
                     </div>
                     <div class="collapse" id="nav-user-link">
@@ -37,17 +38,17 @@ use Illuminate\Http\Request; -->
                     <li class="nav-item pcoded-hasmenu">
                         <a href="#!" class="nav-link "><span class="pcoded-micon"><i
                                     class="feather icon-layout"></i></span><span class="pcoded-mtext">Product</span><span
-                                class="badge badge-primary ml-3">2</span></a>
+                                class="badge badge-primary ml-3">@if($products->count() > 0){{$products->count()}}@endif</span></a>
                         <ul class="pcoded-submenu">
                             <li><a href="{{route('admin.product.list')}}">Product List</a></li>
                             <li><a href="{{route('admin.product.create')}}">Add Product</a></li>
                         </ul>
                     </li>
-
                     <!-- //Category Section -->
                     <li class="nav-item pcoded-hasmenu">
                         <a href="#!" class="nav-link "><span class="pcoded-micon"><i
-                                    class="feather icon-layout"></i></span><span class="pcoded-mtext">Category</span></a>
+                                    class="feather icon-layout"></i></span><span class="pcoded-mtext">Category</span><span
+                                class="badge badge-primary ml-3">@if($categories->count() > 0){{$categories->count()}}@endif</span></a>
                         <ul class="pcoded-submenu">
                             <li><a href="{{route('admin.category.list')}}">Category List</a></li>
                             <li><a href="{{route('admin.category.create')}}">Add Category</a></li>
@@ -58,128 +59,84 @@ use Illuminate\Http\Request; -->
                     <!-- //brand section -->
                     <li class="nav-item pcoded-hasmenu">
                         <a href="#!" class="nav-link "><span class="pcoded-micon"><i
-                                    class="feather icon-layout"></i></span><span class="pcoded-mtext">Brand</span></a>
+                                    class="feather icon-layout"></i></span><span class="pcoded-mtext">Brand</span><span
+                                class="badge badge-primary ml-3">@if($brands->count() > 0){{$brands->count()}}@endif</span></a>
+                     
                         <ul class="pcoded-submenu">
                             <li><a href="{{route('admin.brand.list')}}">Brand List</a></li>
                             <li><a href="{{route('admin.brand.create')}}">Add Brand</a></li>
                         </ul>
                     </li>
 
-
-
+                    <li class="nav-item pcoded-hasmenu">
+                        <a href="#!" class="nav-link "><span class="pcoded-micon"><i
+                                    class="feather icon-layout"></i></span><span class="pcoded-mtext">Banner</span><span
+                                class="badge badge-primary ml-3">@if($banners->count() > 0){{$banners->count()}}@endif</span></a>
+                     
+                        <ul class="pcoded-submenu">
+                            <li><a href="{{route('admin.banner.list')}}">Banner List</a></li>
+                            <li><a href="{{route('admin.banner.create')}}">Add Banner</a></li>
+                        </ul>
+                    </li>
+    
                     <!--Customer and Vendor Start -->
                     <li class="nav-item pcoded-menu-caption">
                         <label>Customer &amp; Vendor</label>
                     </li>
+
                     <li class="nav-item pcoded-hasmenu">
+
                         <a href="#!" class="nav-link "><span class="pcoded-micon"><i
-                                    class="feather icon-box"></i></span><span class="pcoded-mtext">Customer</span></a>
+                                    class="feather icon-box"></i></span><span class="pcoded-mtext">Customer</span><span
+                                class="badge badge-primary ml-3">@if($customers->count() > 0){{$customers->count()}}@endif</span></a>
                         <ul class="pcoded-submenu">
                             <li><a href="{{route('admin.customer.list')}}">Customer List</a></li>
                             <li><a href="{{route('admin.customer.create')}}">Customer Add</a></li>
                         </ul>
                     </li>
+
                     <li class="nav-item pcoded-hasmenu">
                         <a href="#!" class="nav-link "><span class="pcoded-micon"><i
-                                    class="feather icon-box"></i></span><span class="pcoded-mtext">Vendor</span></a>
+                                    class="feather icon-box"></i></span><span class="pcoded-mtext">Vendor</span><span
+                                class="badge badge-primary ml-3">@if($vendors->count() > 0){{$vendors->count()}}@endif</span></a>
                         <ul class="pcoded-submenu">
                             <li><a href="{{route('admin.vendor.list')}}">Vendor List</a></li>
                             <li><a href="{{route('admin.vendor.create')}}">Vendor Add</a></li>
                         </ul>
                     </li>
+                    
                 <!-- Customer and Vendor end -->
-
                 <!-- Setting Start -->
                 <li class="nav-item pcoded-menu-caption">
                         <label>Setting</label>
-                    </li>
-                    <li class="nav-item">
+                </li>
+                <li class="nav-item">
                         <a href="{{route('admin.setting.details')}}" class="nav-link "><span class="pcoded-micon"><i
                                     class="feather icon-file-text"></i></span><span
                                 class="pcoded-mtext">Setting</span></a>
-                    </li>
+                </li>
                 <!-- Setting End -->
 
-                    <li class="nav-item pcoded-hasmenu">
+                <!-- Order Start -->
+                <li class="nav-item pcoded-menu-caption">
+                        <label>Order</label>
+                </li>
+                <li class="nav-item pcoded-hasmenu">
                         <a href="#!" class="nav-link "><span class="pcoded-micon"><i
-                                    class="feather icon-layout"></i></span><span class="pcoded-mtext">Page
-                                layouts</span></a>
+                                    class="feather icon-layout"></i></span><span class="pcoded-mtext">Order</span><span
+                                class="badge badge-primary ml-3">2</span></a>
+                     
                         <ul class="pcoded-submenu">
-                            <li><a href="layout-vertical.html" target="_blank">Vertical</a></li>
-                            <li><a href="layout-horizontal.html" target="_blank">Horizontal</a></li>
+                            <li><a href="">Order List</a></li>
+                            <li><a href="">Order Approved</a></li>
+                            <li><a href="">Order Rejected</a></li>
+                            <li><a href="">Order Delivered</a></li>
+                            <li><a href="">Order Recieved</a></li>
                         </ul>
                     </li>
-
-
-
-
-                    <li class="nav-item pcoded-menu-caption">
-                        <label>UI Element</label>
-                    </li>
-                    <li class="nav-item pcoded-hasmenu">
-                        <a href="#!" class="nav-link "><span class="pcoded-micon"><i
-                                    class="feather icon-box"></i></span><span class="pcoded-mtext">Basic</span></a>
-                        <ul class="pcoded-submenu">
-                            <li><a href="bc_alert.html">Alert</a></li>
-                            <li><a href="bc_button.html">Button</a></li>
-                            <li><a href="bc_badges.html">Badges</a></li>
-                            <li><a href="bc_breadcrumb-pagination.html">Breadcrumb & paggination</a></li>
-                            <li><a href="bc_card.html">Cards</a></li>
-                            <li><a href="bc_collapse.html">Collapse</a></li>
-                            <li><a href="bc_carousel.html">Carousel</a></li>
-                            <li><a href="bc_grid.html">Grid system</a></li>
-                            <li><a href="bc_progress.html">Progress</a></li>
-                            <li><a href="bc_modal.html">Modal</a></li>
-                            <li><a href="bc_spinner.html">Spinner</a></li>
-                            <li><a href="bc_tabs.html">Tabs & pills</a></li>
-                            <li><a href="bc_typography.html">Typography</a></li>
-                            <li><a href="bc_tooltip-popover.html">Tooltip & popovers</a></li>
-                            <li><a href="bc_toasts.html">Toasts</a></li>
-                            <li><a href="bc_extra.html">Other</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item pcoded-menu-caption">
-                        <label>Forms &amp; table</label>
-                    </li>
-                    <li class="nav-item">
-                        <a href="form_elements.html" class="nav-link "><span class="pcoded-micon"><i
-                                    class="feather icon-file-text"></i></span><span
-                                class="pcoded-mtext">Forms</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="tbl_bootstrap.html" class="nav-link "><span class="pcoded-micon"><i
-                                    class="feather icon-align-justify"></i></span><span class="pcoded-mtext">Bootstrap
-                                table</span></a>
-                    </li>
-                    <li class="nav-item pcoded-menu-caption">
-                        <label>Chart & Maps</label>
-                    </li>
-                    <li class="nav-item">
-                        <a href="chart-apex.html" class="nav-link "><span class="pcoded-micon"><i
-                                    class="feather icon-pie-chart"></i></span><span
-                                class="pcoded-mtext">Chart</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="map-google.html" class="nav-link "><span class="pcoded-micon"><i
-                                    class="feather icon-map"></i></span><span class="pcoded-mtext">Maps</span></a>
-                    </li>
-                    <li class="nav-item pcoded-menu-caption">
-                        <label>Pages</label>
-                    </li>
-                    <li class="nav-item pcoded-hasmenu">
-                        <a href="#!" class="nav-link "><span class="pcoded-micon"><i
-                                    class="feather icon-lock"></i></span><span
-                                class="pcoded-mtext">Authentication</span></a>
-                        <ul class="pcoded-submenu">
-                            <li><a href="auth-signup.html" target="_blank">Sign up</a></li>
-                            <li><a href="auth-signin.html" target="_blank">Sign in</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a href="sample-page.html" class="nav-link "><span class="pcoded-micon"><i
-                                    class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Sample
-                                page</span></a></li>
+                    <!-- Order End -->
+             
                 </ul>
-
             </div>
         </div>
     </nav>

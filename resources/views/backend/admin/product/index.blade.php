@@ -81,7 +81,6 @@
                                                 <td scope="col">{!! $product->product_description !!}</td>
                                                 <td scope="col">{!! $product->product_summary !!}</td>
                                                 <td scope="col">{{$product->product_photo}}</td>
-
                                                 <td scope="col">{{optional($product->category)->name}}</td>
                                                 <td scope="col">{{optional($product->subcategory)->name}}</td>
                                                 <td scope="col">{{optional($product->brand)->name}}</td>

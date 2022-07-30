@@ -79,6 +79,10 @@
                                                 <h5>Phone : </h5>
                                                 <h3 class="mt-lg-0 mt-4">{{$setting->phone}}</h3>
                                             </div>
+                                            <div class="col-md-12 col-lg-12">
+                                                <h5>Tel Number</h5>
+                                                <h3 class="mt-lg-0 mt-4">{{$setting->tel_number}}</h3>
+                                            </div>
 
                                             <div class="col-md-12 col-lg-12">
                                                 <h5>Email : </h5>

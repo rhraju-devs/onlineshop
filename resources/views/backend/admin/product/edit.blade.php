@@ -66,7 +66,7 @@
                                         </div>
                                     @endif
 
-                                    <form class="m-3" action="{{route('admin.product.update', $product->id)}}}" method="post">
+                                    <form enctype="multipart/form-data" class="m-3" action="{{route('admin.product.update', $product->id)}}}" method="post">
                                         @csrf
                                         @method('PUT')
                                         <div class="mb-3">
@@ -94,8 +94,16 @@
                                                 <div class="mb-3">
                                                     <label for="photo" class="form-label">Product Photos :<span
                                                             class="text-danger"> *</span></label>
-                                                    <input type="file" class="form-control" id="photo"
-                                                        name="product_photo">
+                                                            <input type="file" id="photo" name="images[]" class="form-control" accept="image/*" multiple >
+                                                        <div class="col-md-12">
+                                                             @foreach ($images as $image)
+                                                            <!-- <div class="card text-white bg-secondary mb-3" >
+                                                                <div class="card-body"> -->
+                                                                <img style="width: 70px; height: 70px" src="{{url('/uploads/product_images/' . $image->image)}}" class="mx-2 my-2">
+                                                                <!-- </div>
+                                                            </div> -->
+                                                             @endforeach
+                                                        </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-lg-6">

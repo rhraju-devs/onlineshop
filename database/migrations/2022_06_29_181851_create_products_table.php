@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('product_name');
             $table->longText('product_description');
             $table->string('product_summary');
-            $table->string('product_photo')->nullable();
+            // $table->string('product_photo')->nullable();
             $table->string('product_category')->nullable();
             $table->string('product_sub_category')->nullable();
             $table->string('product_brand')->nullable();

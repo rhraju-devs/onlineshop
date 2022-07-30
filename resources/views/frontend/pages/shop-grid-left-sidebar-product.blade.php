@@ -268,9 +268,10 @@
                                 <div class="single-product-area mb-30">
                                     <div class="product_image">
                                         <!-- Product Image -->
-                                        <img class="normal_img" src="{{url('/uploads/products/'.$product->product_photo)}}" alt="">
-                                        <img class="hover_img" src="{{url('/uploads/products/'.$product->product_photo)}}" alt="">
-
+                                        <img class="normal_img" src="{{url('/uploads/product_images/',$product->images->first()->image)}}" alt="">
+                                        <!-- @foreach($product->images as $image) -->
+                                        <img class="hover_img" src="{{url('/uploads/product_images/',$product->images->last()->image)}}" alt="">
+                                        <!-- @endforeach -->
                                         <!-- Product Badge -->
                                         <div class="product_badge">
                                             <span>New</span>

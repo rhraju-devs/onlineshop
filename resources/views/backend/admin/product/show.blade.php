@@ -43,46 +43,30 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-xl-5 col-lg-6 text-center">
+                                            <!-- <img class="w-100 border-radius-lg shadow-lg mx-auto"
+                                                src="url('/uploads/products/' . $product->product_photo)" alt="$product->product_photo . 'photo'">
+                                           url('/uploads/product_images/'. optional($product->image)->first(images))
+
+                                           url('/uploads/product_images/' . $images->last())
+                                            -->      
+                                            @if (($images->count())>0)
                                             <img class="w-100 border-radius-lg shadow-lg mx-auto"
-                                                src="{{url('/uploads/products/' . $product->product_photo)}}" alt="{{$product->product_photo . 'photo'}}">
+                                                src="{{url('/uploads/product_images/' . $images->first()->image)}}" alt="{{url('/uploads/product_images/' . $images->first())}}">
+                                            @endif
+                                                <img src="">
                                             <div class="my-gallery d-flex mt-4 pt-2" itemscope
                                                 itemtype="http://schema.org/ImageGallery">
+                                                @foreach ($images as $image)
                                                 <figure itemprop="associatedMedia" itemscope
                                                     itemtype="http://schema.org/ImageObject">
-                                                    <a href="../../../assets/img/products/product-details-2.jpg"
-                                                        itemprop="contentUrl" data-size="500x600">
-                                                        <img class="w-100 min-height-100 max-height-100 border-radius-lg shadow"
-                                                            src="../../../assets/img/products/product-details-2.jpg"
+                                                    <a style="height: 70px; width: 70px;"  href="{{url('/uploads/product_images/' . $image->image)}}"
+                                                        itemprop="contentUrl" data-size="500x600" class="mx-1">
+                                                        <img style="height: 70px; width: 70px;" class="w-100 min-height-100 max-height-100 border-radius-lg shadow mx-1"
+                                                            src="{{url('/uploads/product_images/' . $image->image)}}"
                                                             alt="Image description" />
                                                     </a>
                                                 </figure>
-                                                <figure class="ms-3" itemprop="associatedMedia" itemscope
-                                                    itemtype="http://schema.org/ImageObject">
-                                                    <a href="../../../assets/img/products/product-details-3.jpg"
-                                                        itemprop="contentUrl" data-size="500x600">
-                                                        <img class="w-100 min-height-100 max-height-100 border-radius-lg shadow"
-                                                            src="../../../assets/img/products/product-details-3.jpg"
-                                                            itemprop="thumbnail" alt="Image description" />
-                                                    </a>
-                                                </figure>
-                                                <figure class="ms-3" itemprop="associatedMedia" itemscope
-                                                    itemtype="http://schema.org/ImageObject">
-                                                    <a href="../../../assets/img/products/product-details-4.jpg"
-                                                        itemprop="contentUrl" data-size="500x600">
-                                                        <img class="w-100 min-height-100 max-height-100 border-radius-lg shadow"
-                                                            src="../../../assets/img/products/product-details-4.jpg"
-                                                            itemprop="thumbnail" alt="Image description" />
-                                                    </a>
-                                                </figure>
-                                                <figure class="ms-3" itemprop="associatedMedia" itemscope
-                                                    itemtype="http://schema.org/ImageObject">
-                                                    <a href="../../../assets/img/products/product-details-5.jpg"
-                                                        itemprop="contentUrl" data-size="500x600">
-                                                        <img class="w-100 min-height-100 max-height-100 border-radius-lg shadow"
-                                                            src="../../../assets/img/products/product-details-5.jpg"
-                                                            itemprop="thumbnail" alt="Image description" />
-                                                    </a>
-                                                </figure>
+                                                @endforeach
                                             </div>
 
                                             <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">

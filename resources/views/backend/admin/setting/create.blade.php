@@ -73,6 +73,13 @@
                                         </div>
 
                                         <div class="mb-3">
+                                            <label for="tel_number" class="form-label">Tel Number :<span
+                                                    class="text-danger"> *</span></label>
+                                            <input type="text" class="form-control" id="tel_number" name="tel_number"
+                                                placeholder="+8809638860924">
+                                        </div>
+
+                                        <div class="mb-3">
                                             <label for="email" class="form-label">Email :<span
                                                     class="text-danger"> *</span></label>
                                             <input type="email" class="form-control" id="email" name="email"

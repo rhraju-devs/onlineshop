@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Brand;
 use Illuminate\Http\Request;
-
 class BrandController extends Controller
 {
     public function list()
@@ -18,22 +17,18 @@ class BrandController extends Controller
         $brands = Brand::all();
         return view('backend.admin.brand.create', compact('brands'));
     }
+
+
     public function store(Request $request)
-    
     {
+
         $brandImage = null;
         if($request->hasFile('photo'))
         {
-            // $brandImage = date('Ymdhsis').'-'.$request->file('photo')->getClientOriginalExtension();
-            $brandImage = uniqid('brand_' . strtotime(date('Ymdhsis')), true) . '_' . $request->file('photo')->getClientOriginalName();// . '_' . $request->file('photo')->getClientOriginalExtension();
-            // $brandImage = uniqid('brand_' . strtotime(date('Ymdhsis')), true) . '_' . $request->file('photo')->getClientOriginalExtension();
-
+            $brandImage = uniqid('brand_' . strtotime(date('Ymdhsis')), true) . '.' . $request->file('photo')->getClientOriginalExtension();
             $request->file('photo')->storeAs('/uploads/brands', $brandImage);
-
-            // brand_62d98c352a9925.38714818_292718680_1399150827234751_2565620817809454094_n.jpg_jpg
-            // 292718680_1399150827234751_2565620817809454094_n.jpg
         }
-        // dd($request->all());
+    
         $request->validate([
             'name'=> 'string|required',
             'description' => 'string|required',
@@ -48,9 +43,12 @@ class BrandController extends Controller
             'photo'=>$brandImage,
             'status' =>$request->status,
         ]);
-        // return redirect()->back();
         return redirect()->route('admin.brand.list');
+        // }catch(Throwable $request){
+        //     return $request->getMessage();
+        // }
     }
+
 
     public function edit($id)
     {
@@ -63,8 +61,7 @@ class BrandController extends Controller
         $brandImage = null;
         if($request->hasFile('photo'))
         {
-            $brandImage = uniqid('brand_' . strtotime(date('Ymdhsis')), true) . '_' . $request->file('photo')->getClientOriginalName() . '_' . $request->file('photo')->getClientOriginalExtension();
-            // $brandImage = date('Ymdhsis').'-'.$request->file('photo')->getClientOriginalExtension();
+            $brandImage = uniqid('brand_' . strtotime(date('Ymdhsis')), true) . '.' . $request->file('photo')->getClientOriginalExtension();
             $request->file('photo')->storeAs('/uploads/brands', $brandImage);
         }
 
@@ -97,3 +94,34 @@ class BrandController extends Controller
         return view('backend.admin.brand.show', compact('brands'));
     }
 }
+
+
+    // public function store(Request $request)
+    
+    // {
+    //     $brandImage = null;
+    //     if($request->hasFile('photo'))
+    //     {
+    //         $brandImage = date('Ymdhsis') . '-'. $request->file('photo')->getClientOriginalExtension();
+             
+    //         $request->file('photo')->storeAs('/uploads/brands', $brandImage);
+
+    //     }
+    //     // dd($request->all());
+    //     $request->validate([
+    //         'name'=> 'string|required',
+    //         'description' => 'string|required',
+    //         'summary' => 'string|required',
+    //         'photo' => 'nullable',
+    //         'status' => 'required',
+    //     ]);
+    //     Brand::create([
+    //         'name' => $request->name,
+    //         'description' => $request->description,
+    //         'summary' => $request->summary,
+    //         'photo'=>$brandImage,
+    //         'status' =>$request->status,
+    //     ]);
+    //     // return redirect()->back();
+    //     return redirect()->route('admin.brand.list');
+    // }

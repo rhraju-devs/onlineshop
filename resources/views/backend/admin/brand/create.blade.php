@@ -80,7 +80,8 @@
                                                     <div class="col-md-6 col-lg-6">
                                                         <div class="mb-3">
                                                             <label for="photo" class="form-label">Brand Photos :<span class="text-danger"> *</span></label>
-                                                            <input type="file" class="form-control" id="photo" name="photo">
+                                                            <!-- <input type="file" class="form-control" id="photos[]" name="photo" multiple> -->
+                                                            <input type="file" class="form-control" id="photo" name="photo" multiple>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6 col-lg-6">

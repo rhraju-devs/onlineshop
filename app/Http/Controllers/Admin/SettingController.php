@@ -37,6 +37,7 @@ class SettingController extends Controller
             'phone' => 'required|string|digits:11', 
             'photo' => 'nullable', 
             'logo' => 'nullable', 
+            'tel_number' => 'required',
             'address' => 'string|required',
         ]);
 
@@ -46,6 +47,7 @@ class SettingController extends Controller
             'logo' => $settingLogo, 
             'phone' => $request->phone,
             'email' => $request->email, 
+            'tel_number' => $request->tel_number,
             'address' => $request ->address,
         ]);
         return redirect()->route('admin.setting.details');
@@ -77,6 +79,7 @@ class SettingController extends Controller
             'email' => 'email|required',
             'phone' => 'required|string|digits:11', 
             'photo' => 'nullable', 
+            'tel_number' => 'required',
             'logo' => 'nullable', 
             'address' => 'string|required',
         ]);
@@ -87,6 +90,7 @@ class SettingController extends Controller
             'logo' => $settingLogo, 
             'phone' => $request->phone,
             'email' => $request->email, 
+            'tel_number' => $request->tel_number,
             'address' => $request ->address,
         ]);
         return redirect()->route('admin.setting.details');
