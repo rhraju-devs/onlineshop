@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Models\Vendor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,7 +21,8 @@ class VendorController extends Controller
             $request->file('photo')->storeAs('/uploads/vendors/', $vendorPhoto);
         }
         $request->validate([
-            'fullname' => 'string|required',
+            'firstname' => 'string|required',
+            'lastname' => 'string|required',
             'username' => 'string|required|unique:vendors',
             'email' => 'email|required|unique:vendors',
             'password' => 'string|required',
@@ -34,8 +36,9 @@ class VendorController extends Controller
             'status' => 'string|required',
         ]);
 
-        Vendor::create([
-            'fullname' => $request->fullname,
+        User::create([
+            'firstname' => $request->firstname,
+            'lastname' => $request->lastname,
             'username' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password),
@@ -43,13 +46,12 @@ class VendorController extends Controller
             'photo' => $vendorPhoto,
             'address' => $request->address,
             'vendor_description' => $request->description,
-            'zip' => $request->zip,
-            'product' => $request->product,
+            'zip_code' => $request->zip,
             'license_num' => $request->license,
             'status' => $request->status,
         ]);
         // dd($request);
-        return redirect('/');
+        return redirect()->route('frontend.dashboard');
     }
     public function edit(){
 
@@ -62,28 +64,31 @@ class VendorController extends Controller
             'email' => 'required|email',
             'password' => 'required',
         ]);
-        $check=Auth::guard('vendors')->attempt([
-            'email'=>$request->email,
-            'password'=>$request->password,
+        $check=Auth::attempt([
+            'email' => $request->email,
+            'password' => $request->password,
         ]);
+        // $check=Auth::guard('vendors')->attempt([
+        //     'email'=>$request->email,
+        //     'password'=>$request->password,
+        // ]);
         // dd($check);
         if(!$check){
             // return 'Could Not Login. Give Current crediential';
             Session::flash('error-msg', 'Invalid Email and Password');
+            return redirect()->route('frontend.dashboard');
         }
         else{
-            return redirect()->back();
+            Session::flash('success-msg', 'Vendor Registration Complete wait for approve');
+            return redirect()->route('frontend.dashboard');
             // return 'I am ok';
         }
     }
 
     public function logout()
-    {
-     
-        Auth::guard('vendors')->logout();
-    
-
-        return redirect('/');
-
+    {   
+        // Auth::guard('vendors')->logout();
+        Auth::logout();
+        return redirect()->route('frontend.dashboard');
     }
 }

@@ -9,7 +9,7 @@
                 <div class="card">
 
                     <div class="card-header">
-                        <h5>Category</h5> 
+                        <h5>Customer</h5> 
                         <div class="card-header-right">
                             <div class="btn-group card-option">
                                 <button type="button" class="btn dropdown-toggle btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -31,141 +31,35 @@
                                 <div class="card-body">
                                     <div class="row my-4">
                                         <div class="col-md-6 col-lg-6">
-                                            <h4 class="mb-4 float-left">Category Details</h4>
+                                            <h4 class="mb-4 float-left">Customer Details</h4>
                                         </div>
                                         <div class="col-md-6 col-lg-6">
-                                            <a class="float-right btn btn-outline-info" href="{{route('admin.category.list')}}">Category List</a>
+                                            <a class="float-right btn btn-outline-info" href="{{route('admin.customer.list')}}">Customer List</a>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xl-6 col-lg-6 text-center">
                                             <img class="w-100 border-radius-lg shadow-lg mx-auto"
-                                                src="../../../assets/img/products/product-details-1.jpg" alt="chair">
-                                            <div class="my-gallery d-flex mt-4 pt-2" itemscope
-                                                itemtype="http://schema.org/ImageGallery">
-                                                <figure itemprop="associatedMedia" itemscope
-                                                    itemtype="http://schema.org/ImageObject">
-                                                    <a href="../../../assets/img/products/product-details-2.jpg"
-                                                        itemprop="contentUrl" data-size="500x600">
-                                                        <img class="w-100 min-height-100 max-height-100 border-radius-lg shadow"
-                                                            src="../../../assets/img/products/product-details-2.jpg"
-                                                            alt="Image description" />
-                                                    </a>
-                                                </figure>
-                                                <figure class="ms-3" itemprop="associatedMedia" itemscope
-                                                    itemtype="http://schema.org/ImageObject">
-                                                    <a href="../../../assets/img/products/product-details-3.jpg"
-                                                        itemprop="contentUrl" data-size="500x600">
-                                                        <img class="w-100 min-height-100 max-height-100 border-radius-lg shadow"
-                                                            src="../../../assets/img/products/product-details-3.jpg"
-                                                            itemprop="thumbnail" alt="Image description" />
-                                                    </a>
-                                                </figure>
-                                                <figure class="ms-3" itemprop="associatedMedia" itemscope
-                                                    itemtype="http://schema.org/ImageObject">
-                                                    <a href="../../../assets/img/products/product-details-4.jpg"
-                                                        itemprop="contentUrl" data-size="500x600">
-                                                        <img class="w-100 min-height-100 max-height-100 border-radius-lg shadow"
-                                                            src="../../../assets/img/products/product-details-4.jpg"
-                                                            itemprop="thumbnail" alt="Image description" />
-                                                    </a>
-                                                </figure>
-                                                <figure class="ms-3" itemprop="associatedMedia" itemscope
-                                                    itemtype="http://schema.org/ImageObject">
-                                                    <a href="../../../assets/img/products/product-details-5.jpg"
-                                                        itemprop="contentUrl" data-size="500x600">
-                                                        <img class="w-100 min-height-100 max-height-100 border-radius-lg shadow"
-                                                            src="../../../assets/img/products/product-details-5.jpg"
-                                                            itemprop="thumbnail" alt="Image description" />
-                                                    </a>
-                                                </figure>
-                                            </div>
-
-                                            <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-                                                <div class="pswp__bg"></div>
-
-                                                <div class="pswp__scroll-wrap">
-
-
-                                                    <div class="pswp__container">
-                                                        <div class="pswp__item"></div>
-                                                        <div class="pswp__item"></div>
-                                                        <div class="pswp__item"></div>
-                                                    </div>
-
-                                                    <div class="pswp__ui pswp__ui--hidden">
-                                                        <div class="pswp__top-bar">
-
-                                                            <div class="pswp__counter"></div>
-                                                            <button
-                                                                class="btn btn-white btn-sm pswp__button pswp__button--close">Close
-                                                                (Esc)</button>
-                                                            <button
-                                                                class="btn btn-white btn-sm pswp__button pswp__button--fs">Fullscreen</button>
-                                                            <button
-                                                                class="btn btn-white btn-sm pswp__button pswp__button--arrow--left">Prev
-                                                            </button>
-                                                            <button
-                                                                class="btn btn-white btn-sm pswp__button pswp__button--arrow--right">Next
-                                                            </button>
-
-
-                                                            <div class="pswp__preloader">
-                                                                <div class="pswp__preloader__icn">
-                                                                    <div class="pswp__preloader__cut">
-                                                                        <div class="pswp__preloader__donut"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div
-                                                            class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                                                            <div class="pswp__share-tooltip"></div>
-                                                        </div>
-                                                        <div class="pswp__caption">
-                                                            <div class="pswp__caption__center"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                src="{{url('/uploads/customers/' . $customer->photo)}}" alt="{{$customer->phot}}">
                                         </div>
                                         <div class="col-lg-6 mx-auto">
                                             <div class="row">
                                                 <div class="col-md-6 col-lg-6">
-                                                    <h5>Category Name : </h5>
-                                                    <h3 class="mt-lg-0 mt-4">{{$category->name}}</h3>
+                                                    <h5>Full Name : </h5>
+                                                    <h3 class="mt-lg-0 mt-4">{{$customer->firstname}} {{$customer->lastname}}</h3>
                                                 </div>
 
                                                 <div class="col-md-6 col-lg-6">
-                                                    <h5>Is Parent : </h5>
-                                                    <h3 class="mt-lg-0 mt-4">{{$category->is_parent === 1 ? 'Yes' : 'No'}}</h3>
+                                                    <h5>User Name </h5>
+                                                    <h3 class="mt-lg-0 mt-4">{{$customer->username}}</h3>
                                                 </div>
                                             </div>
                                             <div class="row my-3">
                                                 <div class="col-md-12 col-lg-12">
-                                                    <h5>Parent Category Name : </h5>
-                                                    <h3>{{optional($category->parentCategory)->name}}</h3>
+                                                    <h5>Email Address : </h5>
+                                                    <h3>{{$customer->email}}</h3>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
-                                        <li class="nav-item">
-                                            <a class="nav-link active text-uppercase" id="home-tab" data-toggle="tab" href="#description" role="tab" aria-controls="home" aria-selected="true">Description</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-uppercase" id="profile-tab" data-toggle="tab" href="#summary" role="tab" aria-controls="profile" aria-selected="false">Summary</a>
-                                        </li>
-                                    </ul>
-                                    <div class="tab-content" id="myTabContent">
-                                        <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="home-tab">
-                                            <p class="mb-0">{!! $category->description !!}</p>
-                                        </div>
-                                        <div class="tab-pane fade" id="summary" role="tabpanel" aria-labelledby="profile-tab">
-                                            <p class="mb-0">{!! $category->summary !!}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -175,9 +69,9 @@
 
                 </div>
             </div>
-            <!-- [ sample-page ] end -->
+
     </div>
-        <!-- [ Main Content ] end -->
+
 @endsection
 
 @push('scripts')

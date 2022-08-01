@@ -1600,36 +1600,23 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="popular_section_heading mb-50">
+                    <div class="popular_section_heading mb-50 text-center">
                         <h5>Popular Brands</h5>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="popular_brands_slide owl-carousel">
+                        @foreach($brands as $brand)
                         <div class="single_brands">
-                            <img src="{{url('frontend/img/partner-img/1.jpg')}}" alt="">
+                            <img src="{{url('uploads/brands/'.$brand->photo)}}" alt="">
                         </div>
-                        <div class="single_brands">
-                            <img src="{{url('frontend/img/partner-img/2.jpg')}}" alt="">
-                        </div>
-                        <div class="single_brands">
-                            <img src="{{url('frontend/img/partner-img/3.jpg')}}" alt="">
-                        </div>
-                        <div class="single_brands">
-                            <img src="{{url('frontend/img/partner-img/4.jpg')}}" alt="">
-                        </div>
-                        <div class="single_brands">
-                            <img src="{{url('frontend/img/partner-img/5.jpg')}}" alt="">
-                        </div>
-                        <div class="single_brands">
-                            <img src="{{url('frontend/img/partner-img/6.jpg')}}" alt="">
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Popular Brands Area -->
+    <!-- Popular Brands Area End -->
 
     <!-- Special Featured Area -->
     <section class="special_feature_area pt-5">

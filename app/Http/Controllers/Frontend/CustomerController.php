@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Customer;
 use App\Models\Vendor;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -15,34 +16,37 @@ class CustomerController extends Controller
 
     public function store(Request $request)
     {
+        // dd($request);
         $customerImage = null;
         if($request->hasFile('photo')){
             $customerImage = uniqid('customer_' . strtotime(date('Ymdhsis')), true) . '_' . $request->file('photo')->getClientOriginalName();
             $request->file('photo')->storeAs('/uploads/customers/', $customerImage);
         }
         $request->validate([
-            'fullname' => 'string|required',
-            'username' => 'string|required|unique:customers',
-            'email' => 'email|required|unique:customers',
+            'firstname' => 'string|required',
+            'lastname' => 'string|required',
+            'username' => 'string|required',
+            'email' => 'email|required',
             'password' => 'required|min:6', 
             'phone' => 'required|string|digits:11', 
             'photo' => 'nullable', 
             'address' => 'string|required',
             'status' => 'string|required'
         ]);
-
-        Customer::create([
-            'fullname'=>$request->fullname,
-            'username'=>$request->username,
-            'email'=>$request->email,
-            'password'=>bcrypt($request->password),
-            'phone'=>$request->phone,
-            'photo'=>$customerImage,
-            'address'=>$request->address,
-            'status'=>$request->status,
+        // dd($request->all());
+        User::create([
+            'firstname' => $request->firstname,
+            'lastname' => $request->lastname,
+            'username' => $request->username,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'phone' => $request->phone,
+            'photo' => $customerImage,
+            'address' => $request->address,
+            'status' => $request->status,
         ]);
-        // dd($request);
-        return redirect('/');
+        // dd($request->all());
+        return redirect()->route('frontend.dashboard');
     }
     public function edit(){
 
@@ -58,7 +62,8 @@ class CustomerController extends Controller
         $customer = Customer::find($id);
 
         $request->validate([
-            'fullname' => 'string|required',
+            'firstname' => 'string|required',
+            'lastname' => 'string|required',
             'username' => 'string|required',
             'email' => 'email|required',
             'password' => 'required|min:6', 
@@ -69,7 +74,8 @@ class CustomerController extends Controller
         ]);
 
         $customer->update([
-            'fullname'=>$request->fullname,
+            'firstname'=>$request->firstname,
+            'lastname' => $request->lastname,
             'username'=>$request->username,
             'email'=>$request->email,
             'password'=>bcrypt($request->password),
@@ -78,7 +84,7 @@ class CustomerController extends Controller
             'address'=>$request->address,
             'status'=>$request->status, 
         ]);
-        return redirect()->route('/');
+        return redirect()->route('frontend.dashboard');
     }
 
     public function login(Request $request)
@@ -98,7 +104,7 @@ class CustomerController extends Controller
 
         }
         else{
-            return redirect('/');
+            return redirect()->route('frontend.dashboard');
         }
     }
 
@@ -107,7 +113,7 @@ class CustomerController extends Controller
 
         Auth::logout();
 
-        return redirect('/');
+        return redirect()->route('frontend.dashboard');
 
     }
 }

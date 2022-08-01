@@ -66,86 +66,92 @@
                                     <form class="m-3" action="{{route('admin.vendor.update', $vendor->id)}}" method="POST" enctype="multipart/form-data">
                                         @csrf
                                         @method('PUT')
-                                        <div class="mb-3">
-                                            <label for="fullname" class="form-label">Full Name :<span
+                                        <!-- <div class="mb-3">
+                                            <label for="firstname" class="form-label">First Name :<span
                                                     class="text-danger"> *</span></label>
-                                            <input type="text" class="form-control" id="fullname" name="fullname"
-                                                value="{{$vendor->fullname}}">
-                                        </div>
-                                        <div class="mb-3">
+                                            <input type="text" class="form-control" id="firstname" name="firstname"
+                                                value="">
+                                        </div> -->
+                                        <!-- <div class="mb-3">
+                                            <label for="lastname" class="form-label">Last Name :<span
+                                                    class="text-danger"> *</span></label>
+                                            <input type="text" class="form-control" id="lastname" name="lastname"
+                                                value="">
+                                        </div> -->
+                                        <!-- <div class="mb-3">
                                             <label for="username" class="form-label">User Name :<span
                                                     class="text-danger"> *</span></label>
                                             <input type="text" class="form-control" id="username" name="username"
-                                                value="{{$vendor->username}}">
-                                        </div>
+                                                value="">
+                                        </div> -->
 
-                                        <div class="mb-3">
+                                        <!-- <div class="mb-3">
                                             <label for="email" class="form-label">Email :<span
                                                     class="text-danger"> *</span></label>
                                             <input type="email" class="form-control" id="email" name="email"
-                                                value="{{$vendor->email}}">
-                                        </div>
+                                                value="">
+                                        </div> -->
 
-                                        <div class="mb-3">
+                                        <!-- <div class="mb-3">
                                             <label for="password" class="form-label">Password :<span
                                                     class="text-danger"> *</span></label>
                                             <input type="password" class="form-control" id="password" name="password"
-                                                value="{{$vendor->password}}">
-                                        </div>
+                                                value="">
+                                        </div> -->
 
-                                        <div class="mb-3">
+                                        <!-- <div class="mb-3">
                                             <label for="photo" class="form-label">Photo :<span
                                                     class="text-danger"> *</span></label>
                                             <input type="file" class="form-control" id="photo" name="photo"
                                                 value="">
-                                        </div>
+                                        </div> -->
 
-                                        <div class="mb-3">
+                                        <!-- <div class="mb-3">
                                             <label for="phone" class="form-label">Phone :<span
                                                     class="text-danger"> *</span></label>
                                             <input type="tel" class="form-control" id="phone" name="phone"
-                                                value="{{$vendor->phone}}">
-                                        </div>
+                                                value="">
+                                        </div> -->
 
-                                        <div class="mb-3">
+                                        <!-- <div class="mb-3">
                                             <label for="address" class="form-label">Address :<span
                                                     class="text-danger"> *</span></label>
                                             <input type="text" class="form-control" id="address" name="address"
-                                                value="{{$vendor->address}}">
-                                        </div>
+                                                value="">
+                                        </div> -->
 
-                                        <div class="mb-3">
+                                        <!-- <div class="mb-3">
                                             <label for="summernote1" class="form-label">Description :<span
                                                     class="text-danger"> *</span></label>
                                             <textarea  class="form-control" id="summernote1" name="description"
-                                                >{{$vendor->vendor_description}}</textarea>
-                                        </div>
+                                                ></textarea>
+                                        </div> -->
 
-                                        <div class="mb-3">
+                                        <!-- <div class="mb-3">
                                             <label for="zip" class="form-label">Zip Number :<span
                                                     class="text-danger"> *</span></label>
                                             <input type="number" class="form-control" id="zip" name="zip"
-                                                value="{{$vendor->zip}}">
-                                        </div>
+                                                value="">
+                                        </div> -->
 
                                         <div class="input-group mb-3">
-                                            <label for="product" class="form-label">Product :<span
-                                                    class="text-danger"> *</span></label>
+                                            <label for="is_vendor" class="form-label">Is Vendor :<span
+                                                    class="text-danger"> *</span></label><br>
                                             <div class="input-group-prepend">
-                                                <label class="input-group-text" for="product">Options</label>
+                                                <label class="input-group-text" for="is_vendor">Options</label>
                                             </div>
-                                            <select name='product' class="custom-select" id="product">
-                                                <option @if ($vendor->product == 'active') 'selected' @endif value="active">Active</option>
-                                                <option @if ($vendor->product == 'inactive') 'selected' @endif value="inactive">Inactive</option>
+                                            <select name='is_vendor' class="custom-select" id="is_vendor">
+                                                <option @if ($vendor->is_vendor == 1) 'selected' @endif value=1>Yes</option>
+                                                <option @if ($vendor->is_vendor == 0) 'selected' @endif value =0>No</option>
                                             </select>
                                         </div>
-
+<!-- 
                                         <div class="mb-3">
                                             <label for="license" class="form-label">License Number :<span
                                                     class="text-danger"> *</span></label>
                                             <input type="number" class="form-control" id="license" name="license"
-                                                value="{{$vendor->license_num}}">
-                                        </div>
+                                                value="">
+                                        </div> -->
                                     
                                         <div class="row">
                                             <div class="col-md-4 col-lg-4">
@@ -164,6 +170,21 @@
 
                                         </div>
 
+                                        <div class="row">
+                                            <div class="col-md-4 col-lg-4">
+                                                <div class="input-group mb-3">
+                                                    <label for="role" class="form-label">Role :<span
+                                                            class="text-danger"> *</span></label>
+                                                    <div class="input-group-prepend">
+                                                        <label class="input-group-text" for="role">Options</label>
+                                                    </div>
+                                                    <select name='role' class="custom-select" id="role">
+                                                        <option value="vendor" selected disable>Vendor</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
 
                                         <button type="reset" class="btn btn-primary">Cancel</button>
                                         <button type="submit" class="btn btn-primary">Update</button>

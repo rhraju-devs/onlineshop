@@ -7,11 +7,11 @@ use Illuminate\Http\Request; -->
 
                 <div class="">
                     <div class="main-menu-header">
-                    <!-- url('/uploads/customers/' . auth()->user()->photo) -->
-                        <img class="img-radius" src="{{url('/uploads/customers/' . auth()->user()->photo)}}" class="img-radius"
-                                alt="auth()->user()->photo">
+
+                        <img class="img-radius" src="" class="img-radius"
+                                alt="">
                         <div class="user-details">
-                            <div id="more-details"><i class="fa fa-caret-down"></i>{{auth()->user()->fullname}}</div>
+                            <div id="more-details"><i class="fa fa-caret-down"></i>name</div>
                         </div>
                     </div>
                     <div class="collapse" id="nav-user-link">

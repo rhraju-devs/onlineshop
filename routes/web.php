@@ -47,7 +47,7 @@ Route::get('/all', function(){
 Route::get('/admin/login', [AdminDashboardController::class, 'login'])->name('admin.login');
 Route::post('/admin/login-check', [AdminDashboardController::class, 'loginCheck'])->name('admin.login.check');
 
-Route::group(['middleware'=>'auth','prefix'=>'admin'],function(){
+// Route::group(['middleware'=>'auth','prefix'=>'admin'],function(){
     Route::get('/logout', [AdminDashboardController::class, 'logout'])->name('admin.logout');
     Route::get('/dashboard', [AdminDashboardController::class, 'dashboard'])->name('admin.dashboard');
     // Product Route
@@ -89,6 +89,7 @@ Route::group(['middleware'=>'auth','prefix'=>'admin'],function(){
     Route::post('/customer-store', [CustomerController::class, 'store'])->name('admin.customer.store');
     Route::get('/customer-edit/{id}', [CustomerController::class, 'edit'])->name('admin.customer.edit');
     Route::put('/customer-update/{id}', [CustomerController::class, 'update'])->name('admin.customer.update');
+    Route::get('/customer-show/{id}', [CustomerController::class, 'show'])->name('admin.customer.view');
     Route::get('/customer-delete/{id}', [CustomerController::class, 'delete'])->name('admin.customer.delete');
 
     //vendor Route
@@ -108,7 +109,7 @@ Route::group(['middleware'=>'auth','prefix'=>'admin'],function(){
     Route::put('/banner-update/{id}', [BannerController::class, 'update'])->name('admin.banner.update');
     Route::get('/banner-delete/{id}', [BannerController::class, 'delete'])->name('admin.banner.delete');
     Route::get('/banner-show/{id}', [BannerController::class, 'show'])->name('admin.banner.show');
-});
+// });
 
 
 
@@ -117,6 +118,8 @@ Route::group(['middleware'=>'auth','prefix'=>'admin'],function(){
 //Blog Route
 
 //Blog Category Route
+
+
 
 //Frontend
 Route::get('/', [DashboardController::class, 'dashboard'])->name('frontend.dashboard');
@@ -132,7 +135,7 @@ Route::post('/customer-registration',[FrontendCustomer::class,'store'])->name('c
 Route::post('/customer-login',[FrontendCustomer::class,'login'])->name('customer.login');
 Route::get('/customer-logout',[FrontendCustomer::class,'logout'])->name('customer.logout');
 
-Route::get('/customer/dashboard', [Customer::class, 'dashboard'])->name('customer.dashboard');
+Route::get('/customer/dashboard/', [Customer::class, 'dashboard'])->name('customer.dashboard');
 
 
 

@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('fullname');
+            $table->string('firstname');
+            $table->string('lastname');
             $table->string('username');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -25,9 +26,8 @@ return new class extends Migration
             $table->string('address')->nullable();
             $table->enum('status', ['active', 'inactive'])->default('active');
             $table->string('vendor_description')->nullable();
-            $table->enum('is_vendor', ['active', 'inactive'])->nullable();
-            $table->integer('zip')->nullable();
-            $table->string('product')->nullable();
+            $table->boolean('is_vendor')->nullable();
+            $table->integer('zip_code')->nullable();
             $table->enum('role', ['admin', 'customer', 'vendor'])->default('customer');
             $table->rememberToken();
             $table->timestamps();

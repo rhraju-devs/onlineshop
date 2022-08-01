@@ -16,7 +16,7 @@ return [
     //changing setting
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'customers',
+        'passwords' => 'users',
     ],
 
 
@@ -45,11 +45,15 @@ return [
 
     //changing setting
     'guards' => [
+        'web' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
         'vendors' => [
             'driver' => 'session', 
             'provider' => 'vendors'
         ],
-        'web' => [
+        'customers' => [
             'driver' => 'session',
             'provider' => 'customers',
         ],
@@ -84,6 +88,11 @@ return [
 
     //changing here
     'providers' => [
+
+        'users' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\User::class,
+        ],
         'vendors' => [
             'driver' => 'eloquent', 
             'model' => App\Models\Vendor::class,
@@ -127,6 +136,12 @@ return [
     */
 
     'passwords' => [
+        'users' => [
+            'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
         'customers' => [
             'provider' => 'customers',
             'table' => 'password_resets',

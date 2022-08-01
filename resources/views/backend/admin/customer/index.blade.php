@@ -47,7 +47,7 @@
                                         <thead>
                                             <tr>
                                                 <th scope="col">S.L</th>
-                                                <th scope="col">Name</th>
+                                                <th scope="col">Full Name</th>
                                                 <th scope="col">User Name</th>
                                                 <th scope="col">Eamil</th>
                                                 <th scope="col">Photo</th>
@@ -61,7 +61,7 @@
                                             @foreach($customers as $key=>$customer)
                                                 <tr>
                                                     <td scope="col">{{$key+1}}</td>
-                                                    <td scope="col">{{$customer->fullname}}</td>
+                                                    <td scope="col">{{$customer->firstname}} {{$customer->lastname}}</td>
                                                     <td scope="col">{{$customer->username}}</td>
                                                     <td scope="col">{{$customer->email}}</td>
                                                     <td scope="col">{{$customer->photo}}</td>
@@ -69,7 +69,7 @@
                                                     <td scope="col">{{$customer->address}}</td>
                                                     <td scope="col">{{$customer->status}}</td>
                                                     <td>
-                                                        <a href="" data-toggle="tooltip" title="View" data-placement="bottom" class="btn btn-outline-success btn-sm"><img src="{{url('icon/eye.svg')}}" alt="" srcset=""></a>
+                                                        <a href="{{route('admin.customer.view', $customer->id)}}" data-toggle="tooltip" title="View" data-placement="bottom" class="btn btn-outline-success btn-sm"><img src="{{url('icon/eye.svg')}}" alt="" srcset=""></a>
                                                         <a href="{{route('admin.customer.edit', $customer->id)}}" data-toggle="tooltip" title="Edit" data-placement="bottom" class="btn btn-outline-warning btn-sm"><img src="{{url('icon/edit.svg')}}" alt="" srcset=""></a>
                                                         <a href="{{route('admin.customer.delete', $customer->id)}}" data-toggle="tooltip" title="Delete" data-placement="bottom" class="btn btn-outline-danger btn-sm"><img src="{{url('icon/delete.svg')}}" alt="" srcset=""></a>
                                                     </td>
@@ -79,7 +79,7 @@
                                         <tfoot>
                                             <tr>
                                                 <th scope="col">S.L</th>
-                                                <th scope="col">Name</th>
+                                                <th scope="col">Full Name</th>
                                                 <th scope="col">User Name</th>
                                                 <th scope="col">Eamil</th>
                                                 <th scope="col">Photo</th>

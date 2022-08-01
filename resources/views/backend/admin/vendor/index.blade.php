@@ -50,12 +50,10 @@
                                                 <th scope="col">Full Name</th>
                                                 <th scope="col">User Name</th>
                                                 <th scope="col">Eamil</th>
-                                                <th scope="col">Photo</th>
+                                                <th scope="col">Role</th>
                                                 <th scope="col">Phone</th>
                                                 <th scope="col">Address</th>
-                                                <th scope="col">Description</th>
-                                                <th scope="col">Product</th>
-                                                <th scope="col">License No.</th>
+                                                <th scope="col">Is Vendor</th>
                                                 <th scope="col">Status</th>
                                                 <th scope="col">Action</th>
                                             </tr>
@@ -64,16 +62,13 @@
                                             @foreach($vendors as $key=>$vendor)
                                             <tr>
                                                 <td>{{$key+1}}</td>
-                                                <td>{{$vendor->fullname}}</td>
+                                                <td>{{$vendor->firstname}} {{$vendor->lastname}}</td>
                                                 <td>{{$vendor->username}}</td>
                                                 <td>{{$vendor->email}}</td>
-                                                <td>{{$vendor->photo}}</td>
+                                                <td>{{$vendor->role}}</td>
                                                 <td>{{$vendor->phone}}</td>
                                                 <td>{{$vendor->address}}</td>
-                                                <td>{{$vendor->vendor_description}}</td>
-                                                <td>{{$vendor->product}}</td>
-
-                                                <td>{{$vendor->license_num}}</td>
+                                                <td>{{$vendor->is_vendor ? 'Yes' : 'No'}}</td>
                                                 <td>{{$vendor->status}}</td>
                                                     <td>
                                                         <a href="{{route('admin.vendor.show', $vendor->id)}}" data-toggle="tooltip" title="View" data-placement="bottom" class="btn btn-outline-success btn-sm"><img src="{{url('icon/eye.svg')}}" alt="" srcset=""></a>
@@ -91,12 +86,10 @@
                                                 <th scope="col">Full Name</th>
                                                 <th scope="col">User Name</th>
                                                 <th scope="col">Eamil</th>
-                                                <th scope="col">Photo</th>
+                                                <th scope="col">Role</th>
                                                 <th scope="col">Phone</th>
                                                 <th scope="col">Address</th>
-                                                <th scope="col">Description</th>
-                                                <th scope="col">Product</th>
-                                                <th scope="col">License No.</th>
+                                                <th scope="col">Is Vendor</th>
                                                 <th scope="col">Status</th>
                                                 <th scope="col">Action</th>
                                             </tr>

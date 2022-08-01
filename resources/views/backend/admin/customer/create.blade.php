@@ -68,10 +68,16 @@
                                     <form class="m-3" action="{{route('admin.customer.store')}}" method="POST" enctype="multipart/form-data">
                                         @csrf
                                         <div class="mb-3">
-                                            <label for="fullname" class="form-label">Full Name :<span
+                                            <label for="firstname" class="form-label">First Name :<span
                                                     class="text-danger"> *</span></label>
-                                            <input type="text" class="form-control" id="fullname" name="fullname"
-                                                placeholder="Enter Full Name">
+                                            <input type="text" class="form-control" id="firstname" name="firstname"
+                                                placeholder="Enter First Name">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="lastname" class="form-label">Last Name :<span
+                                                    class="text-danger"> *</span></label>
+                                            <input type="text" class="form-control" id="lastname" name="lastname"
+                                                placeholder="Enter Last Name">
                                         </div>
                                         <div class="mb-3">
                                             <label for="username" class="form-label">User Name :<span

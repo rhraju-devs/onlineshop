@@ -61,8 +61,13 @@
                 <nav class="classy-navbar" id="bigshopNav">
 
                     <!-- Nav Brand -->
-                    <a href="index.html" class="nav-brand"><img src="{{asset('frontend/img/core-img/logo.png')}}"
-                            alt="logo"></a>
+                    <a href="index.html" class="nav-brand">
+                        @foreach($settings as $setting)
+                        <img style="width: 140px; height:35px;" src="{{'/uploads/settings/' . $setting->logo}}"
+                            alt="{{asset('frontend/img/core-img/logo.png')}}">
+                        @endforeach
+                        </a>
+
 
                     <!-- Toggler -->
                     <div class="classy-navbar-toggler">
@@ -210,21 +215,21 @@
                         <div class="account-area">
                             @if(auth()->check())
                             <div class="user-thumbnail m-r-2">
-                                <img src="{{url('/uploads/customers/' . auth()->user()->photo)}}" alt="{{url('frontend/img/bg-img/user.jpg')}}">
+                                <img src="" alt="">
                             </div>
-                            @elseif(Auth::guard('vendors')->check())
-                            <div class="user-thumbnail m-r-2">
-                            <img src="{{url('/uploads/vendors/' . auth('vendors')->user()->photo)}}" alt="{{url('frontend/img/bg-img/user.jpg')}}">
+                            <!-- @elseif(Auth::guard('vendors')->check()) -->
+                            <!-- <div class="user-thumbnail m-r-2">
+                            <img src="url('/uploads/vendors/' . auth('vendors')->user()->photo)" alt="url('frontend/img/bg-img/user.jpg')">
                             </div>
-                            @else
+                            @else -->
                             
                             @endif
                             <ul class="user-meta-dropdown">
                                 <li class="user-title"><span>Hello,</span>
                                     @if(auth()->check())
-                                        {{auth()->user()->fullname}}
-                                    @elseif(Auth::guard('vendors')->check())
-                                        {{auth('vendors')->user()->fullname}}
+                                        {{auth()->user()->firstname}}{{auth()->user()->lastname}}
+                                    <!-- @elseif(Auth::guard('vendors')->check())
+                                        {{auth('vendors')->user()->fullname}} -->
                                     @else
 
                                     @endif
@@ -311,9 +316,14 @@
                 <form class="m-3" action="{{route('customer.registration')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
-                        <label for="fullname" class="form-label">Full Name :<span class="text-danger"> *</span></label>
-                        <input type="text" class="form-control" id="fullname" name="fullname"
-                            placeholder="Enter Full Name">
+                        <label for="firstname" class="form-label">First Name :<span class="text-danger"> *</span></label>
+                        <input type="text" class="form-control" id="firstname" name="firstname"
+                            placeholder="Enter First Name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="lastname" class="form-label">Last Name :<span class="text-danger"> *</span></label>
+                        <input type="text" class="form-control" id="lastname" name="lastname"
+                            placeholder="Enter Last Name">
                     </div>
                     <div class="mb-3">
                         <label for="username" class="form-label">User Name :<span class="text-danger"> *</span></label>
