@@ -145,13 +145,6 @@
                                                 <option @if ($vendor->is_vendor == 0) 'selected' @endif value =0>No</option>
                                             </select>
                                         </div>
-<!-- 
-                                        <div class="mb-3">
-                                            <label for="license" class="form-label">License Number :<span
-                                                    class="text-danger"> *</span></label>
-                                            <input type="number" class="form-control" id="license" name="license"
-                                                value="">
-                                        </div> -->
                                     
                                         <div class="row">
                                             <div class="col-md-4 col-lg-4">
@@ -179,8 +172,8 @@
                                                         <label class="input-group-text" for="role">Options</label>
                                                     </div>
                                                     <select name='role' class="custom-select" id="role">
-                                                        <option value="vendor" selected disable>Vendor</option>
-
+                                                        <option>None</option>
+                                                        <option value="vendor">Vendor</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -198,7 +191,7 @@
 
         </div>
     </div>
-    <!-- [ sample-page ] end -->
+
 </div>
 
 @endsection

@@ -29,11 +29,9 @@ class VendorController extends Controller
             'phone' => 'required|string|digits:11', 
             'photo' => 'nullable', 
             'address' => 'string|required',
-            'description' => 'string|required',
-            'zip' => 'numeric|required',
-            'product' => 'string|required',
-            'license' => 'string|required',
-            'status' => 'string|required',
+            'vendor_description' => 'string|required',
+            'zip_code' => 'numeric|required',
+            // 'status' => 'string|required',
         ]);
 
         User::create([
@@ -47,8 +45,7 @@ class VendorController extends Controller
             'address' => $request->address,
             'vendor_description' => $request->description,
             'zip_code' => $request->zip,
-            'license_num' => $request->license,
-            'status' => $request->status,
+            // 'status' => $request->status,
         ]);
         // dd($request);
         return redirect()->route('frontend.dashboard');

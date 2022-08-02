@@ -31,7 +31,7 @@ class CustomerController extends Controller
             'phone' => 'required|string|digits:11', 
             'photo' => 'nullable', 
             'address' => 'string|required',
-            'status' => 'string|required'
+            // 'status' => 'string|required'
         ]);
         // dd($request->all());
         User::create([
@@ -43,7 +43,7 @@ class CustomerController extends Controller
             'phone' => $request->phone,
             'photo' => $customerImage,
             'address' => $request->address,
-            'status' => $request->status,
+            // 'status' => $request->status,
         ]);
         // dd($request->all());
         return redirect()->route('frontend.dashboard');

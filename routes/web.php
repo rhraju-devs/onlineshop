@@ -47,7 +47,7 @@ Route::get('/all', function(){
 Route::get('/admin/login', [AdminDashboardController::class, 'login'])->name('admin.login');
 Route::post('/admin/login-check', [AdminDashboardController::class, 'loginCheck'])->name('admin.login.check');
 
-// Route::group(['middleware'=>'auth','prefix'=>'admin'],function(){
+Route::group(['middleware'=>'auth','prefix'=>'admin'],function(){
     Route::get('/logout', [AdminDashboardController::class, 'logout'])->name('admin.logout');
     Route::get('/dashboard', [AdminDashboardController::class, 'dashboard'])->name('admin.dashboard');
     // Product Route
@@ -109,7 +109,7 @@ Route::post('/admin/login-check', [AdminDashboardController::class, 'loginCheck'
     Route::put('/banner-update/{id}', [BannerController::class, 'update'])->name('admin.banner.update');
     Route::get('/banner-delete/{id}', [BannerController::class, 'delete'])->name('admin.banner.delete');
     Route::get('/banner-show/{id}', [BannerController::class, 'show'])->name('admin.banner.show');
-// });
+});
 
 
 
