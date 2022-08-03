@@ -27,4 +27,10 @@ class ProductController extends Controller
             $categories = Category::all();
             return view('frontend.pages.product.shop_list_left_sidebar_product', compact('products', 'brands', 'categories'));
     }
+
+    public function single_product($id)
+    {   
+        $product = Product::find($id);
+        return view('frontend.pages.product.single_view_product', compact('product'));
+    }
 }

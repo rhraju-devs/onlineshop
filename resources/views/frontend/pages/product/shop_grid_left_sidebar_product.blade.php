@@ -239,6 +239,7 @@
                                         @foreach($product->images as $image)
                                         <img class="hover_img" src="{{url('/uploads/product_images/',$product->images->last()->image)}}" alt="">
                                         @endforeach
+                                        <!-- Product Image -->
                                         <!-- Product Badge -->
                                         <div class="product_badge">
                                             <span>New</span>
@@ -268,7 +269,7 @@
                                         </div>
 
                                         <p class="brand_name">{{optional($product->brand)->name}}</p>
-                                        <a href="#">{{$product->product_name}}</a>
+                                        <a href="{{route('frontend.single.product', $product->id)}}">{{$product->product_name}}</a>
                                         <h6 class="product-price">{{$product->product_price}}</h6>
                                     </div>
                                 </div>

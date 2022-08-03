@@ -122,6 +122,7 @@ Route::view('/blog', 'frontend.pages.blog.index')->name('frontend.blog');
 // Frontend Product Route
 Route::get('/all-product-grid', [FrontendProduct::class, 'grid_product'])->name('frontend.grid.product');
 Route::get('/all-product-list', [FrontendProduct::class, 'list_product'])->name('frontend.list.product');
+Route::get('/product/single-product-details/{id}', [FrontendProduct::class, 'single_product'])->name('frontend.single.product');
 Route::get('/all', function(){
     return view('frontend.pages.all-product');
 });
