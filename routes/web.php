@@ -120,7 +120,8 @@ Route::get('/about-us', [DashboardController::class, 'about_us'])->name('fronten
 Route::view('/blog', 'frontend.pages.blog.index')->name('frontend.blog');
 
 // Frontend Product Route
-Route::get('/all-product', [FrontendProduct::class, 'index'])->name('frontend.all-product');
+Route::get('/all-product-grid', [FrontendProduct::class, 'grid_product'])->name('frontend.grid.product');
+Route::get('/all-product-list', [FrontendProduct::class, 'list_product'])->name('frontend.list.product');
 Route::get('/all', function(){
     return view('frontend.pages.all-product');
 });

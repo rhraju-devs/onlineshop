@@ -89,7 +89,7 @@
                                 </li>
 
                                 <li>
-                                    <a href="#">All Product</a>
+                                    <a href="{{route('frontend.grid.product')}}">All Product</a>
                                 </li>
 
                                 <li><a href="#">Item</a>
