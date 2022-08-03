@@ -4,12 +4,19 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Product;
+use App\Models\Category;
+use App\Models\Brand;
 
 class DashboardController extends Controller
 {
     public function dashboard()
     {
-        return view('frontend.pages.dashboard');
+        $products = Product::with('images')->get();
+        $brands = Brand::all();
+        $categories = Category::all();
+        $featureproducts = Product::where('feature_product', 'yes')->get();
+        return view('frontend.pages.dashboard.frontend_dashboard', compact('products', 'brands', 'categories', 'featureproducts'));
     }
 
     public function wishlist()

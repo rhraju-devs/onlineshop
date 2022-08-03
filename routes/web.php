@@ -13,6 +13,8 @@ use App\Http\Controllers\Admin\VendorController;
 use App\Http\Controllers\Frontend\CustomerController as FrontendCustomer;
 use App\Http\Controllers\Frontend\VendorController as FrontendVendor;
 use App\Http\Controllers\Frontend\ProductController as FrontendProduct;
+use App\Http\Controllers\Frontend\CategoryController as FrontendCategory;
+use App\Http\Controllers\Frontend\BrandController as FrontendBrand;
 use App\Http\Controllers\Customer\CustomerController as Customer;
 use App\Http\Controllers\Frontend\DashboardController;
 
@@ -31,25 +33,13 @@ Route::get('/home', function (){
     return "This site is under construction...";
 });
 
-Route::get('/modal-product', function (){
-    return view('frontend.pages.product');
-});
-// Route::get('/all-product', function(){
-//     return view('frontend.pages.all-product');
-// });
-Route::get('/all-product', [FrontendProduct::class, 'index'])->name('frontend.all-product');
-Route::get('/all', function(){
-    return view('frontend.pages.all-product');
-});
-
-
-
 Route::get('/admin/login', [AdminDashboardController::class, 'login'])->name('admin.login');
 Route::post('/admin/login-check', [AdminDashboardController::class, 'loginCheck'])->name('admin.login.check');
 
-Route::group(['middleware'=>'auth','prefix'=>'admin'],function(){
+Route::group(['middleware'=>['auth', 'checkAdmin'],'prefix'=>'admin'],function(){
     Route::get('/logout', [AdminDashboardController::class, 'logout'])->name('admin.logout');
     Route::get('/dashboard', [AdminDashboardController::class, 'dashboard'])->name('admin.dashboard');
+
     // Product Route
     Route::get('/product-list', [ProductController::class, 'index'])->name('admin.product.list');
     Route::get('/prcreate', [ProductController::class, 'create'])->name('admin.product.create');
@@ -129,6 +119,11 @@ Route::get('/contact-us', [DashboardController::class, 'contact_us'])->name('fro
 Route::get('/about-us', [DashboardController::class, 'about_us'])->name('frontend.about_us');
 Route::view('/blog', 'frontend.pages.blog.index')->name('frontend.blog');
 
+// Frontend Product Route
+Route::get('/all-product', [FrontendProduct::class, 'index'])->name('frontend.all-product');
+Route::get('/all', function(){
+    return view('frontend.pages.all-product');
+});
 
 //Customer Route
 Route::post('/customer-registration',[FrontendCustomer::class,'store'])->name('customer.registration');
@@ -147,6 +142,12 @@ Route::get('/vendor-logout',[FrontendVendor::class,'logout'])->name('vendor.logo
 
 
 //Multiple Image Upload
+
+//category Product
+Route::get('/category-product/{id}', [FrontendCategory::class, 'view'])->name('frontend.category.view');
+
+//Brand Wise Product
+Route::get('/brand-product/{id}', [FrontendBrand::class, 'view'])->name('frontend.brand.view');
 
 
 

@@ -176,25 +176,38 @@
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div class="row">
-                                            <div class="col-md-4 col-lg-4">
-
-                                            </div>
-                                            <div class="col-md-4 col-lg-4">
-
-                                            </div>
-                                            <div class="col-md-4 col-lg-4">
+                                            <div class="col-md-6 col-lg-6">
                                                 <div class="input-group mb-3">
+                                                    <label for="feature_product" class="form-label">Feature Product :<span
+                                                            class="text-danger"> *</span></label><br>
+                                                    <div class="input-group-prepend">
+                                                        <label class="input-group-text" for="feature_product">Options</label>
+                                                    </div>
+                                                    <select name='feature_product' class="custom-select" id="feature_product">
+                                                        <option @if($product->feature_product == 'yes') selected @endif value="yes">Yes</option>
+                                                        <option @if($product->feature_product == 'no') selected @endif value="no">No</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-6">
+                                                <div class="input-group mb-3">
+                                                <label for="status" class="form-label">Product Status :<span
+                                                            class="text-danger"> *</span></label><br>
                                                     <div class="input-group-prepend">
                                                         <label class="input-group-text" for="status">Options</label>
                                                     </div>
+                                                    <select name='product_status' class="custom-select" id="status">
                                                     <select name='status' class="custom-select" id="status">
                                                         <option @if($product->status == 'active') selected @endif value="active">Active</option>
                                                         <option @if($product->status == 'inactive') selected @endif value="inactive">Inactive</option>
                                                     </select>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
+
 
                                         <button type="reset" class="btn btn-primary">Cancel</button>
                                         <button type="submit" class="btn btn-primary">Update</button>

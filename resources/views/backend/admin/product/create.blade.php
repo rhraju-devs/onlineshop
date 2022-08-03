@@ -174,18 +174,28 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-4 col-lg-4">
-
-                                            </div>
-                                            <div class="col-md-4 col-lg-4">
-
-                                            </div>
-                                            <div class="col-md-4 col-lg-4">
+                                            <div class="col-md-6 col-lg-6">
                                                 <div class="input-group mb-3">
+                                                    <label for="feature_product" class="form-label">Feature Product :<span
+                                                            class="text-danger"> *</span></label><br>
+                                                    <div class="input-group-prepend">
+                                                        <label class="input-group-text" for="feature_product">Options</label>
+                                                    </div>
+                                                    <select name='feature_product' class="custom-select" id="feature_product">
+                                                        <option selected>Choose...</option>
+                                                        <option value="yes">Yes</option>
+                                                        <option value="no">No</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-6">
+                                                <div class="input-group mb-3">
+                                                <label for="status" class="form-label">Product Status :<span
+                                                            class="text-danger"> *</span></label><br>
                                                     <div class="input-group-prepend">
                                                         <label class="input-group-text" for="status">Options</label>
                                                     </div>
-                                                    <select name='product_status' class="custom-select" id="status">
+                                                    <select name='status' class="custom-select" id="status">
                                                         <option selected>Choose...</option>
                                                         <option value="active">Active</option>
                                                         <option value="inactive">Inactive</option>

@@ -93,18 +93,20 @@ class CustomerController extends Controller
             'email' => 'required|email',
             'password' => 'required',
         ]);
-        $check=Auth::attempt([
-            'email'=>$request->email,
-            'password'=>$request->password,
-        ]);
-        // dd($check);
-        if(!$check){
-            // return 'Could Not Login. Give Current crediential';
-            Session::flash('error-msg', 'Invalid Email and Password');
 
-        }
-        else{
+        $user =User::where('status','=', 'active')->where('email',$request->email)->first();
+        if($user){
+            Auth::attempt([
+                'email'=>$request->email,
+                'password'=>$request->password,
+            ]);
+
+            Session::flash('success-msg', 'Vendor Registration Complete wait for approve');
             return redirect()->route('frontend.dashboard');
+        }else{
+            Session::flash('error-msg', 'Invalid Email and Password');
+            return redirect()->route('frontend.dashboard');
+            // return "You are not applicable for login. wait for your confirmation";
         }
     }
 

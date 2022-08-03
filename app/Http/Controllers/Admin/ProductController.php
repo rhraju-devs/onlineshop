@@ -30,7 +30,8 @@ class ProductController extends Controller
         return view('backend.admin.product.create', compact('categories', 'brands', 'subcategories'));
     }
     public function store(Request $request)
-    {
+    { 
+        // dd($request);
         $request->validate([
             'product_name' => 'string|required',
             'product_description' => 'string|required',
@@ -40,8 +41,9 @@ class ProductController extends Controller
             'product_brand'=>'nullable',
             'product_quantity'=>'numeric|required',
             'product_price'=>'numeric|required',
-            'product_status' => 'required',
+            'status' => 'required',
             'product_weight' => 'numeric|required',
+            'feature_product' => 'nullable',
         ]);
 
         $new_product = Product::create([
@@ -54,7 +56,8 @@ class ProductController extends Controller
             'product_quantity' => $request->product_quantity,
             'product_price' => $request->product_price,
             'product_weight' => $request->product_weight,
-            'status' => $request->product_status,
+            'feature_product' => $request->feature_product,
+            'status' => $request->status,
         ]);
         if($request->has('images')){
             foreach($request->file('images')as $image){
@@ -96,6 +99,7 @@ class ProductController extends Controller
             'product_quantity' => $request->product_quantity,
             'product_price' => $request->product_price,
             'product_weight' => $request->product_weight,
+            'feature_product' => $request->feature_product,
             'status' => $request->status,
         ]);
    

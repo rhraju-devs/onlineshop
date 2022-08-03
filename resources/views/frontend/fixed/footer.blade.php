@@ -109,8 +109,7 @@
                     <!-- Copywrite -->
                     <div class="col-12 col-md-6">
                         <div class="copywrite_text">
-                            <p>Made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="#">Designing
-                                    World</a></p>
+                            <p>Made with <i class="icofont-heart"></i> by <a href="#">Md. Rajib Hossain</a></p>
                         </div>
                     </div>
                     <!-- Payment Method -->

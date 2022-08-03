@@ -65,8 +65,7 @@
                                                 <th scope="col">Price</th>
                                                 <th scope="col">Weight</th>
                                                 <th scope="col">Status</th>
-                                                <th scope="col">Created At</th>
-                                                <th scope="col">Updated At</th>
+                                                <th scope="col">Feater Product</th>
                                                 <th scope="col">Action</th>
                                             </tr>
 
@@ -88,8 +87,7 @@
                                                 <td scope="col">{{$product->product_price}}</td>
                                                 <td scope="col">{{$product->product_weight}}</td>
                                                 <td scope="col">{{$product->status}}</td>
-                                                <td scope="col">{{$product->created_at}}</td>
-                                                <td scope="col">{{$product->updated_at}}</td>
+                                                <td scope="col">{{$product->feature_product}}</td>
                                                 <td>
                                                     <a href="{{route('admin.product.show', $product->id)}}" data-toggle="tooltip" title="View" data-placement="bottom"
                                                         class="btn btn-outline-success btn-sm"><img src="{{url('icon/eye.svg')}}" alt=""
