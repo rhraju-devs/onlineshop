@@ -20,6 +20,9 @@ class CategoryController extends Controller
 
     public function list_category($id)
     {
-
+        $products = Product::where('product_category', $id)->get();
+        $brands = Brand::all();
+        $categories = Category::find($id)->with('parentCategory')->get();
+        return view('frontend.pages.category.shop_list_left_sidebar_category_product', compact('products', 'brands', 'categories'));
     }
 }
