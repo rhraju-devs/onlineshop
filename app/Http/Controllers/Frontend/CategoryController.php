@@ -10,11 +10,16 @@ use App\Models\Product;
 
 class CategoryController extends Controller
 {
-    public function view($id)
+    public function grid_category($id)
     {
         $products = Product::where('product_category', $id)->get();
         $brands = Brand::all();
         $categories = Category::find($id)->with('parentCategory')->get();
-        return view('frontend.pages.category.all_category_product', compact('products', 'brands', 'categories'));
+        return view('frontend.pages.category.shop_grid_left_sidebar_category_product', compact('products', 'brands', 'categories'));
+    }
+
+    public function list_category($id)
+    {
+
     }
 }

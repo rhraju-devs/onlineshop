@@ -100,10 +100,16 @@
                             <h6 class="widget-title">Product Categories</h6>
                             <div class="widget-desc">
                                 <!-- Single Checkbox -->
+
                                 @foreach($categories as $category)
+                                
                                 <div class="custom-control custom-checkbox d-flex align-items-center mb-2">
                                     <input type="checkbox" class="custom-control-input" id="{{$category->name}}">
-                                    <label class="custom-control-label" for="{{$category->name}}">{{$category->name}}<span class="text-muted">(109)</span></label>
+                                    <label class="custom-control-label" for="{{$category->name}}">{{$category->name}}
+                       
+                                    <span class="text-muted">( @php echo $category->count() @endphp )</span>
+                          
+                                   </label>
                                 </div>
                                 @endforeach
                                 <!-- Single Checkbox -->
@@ -166,8 +172,11 @@
                                 <div class="custom-control custom-checkbox d-flex align-items-center mb-2">
                                     <input type="checkbox" class="custom-control-input" id="{{$brand->name}}">
 
-                                    <label class="custom-control-label" for="{{$brand->name}}">{{$brand->name}} <span class="text-muted">(203)</span></label>
+                                    <label class="custom-control-label" for="{{$brand->name}}">{{$brand->name}} <span class="text-muted">( {{(\App\Models\Product::where('id', $brand->id)->get()->count())}} )</span></label>
                                 </div>
+                                @endforeach
+                                @foreach($brands as $brand)
+                                <p> Brand Id( {{(\App\Models\Product::where('id', $brand->id)->get()->count())}} )</p>
                                 @endforeach
                                 <!-- Single Checkbox -->
                             </div>
@@ -269,7 +278,8 @@
                                         </div>
 
                                         <p class="brand_name">{{optional($product->brand)->name}}</p>
-                                        <a href="{{route('frontend.single.product', $product->id)}}">{{$product->product_name}}</a>
+                                        <h2><a href="{{route('frontend.single.product', $product->id)}}">{{$product->product_name}}</a></h2>
+                                        <h6 class="brand_name">{{optional($product->category)->name}}</h6>
                                         <h6 class="product-price">{{$product->product_price}}</h6>
                                     </div>
                                 </div>

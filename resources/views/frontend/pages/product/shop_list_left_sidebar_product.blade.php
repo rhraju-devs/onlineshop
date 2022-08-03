@@ -41,7 +41,7 @@
                             <div class="custom-control custom-checkbox d-flex align-items-center mb-2">
                                 <input type="checkbox" class="custom-control-input" id="{{$category->name}}">
                                 <label class="custom-control-label" for="{{$category->name}}">{{$category->name}} <span
-                                        class="text-muted">(109)</span></label>
+                                        class="text-muted">( {{$category->count() }})</span></label>
                             </div>
                             @endforeach
                             <!-- Single Checkbox -->
@@ -112,7 +112,7 @@
                                 <input type="checkbox" class="custom-control-input" id="{{$brand->name}}">
 
                                 <label class="custom-control-label" for="{{$brand->name}}">{{$brand->name}} <span
-                                        class="text-muted">(203)</span></label>
+                                        class="text-muted">( {{$brand->count()}} )</span></label>
                             </div>
                             @endforeach
                             <!-- Single Checkbox -->
@@ -162,7 +162,22 @@
 
             <div class="col-12 col-md-8 col-xl-9">
                 <!-- Shop Top Sidebar -->
-               
+                <div class="shop_top_sidebar_area d-flex flex-wrap align-items-center justify-content-between">
+                        <div class="view_area d-flex">
+                            <div class="grid_view">
+                                <a href="{{route('frontend.grid.product')}}" data-toggle="tooltip" data-placement="top" title="Grid View"><i class="icofont-layout"></i></a>
+                            </div>
+                            <div class="list_view ml-3">
+                                <a href="{{route('frontend.list.product')}}" data-toggle="tooltip" data-placement="top" title="List View"><i class="icofont-listine-dots"></i></a>
+                            </div>
+                        </div>
+                        <select class="small right">
+                            <option selected>Short by Popularity</option>
+                            <option value="1">Short by Newest</option>
+                            <option value="2">Short by Sales</option>
+                            <option value="3">Short by Ratings</option>
+                        </select>
+                    </div>
 
                 <div class="shop_list_product_area">
                     <div class="row">
@@ -213,7 +228,8 @@
                                     </div>
 
                                     <p class="brand_name">{{optional($product->brand)->name}}</p>
-                                    <a href="#">{{$product->product_name}}</a>
+                                    <h2><a href="{{route('frontend.single.product', $product->id)}}">{{$product->product_name}}</a></h2>
+                                    <h6 class="brand_name">{{optional($product->category)->name}}</h6>
                                     <h6 class="product-price">{{$product->product_price}}</h6>
 
                                     <p class="product-short-desc">{!! $product->product_description !!}</p>

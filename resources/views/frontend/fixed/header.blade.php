@@ -97,7 +97,7 @@
                                         <ul class="single-mega cn-col-3">
                                             <li><strong>Category</strong></li>
                                             @foreach($categories as $category)
-                                            <li><a href="{{route('frontend.category.view', $category->id)}}">{{$category->name}}</a></li>
+                                            <li><a href="{{route('frontend.category.grid', $category->id)}}">{{$category->name}}</a></li>
                                             @endforeach
                                         </ul>
                                         <ul class="single-mega cn-col-3">

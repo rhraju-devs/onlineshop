@@ -111,65 +111,31 @@
 
                         <!-- Carousel Inner -->
                         <div class="carousel-inner">
-                            <div class="carousel-item active"> 
-                                <a class="gallery_img" href="/frontend/img/product-img/pd-big-thumb-1.png" title="First Slide">
-                                    <img class="d-block w-100" src="/frontend/img/product-img/pd-big-thumb-1.png"
+                        @foreach($product->images as $key=>$image)
+                            <div class="carousel-item {{$key == 0 ? 'active' : ''}}">
+
+                                <a class="gallery_img" href="{{asset('/uploads/product_images/'. $image->image)}}" title="First Slide">
+                                    <img class="d-block w-100" src="{{asset('/uploads/product_images/'. $image->image)}}"
                                         alt="First slide">
                                 </a>
                                 <!-- Product Badge -->
                                 <div class="product_badge">
                                     <span class="badge-new">New</span>
                                 </div>
-                            </div>
 
-                            <div class="carousel-item">
-                                <a class="gallery_img" href="/frontend/img/product-img/pd-big-thumb-2.png" title="Second Slide">
-                                    <img class="d-block w-100" src="/frontend/img/product-img/pd-big-thumb-2.png"
-                                        alt="Second slide">
-                                </a>
-                                <!-- Product Badge -->
-                                <div class="product_badge">
-                                    <span class="badge-new">Sale</span>
-                                </div>
                             </div>
-
-                            <div class="carousel-item">
-                                <a class="gallery_img" href="/frontend/img/product-img/pd-big-thumb-3.png" title="Third Slide">
-                                    <img class="d-block w-100" src="/frontend/img/product-img/pd-big-thumb-3.png"
-                                        alt="Third slide">
-                                </a>
-                                <!-- Product Badge -->
-                                <div class="product_badge">
-                                    <span class="badge-new">-20%</span>
-                                </div>
-                            </div>
-
-                            <div class="carousel-item">
-                                <a class="gallery_img" href="/frontend/img/product-img/pd-big-thumb-4.png" title="Fourth Slide">
-                                    <img class="d-block w-100" src="/frontend/img/product-img/pd-big-thumb-4.png"
-                                        alt="Fourth slide">
-                                </a>
-                                <!-- Product Badge -->
-                                <div class="product_badge">
-                                    <span class="badge-new">Hot</span>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
 
                         <!-- Carosel Indicators -->
                         <ol class="carousel-indicators">
-                            <li class="active" data-target="#product_details_slider" data-slide-to="0"
-                                style="background-image: url(/frontend/img/product-img/pd-big-thumb-1.png);">
+                            @foreach($product->images as $key=>$image)
+
+                            <li class="{{$key == 0 ? 'active' : ''}}" data-target="#product_details_slider" data-slide-to="{{$key}}"
+                                style="background-image: url({{asset('/uploads/product_images/'. $image->image)}});">
                             </li>
-                            <li data-target="#product_details_slider" data-slide-to="1"
-                                style="background-image: url(/frontend/img/product-img/pd-big-thumb-2.png);">
-                            </li>
-                            <li data-target="#product_details_slider" data-slide-to="2"
-                                style="background-image: url(/frontend/img/product-img/pd-big-thumb-3.png);">
-                            </li>
-                            <li data-target="#product_details_slider" data-slide-to="3"
-                                style="background-image: url(/frontend/img/product-img/pd-big-thumb-4.png);">
-                            </li>
+                            @endforeach
+
                         </ol>
                     </div>
                 </div>
