@@ -236,9 +236,9 @@
                                     <div class="product_image">
                                         <!-- Product Image -->
                                         <img class="normal_img" src="{{url('/uploads/product_images/',$product->images->first()->image)}}" alt="">
-                                        <!-- @foreach($product->images as $image) -->
+                                        @foreach($product->images as $image)
                                         <img class="hover_img" src="{{url('/uploads/product_images/',$product->images->last()->image)}}" alt="">
-                                        <!-- @endforeach -->
+                                        @endforeach
                                         <!-- Product Badge -->
                                         <div class="product_badge">
                                             <span>New</span>

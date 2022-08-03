@@ -25,6 +25,6 @@ class ProductController extends Controller
         //    $images =  $products->image;
             $brands = Brand::all();
             $categories = Category::all();
-            return view('frontend.pages.shop-grid-left-sidebar-product', compact('products', 'brands', 'categories'));
+            return view('frontend.pages.product.shop_list_left_sidebar_product', compact('products', 'brands', 'categories'));
     }
 }
