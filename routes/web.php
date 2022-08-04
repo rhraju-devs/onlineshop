@@ -132,7 +132,7 @@ Route::get('/product/category-product-grid/{id}', [FrontendCategory::class, 'gri
 Route::get('/product/category-product-list/{id}', [FrontendCategory::class, 'list_category'])->name('frontend.category.list');
 
 //Brand Wise Product
-Route::get('/product/brand-product-grid/{id}', [FrontendBrand::class, 'view'])->name('frontend.brand.view');
+Route::get('/product/brand-product-grid/{id}', [FrontendBrand::class, 'grid_brand'])->name('frontend.brand.view');
 Route::get('/product/brand-product-list/{id}', [FrontendBrand::class, 'list_brand'])->name('frontend.brand.list');
 
 //Customer Route

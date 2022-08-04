@@ -10,11 +10,19 @@ use App\Models\Product;
 
 class BrandController extends Controller
 {
-    public function view($id)
+    public function grid_brand($id)
     {
         $products = Product::where('product_brand', $id)->get();
         $brands = Brand::all();
         $categories = Category::find($id)->with('parentCategory')->get();
-        return view('frontend.pages.brand.all_brand_product', compact('products', 'brands', 'categories'));
+        return view('frontend.pages.brand.shop_grid_left_sidebar_brand_product', compact('products', 'brands', 'categories'));
+    }
+
+    public function list_brand($id)
+    {
+        $products = Product::where('product_brand', $id)->get();
+        $brands = Brand::all();
+        $categories = Category::find($id)->with('parentCategory')->get();
+        return view('frontend.pages.brand.shop_list_left_sidebar_brand_product', compact('products', 'brands', 'categories'));
     }
 }

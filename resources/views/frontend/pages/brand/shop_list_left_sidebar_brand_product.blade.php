@@ -168,7 +168,7 @@
                                         <input type="checkbox" class="custom-control-input" id="{{$brand->name}}">
 
                                         <label class="custom-control-label" for="{{$brand->name}}">{{$brand->name}} <span
-                                                class="text-muted">( {{$brand->products->count()}} )</span></label>
+                                                class="text-muted">({{\App\Models\Product::where('product_brand', $brand->id)->get()->count()}} )</span></label>
                                     </div>
                                 @endforeach
                                 <!-- Single Checkbox -->
@@ -292,103 +292,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
-                            <!-- Quick View Modal Area -->
-                            <div class="modal fade" id="product{{$key}}" tabindex="-1" data-keyboard="false" data-backdrop="static" role="dialog"
-                                aria-labelledby="product{{$key}}" aria-hidden="true">
-                                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                                    <div class="modal-content">
-                                        <button type="button" class="close btn" data-dismiss="product{{$key}}" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                        <div class="modal-body">
-                                            <div class="quickview_body">
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <div class="col-12 col-lg-5">
-                                                            <div class="quickview_pro_img">
-                                                                <!-- Product Image -->
-                                                                <img class="normal_img"
-                                                                    src="{{url('/uploads/product_images/',$product->images->first()->image)}}"
-                                                                    alt="">
-                                                                @foreach($product->images as $image)
-                                                                <img class="hover_img"
-                                                                    src="{{url('/uploads/product_images/',$product->images->last()->image)}}"
-                                                                    alt="">
-                                                                @endforeach
-                                                                <!-- Product Image -->
-                                                                <!-- Product Badge -->
-                                                                <div class="product_badge">
-                                                                    <span class="badge-new">New</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-12 col-lg-7">
-                                                            <div class="quickview_pro_des">
-                                                                <h4 class="title">{{$product->product_name}}</h4>
-                                                                <div class="top_seller_product_rating mb-15">
-                                                                    <i class="icofont-star"></i>
-                                                                    <i class="icofont-star"></i>
-                                                                    <i class="icofont-star"></i>
-                                                                    <i class="icofont-star"></i>
-                                                                    <i class="icofont-star"></i>
-                                                                </div>
-                                                                <h5 class="price">{{$product->product_price}}</h5>
-                                                                <p>{{$product->product_description}}</p>
-                                                                <a href="# ">View Full Product Details</a>
-                                                            </div>
-                                                            <!-- Add to Cart Form -->
-                                                            <form class="cart" method="post">
-                                                                <div class="quantity">
-                                                                    <input type="number" class="qty-text" id="qty" step="1"
-                                                                        min="1" max="12" name="quantity" value="1">
-                                                                </div>
-                                                                <button type="submit" name="addtocart" value="5"
-                                                                    class="cart-submit">Add to cart</button>
-                                                                <!-- Wishlist -->
-                                                                <div class="modal_pro_wishlist">
-                                                                    <a href="wishlist.html"><i
-                                                                            class="icofont-heart"></i></a>
-                                                                </div>
-                                                                <!-- Compare -->
-                                                                <div class="modal_pro_compare">
-                                                                    <a href="compare.html"><i
-                                                                            class="icofont-exchange"></i></a>
-                                                                </div>
-                                                            </form>
-                                                            <!-- Share -->
-                                                            <div class="share_wf mt-30">
-                                                                <p>Share with friends</p>
-                                                                <div class="_icon">
-                                                                    <a href="#"><i
-                                                                            class="icofont-facebook"></i></a>
-                                                                    <a href="#"><i
-                                                                            class="icofont-twitter"></i></a>
-                                                                    <a href="#"><i
-                                                                            class="icofont-pinterest"></i></a>
-                                                                    <a href="#"><i class="icofont-linkedin"
-                                                                            ></i></a>
-                                                                    <a href="#"><i class="icofont-instagram"
-                                                                            aria-hidden="true"></i></a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Quick View Modal Area -->
-
-
-
-
-
-
-
 
                             @endforeach
 

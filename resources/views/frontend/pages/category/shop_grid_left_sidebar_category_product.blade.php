@@ -168,7 +168,7 @@
                                         <input type="checkbox" class="custom-control-input" id="{{$brand->name}}">
 
                                         <label class="custom-control-label" for="{{$brand->name}}">{{$brand->name}} <span
-                                                class="text-muted">( {{$brand->count()}} )</span></label>
+                                                class="text-muted">( {{(\App\Models\Product::where('product_brand', $brand->id)->get()->count())}})</span></label>
                                     </div>
                                 @endforeach
                                 <!-- Single Checkbox -->
