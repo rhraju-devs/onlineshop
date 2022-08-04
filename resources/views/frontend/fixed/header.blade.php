@@ -103,7 +103,7 @@
                                         <ul class="single-mega cn-col-3">
                                             <li><strong>Brand</strong></li>
                                             @foreach($brands as $brand)
-                                            <li><a href="{{route('frontend.brand.view', $brand->id)}}">{{$brand->name}}</a></li>
+                                            <li><a href="{{route('frontend.brand.grid', $brand->id)}}">{{$brand->name}}</a></li>
                                             @endforeach
                                         </ul>
                                         <div class="single-mega cn-col-3">

@@ -104,7 +104,7 @@
                                     <div class="custom-control custom-checkbox d-flex align-items-center mb-2">
                                         <input type="checkbox" class="custom-control-input" id="{{$category->name}}">
                                         <label class="custom-control-label" for="{{$category->name}}">{{$category->name}} <span
-                                                class="text-muted">( {{$category->count() }})</span></label>
+                                                class="text-muted">( {{(\App\Models\Product::where('product_category', $category->id)->get()->count())}} )</span></label>
                                     </div>
                                 @endforeach
                                 <!-- Single Checkbox -->

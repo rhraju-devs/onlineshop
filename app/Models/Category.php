@@ -15,4 +15,8 @@ class Category extends Model
     {
         return $this->belongsTo(Category::class, 'parent_id','id');
     }
+
+    public function categoryCount() {
+        return $this->hasMany(Product::class, 'product_category', 'id');
+    }
 }

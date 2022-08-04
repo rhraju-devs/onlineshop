@@ -104,7 +104,7 @@
                                     <div class="custom-control custom-checkbox d-flex align-items-center mb-2">
                                         <input type="checkbox" class="custom-control-input" id="{{$category->name}}">
                                         <label class="custom-control-label" for="{{$category->name}}">{{$category->name}} <span
-                                                class="text-muted">( )</span></label>
+                                                class="text-muted">( {{(\App\Models\Product::where('product_category', $category->id)->get()->count())}} )</span></label>
                                     </div>
                                 @endforeach
                                 <!-- Single Checkbox -->
@@ -221,10 +221,10 @@
                     <div class="shop_top_sidebar_area d-flex flex-wrap align-items-center justify-content-between">
                         <div class="view_area d-flex">
                             <div class="grid_view">
-                                <a href="shop-grid-left-sidebar.html" data-toggle="tooltip" data-placement="top" title="Grid View"><i class="icofont-layout"></i></a>
+                                <a href="{{route('frontend.brand.grid', $brand->id)}}" data-toggle="tooltip" data-placement="top" title="Grid View"><i class="icofont-layout"></i></a>
                             </div>
                             <div class="list_view ml-3">
-                                <a href="shop-list-left-sidebar.html" data-toggle="tooltip" data-placement="top" title="List View"><i class="icofont-listine-dots"></i></a>
+                                <a href="{{route('frontend.brand.list', $brand->id)}}" data-toggle="tooltip" data-placement="top" title="List View"><i class="icofont-listine-dots"></i></a>
                             </div>
                         </div>
                         <select class="small right">
