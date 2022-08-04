@@ -137,6 +137,21 @@
 
 
 @endsection
-@push('scripts')
 
+@push('scripts')
+    <!-- Data Table Plugin -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+
+
+    @if(Session::has('error'))
+            <script>
+                toastr.error("{!! Session::get('error') !!}");
+            </script>
+    @endif
+
+    @if(Session::has('success'))
+            <script>
+                toastr.success("{!! Session::get('success') !!}");
+            </script>
+    @endif
 @endpush

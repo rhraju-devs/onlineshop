@@ -68,9 +68,9 @@
 
 @if(Session::has('error'))
         <script>
-            toastr.success("{!! Session::get('error') !!}");
+            toastr.error("{!! Session::get('error') !!}");
         </script>
-    @endif
+@endif
 
 </body>
 

@@ -28,7 +28,16 @@ class BannerController extends Controller
                 $bannerImage = uniqid('banner_' . strtotime(date('Ymdhsis')), true) . '_' . $request->file('photo')->getClientOriginalExtension();
                 $request->file('photo')->storeAs('/uploads/banner/', $bannerImage);
             }
-            Banner::create([
+            $request->validate([
+                'title' => 'string|nullable', 
+                'description' => 'string|nullable',
+                'subtitle' => 'string|nullable', 
+                'offer' => 'string|nullable', 
+                'button' => 'string|nullable',
+                'photo' => 'required',
+                'status' => 'required',
+            ]);
+            $bannerCreate = Banner::create([
                 'title' => $request->title,
                 'description' => $request->description,
                 'subtitle' => $request->subtitle,
@@ -37,8 +46,13 @@ class BannerController extends Controller
                 'photo' => $bannerImage,
                 'status' => $request->status,
             ]);
-    
-            return redirect()->route('admin.banner.list');
+            
+            if($bannerCreate){
+                return redirect()->route('admin.banner.list')->with('success', 'Banner Successfully Created');
+            }else{
+                return redirect()->back()->with('error', 'Try again and fill the crediential again'); 
+            }
+
     }
 
     public function edit($id)
@@ -57,7 +71,16 @@ class BannerController extends Controller
             $bannerImage = uniqid('banner_' . strtotime(date('Ymdhsis')), true) . '_' . $request->file('photo')->getClientOriginalExtension();
             $request->file('photo')->storeAs('/uploads/banner/', $bannerImage);
         }
-         $banner->update([
+        $request->validate([
+            'title' => 'string|nullable', 
+            'description' => 'string|nullable',
+            'subtitle' => 'string|nullable', 
+            'offer' => 'string|nullable', 
+            'button' => 'string|nullable',
+            'photo' => 'nullable',
+            'status' => 'nullable',
+        ]);
+          $banner->update([
             'title' => $request->title,
             'description' => $request->description,
             'subtitle' => $request->subtitle,
@@ -67,19 +90,35 @@ class BannerController extends Controller
             'status' => $request->status,
         ]);
     // dd($banner2);
-        return redirect()->route('admin.banner.list');
+    if($banner){
+        return redirect()->route('admin.banner.list')->with('success', 'Banner Successfully Updated');
+    }else{
+        return redirect()->back()->with('error', 'Banner could not found and Try again'); 
+    }
+        // return redirect()->route('admin.banner.list');
 
     }
 
     public function delete($id)
     {
-        $banner = Banner::find($id)->delete();
-        return redirect()->route('admin.banner.list');
+        $banner = Banner::find($id);
+        if($banner){
+            $banner->delete();
+            return redirect()->route('admin.banner.list')->with('success', 'Banner Successfully Deleted');
+        }else{
+            return redirect()->back()->with('error', 'Banner could not found and Try again'); 
+        }
+        // return redirect()->route('admin.banner.list');
     }
     public function show($id)
     {
         $banner = Banner::find($id);
         // dd($banner);
-        return view('backend.admin.banner.show', compact('banner'));
+        if($banner){
+            return view('backend.admin.banner.show', compact('banner'))->with('success', 'Banner found Successfully!');
+        }else{
+            return redirect()->back()->with('error', 'Banner could not found and Try again'); 
+        }
+
     }
 }

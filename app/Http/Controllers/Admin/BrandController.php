@@ -86,12 +86,21 @@ class BrandController extends Controller
 
     public function delete($id){
         $brands = Brand::find($id)->delete();
-        return redirect()->back();
+        if($brands){
+            return redirect()->route('admin.brand.list')->with('success', 'Banner Successfully Updated');
+        }else{
+            return redirect()->back()->with('error', 'Banner could not found and Try again'); 
+        }
+        // return redirect()->back();
     }
 
     public function view($id){
         $brands = Brand::find($id);
-        return view('backend.admin.brand.show', compact('brands'));
+        if($brands){
+            return view('backend.admin.brand.show', compact('brands'))->with('success', 'Banner Successfully Updated');
+        }else{
+            return redirect()->back()->with('error', 'Banner could not found and Try again'); 
+        }
     }
 }
 

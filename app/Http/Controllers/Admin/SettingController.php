@@ -41,7 +41,7 @@ class SettingController extends Controller
             'address' => 'string|required',
         ]);
 
-        Setting::create([
+        $settings = Setting::create([
             'description' => $request->discription, 
             'photo' => $settingPhoto,
             'logo' => $settingLogo, 
@@ -50,7 +50,12 @@ class SettingController extends Controller
             'tel_number' => $request->tel_number,
             'address' => $request ->address,
         ]);
-        return redirect()->route('admin.setting.details');
+        if($settings){
+            return redirect()->route('admin.setting.details')->with('success', 'Banner Successfully Updated');
+        }else{
+            return redirect()->back()->with('error', 'Banner could not found and Try again'); 
+        }
+        // return redirect()->route('admin.setting.details');
     }
     
     public function edit($id)
@@ -93,6 +98,11 @@ class SettingController extends Controller
             'tel_number' => $request->tel_number,
             'address' => $request ->address,
         ]);
-        return redirect()->route('admin.setting.details');
+        if($setting->update([])){
+            return redirect()->route('admin.setting.details')->with('success', 'Banner Successfully Updated');
+        }else{
+            return redirect()->back()->with('error', 'Banner could not found and Try again'); 
+        }
+        // return redirect()->route('admin.setting.details');
     }
 }
