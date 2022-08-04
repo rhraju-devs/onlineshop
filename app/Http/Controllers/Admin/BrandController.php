@@ -36,14 +36,19 @@ class BrandController extends Controller
             'photo' => 'nullable',
             'status' => 'required',
         ]);
-        Brand::create([
+        $brands = Brand::create([
             'name' => $request->name,
             'description' => $request->description,
             'summary' => $request->summary,
             'photo'=>$brandImage,
             'status' =>$request->status,
         ]);
-        return redirect()->route('admin.brand.list');
+        if($brands){
+            return redirect()->route('admin.brand.list')->with('success', 'Banner Successfully Created');
+        }else{
+            return redirect()->back()->with('error', 'Banner could not found and Try again'); 
+        }
+        // return redirect()->route('admin.brand.list');
         // }catch(Throwable $request){
         //     return $request->getMessage();
         // }
@@ -81,15 +86,19 @@ class BrandController extends Controller
             'photo'=>$brandImage,
             'status' =>$request->status,
         ]);
-        return redirect()->route('admin.brand.list');
+        if($brands->update([])){
+            return redirect()->route('admin.brand.list')->with('success', 'Brand Successfully Updated');
+        }else{
+            return redirect()->back()->with('error', 'Brand could not found and Try again'); 
+        }
     }
 
     public function delete($id){
         $brands = Brand::find($id)->delete();
         if($brands){
-            return redirect()->route('admin.brand.list')->with('success', 'Banner Successfully Updated');
+            return redirect()->route('admin.brand.list')->with('success', 'Brand Successfully Deleted');
         }else{
-            return redirect()->back()->with('error', 'Banner could not found and Try again'); 
+            return redirect()->back()->with('error', 'Brand could not found and Try again'); 
         }
         // return redirect()->back();
     }
