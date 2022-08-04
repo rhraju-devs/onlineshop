@@ -69,7 +69,7 @@ class ProductController extends Controller
                 ]);
             }
         }
-        return redirect()->route('admin.product.list');
+        return redirect()->route('admin.product.list')->with('product_added', 'Product has been added successfully');
     }
 
     public function edit($id)

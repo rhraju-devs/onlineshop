@@ -42,7 +42,7 @@ Route::group(['middleware'=>['auth', 'checkAdmin'],'prefix'=>'admin'],function()
 
     // Product Route
     Route::get('/product-list', [ProductController::class, 'index'])->name('admin.product.list');
-    Route::get('/prcreate', [ProductController::class, 'create'])->name('admin.product.create');
+    Route::get('/product-create', [ProductController::class, 'create'])->name('admin.product.create');
     Route::post('/product-store', [ProductController::class, 'store'])->name('admin.product.store');
     Route::get('/product-edit/{id}', [ProductController::class, 'edit'])->name('admin.product.edit');
     Route::put('/product-update/{id}', [ProductController::class, 'update'])->name('admin.product.update');

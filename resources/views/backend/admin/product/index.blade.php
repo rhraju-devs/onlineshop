@@ -46,6 +46,7 @@
                                     <div class="col-md-12 col-lg-12">
                                         <h1>Product List</h1>
                                     </div>
+
                                 </div>
 
                                 <div class="col-md-12 col-lg-12">
@@ -126,4 +127,9 @@
         });
 
     </script>
+    @if(Session::has('product_added'))
+        <script>
+            toastr.success("{!! Session::get('product_added') !!}");
+        </script>
+    @endif
 @endpush
