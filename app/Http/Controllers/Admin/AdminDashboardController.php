@@ -18,12 +18,16 @@ class AdminDashboardController extends Controller
     }
     public function loginCheck(Request $request)
     {
-        Auth::attempt([
+        $check = Auth::attempt([
             'email' => $request->email, 
             'password' => $request->password,
         ]);
+        if($check){
+            return redirect()->route('admin.dashboard')->with('success', 'Login Successfully');
+        }else{
+            return redirect()->route('admin.login')->with('error', 'Invalid email and password');
+        }
 
-        return redirect()->route('admin.dashboard');
     }
     public function logout()
     {

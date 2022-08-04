@@ -16,6 +16,9 @@
     <!-- vendor css -->
     <link rel="stylesheet" href="{{url('backend/assets/css/style.css')}}">
 
+    <!-- Toastr CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 
 <!-- [ auth-signin ] start -->
@@ -30,17 +33,16 @@
                         <form action="{{route('admin.login.check')}}" method="post">
                             @csrf
                             <div class="form-group mb-3">
-                                <label class="floating-label" for="Email">Email address</label>
-                                <input type="text" class="form-control" id="Email" placeholder="" name="email">
+                                <label class="floating-label" for="Email"></label>
+                                <input type="text" class="form-control" id="Email" placeholder="Email address" name="email">
                             </div>
                             <div class="form-group mb-4">
-                                <label class="floating-label" for="Password">Password</label>
-                                <input type="password" class="form-control" id="Password" placeholder=""
+                                <label class="floating-label" for="Password"></label>
+                                <input type="password" class="form-control" id="Password" placeholder="Password"
                                     name="password">
                             </div>
                             <div class="custom-control custom-checkbox text-left mb-4 mt-2">
-                                <!-- <input type="checkbox" class="custom-control-input" id="customCheck1">
-							<label class="custom-control-label" for="customCheck1">Save credentials.</label> -->
+
                             </div>
                             <button class="btn btn-block btn-primary mb-4">Signin</button>
                             <p class="mb-2 text-muted">Forgot password? <a href="" class="f-w-400">Reset</a></p>
@@ -59,9 +61,19 @@
 <script src="{{url('backend/assets/js/plugins/bootstrap.min.js')}}"></script>
 <script src="{{url('backend/assets/js/ripple.js')}}"></script>
 <script src="{{url('backend/assets/js/pcoded.min.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+<!-- Toastr CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+@if(Session::has('error'))
+        <script>
+            toastr.success("{!! Session::get('error') !!}");
+        </script>
+    @endif
 
 </body>
+
+
 
 </html>

@@ -687,3 +687,10 @@
         <!-- Latest Customers end -->
     </div>
 @endsection
+@push('scripts')
+    @if(Session::has('success'))
+        <script>
+            toastr.success("{!! Session::get('success') !!}");
+        </script>
+    @endif
+@endpush
