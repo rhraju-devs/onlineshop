@@ -42,7 +42,7 @@ class CategoryController extends Controller
 
         // dd($request->all());
 
-        Category::create([
+        $categories = Category::create([
             'name' => $request->name,
             'slug' =>Str::slug( $request->name),
             'parent_id' => $request->parent_id,
@@ -52,8 +52,11 @@ class CategoryController extends Controller
             'photo' => $categoryImage,
             'status' => $request->status,
         ]);
-                // dd($request->all());
-        return redirect()->route('admin.category.list');
+        if($categories){
+            return redirect()->route('admin.category.list')->with('success', 'Category Successfully Created');
+        }else{
+            return redirect()->back()->with('error', 'Category could not found and Try again'); 
+        }
     }
 
     public function edit($id){
@@ -88,12 +91,21 @@ class CategoryController extends Controller
             'photo' => $categoryImage,
             'status' => $request->status,
         ]);
-        return redirect()->route('admin.category.list');
+        if($category->update([])){
+            return redirect()->route('admin.category.list')->with('success', 'Category Successfully Updated');
+        }else{
+            return redirect()->back()->with('error', 'Category could not found and Try again'); 
+        }
+        // return redirect()->route('admin.category.list');
     }
 
     public function delete($id){
         $categories = Category::find($id)->delete();
-        return redirect()->back();
+        if($categories){
+            return redirect()->route('admin.category.list')->with('success', 'Category Successfully Deleted');
+        }else{
+            return redirect()->back()->with('error', 'Category could not found and Try again'); 
+        }
     }
 
     public function show($id){
