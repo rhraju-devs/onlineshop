@@ -41,7 +41,7 @@ class CustomerController extends Controller
             'status' => 'string|required'
         ]);
 
-        User::create([
+        $customer = User::create([
             'firstname'=>$request->firstname,
             'lastname' => $request->lastname,
             'username'=>$request->username,
@@ -52,8 +52,12 @@ class CustomerController extends Controller
             'address'=>$request->address,
             'status'=>$request->status,
         ]);
-        // dd($request);
-        return redirect()->route('admin.customer.list');
+        if($customer){
+            return redirect()->route('admin.customer.list')->with('success', 'Customer Successfully Created');
+        }else{
+            return redirect()->back()->with('error', 'Customer could not found and Try again'); 
+        }
+        // dd($request);;
     }
 
     public function edit($id)
@@ -95,13 +99,21 @@ class CustomerController extends Controller
             'address'=>$request->address,
             'status'=>$request->status, 
         ]);
-        return redirect()->route('admin.customer.list');
+        if($customer->update([])){
+            return redirect()->route('admin.customer.list')->with('success', 'Customer Successfully Updated');
+        }else{
+            return redirect()->back()->with('error', 'Customer could not found and Try again'); 
+        }
     }
 
     public function delete($id)
     {
         $customer = User::find($id)->delete();
-        return redirect()->back();
+        if($customer){
+            return redirect()->route('admin.customer.list')->with('success', 'Customer Successfully Deleted');
+        }else{
+            return redirect()->back()->with('error', 'Customer could not found and Try again'); 
+        }
     }
 
     public function show($id)
