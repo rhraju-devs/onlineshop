@@ -21,11 +21,11 @@ class ProductController extends Controller
 
     public function search_product(Request $request){
         $search = $request['search'] ?? "";
-        // dd($search);
+
         if($search != ""){
-            // dd($search);
+
             $products = Product::where('product_name', 'LIKE', '%' .$search.'%')->orWhere('product_category', 'LIKE', '%' .$search.'%')->orWhere('product_sub_category', 'LIKE', '%' .$search.'%')->with('images', 'subcategory', 'category', 'brand')->get();
-            // dd($products);
+
         }else{
         $products = Product::with('images')->get();
         }
