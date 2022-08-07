@@ -10,9 +10,19 @@ use App\Models\Brand;
 
 class DashboardController extends Controller
 {
-    public function dashboard()
+    public function dashboard(Request $request)
     {
+        // dd($request->search);
+        $search = $request['search'] ?? "";
+        // dd($search);
+        if($search != ""){
+            // dd($search);
+            $products = Product::where('product_name', 'LIKE', '%' .$search.'%')->with('images')->get();
+            // dd($products);
+        }else{
         $products = Product::with('images')->get();
+        }
+
         $brands = Brand::all();
         $categories = Category::all();
         $featureproducts = Product::where('feature_product', 'yes')->get();

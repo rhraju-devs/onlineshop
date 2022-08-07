@@ -325,6 +325,7 @@
                                 </div>
                             </div>
                         </div>
+                        
                         <!-- Quick View Modal Area -->
 
 

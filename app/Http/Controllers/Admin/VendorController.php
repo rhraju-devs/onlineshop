@@ -10,9 +10,18 @@ use Illuminate\Http\Request;
 
 class VendorController extends Controller
 {
-    public function index()
-    {
-        $vendors = User::all();
+    public function index(Request $request)
+    {   
+        $search = $request['search'] ?? "";
+        // dd($search);
+        if($search != ""){
+            // dd($search);
+            $vendors = User::where('firstname', 'LIKE', '%' .$search.'%')->orWhere('lastname', 'LIKE', '%' .$search.'%')->orWhere('username', 'LIKE', '%' .$search.'%')->orWhere('email', 'LIKE', '%' .$search.'%')->get();
+            // dd($products);
+        }else{
+            $vendors = User::all();
+        }
+        // $vendors = User::all();
         return view('backend.admin.vendor.index', compact('vendors'));
     }
 

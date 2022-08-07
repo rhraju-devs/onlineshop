@@ -146,8 +146,14 @@
                             <div class="search-btn"><i class="icofont-search"></i></div>
                             <!-- Form -->
                             <div class="search-form">
-                                <input type="search" class="form-control" placeholder="Search">
-                                <input type="submit" class="d-none" value="Send">
+                                <form action="{{route('frontend.search.product')}}" method="get">
+                                    <input type="search" class="form-control" placeholder="Search" value="{{$search}}" name="search">
+                                    <!-- <input type="submit" class="d-none" value="Send"> -->
+                                    <button type="submit" class="btn btn-primary sm-btn">Search</button>
+                                    <a href="{{route('frontend.dashboard')}}">
+                                        <button type="reset" class="btn btn-primary sm-btn">Reset</button>
+                                    </a>
+                                </form>
                             </div>
                         </div>
 

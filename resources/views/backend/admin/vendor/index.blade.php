@@ -42,8 +42,19 @@
                                     </div>      
                                 </div>
 
+                                <div class="search-form">
+                                <form action="{{route('admin.vendor.list')}}" method="get">
+                                    <input type="search" class="form-control" placeholder="Search" value="{{$search}}" name="search">
+                                    <!-- <input type="submit" class="d-none" value="Send"> -->
+                                    <button type="submit" class="btn btn-primary sm-btn">Search</button>
+                                    <a href="{{route('admin.vendor.list')}}">
+                                        <button type="reset" class="btn btn-primary sm-btn">Reset</button>
+                                    </a>
+                                </form>
+                            </div>
+
                                 <div class="col-md-12 col-lg-12">
-                                    <table id="data_table_set" class="table table-info table-responsive table-striped table-hover">
+                                    <table id="data_table_set1" class="table table-info table-responsive table-striped table-hover">
                                         <thead>
                                             <tr>
                                                 <th scope="col">S.L</th>

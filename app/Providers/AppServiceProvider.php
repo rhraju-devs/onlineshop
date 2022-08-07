@@ -59,5 +59,13 @@ class AppServiceProvider extends ServiceProvider
         $settings = Setting::all();
         View::share('settings', $settings);
 
+        $search = $request['search'] ?? "";
+        // if($search != ""){
+        //     $products = Product::where('product_name', 'LIKE', '%$search$')->orWhere('product_brand', 'LIKE', '%$search$%')->orWhere('product_category', 'LIKE', '%$search%')->orWhere('product_sub_category', 'LIKE', '%$search%')->with('images')->get();
+        // }else{
+        //     $products = Product::with('images')->get();
+        // }
+        View::share('search', $search);
+
     }
 }
