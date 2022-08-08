@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Banner;
 use Illuminate\Http\Request;
-
+use Brian2694\Toastr\Facades\Toastr;
 
 class BannerController extends Controller
 {
@@ -25,7 +25,7 @@ class BannerController extends Controller
             $bannerImage = null;
             if($request->hasFile('photo'))
             {
-                $bannerImage = uniqid('banner_' . strtotime(date('Ymdhsis')), true) . '_' . $request->file('photo')->getClientOriginalExtension();
+                $bannerImage = uniqid('banner_' . strtotime(date('Ymdhsis')), true) . rand(0,1000) . '_' . $request->file('photo')->getClientOriginalExtension();
                 $request->file('photo')->storeAs('/uploads/banner/', $bannerImage);
             }
             $request->validate([
@@ -48,9 +48,11 @@ class BannerController extends Controller
             ]);
             
             if($bannerCreate){
-                return redirect()->route('admin.banner.list')->with('success', 'Banner Successfully Created');
+                Toastr::success('Banner Successfully Created :)', 'Create', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+                return redirect()->route('admin.banner.list');
             }else{
-                return redirect()->back()->with('error', 'Try again and fill the crediential again'); 
+                Toastr::error('Fill up Banner Credential  (:', 'Error', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+                return redirect()->back(); 
             }
 
     }
@@ -68,7 +70,7 @@ class BannerController extends Controller
         $bannerImage = null;
         if($request->hasFile('photo'))
         {
-            $bannerImage = uniqid('banner_' . strtotime(date('Ymdhsis')), true) . '_' . $request->file('photo')->getClientOriginalExtension();
+            $bannerImage = uniqid('banner_' . strtotime(date('Ymdhsis')), true) . rand(0,1000) . '_' . $request->file('photo')->getClientOriginalExtension();
             $request->file('photo')->storeAs('/uploads/banner/', $bannerImage);
         }
         $request->validate([
@@ -90,12 +92,13 @@ class BannerController extends Controller
             'status' => $request->status,
         ]);
     // dd($banner2);
-    if($banner){
-        return redirect()->route('admin.banner.list')->with('success', 'Banner Successfully Updated');
-    }else{
-        return redirect()->back()->with('error', 'Banner could not found and Try again'); 
-    }
-        // return redirect()->route('admin.banner.list');
+        if($banner){
+            Toastr::success('Banner Successfully Updated :)', 'Updated', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->route('admin.banner.list');
+        }else{
+            Toastr::error('Fill up Banner Credential  (:', 'Not Updated', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->back(); 
+        }
 
     }
 
@@ -104,21 +107,23 @@ class BannerController extends Controller
         $banner = Banner::find($id);
         if($banner){
             $banner->delete();
-            return redirect()->route('admin.banner.list')->with('success', 'Banner Successfully Deleted');
+            Toastr::error('Banner Successfully Deleted :)', 'Deleted', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->route('admin.banner.list');
         }else{
-            return redirect()->back()->with('error', 'Banner could not found and Try again'); 
+            Toastr::warning('Banner could not found (:', 'Not Found', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->back(); 
         }
-        // return redirect()->route('admin.banner.list');
     }
     public function show($id)
     {
         $banner = Banner::find($id);
         // dd($banner);
         if($banner){
-            return view('backend.admin.banner.show', compact('banner'))->with('success', 'Banner found Successfully!');
+            Toastr::info('Banner Found :)', 'Found', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return view('backend.admin.banner.show', compact('banner'));
         }else{
-            return redirect()->back()->with('error', 'Banner could not found and Try again'); 
+            Toastr::warning('Something Wrong (:', 'Not Found', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->back(); 
         }
-
     }
 }
