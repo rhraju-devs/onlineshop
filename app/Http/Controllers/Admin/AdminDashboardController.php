@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Brian2694\Toastr\Facades\Toastr;
 
 class AdminDashboardController extends Controller
 {
@@ -23,15 +24,18 @@ class AdminDashboardController extends Controller
             'password' => $request->password,
         ]);
         if($check){
-            return redirect()->route('admin.dashboard')->with('success', 'Login Successfully');
+            Toastr::success('Admin Login Successfully :)', 'Login', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->route('admin.dashboard');
         }else{
-            return redirect()->route('admin.login')->with('error', 'Invalid email and password');
+            Toastr::error('Invalid email and password (:', 'Error', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->route('admin.login');
         }
 
     }
     public function logout()
     {
         Auth::logout();
+        Toastr::error('Admin Successfully Logout :)', '', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
         return redirect()->route('admin.login');
     }
 }

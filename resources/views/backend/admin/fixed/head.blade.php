@@ -13,7 +13,6 @@
 <link rel="stylesheet" href="{{url('backend/assets/css/style.css')}}">
 
 <!-- Toastr CDN -->
-
 <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 
 
