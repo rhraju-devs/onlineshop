@@ -14,6 +14,10 @@ use App\Models\Vendor;
 use App\Models\Product;
 use App\Models\Banner;
 use App\Models\Setting;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
+// Use for Macro Builder
+use Illuminate\Database\Query\Builder;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,9 +28,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
-    }
 
+    }
+    // foreach (Arr::wrap($attributes) as $attribute) {
     /**
      * Bootstrap any application services.
      *
@@ -34,6 +38,46 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // Builder::macro('whereLike', function ($attributes, string $searchTerm) {
+        //     $this->where(function (Builder $query) use ($attributes, $searchTerm) {
+        //         foreach (Arr::wrap($attributes) as $attribute) {
+        //             $query->when(
+        //                 Str::contains($attribute, '.'),
+        //                 function (Builder $query) use ($attribute, $searchTerm) {
+        //                     [$relationName, $relationAttribute] = explode('.', $attribute);
+        //                     $query->orWhereHas($relationName, function (Builder $query) use ($relationAttribute, $searchTerm) {
+        //                         $query->where($relationAttribute, 'LIKE', "%{$searchTerm}%");
+        //                     });
+        //                 },
+        //                 function (Builder $query) use ($attribute, $searchTerm) {
+        //                     $query->orWhere($attribute, 'LIKE', "%{$searchTerm}%");
+        //                 }
+        //             );
+        //         }
+        //     });
+        
+        //     return $this;
+        // });
+
+        Builder::macro('whereLike', function ($attributes, string $searchTerm) {
+            $searchTerm = trim($searchTerm);
+            $this->where(static function (Builder $query) use ($searchTerm, $attributes) {
+                foreach (Arr::wrap($attributes) as $attribute) {
+                    $query->when(Str::contains($attribute, '.'), static function (Builder $query) use ($searchTerm, $attribute) {
+                        [$relationName, $relationAttribute] = explode('.', $attribute);
+                        $query->orWhereHas($relationName, static function (Builder $query) use ($relationAttribute, $searchTerm) {
+                            $query->where($relationAttribute, 'LIKE', "{$searchTerm}%");
+                        });
+                    }, static function (Builder $query) use ($attribute, $searchTerm) {
+                        $query->orWhere($attribute, 'LIKE', "{$searchTerm}%");
+                    });
+                }
+            });
+
+            return $this;
+        });
+
+
         Paginator::useBootstrap();
         Schema::defaultStringLength(191);
 
@@ -66,6 +110,8 @@ class AppServiceProvider extends ServiceProvider
         //     $products = Product::with('images')->get();
         // }
         View::share('search', $search);
+
+
 
     }
 }

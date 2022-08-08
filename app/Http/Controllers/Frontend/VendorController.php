@@ -61,21 +61,17 @@ class VendorController extends Controller
             'email' => 'required|email',
             'password' => 'required',
         ]);
-
-
         $user =User::where('role','=', 'vendor')->where('email',$request->email)->first();
         if($user){
             Auth::attempt([
                 'email'=>$request->email,
                 'password'=>$request->password,
             ]);
-
             Session::flash('success-msg', 'Vendor Registration Complete wait for approve');
             return redirect()->route('frontend.dashboard');
         }else{
             Session::flash('error-msg', 'Invalid Email and Password');
             return redirect()->route('frontend.dashboard');
-            // return "You are not applicable for login. wait for your confirmation";
         }
         // $check=Auth::guard('vendors')->attempt([
         //     'email'=>$request->email,

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Brand;
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
 class BrandController extends Controller
 {
     public function list()
@@ -21,11 +22,10 @@ class BrandController extends Controller
 
     public function store(Request $request)
     {
-
         $brandImage = null;
         if($request->hasFile('photo'))
         {
-            $brandImage = uniqid('brand_' . strtotime(date('Ymdhsis')), true) . '.' . $request->file('photo')->getClientOriginalExtension();
+            $brandImage = uniqid('brand_' . strtotime(date('Ymdhsis')), true) . rand(0,1000) . '.' . $request->file('photo')->getClientOriginalExtension();
             $request->file('photo')->storeAs('/uploads/brands', $brandImage);
         }
     
@@ -44,9 +44,11 @@ class BrandController extends Controller
             'status' =>$request->status,
         ]);
         if($brands){
-            return redirect()->route('admin.brand.list')->with('success', 'Banner Successfully Created');
+            Toastr::success('Brand Successfully Created :)', 'Create', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->route('admin.brand.list');
         }else{
-            return redirect()->back()->with('error', 'Banner could not found and Try again'); 
+            Toastr::error('Fill up Brand Credential  (:', '', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->back(); 
         }
         // return redirect()->route('admin.brand.list');
         // }catch(Throwable $request){
@@ -66,16 +68,16 @@ class BrandController extends Controller
         $brandImage = null;
         if($request->hasFile('photo'))
         {
-            $brandImage = uniqid('brand_' . strtotime(date('Ymdhsis')), true) . '.' . $request->file('photo')->getClientOriginalExtension();
+            $brandImage = uniqid('brand_' . strtotime(date('Ymdhsis')), true) . rand(0,1000) . '.' . $request->file('photo')->getClientOriginalExtension();
             $request->file('photo')->storeAs('/uploads/brands', $brandImage);
         }
 
         $request->validate([
-            'name'=> 'string|required',
-            'description' => 'string|required',
-            'summary' => 'string|required',
+            'name'=> 'string|nullable',
+            'description' => 'string|nullable',
+            'summary' => 'string|nullable',
             'photo' => 'nullable',
-            'status' => 'required',
+            'status' => 'nullable',
         ]);
 
         $brands = Brand::find($id);
@@ -87,8 +89,10 @@ class BrandController extends Controller
             'status' =>$request->status,
         ]);
         if($brands->update([])){
-            return redirect()->route('admin.brand.list')->with('success', 'Brand Successfully Updated');
+            Toastr::success('Brand Successfully Updated :)', 'Updated', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->route('admin.brand.list');
         }else{
+            Toastr::warning('Fill up Brand Credential  :)', '', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
             return redirect()->back()->with('error', 'Brand could not found and Try again'); 
         }
     }
@@ -96,8 +100,10 @@ class BrandController extends Controller
     public function delete($id){
         $brands = Brand::find($id)->delete();
         if($brands){
-            return redirect()->route('admin.brand.list')->with('success', 'Brand Successfully Deleted');
+            Toastr::error('Brand Deleted Successfully', 'Deleted', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->route('admin.brand.list');
         }else{
+            Toastr::warning('Brand could not found and Try again', 'Not Found', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true, "preventDuplicates" => true,]);
             return redirect()->back()->with('error', 'Brand could not found and Try again'); 
         }
         // return redirect()->back();
@@ -106,40 +112,11 @@ class BrandController extends Controller
     public function view($id){
         $brands = Brand::find($id);
         if($brands){
-            return view('backend.admin.brand.show', compact('brands'))->with('success', 'Banner Successfully Updated');
+            Toastr::success('Brand Found Successfully !!!', 'Found', ["positionClass"=> "toast-top-right",   "closeButton" => true,"progressBar" => true, "preventDuplicates" => true,]);
+            return view('backend.admin.brand.show', compact('brands'));
         }else{
-            return redirect()->back()->with('error', 'Banner could not found and Try again'); 
+            Toastr::warning('Brand could not found ...', 'Sorry!!', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true, "preventDuplicates" => true,]);
+            return redirect()->back()->with('error', ''); 
         }
     }
 }
-
-
-    // public function store(Request $request)
-    
-    // {
-    //     $brandImage = null;
-    //     if($request->hasFile('photo'))
-    //     {
-    //         $brandImage = date('Ymdhsis') . '-'. $request->file('photo')->getClientOriginalExtension();
-             
-    //         $request->file('photo')->storeAs('/uploads/brands', $brandImage);
-
-    //     }
-    //     // dd($request->all());
-    //     $request->validate([
-    //         'name'=> 'string|required',
-    //         'description' => 'string|required',
-    //         'summary' => 'string|required',
-    //         'photo' => 'nullable',
-    //         'status' => 'required',
-    //     ]);
-    //     Brand::create([
-    //         'name' => $request->name,
-    //         'description' => $request->description,
-    //         'summary' => $request->summary,
-    //         'photo'=>$brandImage,
-    //         'status' =>$request->status,
-    //     ]);
-    //     // return redirect()->back();
-    //     return redirect()->route('admin.brand.list');
-    // }

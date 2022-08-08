@@ -121,12 +121,20 @@
     
 @if(Session::has('error'))
             <script>
+                            toastr.opptions = {
+                "closeButton" : true, 
+                "progressBar" : true,
+            }
                 toastr.error("{!! Session::get('error') !!}");
             </script>
     @endif
 
     @if(Session::has('success'))
             <script>
+                            toastr.opptions = {
+                "closeButton" : true, 
+                "progressBar" : true,
+            }
                 toastr.success("{!! Session::get('success') !!}");
             </script>
     @endif
