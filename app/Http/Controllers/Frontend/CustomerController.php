@@ -9,6 +9,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Brian2694\Toastr\Facades\Toastr;
 
 
 class CustomerController extends Controller
@@ -112,10 +113,13 @@ class CustomerController extends Controller
 
     public function logout()
     {
-
-        Auth::logout();
-
-        return redirect()->route('frontend.dashboard');
-
+        $check = Auth::logout();
+        if($check){
+            Toastr::error('Vendor Successfully Logout (:', 'Logout', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->route('frontend.dashboard');
+        }else{
+            Toastr::warning('Something Went Wrong (:', 'Warning', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->route('frontend.dashboard');
+        }
     }
 }

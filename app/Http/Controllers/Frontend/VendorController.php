@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use App\Models\Vendor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use Brian2694\Toastr\Facades\Toastr;
+
+
 class VendorController extends Controller
 {
 
@@ -48,7 +50,13 @@ class VendorController extends Controller
             // 'status' => $request->status,
         ]);
         // dd($request);
-        return redirect()->route('frontend.dashboard');
+        if(User::create()){
+            Toastr::success('Vendor Successfully Register :)', 'Registration', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->route('frontend.dashboard');
+        }else{
+            Toastr::error('Fill Up the Crediential again :)', 'Warning', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->route('frontend.dashboard');
+        }
     }
     public function edit(){
 
@@ -67,10 +75,10 @@ class VendorController extends Controller
                 'email'=>$request->email,
                 'password'=>$request->password,
             ]);
-            Session::flash('success-msg', 'Vendor Registration Complete wait for approve');
+            Toastr::success('Vendor Successfully Login :)', 'Login', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
             return redirect()->route('frontend.dashboard');
         }else{
-            Session::flash('error-msg', 'Invalid Email and Password');
+            Toastr::error('Invalid Email and Password (:', 'Credientail', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
             return redirect()->route('frontend.dashboard');
         }
         // $check=Auth::guard('vendors')->attempt([
@@ -92,7 +100,14 @@ class VendorController extends Controller
 
     public function logout()
     {   
-        Auth::logout();
-        return redirect()->route('frontend.dashboard');
+        $check = Auth::logout();
+        if($check){
+            Toastr::error('Vendor Successfully Logout (:', 'Logout', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->route('frontend.dashboard');
+        }else{
+            Toastr::warning('Something Went Wrong (:', 'Warning', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->route('frontend.dashboard');
+        }
+
     }
 }

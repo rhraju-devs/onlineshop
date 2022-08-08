@@ -1,7 +1,7 @@
 
-    <!-- <script src="url('frontend/assets/js/jquery.min.js')"></script> -->
-    <!-- <script src="url('frontend/assets/js/popper.min.js')"></script> -->
-    <!-- <script src="url('frontend/assets/js/bootstrap.min.js')"></script> -->
+    <script src="{{url('frontend/assets/js/jquery.min.js')}}"></script>
+    <script src="{{url('frontend/assets/js/popper.min.js')}}"></script>
+    <script src="{{url('frontend/assets/js/bootstrap.min.js')}}"></script>
     <script src="{{url('frontend/assets/js/jquery.easing.min.js')}}"></script>
     <script src="{{url('frontend/assets/js/classy-nav.min.js')}}"></script>
     <script src="{{url('frontend/assets/js/owl.carousel.min.js')}}"></script>
