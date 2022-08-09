@@ -24,8 +24,8 @@ class ProductController extends Controller
         $search = $request['search'] ?? "";
 
         if($search != ""){
-            $products = Product::where('product_name', 'LIKE', '%' .$search.'%')->with('images')->get();
-            // $products = Product::whereLike(['product_name', 'text', 'brand.name', 'category.name'], $search)->get();
+            // $products = Product::where('product_name', 'LIKE', '%' .$search.'%')->with('images')->get();
+            $products = Product::whereLike(['product_name', 'brand.name', 'category.name'], $search)->get();
         }else{
         $products = Product::with('images')->get();
         }

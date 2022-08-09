@@ -9,12 +9,15 @@
 @section('admin_dashboard_content')
 <div style="background-color: #fff;" class="row">
     <div class="row">
+    <div class="row my-3 mx-5">
         <div class="col-md-6 col-lg-6">
-            <a class="btn btn-outline-info align-right" href="{{route('admin.banner.list')}}">Banner List</a>
+            <a class="btn btn-outline-info float-left" href="{{route('admin.banner.list')}}">Banner List</a>
         </div>
-        <div class="col-md-6 col-lg-6">
-            <p class="fw-bold">Total Brand : </p>
-        </div>
+        <div class="col-md-6 col-lg-6 float-right">
+        <p class="fw-bold float-right">Total Banner :{{$banners->count()}}</p>
+        </div>      
+    </div>
+
     </div>
 
     <div class="col-md-12 col-lg-12">
@@ -73,7 +76,7 @@
                     <div class="mb-3">
                         <label for="photo" class="form-label">Banner Photo :<span class="text-danger"> *</span></label>
                         <input type="file" class="form-control" id="photo" name="photo">
-                        <img src="{{url('/uploads/brands/' . $banner->photo)}}" alt="{{url('/uploads/brands/' . $banner->photo)}}">
+                        <img src="{{url('uploads/banner/' . $banner->photo)}}" alt="{{url('uploads/banner/' . $banner->photo)}}">
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6">
@@ -92,8 +95,8 @@
                     </div>
                 </div>
             </div>
-            <button type="reset" class="btn btn-primary btn-lg m-r-5">Reset</button>
-            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+            <button type="reset" class="btn btn-primary btn-sm m-r-5">Reset</button>
+            <button type="submit" class="btn btn-primary btn-sm">Update</button>
 
         </form>
     </div>

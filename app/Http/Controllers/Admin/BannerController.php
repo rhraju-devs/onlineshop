@@ -67,7 +67,7 @@ class BannerController extends Controller
     {
         // dd($request);
         $banner = Banner::find($id);
-        $bannerImage = null;
+        $bannerImage = $banner->photo;
         if($request->hasFile('photo'))
         {
             $bannerImage = uniqid('banner_' . strtotime(date('Ymdhsis')), true) . rand(0,1000) . '_' . $request->file('photo')->getClientOriginalExtension();

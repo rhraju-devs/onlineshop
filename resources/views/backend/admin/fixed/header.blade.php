@@ -5,8 +5,10 @@
         <a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a>
         <a href="{{route('frontend.dashboard')}}" class="b-brand">
             <!-- ========   change your logo hear   ============ -->
-            <img src="{{url('backend/assets/images/online.png')}}" alt="" class="logo">
-            <img src="{{url('backend/assets/images/logo-icon.png')}}" alt="" class="logo-thumb">
+            @foreach($settings as $setting)
+            <img src="{{'/uploads/settings/' . $setting->logo}}" alt="" class="logo">
+            <img src="{{'/uploads/settings/' . $setting->logo}}" alt="" class="logo-thumb">
+            @endforeach
         </a>
         <a href="#!" class="mob-toggler">
             <i class="feather icon-more-vertical"></i>

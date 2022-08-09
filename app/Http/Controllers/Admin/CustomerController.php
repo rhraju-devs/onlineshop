@@ -7,6 +7,7 @@ use App\Models\Customer;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Brian2694\Toastr\Facades\Toastr;
 
 class CustomerController extends Controller
 {
@@ -53,9 +54,11 @@ class CustomerController extends Controller
             'status'=>$request->status,
         ]);
         if($customer){
-            return redirect()->route('admin.customer.list')->with('success', 'Customer Successfully Created');
+            Toastr::success('Customer Successfully Created :)', 'Create', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->route('admin.customer.list');
         }else{
-            return redirect()->back()->with('error', 'Customer could not found and Try again'); 
+            Toastr::success('Fill the Cridential :)', 'Not found', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->back(); 
         }
         // dd($request);;
     }
@@ -68,13 +71,13 @@ class CustomerController extends Controller
 
     public function update(Request $request, $id)
     {
-        $customerImage = null;
+        $customer = User::find($id);
+        $customerImage = $customer->photo;
         if($request->hasFile('photo'))
         {
-            $customerImage = uniqid('customer_' . strtotime(date('Ymdhsis')), true) . '_' . $request->file('photo')->getClientOriginalName();
+            $customerImage = uniqid('customer_' . strtotime(date('Ymdhsis')), true) . '_' . rand(1, 1000) . $request->file('photo')->getClientOriginalName();
             $request->file('photo')->storeAs('/uploads/customers/', $customerImage);
         }
-        $customer = User::find($id);
 
         $request->validate([
             'firstname' => 'string|nullable',
@@ -100,9 +103,11 @@ class CustomerController extends Controller
             'status'=>$request->status, 
         ]);
         if($customer->update([])){
-            return redirect()->route('admin.customer.list')->with('success', 'Customer Successfully Updated');
+            Toastr::success('Customer Successfully Updated :)', 'Update', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->route('admin.customer.list');
         }else{
-            return redirect()->back()->with('error', 'Customer could not found and Try again'); 
+            Toastr::error('Something Wrond :)', 'Error', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->back(); 
         }
     }
 
@@ -110,16 +115,24 @@ class CustomerController extends Controller
     {
         $customer = User::find($id)->delete();
         if($customer){
-            return redirect()->route('admin.customer.list')->with('success', 'Customer Successfully Deleted');
+            Toastr::error('Customer Successfully Deleted :)', 'Delete', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->route('admin.customer.list');
         }else{
-            return redirect()->back()->with('error', 'Customer could not found and Try again'); 
+            Toastr::warning('Customer could not found and Try again (:', 'Warning', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->back(); 
         }
     }
 
     public function show($id)
     {
         $customer = User::find($id);
-        return view('backend.admin.customer.show', compact('customer'));
+        if($customer){
+            Toastr::info('Customer Found :)', 'Found', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return view('backend.admin.customer.show', compact('customer'));
+        }else{
+            Toastr::warning('Customer could not found and Try again (:', 'Warning', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->back(); 
+        }
     }
 
 

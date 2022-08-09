@@ -17,7 +17,8 @@ use App\Models\Setting;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 // Use for Macro Builder
-use Illuminate\Database\Query\Builder;
+// use Illuminate\Database\Query\Builder;
+use Illuminate\Database\Eloquent\Builder;
 
 class AppServiceProvider extends ServiceProvider
 {
