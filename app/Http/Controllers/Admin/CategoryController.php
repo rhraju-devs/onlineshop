@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Brian2694\Toastr\Facades\Toastr;
 
 class CategoryController extends Controller
 {
@@ -22,10 +23,12 @@ class CategoryController extends Controller
     }
     public function store(Request $request)
     {
+
         $categoryImage = null;
-        if($request->hasFile($categoryImage)){
-            $categoryImage = uniqid('category_' . strtotime(date('Ymdhsis')), true) . '_' . $request->file('photo')->getClientOriginalName();
-            $request->file('photo')->storeAs('/uploads/category', $categoryImage);
+        if($request->hasFile('photo')){
+            $file=$request->file('photo');
+            $categoryImage = uniqid('category_' . strtotime(date('Ymdhsis')), true) . '_' . rand(1, 1000) . $request->file('photo')->getClientOriginalName();
+            $file->storeAs('/uploads/category', $categoryImage);
         }
 
         // dd($request->all());
@@ -52,10 +55,13 @@ class CategoryController extends Controller
             'photo' => $categoryImage,
             'status' => $request->status,
         ]);
-        if($categories){
-            return redirect()->route('admin.category.list')->with('success', 'Category Successfully Created');
+        // dd($categories);
+        if(Category::create()){
+            Toastr::success('Category Successfully Created :)', 'Created', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->route('admin.category.list');
         }else{
-            return redirect()->back()->with('error', 'Category could not found and Try again'); 
+            Toastr::error('Something went wrong :)', 'Error', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->back(); 
         }
     }
 
@@ -67,16 +73,17 @@ class CategoryController extends Controller
 
     public function update(Request $request, $id){
         $categoryImage = null;
-        if($request->hasFile($categoryImage)){
-            $categoryImage = uniqid('category_' . strtotime(date('Ymdhsis')), true) . '_' . $request->file('photo')->getClientOriginalName();
-            $request->file('photo')->storeAs('/uploads/category', $categoryImage);
+        if($request->hasFile('photo')){
+            $file=$request->file('photo');
+            $categoryImage = uniqid('category_' . strtotime(date('Ymdhsis')), true) . '_' . rand(1, 1000) . $request->file('photo')->getClientOriginalName();
+            $file->storeAs('/uploads/category', $categoryImage);
         }
 
         $category = Category::find($id);
         $request->validate([
-            'name' => 'string|required',
-            'summary' => 'string|required',
-            'description' => 'string|required',
+            'name' => 'string|nullable',
+            'summary' => 'string|nullable',
+            'description' => 'string|nullable',
             'is_parent' => 'sometimes|in:1',
             'parent_id' => 'nullable', 
             'status' => 'required|in:active,inactive',
@@ -92,25 +99,33 @@ class CategoryController extends Controller
             'status' => $request->status,
         ]);
         if($category->update([])){
-            return redirect()->route('admin.category.list')->with('success', 'Category Successfully Updated');
+            Toastr::success('Category Successfully updated :)', 'Updated', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->route('admin.category.list');
         }else{
-            return redirect()->back()->with('error', 'Category could not found and Try again'); 
+            Toastr::error('Try again (:', 'Something Wrong', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->back(); 
         }
-        // return redirect()->route('admin.category.list');
     }
 
     public function delete($id){
         $categories = Category::find($id)->delete();
         if($categories){
-            return redirect()->route('admin.category.list')->with('success', 'Category Successfully Deleted');
+            Toastr::error('Category Successfully Deleted :)', 'Deleted', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->route('admin.category.list');
         }else{
-            return redirect()->back()->with('error', 'Category could not found and Try again'); 
+            Toastr::warning('Category could not found and Try again (:', 'Not Found', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->back(); 
         }
     }
 
     public function show($id){
         $category = Category::with('parentCategory')->orderBy('id','desc')->find($id);
-        
-        return view('backend.admin.category.show', compact('category'));
+        if($category){
+            Toastr::info('Category Found :)', 'Show', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return view('backend.admin.category.show', compact('category'));
+        }else{
+            Toastr::warning('Category data not found (:', 'Not Found', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->back();
+        }
     }
 }

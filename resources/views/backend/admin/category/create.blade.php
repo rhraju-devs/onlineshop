@@ -74,16 +74,16 @@
                                         </div>
 
                                         <div class="mb-3">
-                                            <label for="description" class="form-label">Category Description :<span
+                                            <label for="summernote1" class="form-label">Category Description :<span
                                                     class="text-danger"> *</span></label>
                                             <textarea id="summernote1" name="description" class="form-control"
-                                                id="description" class="form-control"
+                                                 class="form-control"
                                                 placeholder="Enter Category Description"></textarea>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="summary" class="form-label">Category Summary :<span
+                                            <label for="summernote2" class="form-label">Category Summary :<span
                                                     class="text-danger"> *</span></label>
-                                            <textarea id="summernote2" name="summary" class="form-control" id="summary"
+                                            <textarea id="summernote2" name="summary" class="form-control" 
                                                 placeholder="Enter Category Summary"></textarea>
                                         </div>
 
@@ -117,7 +117,7 @@
                                                         <label class="input-group-text" for="status">Options</label>
                                                     </div>
                                                     <select name='status' class="custom-select" id="status">
-                                                        <option selected>Choose...</option>
+                                                        <option selected disabled>Choose Status</option>
                                                         <option value="active">Active</option>
                                                         <option value="inactive">Inactive</option>
                                                     </select>

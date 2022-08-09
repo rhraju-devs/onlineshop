@@ -1,14 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\Frontend;
-
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\Customer;
 use App\Models\Vendor;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
 use Brian2694\Toastr\Facades\Toastr;
 
 
@@ -20,7 +18,7 @@ class CustomerController extends Controller
         // dd($request);
         $customerImage = null;
         if($request->hasFile('photo')){
-            $customerImage = uniqid('customer_' . strtotime(date('Ymdhsis')), true) . '_' . $request->file('photo')->getClientOriginalName();
+            $customerImage = uniqid('customer_' . strtotime(date('Ymdhsis')), true) . '_' . rand(1, 1000) . $request->file('photo')->getClientOriginalExtension();
             $request->file('photo')->storeAs('/uploads/customers/', $customerImage);
         }
         $request->validate([
@@ -57,7 +55,7 @@ class CustomerController extends Controller
         $customerImage = null;
         if($request->hasFile('photo'))
         {
-            $customerImage = uniqid('customer_' . strtotime(date('Ymdhsis')), true) . '_' . $request->file('photo')->getClientOriginalName();
+            $customerImage = uniqid('customer_' . strtotime(date('Ymdhsis')), true) . '_' .rand(1, 1000) . $request->file('photo')->getClientOriginalExtension();
             $request->file('photo')->storeAs('/uploads/customers/', $customerImage);
         }
         $customer = Customer::find($id);
@@ -102,20 +100,20 @@ class CustomerController extends Controller
                 'password'=>$request->password,
             ]);
 
-            Session::flash('success-msg', 'Vendor Registration Complete wait for approve');
+            Toastr::error('Customer Login Successfully (:', 'Login', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
             return redirect()->route('frontend.dashboard');
         }else{
-            Session::flash('error-msg', 'Invalid Email and Password');
+            Toastr::error('Invalid Email and Password (:', 'Error', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
             return redirect()->route('frontend.dashboard');
-            // return "You are not applicable for login. wait for your confirmation";
         }
     }
 
     public function logout()
     {
         $check = Auth::logout();
+        dd($check);
         if($check){
-            Toastr::error('Vendor Successfully Logout (:', 'Logout', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            Toastr::error('Logout Successfully (:', 'Logout', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
             return redirect()->route('frontend.dashboard');
         }else{
             Toastr::warning('Something Went Wrong (:', 'Warning', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
