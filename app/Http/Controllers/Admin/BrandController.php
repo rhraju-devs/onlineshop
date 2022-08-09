@@ -65,7 +65,8 @@ class BrandController extends Controller
 
     public function update(Request $request, $id)
     {
-        $brandImage = null;
+        $brands = Brand::find($id);
+        $brandImage = $brands->photo;
         if($request->hasFile('photo'))
         {
             $brandImage = uniqid('brand_' . strtotime(date('Ymdhsis')), true) . rand(0,1000) . '.' . $request->file('photo')->getClientOriginalExtension();
@@ -80,7 +81,6 @@ class BrandController extends Controller
             'status' => 'nullable',
         ]);
 
-        $brands = Brand::find($id);
         $brands->update([
             'name' => $request->name,
             'description' => $request->description,

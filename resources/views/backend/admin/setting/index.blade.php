@@ -113,7 +113,7 @@
                                     <div class="tab-content" id="myTabContent">
                                         <div class="tab-pane fade show active" id="description" role="tabpanel"
                                             aria-labelledby="home-tab">
-                                            <p class="mb-0">{{($setting->description)}}</p>
+                                            <p class="mb-0">{!! $setting->description !!}</p>
                                         </div>
                                         <div class="tab-pane fade" id="summary" role="tabpanel" aria-labelledby="profile-tab">
                                             <p class="mb-0">Site Summary</p>
@@ -139,19 +139,5 @@
 @endsection
 
 @push('scripts')
-    <!-- Data Table Plugin -->
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
 
-
-    @if(Session::has('error'))
-            <script>
-                toastr.error("{!! Session::get('error') !!}");
-            </script>
-    @endif
-
-    @if(Session::has('success'))
-            <script>
-                toastr.success("{!! Session::get('success') !!}");
-            </script>
-    @endif
 @endpush

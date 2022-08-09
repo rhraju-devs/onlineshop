@@ -88,8 +88,7 @@
                                             <div class="mb-3">
                                                 <label  class="form-label">Website Description :<span
                                                         class="text-danger"> *</span></label>
-                                                <textarea id="summernote1" name="discription" class="form-control"
-                                                    ">{{$setting->discription}}</textarea>
+                                                <textarea id="summernote1" name="discription" class="form-control">{{($setting->description)}}</textarea>
                                             </div>
 
                                             <div class="row">
@@ -97,7 +96,9 @@
                                                     <div class="mb-3">
                                                         <label for="photo" class="form-label">Website Feature  Photos :<span
                                                                 class="text-danger"> *</span></label>
-                                                        <input type="file" class="form-control" id="photo" name="photo" value="{{$setting->photo}}">
+                                                        <input type="file" class="form-control" id="photo" name="photo">
+                                                        <br>
+                                                        <img style="width: 150px;height:120px;" src="{{'/uploads/settings/' . $setting->photo}}" alt="">
                                                     </div>
                                                 </div>
                                             </div>
@@ -108,6 +109,7 @@
                                                         <label for="logo" class="form-label">Website Logo:<span
                                                                 class="text-danger"> *</span></label>
                                                         <input type="file" class="form-control" id="logo" name="logo" value="{{$setting->logo}}">
+                                                        <img style="width: 150px;height:120px;"  src="{{'/uploads/settings/' . $setting->logo}}" alt="">
                                                     </div>
                                                 </div>
                                             </div>

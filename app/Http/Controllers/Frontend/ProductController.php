@@ -24,19 +24,18 @@ class ProductController extends Controller
         $search = $request['search'] ?? "";
 
         if($search != ""){
-            // $products = Product::where('product_name', 'LIKE', '%' .$search.'%')->with('images')->get();
-            $products = Product::whereLike(['product_name', 'text', 'brand.name', 'category.name'], $search)->get();
+            $products = Product::where('product_name', 'LIKE', '%' .$search.'%')->with('images')->get();
+            // $products = Product::whereLike(['product_name', 'text', 'brand.name', 'category.name'], $search)->get();
         }else{
         $products = Product::with('images')->get();
         }
-
 
         $brands = Brand::all();
         $categories = Category::all();
         $featureproducts = Product::where('feature_product', 'yes')->get();
         return view('frontend.pages.product.search_product', compact('products', 'brands', 'categories', 'featureproducts'));
     }
-
+            // $products = Product::where('product_name', 'LIKE', '%' .$search.'%')->with('images')->get();
             // $products = Product::where('product_name', 'LIKE', '%' .$search.'%')->with('images')->get();
                     // $products = Product::with('category')->where('product_name', 'LIKE', '%'.$search.'%')->whereHas('Category', function($q){
         //     $q->where('name', 'LIKE', '%'. $search .'%');
