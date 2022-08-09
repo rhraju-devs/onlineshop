@@ -123,6 +123,6 @@
         });
     </script>
 
-@if(Session::has('error'))
+
 
 @endpush

@@ -12,17 +12,19 @@ class BrandController extends Controller
 {
     public function grid_brand($id)
     {
+        $name = Brand::find($id);
         $products = Product::where('product_brand', $id)->get();
         $brands = Brand::all();
-        $categories = Category::find($id)->with('parentCategory')->get();
-        return view('frontend.pages.brand.shop_grid_left_sidebar_brand_product', compact('products', 'brands', 'categories'));
+        $categories = Category::with('parentCategory')->get();
+        return view('frontend.pages.brand.shop_grid_left_sidebar_brand_product', compact('products', 'brands', 'categories', 'name'));
     }
 
     public function list_brand($id)
     {
+        $name = Brand::find($id);
         $products = Product::where('product_brand', $id)->get();
         $brands = Brand::all();
-        $categories = Category::find($id)->with('parentCategory')->get();
-        return view('frontend.pages.brand.shop_list_left_sidebar_brand_product', compact('products', 'brands', 'categories'));
+        $categories = Category::with('parentCategory')->get();
+        return view('frontend.pages.brand.shop_list_left_sidebar_brand_product', compact('products', 'brands', 'categories','name'));
     }
 }

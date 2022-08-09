@@ -12,19 +12,22 @@ class CategoryController extends Controller
 {
     public function grid_category($id)
     {
+        $name = Category::find($id);
+        // dd($name->name);
         $products = Product::where('product_category', $id)->get();
         $brands = Brand::all();
         $categories = Category::find($id)->with('parentCategory')->get();
         // $categories = Category::find($id);//->with('parentCategory')->get();
-        return view('frontend.pages.category.shop_grid_left_sidebar_category_product', compact('products', 'brands', 'categories'));
+        return view('frontend.pages.category.shop_grid_left_sidebar_category_product', compact('products', 'brands', 'categories','name'));
     }
 
     public function list_category($id)
     {
+        $name = Category::find($id);
         $products = Product::where('product_category', $id)->get();
         $brands = Brand::all();
         $categories = Category::find($id)->with('parentCategory')->get();
         // $categories = Category::find($id);//->with('parentCategory')->get();
-        return view('frontend.pages.category.shop_list_left_sidebar_category_product', compact('products', 'brands', 'categories'));
+        return view('frontend.pages.category.shop_list_left_sidebar_category_product', compact('products', 'brands', 'categories','name'));
     }
 }

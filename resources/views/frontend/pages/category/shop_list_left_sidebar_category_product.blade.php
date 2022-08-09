@@ -148,159 +148,161 @@
 
                 <div class="col-12 col-sm-7 col-md-8 col-lg-9">
                     <!-- Shop Top Sidebar -->
-                    <div class="shop_top_sidebar_area d-flex flex-wrap align-items-center justify-content-between">
-                        <div class="view_area d-flex">
-                            <div class="grid_view">
-                                <a href="{{route('frontend.category.grid', $category->id)}}" data-toggle="tooltip" data-placement="top" title="Grid View"><i class="icofont-layout"></i></a>
-                            </div>
-                            <div class="list_view ml-3">
-                                <a href="{{route('frontend.category.list', $category->id)}}" data-toggle="tooltip" data-placement="top" title="List View"><i class="icofont-listine-dots"></i></a>
-                            </div>
-                        </div>
-                        <select class="small right">
-                            <option selected>Short by Popularity</option>
-                            <option value="1">Short by Newest</option>
-                            <option value="2">Short by Sales</option>
-                            <option value="3">Short by Ratings</option>
-                        </select>
-                    </div>
-
-                    <div class="shop_list_product_area">
-                        <div class="row">
-                            <!-- Single Product -->
-                            @foreach($products as $key=>$product)
-                            <div class="col-12">
-                                <div class="single-product-area mb-30">
-                                    <div class="product_image">
-                                        <!-- Product Image -->
-                                        <img class="normal_img"
-                                            src="{{url('/uploads/product_images/',$product->images->first()->image)}}"
-                                            alt="">
-                                        @foreach($product->images as $image)
-                                        <img class="hover_img"
-                                            src="{{url('/uploads/product_images/',$product->images->last()->image)}}"
-                                            alt="">
-                                        @endforeach
-                                        <!-- Product Image -->
-
-                                        <!-- Product Badge -->
-                                        <div class="product_badge">
-                                            <span>New</span>
-                                        </div>
-
-                                        <!-- Wishlist -->
-                                        <div class="product_wishlist">
-                                            <a href="wishlist.html"><i class="icofont-heart"></i></a>
-                                        </div>
-
-                                        <!-- Compare -->
-                                        <div class="product_compare">
-                                            <a href="compare.html"><i class="icofont-exchange"></i></a>
-                                        </div>
-                                    </div>
-
-                                    <!-- Product Description -->
-                                    <div class="product_description">
-                                        <!-- Add to cart -->
-                                        <div class="product_add_to_cart">
-                                            <a href="#"><i class="icofont-shopping-cart"></i> Add to Cart</a>
-                                        </div>
-
-                                        <!-- Quick View -->
-                                        <div class="product_quick_view">
-                                            <a href="{{route('frontend.single.product', $product->id)}}"  data-bs-toggle="modal" data-bs-target="#product-{{$product->id}}"><i
-                                                    class="icofont-eye-alt"></i> Quick View</a>
-                                            <!-- <a href="#" data-toggle="modal" data-target="#quickview"><i class="icofont-eye-alt"></i> Quick View</a> -->
-                                        </div>
-
-                                        <p class="brand_name">{{optional($product->brand)->name}}</p>
-                                        <h2><a href="{{route('frontend.single.product', $product->id)}}">{{$product->product_name}}</a></h2>
-                                        <h6 class="brand_name">{{optional($product->category)->name}}</h6>
-                                        <h6 class="product-price">{{$product->product_price}}</h6>
-
-                                        <p class="product-short-desc">{!! $product->product_description !!}</p>
-                                    </div>
+                    @if($products->count()>0)
+                        <div class="shop_top_sidebar_area d-flex flex-wrap align-items-center justify-content-between">
+                            <div class="view_area d-flex">
+                                <div class="grid_view">
+                                    <a href="{{route('frontend.category.grid', $products[0]->product_category)}}" data-toggle="tooltip" data-placement="top" title="Grid View"><i class="icofont-layout"></i></a>
+                                </div>
+                                <div class="list_view ml-3">
+                                    <a href="{{route('frontend.category.list', $products[0]->product_category)}}" data-toggle="tooltip" data-placement="top" title="List View"><i class="icofont-listine-dots"></i></a>
                                 </div>
                             </div>
+                            <select class="small right">
+                                <option selected>Short by Popularity</option>
+                                <option value="1">Short by Newest</option>
+                                <option value="2">Short by Sales</option>
+                                <option value="3">Short by Ratings</option>
+                            </select>
+                        </div>
+
+                        <div class="shop_list_product_area">
+                            <div class="row">
+                                <!-- Single Product -->
+                                @foreach($products as $key=>$product)
+                                <div class="col-12">
+                                    <div class="single-product-area mb-30">
+                                        <div class="product_image">
+                                            <!-- Product Image -->
+                                            <img class="normal_img"
+                                                src="{{url('/uploads/product_images/',$product->images->first()->image)}}"
+                                                alt="">
+                                            @foreach($product->images as $image)
+                                            <img class="hover_img"
+                                                src="{{url('/uploads/product_images/',$product->images->last()->image)}}"
+                                                alt="">
+                                            @endforeach
+                                            <!-- Product Image -->
+
+                                            <!-- Product Badge -->
+                                            <div class="product_badge">
+                                                <span>New</span>
+                                            </div>
+
+                                            <!-- Wishlist -->
+                                            <div class="product_wishlist">
+                                                <a href="wishlist.html"><i class="icofont-heart"></i></a>
+                                            </div>
+
+                                            <!-- Compare -->
+                                            <div class="product_compare">
+                                                <a href="compare.html"><i class="icofont-exchange"></i></a>
+                                            </div>
+                                        </div>
+
+                                        <!-- Product Description -->
+                                        <div class="product_description">
+                                            <!-- Add to cart -->
+                                            <div class="product_add_to_cart">
+                                                <a href="#"><i class="icofont-shopping-cart"></i> Add to Cart</a>
+                                            </div>
+
+                                            <!-- Quick View -->
+                                            <div class="product_quick_view">
+                                                <a href="{{route('frontend.single.product', $product->id)}}"  data-bs-toggle="modal" data-bs-target="#product-{{$product->id}}"><i
+                                                        class="icofont-eye-alt"></i> Quick View</a>
+                                                <!-- <a href="#" data-toggle="modal" data-target="#quickview"><i class="icofont-eye-alt"></i> Quick View</a> -->
+                                            </div>
+
+                                            <p class="brand_name">{{optional($product->brand)->name}}</p>
+                                            <h2><a href="{{route('frontend.single.product', $product->id)}}">{{$product->product_name}}</a></h2>
+                                            <h6 class="brand_name">{{optional($product->category)->name}}</h6>
+                                            <h6 class="product-price">{{$product->product_price}}</h6>
+
+                                            <p class="product-short-desc">{!! $product->product_description !!}</p>
+                                        </div>
+                                    </div>
+                                </div>
 
 
-                            <!-- Quick View Modal Area -->
-                            <div class="modal fade" id="product-{{$product->id}}"  tabindex="-1" role="dialog"
-                                aria-labelledby="product-{{$product->id}}" aria-hidden="true">
-                                <div class="modal-dialog modal-lg modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <button type="button" class="close btn"  data-bs-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                        <div class="modal-body">
-                                            <div class="quickview_body">
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <div class="col-12 col-lg-5">
-                                                            <div class="quickview_pro_img">
-                                                                <!-- Product Image -->
-                                                                <img class="normal_img"
-                                                                    src="{{url('/uploads/product_images/',$product->images->first()->image)}}"
-                                                                    alt="">
-                                                                @foreach($product->images as $image)
-                                                                <img class="hover_img"
-                                                                    src="{{url('/uploads/product_images/',$product->images->last()->image)}}"
-                                                                    alt="">
-                                                                @endforeach
-                                                                <!-- Product Image -->
-                                                                <!-- Product Badge -->
-                                                                <div class="product_badge">
-                                                                    <span class="badge-new">New</span>
+                                <!-- Quick View Modal Area -->
+                                <div class="modal fade" id="product-{{$product->id}}"  tabindex="-1" role="dialog"
+                                    aria-labelledby="product-{{$product->id}}" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <button type="button" class="close btn"  data-bs-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            <div class="modal-body">
+                                                <div class="quickview_body">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-12 col-lg-5">
+                                                                <div class="quickview_pro_img">
+                                                                    <!-- Product Image -->
+                                                                    <img class="normal_img"
+                                                                        src="{{url('/uploads/product_images/',$product->images->first()->image)}}"
+                                                                        alt="">
+                                                                    @foreach($product->images as $image)
+                                                                    <img class="hover_img"
+                                                                        src="{{url('/uploads/product_images/',$product->images->last()->image)}}"
+                                                                        alt="">
+                                                                    @endforeach
+                                                                    <!-- Product Image -->
+                                                                    <!-- Product Badge -->
+                                                                    <div class="product_badge">
+                                                                        <span class="badge-new">New</span>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="col-12 col-lg-7">
-                                                            <div class="quickview_pro_des">
-                                                                <h4 class="title">{{$product->product_name}}</h4>
-                                                                <div class="top_seller_product_rating mb-15">
-                                                                    <i class="icofont-star"></i>
-                                                                    <i class="icofont-star"></i>
-                                                                    <i class="icofont-star"></i>
-                                                                    <i class="icofont-star"></i>
-                                                                    <i class="icofont-star"></i>
+                                                            <div class="col-12 col-lg-7">
+                                                                <div class="quickview_pro_des">
+                                                                    <h4 class="title">{{$product->product_name}}</h4>
+                                                                    <div class="top_seller_product_rating mb-15">
+                                                                        <i class="icofont-star"></i>
+                                                                        <i class="icofont-star"></i>
+                                                                        <i class="icofont-star"></i>
+                                                                        <i class="icofont-star"></i>
+                                                                        <i class="icofont-star"></i>
+                                                                    </div>
+                                                                    <h5 class="price">{{$product->product_price}}</h5>
+                                                                    <p>{{$product->product_description}}</p>
+                                                                    <a href="# ">View Full Product Details</a>
                                                                 </div>
-                                                                <h5 class="price">{{$product->product_price}}</h5>
-                                                                <p>{{$product->product_description}}</p>
-                                                                <a href="# ">View Full Product Details</a>
-                                                            </div>
-                                                            <!-- Add to Cart Form -->
-                                                            <form class="cart" method="post">
-                                                                <div class="quantity">
-                                                                    <input type="number" class="qty-text" id="qty" step="1"
-                                                                        min="1" max="12" name="quantity" value="1">
-                                                                </div>
-                                                                <button type="submit" name="addtocart" value="5"
-                                                                    class="cart-submit">Add to cart</button>
-                                                                <!-- Wishlist -->
-                                                                <div class="modal_pro_wishlist">
-                                                                    <a href="wishlist.html"><i
-                                                                            class="icofont-heart"></i></a>
-                                                                </div>
-                                                                <!-- Compare -->
-                                                                <div class="modal_pro_compare">
-                                                                    <a href="compare.html"><i
-                                                                            class="icofont-exchange"></i></a>
-                                                                </div>
-                                                            </form>
-                                                            <!-- Share -->
-                                                            <div class="share_wf mt-30">
-                                                                <p>Share with friends</p>
-                                                                <div class="_icon">
-                                                                    <a href="#"><i
-                                                                            class="icofont-facebook"></i></a>
-                                                                    <a href="#"><i
-                                                                            class="icofont-twitter"></i></a>
-                                                                    <a href="#"><i
-                                                                            class="icofont-pinterest"></i></a>
-                                                                    <a href="#"><i class="icofont-linkedin"
-                                                                            ></i></a>
-                                                                    <a href="#"><i class="icofont-instagram"
-                                                                            aria-hidden="true"></i></a>
+                                                                <!-- Add to Cart Form -->
+                                                                <form class="cart" method="post">
+                                                                    <div class="quantity">
+                                                                        <input type="number" class="qty-text" id="qty" step="1"
+                                                                            min="1" max="12" name="quantity" value="1">
+                                                                    </div>
+                                                                    <button type="submit" name="addtocart" value="5"
+                                                                        class="cart-submit">Add to cart</button>
+                                                                    <!-- Wishlist -->
+                                                                    <div class="modal_pro_wishlist">
+                                                                        <a href="wishlist.html"><i
+                                                                                class="icofont-heart"></i></a>
+                                                                    </div>
+                                                                    <!-- Compare -->
+                                                                    <div class="modal_pro_compare">
+                                                                        <a href="compare.html"><i
+                                                                                class="icofont-exchange"></i></a>
+                                                                    </div>
+                                                                </form>
+                                                                <!-- Share -->
+                                                                <div class="share_wf mt-30">
+                                                                    <p>Share with friends</p>
+                                                                    <div class="_icon">
+                                                                        <a href="#"><i
+                                                                                class="icofont-facebook"></i></a>
+                                                                        <a href="#"><i
+                                                                                class="icofont-twitter"></i></a>
+                                                                        <a href="#"><i
+                                                                                class="icofont-pinterest"></i></a>
+                                                                        <a href="#"><i class="icofont-linkedin"
+                                                                                ></i></a>
+                                                                        <a href="#"><i class="icofont-instagram"
+                                                                                aria-hidden="true"></i></a>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -310,42 +312,47 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-- Quick View Modal Area -->
+
+
+
+
+
+
+
+
+                                @endforeach
+
                             </div>
-                            <!-- Quick View Modal Area -->
-
-
-
-
-
-
-
-
-                            @endforeach
-
                         </div>
-                    </div>
 
-                    <!-- Shop Pagination Area -->
-                    <div class="shop_pagination_area mt-30">
-                        <nav aria-label="Page navigation">
-                            <ul class="pagination pagination-sm justify-content-center">
-                                <li class="page-item">
-                                    <a class="page-link" href="#"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
-                                </li>
-                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                <li class="page-item"><a class="page-link" href="#">...</a></li>
-                                <li class="page-item"><a class="page-link" href="#">8</a></li>
-                                <li class="page-item"><a class="page-link" href="#">9</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+                        <!-- Shop Pagination Area -->
+                        <div class="shop_pagination_area mt-30">
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination pagination-sm justify-content-center">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">...</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">8</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">9</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                    @else
+                        <p class="mx-5 mx-5 my-5">
+                                No Product Found for <strong class="text-info">{{$name->name}}</strong> Category.
+                        </p>
+                    @endif
 
                 </div>
             </div>

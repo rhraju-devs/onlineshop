@@ -16,8 +16,8 @@ use App\Models\Banner;
 use App\Models\Setting;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
+
 // Use for Macro Builder
-// use Illuminate\Database\Query\Builder;
 use Illuminate\Database\Eloquent\Builder;
 
 class AppServiceProvider extends ServiceProvider
@@ -31,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
     {
 
     }
-    // foreach (Arr::wrap($attributes) as $attribute) {
+
     /**
      * Bootstrap any application services.
      *
@@ -85,11 +85,7 @@ class AppServiceProvider extends ServiceProvider
         View::share('settings', $settings);
 
         $search = $request['search'] ?? "";
-        // if($search != ""){
-        //     $products = Product::where('product_name', 'LIKE', '%$search$')->orWhere('product_brand', 'LIKE', '%$search$%')->orWhere('product_category', 'LIKE', '%$search%')->orWhere('product_sub_category', 'LIKE', '%$search%')->with('images')->get();
-        // }else{
-        //     $products = Product::with('images')->get();
-        // }
+
         View::share('search', $search);
 
 

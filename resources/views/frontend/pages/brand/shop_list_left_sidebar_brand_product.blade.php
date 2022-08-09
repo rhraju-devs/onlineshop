@@ -218,13 +218,14 @@
 
                 <div class="col-12 col-sm-7 col-md-8 col-lg-9">
                     <!-- Shop Top Sidebar -->
+                    @if($products->count()>0)
                     <div class="shop_top_sidebar_area d-flex flex-wrap align-items-center justify-content-between">
                         <div class="view_area d-flex">
                             <div class="grid_view">
-                                <a href="{{route('frontend.brand.grid', $brand->id)}}" data-toggle="tooltip" data-placement="top" title="Grid View"><i class="icofont-layout"></i></a>
+                                <a href="{{route('frontend.brand.grid', $products[0]->product_brand)}}" data-toggle="tooltip" data-placement="top" title="Grid View"><i class="icofont-layout"></i></a>
                             </div>
                             <div class="list_view ml-3">
-                                <a href="{{route('frontend.brand.list', $brand->id)}}" data-toggle="tooltip" data-placement="top" title="List View"><i class="icofont-listine-dots"></i></a>
+                                <a href="{{route('frontend.brand.list', $products[0]->product_brand)}}" data-toggle="tooltip" data-placement="top" title="List View"><i class="icofont-listine-dots"></i></a>
                             </div>
                         </div>
                         <select class="small right">
@@ -319,6 +320,11 @@
                             </ul>
                         </nav>
                     </div>
+                    @else
+                        <p class="mx-5 mx-5 my-5">
+                            No Product Found for <strong class="text-info">{{$name->name}}</strong> Category.
+                        </p>
+                    @endif
 
                 </div>
             </div>
