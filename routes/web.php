@@ -124,7 +124,8 @@ Route::get('/all-product-grid', [FrontendProduct::class, 'grid_product'])->name(
 Route::get('/all-product-list', [FrontendProduct::class, 'list_product'])->name('frontend.list.product');
 Route::get('/product/single-product-details/{id}', [FrontendProduct::class, 'single_product'])->name('frontend.single.product');
 
-Route::get('/product/search-product/', [FrontendProduct::class, 'search_product'])->name('frontend.search.product');
+Route::get('/product/search-product-grid/', [FrontendProduct::class, 'search_product'])->name('frontend.search.product');
+Route::get('/product/search-product-list/', [FrontendProduct::class, 'search_product'])->name('frontend.search.product.list');
 
 //category Product
 Route::get('/product/category-product-grid/{id}', [FrontendCategory::class, 'grid_category'])->name('frontend.category.grid');

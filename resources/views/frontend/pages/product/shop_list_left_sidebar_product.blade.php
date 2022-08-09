@@ -227,10 +227,13 @@
                                         <!-- <a href="#" data-toggle="modal" data-target="#quickview"><i class="icofont-eye-alt"></i> Quick View</a> -->
                                     </div>
 
-                                    <p class="brand_name">{{optional($product->brand)->name}}</p>
+
                                     <h2><a href="{{route('frontend.single.product', $product->id)}}">{{$product->product_name}}</a></h2>
-                                    <h6 class="brand_name">{{optional($product->category)->name}}</h6>
-                                    <h6 class="product-price">{{$product->product_price}}</h6>
+                                    <h6 class="product-price">BDT {{$product->product_price}} &#2547;</h6>
+                                    <p class="brand_name">{{optional($product->brand)->name}}</p>
+                                    <h5 class="price">BDT {{$product->product_price}} &#2547;</h5>
+                                    <p>{{$product->product_description}}</p>
+                                    <a href="{{route('frontend.single.product', $product->id)}}">View Full Product Details</a>
 
                                     <p class="product-short-desc">{!! $product->product_description !!}</p>
                                 </div>
@@ -278,9 +281,12 @@
                                                                 <i class="icofont-star"></i>
                                                                 <i class="icofont-star"></i>
                                                             </div>
-                                                            <h5 class="price">{{$product->product_price}}</h5>
+                                                            <p class="brand_name">{{optional($product->brand)->name}}</p>
+                                                            <h5 class="price">BDT {{$product->product_price}} &#2547;</h5>
                                                             <p>{{$product->product_description}}</p>
-                                                            <a href="# ">View Full Product Details</a>
+                                                            <a href="{{route('frontend.single.product', $product->id)}}">View Full Product Details</a>
+
+
                                                         </div>
                                                         <!-- Add to Cart Form -->
                                                         <form class="cart" method="post">
@@ -327,13 +333,6 @@
                         </div>
                         
                         <!-- Quick View Modal Area -->
-
-
-
-
-
-
-
 
                         @endforeach
 

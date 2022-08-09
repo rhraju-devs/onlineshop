@@ -33,13 +33,9 @@ class ProductController extends Controller
         $brands = Brand::all();
         $categories = Category::all();
         $featureproducts = Product::where('feature_product', 'yes')->get();
-        return view('frontend.pages.product.search_product', compact('products', 'brands', 'categories', 'featureproducts'));
+        return view('frontend.pages.product.search_product', compact('products', 'brands', 'categories', 'featureproducts', 'search'));
     }
-            // $products = Product::where('product_name', 'LIKE', '%' .$search.'%')->with('images')->get();
-            // $products = Product::where('product_name', 'LIKE', '%' .$search.'%')->with('images')->get();
-                    // $products = Product::with('category')->where('product_name', 'LIKE', '%'.$search.'%')->whereHas('Category', function($q){
-        //     $q->where('name', 'LIKE', '%'. $search .'%');
-        // })->get();
+
     public function list_product()
     {
         $products = Product::with('images')->get();

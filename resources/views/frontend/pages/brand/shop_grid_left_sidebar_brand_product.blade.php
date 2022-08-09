@@ -277,9 +277,11 @@
                                             <a href="#" data-toggle="modal" data-target="#quickview"><i class="icofont-eye-alt"></i> Quick View</a>
                                         </div>
 
+                                        
                                         <p class="brand_name">{{optional($product->brand)->name}}</p>
-                                        <a href="#">{{$product->product_name}}</a>
-                                        <h6 class="product-price">{{$product->product_price}}</h6>
+                                        <h2><a href="{{route('frontend.single.product', $product->id)}}">{{$product->product_name}}</a></h2>
+                                        <h6 class="brand_name">{{optional($product->category)->name}}</h6>
+                                        <h6 class="product-price">BDT {{$product->product_price}} &#2547;</h6>
                                     </div>
                                 </div>
                             </div>

@@ -219,6 +219,8 @@
 
                 <div class="col-12 col-sm-7 col-md-8 col-lg-9">
                     <!-- Shop Top Sidebar -->
+                    <p>You are searching for : {{$search}}</p>
+                    @if($products->count()>0)
                     <div class="shop_top_sidebar_area d-flex flex-wrap align-items-center justify-content-between">
                         <div class="view_area d-flex">
                             <div class="grid_view">
@@ -239,7 +241,7 @@
                     <div class="shop_grid_product_area">
                         <div class="row justify-content-center">
                             <!-- Single Product -->
-             
+
                             @foreach($products as $key=>$product)
                             <div class="col-9 col-sm-12 col-md-6 col-lg-4">
                                 <div class="single-product-area mb-30">
@@ -281,7 +283,7 @@
                                         <p class="brand_name">{{optional($product->brand)->name}}</p>
                                         <h2><a href="{{route('frontend.single.product', $product->id)}}">{{$product->product_name}}</a></h2>
                                         <h6 class="brand_name">{{optional($product->category)->name}}</h6>
-                                        <h6 class="product-price">{{$product->product_price}}</h6>
+                                        <h6 class="product-price">BDT {{$product->product_price}} &#2547;</h6>
                                     </div>
                                 </div>
                             </div>
@@ -310,6 +312,14 @@
                             </ul>
                         </nav>
                     </div>
+
+                    @else
+                        <p class="mx-5 mx-5 my-5">
+                            No result found for <strong class="text-danger">{{$search}}</strong>. Try again
+                        </p>
+                    @endif
+
+
 
                 </div>
             </div>

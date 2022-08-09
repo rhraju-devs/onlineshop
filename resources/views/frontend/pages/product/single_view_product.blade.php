@@ -153,7 +153,8 @@
                         <i class="fa fa-star" aria-hidden="true"></i>
                         <span class="text-muted">(8 Reviews)</span>
                     </div>
-                    <h4 class="price mb-4">{{$product->product_price}}</h4>
+                    <h4 class="price mb-4">BDT {{$product->product_price}} &#2547;</h4>
+
 
                     <!-- Overview -->
                     <div class="short_overview mb-4">
