@@ -55,7 +55,7 @@ class CategoryController extends Controller
             'photo' => $categoryImage,
             'status' => $request->status,
         ]);
-        // dd($categories);
+        dd($categories);
         if(Category::create()){
             Toastr::success('Category Successfully Created :)', 'Created', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
             return redirect()->route('admin.category.list');
@@ -72,7 +72,8 @@ class CategoryController extends Controller
     }
 
     public function update(Request $request, $id){
-        $categoryImage = null;
+        $category = Category::find($id);
+        $categoryImage=$category->photo;
         if($request->hasFile('photo')){
             $file=$request->file('photo');
             $categoryImage = uniqid('category_' . strtotime(date('Ymdhsis')), true) . '_' . rand(1, 1000) . $request->file('photo')->getClientOriginalName();

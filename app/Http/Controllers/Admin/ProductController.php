@@ -8,15 +8,12 @@ use App\Models\Brand;
 use App\Models\Product;
 use App\Models\Image;
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
 
 class ProductController extends Controller
 {
     public function index()
     {   
-        // $products = Product::with('category', 'subcategory', 'brand')->get();
-        // // dd($products);
-        // return view('backend.admin.product.index', compact('products',));
-
         //changin 
         $products = Product::with('category', 'subcategory', 'brand', 'images')->get();
         // dd($products);
@@ -61,7 +58,7 @@ class ProductController extends Controller
         ]);
         if($request->has('images')){
             foreach($request->file('images')as $image){
-                $imageName = uniqid('product_image_' . strtotime(date('Ymdhmis')), true) . '.' . $image->getClientOriginalExtension();
+                $imageName = uniqid('product_image_' . strtotime(date('Ymdhmis')), true) . '.' .rand(1, 1000) . $image->getClientOriginalExtension();
                 $image->move(public_path('/uploads/product_images'),$imageName);
                 Image::create([
                     'product_id'=>$new_product->id,
@@ -69,7 +66,14 @@ class ProductController extends Controller
                 ]);
             }
         }
-        return redirect()->route('admin.product.list')->with('product_added', 'Product has been added successfully');
+        if($new_product){
+            Toastr::success('Product Successfully Created :)', 'Created', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->route('admin.product.list');
+        }else{
+            Toastr::error('Something Wrond (:', 'Error', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->route('admin.product.list');
+        }
+
     }
 
     public function edit($id)
@@ -83,11 +87,21 @@ class ProductController extends Controller
     }
 
     public function update(Request $request, $id){
-        // dd($request->images);
         $product = Product::find($id);
-        // $product = Product::with('images')->find($id);
 
-
+        $request->validate([
+            'product_name' => 'string|nullable',
+            'product_description' => 'string|nullable',
+            'product_summary' => 'string|nullable',
+            'product_category' => 'nullable', 
+            'product_sub_category'=>'nullable',
+            'product_brand'=>'nullable',
+            'product_quantity'=>'numeric|nullable',
+            'product_price'=>'numeric|nullable',
+            'status' => 'nullable',
+            'product_weight' => 'numeric|nullable',
+            'feature_product' => 'nullable',
+        ]);
 
          $product -> update([
             'product_name' => $request->product_name,
@@ -103,8 +117,9 @@ class ProductController extends Controller
             'status' => $request->status,
         ]);
    
-            $product->images()->delete();
-        if($request->hasFile('images')){
+            // $product->images()->delete();
+            if($request->hasFile('images')){
+                $product->images()->delete();
             foreach($request->file('images') as $image){
                 $imageName = uniqid('product_image_' . strtotime(date('Ymdhmis')), true) . '.' . $image->getClientOriginalExtension();
                 $image->move(public_path('/uploads/product_images'),$imageName);
@@ -116,22 +131,39 @@ class ProductController extends Controller
         }
         
 
-
-        return redirect()->route('admin.product.list');
+        if($product->update([])){
+            Toastr::success('Product Successfully Updated :)', 'Updated', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->route('admin.product.list');
+        }else{
+            Toastr::error('Something Wrond (:', 'Error', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->route('admin.product.list');
+        }
     }
 
     public function show($id)
     {
         $product = Product::with('category', 'subcategory', 'brand')->find($id);
         $images = $product->images;
-        return view('backend.admin.product.show', compact('product', 'images'));
+        if($product){
+            Toastr::success('Product Found :)', 'Found', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return view('backend.admin.product.show', compact('product', 'images'));
+        }else{
+            Toastr::error('Something Wrond (:', 'Error', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return view('backend.admin.product.show', compact('product', 'images'));
+        }
     }
     public function delete($id){
         $product = Product::find($id);
         $product->images()->delete();
-        Product::find($id)->delete();
+        $delete = Product::find($id)->delete();
+        if($delete){
+            Toastr::error('Product successfully Deleted :)', 'Delete', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->back();
+        }else{
+            Toastr::warning('Something Wrond (:', 'Error', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->back();
+        }
 
 
-        return redirect()->back();
     }
 }

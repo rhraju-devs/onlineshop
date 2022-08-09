@@ -198,11 +198,10 @@
                                                     <div class="input-group-prepend">
                                                         <label class="input-group-text" for="status">Options</label>
                                                     </div>
-                                                    <select name='product_status' class="custom-select" id="status">
+
                                                     <select name='status' class="custom-select" id="status">
                                                         <option @if($product->status == 'active') selected @endif value="active">Active</option>
                                                         <option @if($product->status == 'inactive') selected @endif value="inactive">Inactive</option>
-                                                    </select>
                                                     </select>
                                                 </div>
                                             </div>

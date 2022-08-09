@@ -51,14 +51,12 @@
 
                                 <div class="col-md-12 col-lg-12">
                                     <table id="data_table_set" class="table table-info table-responsive table-striped table-hover">
-
                                         <thead>
                                             <tr>
                                                 <th scope="col">S.L</th>
                                                 <th scope="col">Name</th>
                                                 <th scope="col">Description</th>
                                                 <th scope="col">Summary</th>
-                                                <th scope="col">Image</th>
                                                 <th scope="col">Category</th>
                                                 <th scope="col">Sub Category</th>
                                                 <th scope="col">Brand</th>
@@ -69,18 +67,14 @@
                                                 <th scope="col">Feater Product</th>
                                                 <th scope="col">Action</th>
                                             </tr>
-
                                         </thead>
                                         <tbody class="table-group-divider">
-
                                             @foreach($products as $key=>$product)
                                             <tr>
-
                                                 <td scope="col">{{$key+1}}</td>
                                                 <td scope="col">{{$product->product_name}}</td>
                                                 <td scope="col">{!! $product->product_description !!}</td>
                                                 <td scope="col">{!! $product->product_summary !!}</td>
-                                                <td scope="col">{{$product->product_photo}}</td>
                                                 <td scope="col">{{optional($product->category)->name}}</td>
                                                 <td scope="col">{{optional($product->subcategory)->name}}</td>
                                                 <td scope="col">{{optional($product->brand)->name}}</td>
@@ -103,6 +97,23 @@
                                             </tr>
                                             @endforeach
                                         </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th scope="col">S.L</th>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Description</th>
+                                                <th scope="col">Summary</th>
+                                                <th scope="col">Category</th>
+                                                <th scope="col">Sub Category</th>
+                                                <th scope="col">Brand</th>
+                                                <th scope="col">Quantity</th>
+                                                <th scope="col">Price</th>
+                                                <th scope="col">Weight</th>
+                                                <th scope="col">Status</th>
+                                                <th scope="col">Feater Product</th>
+                                                <th scope="col">Action</th>
+                                            </tr>
+                                        </tfoot>
                                     </table>
                                 </div>                                
                             </div>

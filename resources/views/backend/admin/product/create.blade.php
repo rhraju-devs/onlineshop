@@ -6,11 +6,7 @@
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
 @endsection
 
-
 @section('admin_dashboard_content')
-
-
-
 
 <div class="row">
     <!-- [ sample-page ] start -->
@@ -80,15 +76,15 @@
                                         </div>
 
                                         <div class="mb-3">
-                                            <label for="summernote1" class="form-label">Product Description :<span
+                                            <label for="summernote2" class="form-label">Product Description :<span
                                                     class="text-danger"> *</span></label>
-                                            <textarea name="product_description" class="form-control" id="summernote1"
+                                            <textarea name="product_description" class="form-control" id="summernote2"
                                                 placeholder="Enter Product Description"></textarea>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="summernote2" class="form-label">Product Summary :<span
+                                            <label for="summernote1" class="form-label">Product Summary :<span
                                                     class="text-danger"> *</span></label>
-                                            <textarea name="product_summary" class="form-control" id="summernote2"
+                                            <textarea name="product_summary" class="form-control" id="summernote1"
                                                 placeholder="Enter Product Summary"></textarea>
                                         </div>
 
@@ -97,8 +93,6 @@
                                                 <div class="mb-3">
                                                     <label for="photo" class="form-label">Product Photos :<span
                                                             class="text-danger"> *</span></label>
-                                                    <!-- <input type="file" class="form-control" id="photo"
-                                                        name="product_photo"> -->
                                                         <input type="file" id="photo" name="images[]" class="form-control" accept="image/*" multiple >
                                                 </div>
                                             </div>
@@ -124,7 +118,7 @@
                                                             class="text-danger"> *</span></label>
                                                     <select name="product_category" class="form-select"
                                                         aria-label="Default select example">
-                                                        <option selected>Select Category</option>
+                                                        <option selected value="">Select Category</option>
                                                         @foreach($categories as $category)
                                                         <option value="{{$category->id}}">{{$category->name}}</option>
                                                         @endforeach
@@ -137,7 +131,7 @@
                                                         :<span class="text-danger"> *</span></label>
                                                     <select name="product_sub_category" id="sub_category"
                                                         class="form-select" aria-label="Default select example">
-                                                        <option selected>Select Sub-Category</option>
+                                                        <option selected value="">Select Sub-Category</option>
                                                         @foreach($subcategories as $category)
                                                         <option value="{{$category->id}}">{{$category->name}}</option>
                                                         @endforeach
@@ -182,7 +176,7 @@
                                                         <label class="input-group-text" for="feature_product">Options</label>
                                                     </div>
                                                     <select name='feature_product' class="custom-select" id="feature_product">
-                                                        <option selected>Choose...</option>
+                                                        <option selected>Is Feature</option>
                                                         <option value="yes">Yes</option>
                                                         <option value="no">No</option>
                                                     </select>
@@ -196,14 +190,14 @@
                                                         <label class="input-group-text" for="status">Options</label>
                                                     </div>
                                                     <select name='status' class="custom-select" id="status">
-                                                        <option selected>Choose...</option>
+                                                        <option selected>Choose Status</option>
                                                         <option value="active">Active</option>
                                                         <option value="inactive">Inactive</option>
                                                     </select>
                                                 </div>
                                             </div>
                                         </div>
-
+                                        <button type="reset" class="btn btn-primarty mx-5">Reset</button>
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </form>
                                 </div>
@@ -241,7 +235,6 @@
         });
         $('.dropdrown-toggle').dropdown();
     });
-
 </script>
 
 @endpush
