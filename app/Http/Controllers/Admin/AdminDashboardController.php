@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
+// use Illuminate\Http\Request;
+// use Illuminate\Support\Facades\Session;
+
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Brian2694\Toastr\Facades\Toastr;
+use Illuminate\Support\Facades\Artisan;
 
 class AdminDashboardController extends Controller
 {
@@ -37,5 +42,26 @@ class AdminDashboardController extends Controller
         Auth::logout();
         Toastr::error('Admin Successfully Logout :)', '', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
         return redirect()->route('admin.login');
+    }
+
+    public function optimization()
+    {
+        // dd('hi');
+        // Toastr::success('Admin Config, Cache, View and Route Suggggggggggggccessfully Clear :)', 'Clear', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+        // $data = request()->session()->all();
+        // dd($data);
+        $check = Artisan::call('config:cache');
+        $check = Artisan::call('cache:clear');
+        $check = Artisan::call('view:clear');
+        $check = Artisan::call('route:cache');
+       
+        if(isset($check)){
+            Toastr::success('Admin Config, Cache, View and Route Successfully Clear :)', 'Clear', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->back();
+        }else{
+            Toastr::error('Admin Config, Cache, View and Route Successfully Clear :)', 'Clear', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            return redirect()->back();
+        }
+
     }
 }

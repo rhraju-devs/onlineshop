@@ -147,7 +147,7 @@
                             <!-- Form -->
                             <div class="search-form">
                                 <form action="{{route('frontend.search.product')}}" method="get">
-                                    <input type="search" class="form-control" placeholder="Search" value="{{$search}}" name="search">
+                                    <input type="search" class="form-control" placeholder="Search anything" value="{{$search}}" name="search">
                                     <!-- <input type="submit" class="d-none" value="Send"> -->
                                     <button type="submit" class="btn btn-primary sm-btn">Search</button>
                                     <a href="{{route('frontend.dashboard')}}">

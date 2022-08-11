@@ -17,6 +17,7 @@ use App\Http\Controllers\Frontend\CategoryController as FrontendCategory;
 use App\Http\Controllers\Frontend\BrandController as FrontendBrand;
 use App\Http\Controllers\Customer\CustomerController as Customer;
 use App\Http\Controllers\Frontend\DashboardController;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -99,6 +100,9 @@ Route::group(['middleware'=>['auth', 'checkAdmin'],'prefix'=>'admin'],function()
     Route::put('/banner-update/{id}', [BannerController::class, 'update'])->name('admin.banner.update');
     Route::get('/banner-delete/{id}', [BannerController::class, 'delete'])->name('admin.banner.delete');
     Route::get('/banner-show/{id}', [BannerController::class, 'show'])->name('admin.banner.show');
+
+    //optimization
+    Route::get('/optimization', [AdminDashboardController::class, 'optimization'])->name('admin.optimization');
 });
 
 

@@ -11,7 +11,7 @@ use Illuminate\Http\Request; -->
                         <img class="img-radius" src="" class="img-radius"
                                 alt="">
                         <div class="user-details">
-                            <div id="more-details"><i class="fa fa-caret-down"></i>name</div>
+                            <div id="more-details"><i class="fa fa-caret-down"></i>{{auth()->user()->firstname}} {{auth()->user()->lastname}}</div>
                         </div>
                     </div>
                     <div class="collapse" id="nav-user-link">
@@ -20,7 +20,7 @@ use Illuminate\Http\Request; -->
                                         class="feather icon-user m-r-5"></i>View Profile</a></li>
                             <li class="list-group-item"><a href="#!"><i
                                         class="feather icon-settings m-r-5"></i>Settings</a></li>
-                            <li class="list-group-item"><a href="auth-normal-sign-in.html"><i
+                            <li class="list-group-item"><a href="{{route('admin.logout')}}"><i
                                         class="feather icon-log-out m-r-5"></i>Logout</a></li>
                         </ul>
                     </div>
@@ -116,7 +116,16 @@ use Illuminate\Http\Request; -->
                                 class="pcoded-mtext">Setting</span></a>
                 </li>
                 <!-- Setting End -->
-
+                <!-- admin.optimization Start -->
+                <li class="nav-item pcoded-menu-caption">
+                    <label>Optimization</label>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('admin.optimization')}}" class="nav-link "><span class="pcoded-micon"><i
+                                class="feather icon-file-text"></i></span><span
+                            class="pcoded-mtext">Optimization</span></a>
+                </li>
+                <!-- admin.optimization End -->
                 <!-- Order Start -->
                 <li class="nav-item pcoded-menu-caption">
                         <label>Order</label>
@@ -135,6 +144,21 @@ use Illuminate\Http\Request; -->
                         </ul>
                     </li>
                     <!-- Order End -->
+
+
+
+
+                    <!-- Logout Start -->
+                    <li class="nav-item pcoded-menu-caption">
+                        <label>Logout</label>
+                </li>
+                
+                <li class="nav-item">
+                        <a href="{{route('admin.logout')}}" class="nav-link "><span class="pcoded-micon"><i
+                                    class="feather icon-file-text"></i></span><span
+                                class="pcoded-mtext">Logout</span></a>
+                </li>
+                    <!-- Logout End -->
              
                 </ul>
             </div>
