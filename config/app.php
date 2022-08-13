@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'OnlineShopping'),
+    'name' => env('APP_NAME', 'OnlineShopBD'),
 
     /*
     |--------------------------------------------------------------------------

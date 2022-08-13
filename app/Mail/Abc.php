@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class MailContact extends Mailable
+class Abc extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -16,9 +16,9 @@ class MailContact extends Mailable
      *
      * @return void
      */
-    public function __construct($data)
+    public function __construct()
     {
-        $this->data = $data;
+        //
     }
 
     /**
@@ -28,9 +28,6 @@ class MailContact extends Mailable
      */
     public function build()
     {
-        return $this->markdown('frontend.email.email')
-                ->subject('A new contact email')
-                ->from('system@yoursite.com', 'System')
-                ->with('data', $this->data);
+        return $this->markdown('frontend.abc.abc');
     }
 }
