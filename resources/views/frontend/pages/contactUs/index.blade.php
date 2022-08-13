@@ -58,18 +58,19 @@
 
                 <div class="col-12">
                     <div class="contact_from mb-50">
-                        <form action="mail.php" method="post" id="main_contact_form">
+                        <form action="{{route('send.email')}}" method="post">
+                            @csrf
                             <div class="contact_input_area">
                                 <div id="success_fail_info"></div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="f_name" id="f-name" placeholder="First Name" required>
+                                            <input type="text" class="form-control" name="name" id="name" placeholder="Enter your Name" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="l_name" id="l-name" placeholder="Last Name" required>
+                                            <input type="subject" class="form-control" name="subject" id="subject" placeholder="Subject" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -79,11 +80,12 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <select class="custom-select form-control w-100">
-                                                <option selected>Subject</option>
-                                                <option value="1">Delivery Info</option>
-                                                <option value="2">Payment Process</option>
-                                                <option value="3">Quality Issues</option>
+                                            <select class="custom-select form-control w-100" name="issue">
+                                                <option selected>Issues</option>
+                                                <option value="deliveryInfo">Delivery Info</option>
+                                                <option value="paymentProcess">Payment Process</option>
+                                                <option value="qualityIssues">Quality Issues</option>
+                                                <option value="others">Other's</option>
                                             </select>
                                         </div>
                                     </div>
