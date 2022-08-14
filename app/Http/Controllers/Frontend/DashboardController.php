@@ -76,7 +76,6 @@ class DashboardController extends Controller
 
     }
     public function sendEmail(Request $request){
-        
         $data = [
             'name' => $request->name,
             'email' => $request->email, 
@@ -84,9 +83,23 @@ class DashboardController extends Controller
             'issue' => $request->issue,
             'message' => $request->message,
         ];
+
+        if($this->isOnline()){
+            Mail::to('receiver@gmail.com')->send(new MailContact($data));
+            Toastr::success('Thanks for Giving us Feedback');
+            return redirect()->route('frontend.dashboard')->with('success', 'Thanks for giving us your feedback');
+        }else{
+            return "No connection! Check your Net Connection";
+        }
         // dd($data);
-    Mail::to('receiver@gmail.com')->send(new MailContact($data));
-    Toastr::success('Thanks for Giving us Feedback');
-    return redirect()->route('frontend.dashboard');
+
+    }
+
+    public function isOnline($site = "https://www.youtube.com/"){
+        if(@fopen($site, "r")){
+            return true;
+        }else{
+            return false;
+        }
     }
 }

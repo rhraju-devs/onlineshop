@@ -57,6 +57,10 @@
                 </div>
 
                 <div class="col-12">
+
+                </div>
+
+                <div class="col-12">
                     <div class="contact_from mb-50">
                         <form action="{{route('send.email')}}" method="post">
                             @csrf
@@ -65,17 +69,20 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="name" id="name" placeholder="Enter your Name" required>
+                                            <input type="text" class="form-control" name="name" id="name" placeholder="Enter your Name" value="{{ old('name') }}">
+                                            @error ('name') <span class ="text-danger">{{message}}</span> @enderror   
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="subject" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                                            <input type="subject" class="form-control" name="subject" id="subject" placeholder="Subject" required value="{{ old('subject') }}">
+                                            @error ('subject') <span class ="text-danger">{{message}}</span> @enderror   
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="email" class="form-control" name="email" id="email" placeholder="Your E-mail" required>
+                                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required value="{{ old('email') }}">
+                                            @error ('email') <span class ="text-danger">{{message}}</span> @enderror   
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -87,11 +94,13 @@
                                                 <option value="qualityIssues">Quality Issues</option>
                                                 <option value="others">Other's</option>
                                             </select>
+                                            @error ('issue') <span class ="text-danger">{{message}}</span> @enderror   
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Your Message *" required></textarea>
+                                            <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Your Message *" required value="{{ old('message') }}"></textarea>
+                                            @error ('message') <span class ="text-danger">{{message}}</span> @enderror   
                                         </div>
                                     </div>
                                     <div class="col-12 text-center">
