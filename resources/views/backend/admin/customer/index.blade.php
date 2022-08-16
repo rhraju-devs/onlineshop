@@ -69,6 +69,7 @@
                                                     <td scope="col">{{$customer->address}}</td>
                                                     <td scope="col">{{$customer->status}}</td>
                                                     <td>
+                                                        <a href="{{route('admin.customer.sms', $customer->id)}}" data-toggle="tooltip" title="SMS" data-placement="bottom" class="btn btn-outline-success btn-sm"><img src="{{url('icon/chat.svg')}}" alt="" srcset=""></a>
                                                         <a href="{{route('admin.customer.view', $customer->id)}}" data-toggle="tooltip" title="View" data-placement="bottom" class="btn btn-outline-success btn-sm"><img src="{{url('icon/eye.svg')}}" alt="" srcset=""></a>
                                                         <a href="{{route('admin.customer.edit', $customer->id)}}" data-toggle="tooltip" title="Edit" data-placement="bottom" class="btn btn-outline-warning btn-sm"><img src="{{url('icon/edit.svg')}}" alt="" srcset=""></a>
                                                         <a href="{{route('admin.customer.delete', $customer->id)}}" data-toggle="tooltip" title="Delete" data-placement="bottom" class="btn btn-outline-danger btn-sm"><img src="{{url('icon/delete.svg')}}" alt="" srcset=""></a>

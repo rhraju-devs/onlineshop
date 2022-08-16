@@ -12,6 +12,8 @@ use Brian2694\Toastr\Facades\Toastr;
 // Mail class import
 use Illuminate\Support\Facades\Mail;
 
+use Illuminate\Notifications\Messages\VonageMessage;
+
 class DashboardController extends Controller
 {
     public function dashboard(Request $request)
@@ -102,4 +104,24 @@ class DashboardController extends Controller
             return false;
         }
     }
+
+    /**
+     * Get the Vonage / SMS representation of the notification.
+     *
+     * @param  mixed  $notifiable
+     * @return \Illuminate\Notifications\Messages\VonageMessage
+     */
+    public function toVonage($notifiable)
+    {
+        
+        return (new VonageMessage)
+                    ->content('Your SMS message content')
+                    ->from('15554443333');
+    }
+
+//     $users = User::select([‘id’, ‘first_name’, ‘last_name’])->get();
+ 
+// foreach($users as $user) {
+//     // Do something here
+// }
 }

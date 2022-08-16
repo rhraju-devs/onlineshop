@@ -82,6 +82,7 @@ Route::group(['middleware'=>['auth', 'checkAdmin'],'prefix'=>'admin'],function()
     Route::put('/customer-update/{id}', [CustomerController::class, 'update'])->name('admin.customer.update');
     Route::get('/customer-show/{id}', [CustomerController::class, 'show'])->name('admin.customer.view');
     Route::get('/customer-delete/{id}', [CustomerController::class, 'delete'])->name('admin.customer.delete');
+    Route::get('/customer-sms/{id}', [CustomerController::class, 'sms'])->name('admin.customer.sms');
 
     //vendor Route
     Route::get('/vendor-list', [VendorController::class, 'index'])->name('admin.vendor.list');
@@ -120,7 +121,9 @@ Route::get('/', [DashboardController::class, 'dashboard'])->name('frontend.dashb
 Route::get('/checkout', [DashboardController::class, 'checkout_1'])->name('frontend.checkout.1');
 Route::get('/wishlist', [DashboardController::class, 'wishlist'])->name('frontend.wishlist');
 Route::get('/contact-us', [DashboardController::class, 'contact_us'])->name('frontend.contact_us');
+//send email with mailtrap.io
 Route::post('/send-eamil', [DashboardController::class, 'sendEmail'])->name('send.email');
+// Route::get('/send-sms', [DashboardController::class, 'toVonage'])->name('send.sms');
 Route::get('/about-us', [DashboardController::class, 'about_us'])->name('frontend.about_us');
 Route::view('/blog', 'frontend.pages.blog.index')->name('frontend.blog');
 

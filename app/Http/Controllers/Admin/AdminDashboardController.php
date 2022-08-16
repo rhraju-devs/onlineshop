@@ -51,13 +51,15 @@ class AdminDashboardController extends Controller
         // $data = request()->session()->all();
         // dd($data);
         $check = Artisan::call('config:cache');
+        $check = Artisan::call('config:clear');
         $check = Artisan::call('cache:clear');
         $check = Artisan::call('view:clear');
         $check = Artisan::call('route:cache');
+        $check = Artisan::call('route:clear');
        
         if(isset($check)){
             Toastr::success('Admin Config, Cache, View and Route Successfully Clear :)', 'Clear', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
-            return redirect()->back();
+            return redirect('http://onlineshop.raju/admin/dashboard');//->route('admin.dashboard');
         }else{
             Toastr::error('Admin Config, Cache, View and Route Successfully Clear :)', 'Clear', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
             return redirect()->back();

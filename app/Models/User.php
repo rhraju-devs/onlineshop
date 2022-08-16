@@ -38,4 +38,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // Vonage SMS Notification
+    public function routeNotificationForVonage($notification)
+    {
+        return $this->phone;
+    }
+
+
 }

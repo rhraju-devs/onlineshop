@@ -7,10 +7,12 @@
     "require": {
         "php": "^8.0.2",
         "brian2694/laravel-toastr": "^5.57",
-        "guzzlehttp/guzzle": "^7.2",
+        "guzzlehttp/guzzle": "^7.4",
         "laravel/framework": "^9.11",
         "laravel/sanctum": "^2.14.1",
-        "laravel/tinker": "^2.7"
+        "laravel/tinker": "^2.7",
+        "laravel/vonage-notification-channel": "^3.0",
+        "vonage/client": "^3.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Brian2694\Toastr\Facades\Toastr;
 
+use App\Notifications\SuccessfulRegistration;
+use Illuminate\Notifications\Messages\VonageMessage;
+use Illuminate\Notifications\Notification;
+use Illuminate\Notifications\Vonage;
+
 class CustomerController extends Controller
 {
     public function index()
@@ -133,6 +138,28 @@ class CustomerController extends Controller
             Toastr::warning('Customer could not found and Try again (:', 'Warning', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
             return redirect()->back(); 
         }
+    }
+
+    public function sms($id)
+    {
+        $customer = User::find($id);
+        $customer->notify(new SuccessfulRegistration());
+
+        $basic  = new \Vonage\Client\Credentials\Basic("20fb412f", "BXQ1IWzxb9tXg15L");
+        $client = new \Vonage\Client($basic);
+
+        $response = $client->sms()->send(
+            new \Vonage\SMS\Message\SMS("8801521471117",'onlinestore', 'A text message sent using the Nexmo SMS API')
+        );
+        
+        $message = $response->current();
+        
+        if ($message->getStatus() == 0) {
+            echo "The message was sent successfully\n";
+        } else {
+            echo "The message failed with status: " . $message->getStatus() . "\n";
+        }
+        return "success";
     }
 
 
