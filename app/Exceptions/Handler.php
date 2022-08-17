@@ -47,4 +47,6 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    
 }

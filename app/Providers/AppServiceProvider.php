@@ -62,7 +62,6 @@ class AppServiceProvider extends ServiceProvider
         Paginator::useBootstrap();
         Schema::defaultStringLength(191);
 
-
         $products = Product::all();
         View::share('products', $products);
 
@@ -87,8 +86,5 @@ class AppServiceProvider extends ServiceProvider
         $search = $request['search'] ?? "";
 
         View::share('search', $search);
-
-
-
     }
 }

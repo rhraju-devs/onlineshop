@@ -111,7 +111,7 @@ class CustomerController extends Controller
     public function logout()
     {
         $check = Auth::logout();
-        dd($check);
+
         if($check){
             Toastr::error('Logout Successfully (:', 'Logout', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
             return redirect()->route('frontend.dashboard');

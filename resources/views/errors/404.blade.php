@@ -40,21 +40,21 @@
                     <p>Sorry! the page you looking for is not found. Make sure that you have typed the currect URL</p>
                     @auth()
                     @if(auth()->user()->role == 'customer')
-                    <a href="{{route('frontend.dashboard')}}" class="btn btn-primary mt-3"><i class="fa fa-home" aria-hidden="true"></i> GO
+                    <a href="{{route('frontend.dashboard')}}" class="btn btn-primary mt-3"><i class="icofont-home"></i> GO
                         HOME</a>
                     @elseif(auth()->user()->role == 'vendor')
-                    <a href="{{route('frontend.dashboard')}}" class="btn btn-primary mt-3"><i class="fa fa-home" aria-hidden="true"></i> GO
+                    <a href="{{route('frontend.dashboard')}}" class="btn btn-primary mt-3"><i class="icofont-home"></i> GO
                         HOME</a>
                     @elseif(auth()->user()->role == 'admin')
-                    <a href="{{route('admin.dashboard')}}" class="btn btn-primary mt-3 mx-5"><i class="fa fa-home" aria-hidden="true"></i> GO
+                    <a href="{{route('admin.dashboard')}}" class="btn btn-primary mt-3 mx-5"><i class="icofont-dashboard-web"></i> GO
                         TO DASHBOARD</a>
 
-                    <a href="{{route('frontend.dashboard')}}" class="btn btn-primary mt-3"><i class="fa fa-home" aria-hidden="true"></i> GO
+                    <a href="{{route('frontend.dashboard')}}" class="btn btn-primary mt-3"><i class="icofont-home"></i> GO
                         HOME</a>
                     @endif
                     @endauth
                     @guest
-                            <a href="{{route('frontend.dashboard')}}" class="btn btn-primary mt-3"><i class="fa fa-home" aria-hidden="true"></i> GO
+                            <a href="{{route('frontend.dashboard')}}" class="btn btn-primary mt-3"><i class="icofont-home"></i> GO
                         HOME</a>
                     @endguest
                 </div>
