@@ -164,3 +164,10 @@ class CustomerController extends Controller
 
 
 }
+
+
+// Helper function
+// https://readerstacks.com/create-custom-helper-functions-in-laravel-8/
+// https://github.com/browner12/helpers
+// https://laravel.com/docs/5.1/helpers
+// https://www.youtube.com/watch?v=XZ-Isc5lzF8
