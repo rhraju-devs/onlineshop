@@ -16,6 +16,7 @@ use App\Http\Controllers\Frontend\ProductController as FrontendProduct;
 use App\Http\Controllers\Frontend\CategoryController as FrontendCategory;
 use App\Http\Controllers\Frontend\BrandController as FrontendBrand;
 use App\Http\Controllers\Customer\CustomerController as Customer;
+use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\DashboardController;
 use Illuminate\Support\Facades\Artisan;
 
@@ -131,9 +132,12 @@ Route::view('/blog', 'frontend.pages.blog.index')->name('frontend.blog');
 Route::get('/all-product-grid', [FrontendProduct::class, 'grid_product'])->name('frontend.grid.product');
 Route::get('/all-product-list', [FrontendProduct::class, 'list_product'])->name('frontend.list.product');
 Route::get('/product/single-product-details/{id}', [FrontendProduct::class, 'single_product'])->name('frontend.single.product');
-
 Route::get('/product/search-product-grid/', [FrontendProduct::class, 'search_product'])->name('frontend.search.product');
 Route::get('/product/search-product-list/', [FrontendProduct::class, 'search_product'])->name('frontend.search.product.list');
+
+// Add to cart
+Route::get('/product/cart/addcart/{id}', [CartController::class, 'addToCart'])->name('product.add.cart');
+Route::get('/product/cart-list',[CartController::class, 'cartView'])->name('product.cart.view');
 
 //category Product
 Route::get('/product/category-product-grid/{id}', [FrontendCategory::class, 'grid_category'])->name('frontend.category.grid');
