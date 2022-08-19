@@ -206,7 +206,7 @@
                     <!-- Add to Cart Form -->
                     <form class="cart clearfix my-5 d-flex flex-wrap align-items-center" method="">
                         <div class="quantity">
-                            <input type="number" class="qty-text form-control" id="qty2" step="1" min="1" max="12"
+                            <input type="number" class="qty-text form-control" id="qty2" step="1" min="1"
                                 name="quantity" value="1">
                         </div>
                         <button type="submit" name="addtocart" value="5"

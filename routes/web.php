@@ -121,6 +121,7 @@ Route::group(['middleware'=>['auth', 'checkAdmin'],'prefix'=>'admin'],function()
 Route::get('/', [DashboardController::class, 'dashboard'])->name('frontend.dashboard');
 Route::get('/checkout', [DashboardController::class, 'checkout_1'])->name('frontend.checkout.1');
 Route::get('/wishlist', [DashboardController::class, 'wishlist'])->name('frontend.wishlist');
+Route::get('/product/wishlist/{id}', [DashboardController::class, 'addWishlist'])->name('product.wishlist');
 Route::get('/contact-us', [DashboardController::class, 'contact_us'])->name('frontend.contact_us');
 //send email with mailtrap.io
 Route::post('/send-eamil', [DashboardController::class, 'sendEmail'])->name('send.email');
@@ -138,6 +139,9 @@ Route::get('/product/search-product-list/', [FrontendProduct::class, 'search_pro
 // Add to cart
 Route::get('/product/cart/addcart/{id}', [CartController::class, 'addToCart'])->name('product.add.cart');
 Route::get('/product/cart-list',[CartController::class, 'cartView'])->name('product.cart.view');
+Route::get('/product/cart-delete/{id}', [CartController::class, 'deleteCartItem'])->name('delete.cart.item');
+Route::get('/clear-cart', [CartController::class, 'clearCart'])->name('clear.cart');
+Route::get('/product/cart-update/{id}', [CartController::class, 'updateCart'])->name('product.cart.update');
 
 //category Product
 Route::get('/product/category-product-grid/{id}', [FrontendCategory::class, 'grid_category'])->name('frontend.category.grid');

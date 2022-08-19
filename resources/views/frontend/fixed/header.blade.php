@@ -158,14 +158,25 @@
                         </div>
 
                         <!-- Wishlist -->
-                        <div class="wishlist-area">
-                            <a href="{{route('frontend.wishlist')}}" class="wishlist-btn"><i
-                                    class="icofont-heart"></i></a>
+                        <div class="cart-area">
+                            <div class="cart--btn">
+                                <a href="{{route('frontend.wishlist')}}">
+                                    <i class="icofont-heart"></i><span class="cart_quantity">
+                                {{session()->has('wishlist') ? count(session()->get('wishlist')) : 0}}
+                                <!-- class="wishlist-btn"  -->
+                                    </span>
+                                </a>
+                            </div>
+
                         </div>
 
                         <!-- Cart -->
                         <div class="cart-area">
-                            <div class="cart--btn"><i class="icofont-cart"></i> <span class="cart_quantity">2</span>
+                            <div class="cart--btn">
+                                <i class="icofont-cart"></i> <span class="cart_quantity">
+                               {{session()->has('cart') ? count(session()->get('cart')) : 0}}
+                              
+                            </span>
                             </div>
 
                             <!-- Cart Dropdown Content -->

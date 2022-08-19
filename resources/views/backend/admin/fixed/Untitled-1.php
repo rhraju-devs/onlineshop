@@ -12,7 +12,6 @@ class AddToCartController extends Controller
 //    add to cart
     public function addToCart($id)
     {
-
         $product=Product::find($id);
         if(!$product)
         {
@@ -68,8 +67,6 @@ class AddToCartController extends Controller
                 Toastr::error('Stock Out','Sorry !!!');
             }
             return redirect()->back();
-
-
         }
 
 

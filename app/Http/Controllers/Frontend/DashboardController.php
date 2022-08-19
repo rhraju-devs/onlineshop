@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session; 
 use App\Mail\MailContact;
 use Illuminate\Http\Request;
 use App\Models\Product;
@@ -35,10 +36,7 @@ class DashboardController extends Controller
         return view('frontend.pages.dashboard.frontend_dashboard', compact('products', 'brands', 'categories', 'featureproducts'));
     }
 
-    public function wishlist()
-    {
-        return view('frontend.pages.wishlist.index');
-    }
+
 
     public function contact_us()
     {
@@ -105,23 +103,102 @@ class DashboardController extends Controller
         }
     }
 
-    /**
-     * Get the Vonage / SMS representation of the notification.
-     *
-     * @param  mixed  $notifiable
-     * @return \Illuminate\Notifications\Messages\VonageMessage
-     */
-    public function toVonage($notifiable)
+    public function wishlist()
     {
+        // dd(Session::get('cart'));
+        return view('frontend.pages.wishlist.index');
+    }
+    
+    public function addWishlist($id)
+    {
+        // dd($request->id);
+
+        $product=Product::with('images')->find($id);
         
-        return (new VonageMessage)
-                    ->content('Your SMS message content')
-                    ->from('15554443333');
+            // dd($product);
+            // dd($product->images[0]->image);
+        if(!isset($product))
+        {
+            //product not found
+            Toastr::warning('Product not Found :)', 'Not Found', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
+            // dd($product);
+            return redirect()->back();
+        }
+        $cartExist=session()->get('wishlist');
+
+        if(session()->forget('wishlist')){
+            return 'success';
+        }
+
+        //cart is empty start
+        if($cartExist == null) {
+            //case 01: cart is empty.
+            //  action: add product to cart
+            if($product->product_quantity>=1){
+                // dd($product->product_quantity);
+                $cartData = [
+                    $id => [
+                        'product_id' => $id,
+                        'product_image' => $product->images[0]->image,
+                        'product_name' => $product->product_name,
+                        'product_price' => $product->product_price,
+                        'product_qty' => 1,
+                        'subtotal'=>$product->product_price ,
+                    ]
+                ];
+                // session cart variable data added
+                session()->put('wishlist', $cartData);
+                // session()->flush();
+                // dd(session()->get('cart'));
+                Toastr::success('Added to Cart successfully','Success');
+                return redirect()->back();
+            }
+            // product quantity not available
+            else{
+                Toastr::error('Stock Out','Sorry !!!');
+            }
+            return redirect()->back();
+        }
+        //cart empty end
+
+        // cart is not empty. but product does not exist into the cart
+        // if(!isset($cartExist[$id]))
+        if(array_key_exists($id, $cartExist))
+        {
+
+            //increment quantity of existing product.
+            $cartExist[$id]['product_qty']+=1;
+            // dd($cartExist[$id]['product_qty']);
+            if($product->product_quantity>=$cartExist[$id]['product_qty'])
+            {
+                $getCart[$id]['subtotal']=$cartExist[$id]['product_qty']*$cartExist[$id]['product_price'];
+                session()->put('wishlist',$cartExist);
+                return redirect()->back()->with('message','Product Quantity Updated.');
+            }
+            return redirect()->back()->with('message','Product Stock out.');
+        }else
+        {
+            //if not empty but product is different step 3
+            if($product->product_quantity>=1)
+            {
+                $cartExist[$id]=[
+                    'product_id' => $id,
+                    'product_image' => $product->images[0]->image,
+                    'product_name' => $product->product_name,
+                    'product_price' => $product->product_price,
+                    'product_qty' => 1,
+                    'subtotal'=>$product->product_price ,
+                ];
+                session()->put('wishlist',$cartExist);
+                return redirect()->back()->with('message','Product Added to Cart.');
+            }
+            return redirect()->back()->with('message','Product Stock Out.');
+        }
+        // cart is not empty. but product does not exist into the cart
+
+                // dd(session()->get('cart'));
+                // return redirect()->route('product.cart.view');
     }
 
-//     $users = User::select([‘id’, ‘first_name’, ‘last_name’])->get();
- 
-// foreach($users as $user) {
-//     // Do something here
-// }
+
 }

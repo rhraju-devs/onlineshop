@@ -11,7 +11,7 @@
                 <div class="col-12">
                     <h5>Cart</h5>
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{route('frontend.dashboard')}}">Home</a></li>
                         <li class="breadcrumb-item active">Cart</li>
                     </ol>
                 </div>
@@ -40,12 +40,16 @@
                                 </thead>
                                 <tbody>
 
-                                 {{-- @dd(session()->get('cart'))  --}}                                
+                            
                                 @if(session('cart'))
                                         @foreach(session('cart') as $id => $details)
+
+
                                             <tr>
                                                 <th scope="row">
-                                                    <i class="icofont-close"></i>
+                                                    <a href="{{route('delete.cart.item', $id)}}">
+                                                        <i class="icofont-close"></i>
+                                                    </a>
                                                 </th>
                                                 <td>
                                                     <img src="{{url('/uploads/product_images/', $details['product_image'])}}" alt="Product">
@@ -53,19 +57,48 @@
                                                 <td>
                                                     <a href="#">{{$details['product_name']}}</a>
                                                 </td>
-                                                <td>{{$details['product_price']}}</td>
+                                                <td>BDT. {{number_format($details['product_price'], 2)}} &#2547;</td>
                                                 <td>
                                                     <div class="quantity">
-                                                        <input type="number" class="qty-text" id="qty2" step="1" min="1" max="99" name="quantity" value="{{ $details['product_qty'] }}">
+                                                        <form action="{{route('product.cart.update', $id)}}" method="get">
+                                                            <input type="number" class="qty-text mx-3" id="qty2" step="1" min="1"  name="quantity" value="{{ $details['product_qty'] }}">
+                                                            <button type="submit" class="btn btn-primary btn-sm" rel="noopener noreferrer">
+                                                                <i class="icofont-refresh"></i>
+                                                            </button>
+                                                        </form>
+
                                                     </div>
                                                 </td>
-                                                <td>{{$details['product_price']}}</td>
+                                                <td>BDT. {{number_format($details['product_price'] * $details['product_qty'], 2) }} &#2547;</td>
                                             </tr>
                                         @endforeach
+
+                                    @else
+                                            <tr>
+                                                <th colspan="6">No Cart Product Available</th>
+                                            </tr>
+
                                     @endif
 
                                 </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th scope="col"><i class="icofont-ui-delete"></i></th>
+                                        <th scope="col">Image</th>
+                                        <th scope="col">Product</th>
+                                        <th scope="col">Unit Price</th>
+                                        <th scope="col">Quantity</th>
+                                        <th scope="col">Total</th>
+                                    </tr>
+                                </tfoot>
                             </table>
+                        </div>
+                    </div>
+
+
+                    <div class="cart-footer text-right">
+                        <div class="back-to-shop float-right">
+                            <a href="{{route('clear.cart')}}" class="btn btn-primary">Delete All Item</a>
                         </div>
                     </div>
                 </div>
