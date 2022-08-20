@@ -44,7 +44,9 @@
                                        {{-- @dd(session('wishlist'))--}}
                                     <tr>
                                         <th scope="row">
-                                            <i class="icofont-close"></i>
+                                            <a href="{{route('delete.wishlist.item', $id)}}">
+                                                <i class="icofont-close"></i>
+                                            </a>
                                         </th>
                                         <td>
                                             <img src="{{url('/uploads/product_images/', $details['product_image'])}}" alt="Product">
@@ -85,7 +87,7 @@
 
                     <div class="cart-footer text-right">
                         <div class="back-to-shop float-left">
-                            <a href="#" class="btn btn-primary">Delete All Item</a>
+                            <a href="{{route('clear.wishlist')}}" class="btn btn-primary">Delete All Item</a>
                         </div>
 
                         <div class="back-to-shop float-right">

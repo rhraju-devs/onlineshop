@@ -201,4 +201,18 @@ class DashboardController extends Controller
     }
 
 
+    public function clearWishlist()
+    {
+        session()->forget('wishlist');
+        return redirect()->back();
+    }
+    public function deleteWishlistItem($id)
+    {
+        $wishlist = session()->get('wishlist');
+        unset($wishlist[$id]);
+        session()->put('wishlist', $wishlist);
+        return redirect()->back();
+    }
+
+
 }
