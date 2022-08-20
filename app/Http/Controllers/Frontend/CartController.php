@@ -49,7 +49,7 @@ class CartController extends Controller
                         'product_name' => $product->product_name,
                         'product_price' => $product->product_price,
                         'product_qty' => 1,
-                        'subtotal'=>$product->product_price ,
+                        'subtotal'=>$product->product_price * 1 ,
                     ]
                 ];
                 // session cart variable data added
@@ -77,7 +77,7 @@ class CartController extends Controller
             // dd($cartExist[$id]['product_qty']);
             if($product->product_quantity>=$cartExist[$id]['product_qty'])
             {
-                $getCart[$id]['subtotal']=$cartExist[$id]['product_qty']*$cartExist[$id]['product_price'];
+                $cartExist[$id]['subtotal']=$cartExist[$id]['product_qty']*$cartExist[$id]['product_price'];
                 session()->put('cart',$cartExist);
                 return redirect()->back()->with('message','Product Quantity Updated.');
             }
@@ -93,7 +93,7 @@ class CartController extends Controller
                     'product_name' => $product->product_name,
                     'product_price' => $product->product_price,
                     'product_qty' => 1,
-                    'subtotal'=>$product->product_price ,
+                    'subtotal'=>$product->product_price * 1 ,
                 ];
                 session()->put('cart',$cartExist);
                 return redirect()->back()->with('message','Product Added to Cart.');
