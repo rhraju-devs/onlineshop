@@ -182,8 +182,9 @@
                             <!-- Cart Dropdown Content -->
                             <div class="cart-dropdown-content">
                                 <ul class="cart-list">
-                                @if(session('cart'))
-                                        @foreach(session('cart') as $id => $details)
+                                @if(session()->has('carth'))
+                                    @foreach(session('cart') as $id => $details)
+                                       
                                     <li>
                                         <div class="cart-item-desc">
                                             <a href="#" class="image">

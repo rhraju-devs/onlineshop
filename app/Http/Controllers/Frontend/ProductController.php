@@ -10,9 +10,12 @@ use App\Models\Brand;
 
 class ProductController extends Controller
 {
+    public $min_price = 0;
+    public $max_price = 10000;
     public function grid_product()
     {
-        $products = Product::with('images')->get();
+
+        $products = Product::whereBetween('product_price', [$this->min_price, $this->max_price])->with('images')->get();
     //    $images =  $products->image;
         $brands = Brand::all();
         $categories = Category::all();

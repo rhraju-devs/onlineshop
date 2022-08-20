@@ -39,7 +39,10 @@
                                 </tr>
                             </thead>
                             <tbody>
+
                                 @if(session('cart'))
+                                {{--session()->forget('cart')--}}
+          
                                     @foreach(session('cart') as $id => $details)
                                 <tr>
                                     <th scope="row">
@@ -126,7 +129,10 @@
                                 <tr>
                                     <td>Sub Total</td>
                                     @php 
+                                    if(session('cart'))
                                         $total = array_sum(array_column(session()->get('cart'),'subtotal'));
+                                    else
+                                    $total = 0;
                                     @endphp
                                     <td>BDT. {{number_format($total, 2)}} &#2547;</td>
                                 </tr>

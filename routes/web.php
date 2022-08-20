@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\ShippingController;
 use App\Http\Controllers\Admin\VendorController;
 use App\Http\Controllers\Frontend\CustomerController as FrontendCustomer;
 use App\Http\Controllers\Frontend\VendorController as FrontendVendor;
@@ -106,6 +107,14 @@ Route::group(['middleware'=>['auth', 'checkAdmin'],'prefix'=>'admin'],function()
 
     //optimization
     Route::get('/optimization', [AdminDashboardController::class, 'optimization'])->name('admin.optimization');
+
+    //shipping
+    Route::get('/shipping-list', [ShippingController::class, 'index'])->name('admin.shipping.list');
+    Route::get('/shipping-create', [ShippingController::class, 'create'])->name('admin.shipping.create');
+    Route::post('/shipping-store', [ShippingController::class, 'store'])->name('admin.shipping.store');
+    Route::get('/shipping-edit/{id}', [ShippingController::class, 'edit'])->name('admin.shipping.edit');
+    Route::put('/shipping-update/{id}', [ShippingController::class, 'update'])->name('admin.shipping.update');
+    Route::get('/shipping-delete/{id}', [ShippingController::class, 'delete'])->name('admin.shipping.delete');
 });
 
 

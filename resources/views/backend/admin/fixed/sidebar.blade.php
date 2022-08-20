@@ -106,6 +106,22 @@ use Illuminate\Http\Request; -->
                     </li>
                     
                 <!-- Customer and Vendor end -->
+
+                <!-- Shipping Start -->
+                <li class="nav-item pcoded-menu-caption">
+                        <label>Shipping</label>
+                    </li>
+
+                    <li class="nav-item pcoded-hasmenu">
+                        <a href="#!" class="nav-link "><span class="pcoded-micon"><i
+                                    class="feather icon-box"></i></span><span class="pcoded-mtext">Shipping</span><span
+                                class="badge badge-primary ml-3">@if($shipping->count() > 0){{$shipping->count()}}@endif</span></a>
+                        <ul class="pcoded-submenu">
+                            <li><a href="{{route('admin.shipping.list')}}">Shipping List</a></li>
+                            <li><a href="{{route('admin.shipping.create')}}">Shipping Add</a></li>
+                        </ul>
+                    </li>
+                <!-- Shipping End -->
                 <!-- Setting Start -->
                 <li class="nav-item pcoded-menu-caption">
                         <label>Setting</label>

@@ -11,6 +11,7 @@ class CartController extends Controller
 {
     public function cartView()
     {
+        // session()->forget('cart');
         return view('frontend.pages.cart.cart');
     }
 
@@ -31,11 +32,6 @@ class CartController extends Controller
             return redirect()->back();
         }
         $cartExist=session()->get('cart');
-
-        if(session()->forget('cart')){
-            return 'success';
-        }
-
         //cart is empty start
         if($cartExist == null) {
             //case 01: cart is empty.
@@ -54,8 +50,6 @@ class CartController extends Controller
                 ];
                 // session cart variable data added
                 session()->put('cart', $cartData);
-                // session()->flush();
-                // dd(session()->get('cart'));
                 Toastr::success('Added to Cart successfully','Success');
                 return redirect()->back();
             }
@@ -67,18 +61,16 @@ class CartController extends Controller
         }
         //cart empty end
 
-        // cart is not empty. but product does not exist into the cart
-        // if(!isset($cartExist[$id]))
+        // cart is not empty. but product exist into the cart
         if(array_key_exists($id, $cartExist))
         {
-
             //increment quantity of existing product.
             $cartExist[$id]['product_qty']+=1;
             // dd($cartExist[$id]['product_qty']);
             if($product->product_quantity>=$cartExist[$id]['product_qty'])
             {
-                $cartExist[$id]['subtotal']=$cartExist[$id]['product_qty']*$cartExist[$id]['product_price'];
-                session()->put('cart',$cartExist);
+                $cartExist[$id]['subtotal']=$cartExist[$id]['product_qty'] * $cartExist[$id]['product_price'];
+                session()->put('cart', $cartExist);
                 return redirect()->back()->with('message','Product Quantity Updated.');
             }
             return redirect()->back()->with('message','Product Stock out.');
@@ -93,7 +85,7 @@ class CartController extends Controller
                     'product_name' => $product->product_name,
                     'product_price' => $product->product_price,
                     'product_qty' => 1,
-                    'subtotal'=>$product->product_price * 1 ,
+                    'subtotal'=>$product->product_price,
                 ];
                 session()->put('cart',$cartExist);
                 return redirect()->back()->with('message','Product Added to Cart.');
@@ -101,8 +93,6 @@ class CartController extends Controller
             return redirect()->back()->with('message','Product Stock Out.');
         }
         // cart is not empty. but product does not exist into the cart
-
-                // dd(session()->get('cart'));
                 return redirect()->route('product.cart.view');
     }
 
@@ -116,23 +106,17 @@ class CartController extends Controller
         $updatedCart=session()->get('cart');
         unset($updatedCart[$id]);
         session()->put('cart',$updatedCart);
-
         return redirect()->back()->with('message','Item deleted.');
     }
 
-    public function updateCart(Request $request,$id)
+    public function updateCart(Request $request, $id)
     {
-        // dd($id);
-        // dd($request->all());
         $getCart=session()->get('cart');
-// dd($getCart);
-        $product=Product::find($id);
-        // dd($product);
+        $product=Product::with('images')->find($id);
         if($product->product_quantity>=$request->quantity)
         {
             $getCart[$id]['product_qty']=$request->quantity;
             $getCart[$id]['subtotal']=$request->quantity * $getCart[$id]['product_price'];
-// dd($getCart);
             session()->put('cart',$getCart);
             return redirect()->back()->with('message','Product Quantity Updated');
         }

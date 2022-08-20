@@ -14,6 +14,7 @@ use App\Models\Vendor;
 use App\Models\Product;
 use App\Models\Banner;
 use App\Models\Setting;
+use App\Models\Shipping;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 
@@ -84,7 +85,9 @@ class AppServiceProvider extends ServiceProvider
         View::share('settings', $settings);
 
         $search = $request['search'] ?? "";
-
         View::share('search', $search);
+
+        $shipping = Shipping::all();
+        View::share('shipping', $shipping);
     }
 }
