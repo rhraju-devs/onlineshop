@@ -21,12 +21,14 @@ class ShippingController extends Controller
         // dd(request()->all());
         $request->validate([
             'type' => 'string|required',
+            'delivery_time' => 'required|string',
             'price'=> 'required|numeric',
             'status'=> 'required|string',
         ]);
 
         Shipping::create([
             'type' => $request->type,
+            'delivery_time' => $request->delivery_time,
             'price' => $request->price,
             'status' => $request->status,
         ]);
@@ -45,11 +47,13 @@ class ShippingController extends Controller
         $request->validate([
             'type' => 'string|required',
             'price'=> 'required|numeric',
+            'delivery_time' => 'required|string',
             'status'=> 'required|string',
         ]);
 
         $data->update([
             'type' => $request->type,
+            'delivery_time' => $request->delivery_time,
             'price' => $request->price,
             'status' => $request->status,
         ]);

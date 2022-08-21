@@ -50,6 +50,7 @@
                                                 <tr>
                                                     <th scope="col">S.L</th>
                                                     <th scope="col">Type</th>
+                                                    <th sceope="col">Delivery Time</th>
                                                     <th scope="col">price</th>
                                                     <th scope="col">Status</th>
                                                     <th scope="col">Action</th>
@@ -61,6 +62,7 @@
                                                     <tr>
                                                         <td scope="col">{{$key+1}}</td>
                                                         <td scope="col">{{$data->type}}</td>
+                                                        <td scope="col">{{$data->delivery_time}}</td>
                                                         <td scope="col">{{$data->price}}</td>
                                                         <td scope="col">{{$data->status}}</td>
                                                         <td>
@@ -80,6 +82,7 @@
                                                 <tr>
                                                 <th scope="col">S.L</th>
                                                     <th scope="col">Type</th>
+                                                    <th scope="col">Delivery Time</th>
                                                     <th scope="col">price</th>
                                                     <th scope="col">Status</th>
                                                     <th scope="col">Action</th>

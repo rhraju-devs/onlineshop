@@ -47,34 +47,8 @@ class DashboardController extends Controller
     {
         return view('frontend.pages.aboutUs.index');
     }
-    public function checkout_1()
-    {
+    
 
-    }
-    public function checkout_2()
-    {
-        
-    }
-
-    public function checkout_3()
-    {
-        
-    }
-
-    public function checkout_4()
-    {
-        
-    }
-
-    public function checkout_5()
-    {
-        
-    }
-
-    public function cart()
-    {
-
-    }
     public function sendEmail(Request $request){
         $data = [
             'name' => $request->name,

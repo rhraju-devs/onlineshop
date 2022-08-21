@@ -20,7 +20,8 @@ use App\Http\Controllers\Customer\CustomerController as Customer;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\DashboardController;
 use Illuminate\Support\Facades\Artisan;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+// use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use App\Http\Controllers\Frontend\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -129,11 +130,14 @@ Route::group(['middleware'=>['auth', 'checkAdmin'],'prefix'=>'admin'],function()
 
 //Frontend
 Route::get('/', [DashboardController::class, 'dashboard'])->name('frontend.dashboard');
-Route::get('/checkout', [DashboardController::class, 'checkout_1'])->name('frontend.checkout.1');
 Route::get('/wishlist', [DashboardController::class, 'wishlist'])->name('frontend.wishlist');
 Route::get('/product/wishlist/{id}', [DashboardController::class, 'addWishlist'])->name('product.wishlist');
 Route::get('/product/wishlist-delete/{id}', [DashboardController::class, 'deleteWishlistItem'])->name('delete.wishlist.item');
 Route::get('/clear-wishlist', [DashboardController::class, 'clearWishlist'])->name('clear.wishlist');
+
+//checkout
+Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('forntend.checkout');
+Route::post('/checkout-store', [CheckoutController::class, 'store'])->name('frontend.checkout.store');
 
 Route::get('/contact-us', [DashboardController::class, 'contact_us'])->name('frontend.contact_us');
 //send email with mailtrap.io

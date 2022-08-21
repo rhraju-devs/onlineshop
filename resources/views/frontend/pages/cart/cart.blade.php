@@ -42,8 +42,8 @@
 
                                 @if(session('cart'))
                                 {{--session()->forget('cart')--}}
-          
-                                    @foreach(session('cart') as $id => $details)
+
+                                @foreach(session('cart') as $id => $details)
                                 <tr>
                                     <th scope="row">
                                         <a href="{{route('delete.cart.item', $id)}}">
@@ -124,34 +124,58 @@
                 <div class="cart-total-area mb-30">
                     <h5 class="mb-3">Cart Totals</h5>
                     <div class="table-responsive">
-                        <table class="table mb-3">                    
+                        <table class="table mb-3">
                             <tbody>
                                 <tr>
                                     <td>Sub Total</td>
-                                    @php 
+                                    @php
                                     if(session('cart'))
-                                        $total = array_sum(array_column(session()->get('cart'),'subtotal'));
+                                    $total = array_sum(array_column(session()->get('cart'),'subtotal'));
                                     else
                                     $total = 0;
                                     @endphp
                                     <td>BDT. {{number_format($total, 2)}} &#2547;</td>
                                 </tr>
                                 <tr>
-                                    <td>Shipping</td>
-                                    <td>BDT. 45 &#2547;</td>
+
                                 </tr>
                                 <tr>
                                     <td>VAT (10%)</td>
-                                    <td>BDT. 55 &#2547;</td>
+                                    <td>
+                                        @if(session('cart'))
+                                        @php
+                                        $total_vat = array_sum(array_column(session()->get('cart'),'subtotal'));
+                                        $total_vat = (($total_vat * 10) / 100);
+                                        @endphp
+                                        BDT. {{$total_vat}} &#2547;
+                                        @else
+                                        @php
+                                        $total_vat = 0;
+                                        @endphp
+                                        BDT. {{$total_vat}} &#2547;
+                                        @endif
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Total</td>
-                                    <td>BDT. 67 &#2547;</td>
+                                    <td>
+                                        @if(session('cart'))
+                                        BDT. {{$total + $total_vat}} &#2547;
+                                        @php
+                                        session()->get('cart_total');
+                                        $cart_total = $total + $total_vat;
+                                        session()->put('cart_total', $cart_total);                                        
+                                        @endphp
+                                      
+                                        @else
+                                        BDT. 0 &#2547;
+                                        @endif
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    <a href="checkout-1.html" class="btn btn-primary d-block">Proceed To Checkout</a>
+                    <a href="{{route('forntend.checkout')}}" class="btn btn-primary d-block">Proceed To Checkout</a>
                 </div>
             </div>
         </div>
@@ -159,3 +183,5 @@
 </div>
 <!-- Cart Area End -->
 @endsection
+
+

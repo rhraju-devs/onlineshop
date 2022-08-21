@@ -73,6 +73,13 @@
                                         </div>
 
                                         <div class="mb-3">
+                                            <label for="delivery_time" class="form-label">Delivery Time :<span
+                                                    class="text-danger"> *</span></label>
+                                            <input type="text" class="form-control" id="delivery_time" name="delivery_time"
+                                                placeholder="Delivery Time" required>
+                                        </div>
+
+                                        <div class="mb-3">
                                             <label for="price" class="form-label">Shipping Price :<span
                                                     class="text-danger"> *</span></label>
                                             <input type="number" name="price" class="form-control" id="price"
