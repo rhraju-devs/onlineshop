@@ -173,16 +173,17 @@
                         <!-- Cart -->
                         <div class="cart-area">
                             <div class="cart--btn">
-                                <i class="icofont-cart"></i> <span class="cart_quantity">
-                               {{session()->has('cart') ? count(session()->get('cart')) : 0}}
-                              
-                            </span>
+                                <a href="{{route('product.cart.view')}}">
+                                    <i class="icofont-cart"></i> <span class="cart_quantity">
+                                        {{session()->has('cart') ? count(session()->get('cart')) : 0}}
+                                    </span>
+                                </a>
                             </div>
 
                             <!-- Cart Dropdown Content -->
                             <div class="cart-dropdown-content">
                                 <ul class="cart-list">
-                                @if(session()->has('carth'))
+                                @if(session()->has('cart'))
                                     @foreach(session('cart') as $id => $details)
                                        
                                     <li>
@@ -210,20 +211,51 @@
                                     <ul>
                                         <li>
                                             <span>Sub Total:</span>
-                                            <span>$822.96</span>
+                                            @php
+                                                if(session('cart'))
+                                                    $total = array_sum(array_column(session()->get('cart'),'subtotal'));
+                                                else
+                                                    $total = 0;
+                                            @endphp
+                                            <span>BDT. {{number_format($total, 2)}} &#2547;</span>
                                         </li>
                                         <li>
-                                            <span>Shipping:</span>
-                                            <span>$30.00</span>
+                                            <span>VAT:</span>
+                                            <span>
+                                            @if(session('cart'))
+                                            @php
+                                                $total_vat = array_sum(array_column(session()->get('cart'),'subtotal'));
+                                                $total_vat = (($total_vat * 10) / 100);
+                                            @endphp
+                                                BDT. {{$total_vat}} &#2547;
+                                            @else
+                                            @php
+                                        $total_vat = 0;
+                                        @endphp
+                                        BDT. {{$total_vat}} &#2547;
+                                        @endif
+                                            </span>
                                         </li>
                                         <li>
                                             <span>Total:</span>
-                                            <span>$856.63</span>
+                                            <span>
+                                            @if(session('cart'))
+                                                BDT. {{$total + $total_vat}} &#2547;
+                                                @php
+                                                    session()->get('cart_total');
+                                                    $cart_total = $total + $total_vat;
+                                                    session()->put('cart_total', $cart_total);                                        
+                                                @endphp
+                                      
+                                            @else
+                                                BDT. 0 &#2547;
+                                            @endif
+                                            </span>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="cart-box">
-                                    <a href="checkout-1.html" class="btn btn-primary d-block">Checkout</a>
+                                    <a href="{{route('forntend.checkout')}}" class="btn btn-primary d-block">Checkout</a>
                                 </div>
                             </div>
                         </div>

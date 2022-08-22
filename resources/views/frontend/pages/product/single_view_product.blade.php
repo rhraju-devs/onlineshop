@@ -209,30 +209,30 @@
 
                     <div class="cart clearfix my-5 d-flex flex-wrap align-items-center">
 
-                        @if(session('cart'))
                         @php
-                             $getCart=session()->get('cart');
+                            $getCart=session()->get('cart');
                         @endphp
 
-                        @foreach($getCart as $id => $details)
-                            @if($id == $product->id)
-                            <form action="{{route('product.cart.update', $id)}}" method="get">
-                                <input type="number" class="qty-text mx-3" id="qty2" step="1" min="1" name="quantity"
-                                    value="{{ $details['product_qty'] }}">
-                                <button type="submit" class="btn btn-primary btn-sm" rel="noopener noreferrer">
-                                    <i class="icofont-refresh"></i>
-                                </button>
-                            </form>
-                            @endif
+                        @if($getCart)
+                            @foreach($getCart as $id => $details)
+                                @if($id == $product->id)
+                                <form action="{{route('product.cart.update', $id)}}" method="get">
+                                    <input type="number" class="qty-text mx-3" id="qty2" step="1" min="1" name="quantity"
+                                        value="{{ $details['product_qty'] }}">
+                                    <button type="submit" class="btn btn-primary mt-1 mt-md-0 ml-1 ml-md-3" rel="noopener noreferrer">
+                                        Add to cart
+                                    </button>
+                                </form>
+                                @endif
+                            @endforeach
 
-                        @endforeach
-
-                        @else
-                        <a href="{{route('product.add.cart', $product->id)}}">
-                            <button name="addtocart" value="5" class="btn btn-primary mt-1 mt-md-0 ml-1 ml-md-3">Add to
-                                cart</button>
-                        </a>
+                            @else
+                                <a href="{{route('product.add.cart', $product->id)}}">
+                                    <button name="addtocart"  class="btn btn-primary mt-1 mt-md-0 ml-1 ml-md-3">Add to
+                                    cart</button>
+                                </a>
                         @endif
+
                     </div>
 
                     <!-- Others Info -->

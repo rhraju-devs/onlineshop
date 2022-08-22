@@ -25,6 +25,7 @@
     <div class="checkout_area section_padding_100">
         <div class="container">
             <div class="row">
+                @if(auth()->user())
                 <div class="col-12">
                     <div class="checkout_details_area clearfix">
                         <h5 class="mb-4">Checkout Details</h5>
@@ -84,13 +85,15 @@
                         </form>
                     </div>
                 </div>
-
+                @else
                 <div class="col-12">
-                    <div class="checkout_pagination d-flex justify-content-end mt-50">
+                    <h5 class="checkout_pagination d-flex justify-content-center">Login first for Checkout</h5>
+                    <div class="checkout_pagination d-flex justify-content-center mt-50">
                         <a href="{{route('frontend.dashboard')}}" class="btn btn-primary mt-2 ml-2">Home</a>
                         <a href="{{route('frontend.grid.product')}}" class="btn btn-primary mt-2 ml-2">All Product</a>
                     </div>
                 </div>
+                @endif
             </div>
         </div>
     </div>
