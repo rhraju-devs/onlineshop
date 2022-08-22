@@ -182,7 +182,7 @@
 
                                     <!-- Wishlist -->
                                     <div class="product_wishlist">
-                                        <a href="wishlist.html"><i class="icofont-heart"></i></a>
+                                        <a href="{{route('product.wishlist', $product->id)}}"><i class="icofont-heart"></i></a>
                                     </div>
 
                                     <!-- Compare -->
@@ -195,7 +195,7 @@
                                 <div class="product_description">
                                     <!-- Add to cart -->
                                     <div class="product_add_to_cart">
-                                        <a href="#"><i class="icofont-shopping-cart"></i> Add to Cart</a>
+                                        <a href="{{route('product.add.cart', $product->id)}}"><i class="icofont-shopping-cart"></i> Add to Cart</a>
                                     </div>
 
                                     <!-- Quick View -->
@@ -205,8 +205,9 @@
                                     </div>
 
                                     <p class="brand_name">{{optional($product->brand)->name}}</p>
-                                    <a href="#">{{$product->product_name}}</a>
-                                    <h6 class="product-price">{{$product->product_price}}</h6>
+                                    <h2><a href="{{route('frontend.single.product', $product->id)}}">{{$product->product_name}}</a></h2>
+                                    <h6 class="brand_name">{{optional($product->category)->name}}</h6>
+                                    <h6 class="product-price">BDT {{$product->product_price}} &#2547;</h6>
                                 </div>
                         </div>
                         @endforeach
@@ -259,7 +260,7 @@
 
                                     <!-- Wishlist -->
                                     <div class="product_wishlist">
-                                        <a href="wishlist.html"><i class="icofont-heart"></i></a>
+                                        <a href="{{route('product.wishlist', $featureproduct->id)}}"><i class="icofont-heart"></i></a>
                                     </div>
 
                                     <!-- Compare -->
@@ -272,7 +273,7 @@
                                 <div class="product_description">
                                     <!-- Add to cart -->
                                     <div class="product_add_to_cart">
-                                        <a href="#"><i class="icofont-shopping-cart"></i> Add to Cart</a>
+                                        <a href="{{route('product.add.cart', $featureproduct->id)}}"><i class="icofont-shopping-cart"></i> Add to Cart</a>
                                     </div>
 
                                     <!-- Quick View -->
@@ -281,14 +282,14 @@
                                                 class="icofont-eye-alt"></i> Quick View</a>
                                     </div>
 
-                                    <a href="#">{{$featureproduct->product_name}}</a>
-                                    <h6 class="product-price">{{$featureproduct->product_price}}</h6>
+                                    <a href="{{route('frontend.single.product', $featureproduct->id)}}">{{$featureproduct->product_name}}</a>
+                                    <h6 class="product-price">BDT. {{$featureproduct->product_price}} &#2547;</h6>
                                     <div class="product_rating">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="icofont-star"></i>
+                                        <i class="icofont-star"></i>
+                                        <i class="icofont-star"></i>
+                                        <i class="icofont-star"></i>
+                                        <i class="icofont-star"></i>
                                     </div>
                                 </div>
                             </div>

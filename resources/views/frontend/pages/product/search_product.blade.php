@@ -259,7 +259,7 @@
 
                                         <!-- Wishlist -->
                                         <div class="product_wishlist">
-                                            <a href="wishlist.html"><i class="icofont-heart"></i></a>
+                                            <a href="{{route('product.wishlist', $product->id)}}"><i class="icofont-heart"></i></a>
                                         </div>
 
                                         <!-- Compare -->
