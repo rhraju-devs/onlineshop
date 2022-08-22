@@ -129,6 +129,7 @@ Route::group(['middleware'=>['auth', 'checkAdmin'],'prefix'=>'admin'],function()
 
 
 //Frontend
+Route::view('/invoice', 'invoice');
 Route::get('/', [DashboardController::class, 'dashboard'])->name('frontend.dashboard');
 Route::get('/wishlist', [DashboardController::class, 'wishlist'])->name('frontend.wishlist');
 Route::get('/product/wishlist/{id}', [DashboardController::class, 'addWishlist'])->name('product.wishlist');
