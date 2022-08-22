@@ -10,9 +10,4 @@ class Order extends Model
 {
     use HasFactory;
     protected $guarded = [];
-
-    public function order()
-    {
-        return $this->hasMany(OrderDetail::class);
-    }
 }

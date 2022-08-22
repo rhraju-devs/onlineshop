@@ -67,26 +67,28 @@
                                                 </tr>
                                             </thead>
                                             <tbody class="table-group-divider">
-                                                @foreach($orders as $key=>$order)
+                                                @foreach($orders as $key=>$data)
+
                                                     <tr>
                                                         <td scope="col">{{$key+1}}</td>
-                                                        <td scope="col">{{$order->firstname}} {{order->lastname}}</td>
-                                                        <td scope="col">{{$order->email}}</td>
-                                                        <td scope="col">{{$order->user_id}}</td>
-                                                        <td scope="col">{{$order->order_id}}</td>
-                                                        <td scope="col">{{$order->product_id}}</td>
-                                                        <td scope="col">{{$order->transition_id}}</td>
-                                                        <td scope="col">{{$order->address}}</td>
-                                                        <td scope="col">{{$order->quantity}}</td>
-                                                        <td scope="col">{{$order->unit_price}}</td>
-                                                        <td scope="col">{{$order->subtotal}}</td>
-                                                        <td scope="col">{{$order->total}}</td>
-                                                        <td scope="col">{{$order->payment_method}}</td>
-                                                        <td scope="col">{{$order->status}}</td>
+                                                        <td scope="col">{{$data->orderDetails->firstname}} {{$data->orderDetails->lastname}}</td>
+                                                        <td scope="col">{{$data->orderDetails->email}}</td>
+                                                        <td scope="col">{{$data->orderDetails->user_id}}</td>
+                                                        <td scope="col">#{{$data->order_id}}</td>
+                                                        <td scope="col">{{$data->product_id}}</td>
+                                                        <td scope="col">{{$data->orderDetails->transition_id}}</td>
+                                                        <td scope="col">{{$data->orderDetails->address}}</td>
+                                                        <td scope="col">{{$data->quantity}}</td>
+                                                        <td scope="col">{{$data->unit_price}}</td>
+                                                        <td scope="col">{{$data->orderDetails->shipping}}</td>
+                                                        <td scope="col">{{$data->subtotal}}</td>
+                                                        <td scope="col">{{$data->orderDetails->total_price}}</td>
+                                                        <td scope="col">{{$data->orderDetails->payment_method}}</td>
+                                                        <td scope="col">{{$data->orderDetails->status}}</td>
                                                         <td>
-                                                        <a href="{{route('admin.order.invoice', $order->id)}}" data-toggle="tooltip" title="View" data-placement="bottom" class="btn btn-outline-success btn-sm"><img src="{{url('icon/eye.svg')}}" alt="" srcset=""></a>
-                                                        <a href="{{route('admin.order.edit', $order->id)}}" data-toggle="tooltip" title="Edit" data-placement="bottom" class="btn btn-outline-warning btn-sm"><img src="{{url('icon/edit.svg')}}" alt="" srcset=""></a>
-                                                        <a href="{{route('admin.order.delete', $order->id)}}" data-toggle="tooltip" title="Delete" data-placement="bottom" class="btn btn-outline-danger btn-sm"><img src="{{url('icon/delete.svg')}}" alt="" srcset=""></a>
+                                                        <a href="{{route('admin.order.invoice', $data->id)}}" data-toggle="tooltip" title="View" data-placement="bottom" class="btn btn-outline-success btn-sm"><img src="{{url('icon/eye.svg')}}" alt="" srcset=""></a>
+                                                        <a href="{{route('admin.order.edit', $data->id)}}" data-toggle="tooltip" title="Edit" data-placement="bottom" class="btn btn-outline-warning btn-sm"><img src="{{url('icon/edit.svg')}}" alt="" srcset=""></a>
+                                                        <a href="{{route('admin.order.delete', $data->id)}}" data-toggle="tooltip" title="Delete" data-placement="bottom" class="btn btn-outline-danger btn-sm"><img src="{{url('icon/delete.svg')}}" alt="" srcset=""></a>
                                                         </td>
                                                     </tr>
                                                     @endforeach
