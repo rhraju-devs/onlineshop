@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CustomerController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\ShippingController;
@@ -116,6 +117,12 @@ Route::group(['middleware'=>['auth', 'checkAdmin'],'prefix'=>'admin'],function()
     Route::get('/shipping-edit/{id}', [ShippingController::class, 'edit'])->name('admin.shipping.edit');
     Route::put('/shipping-update/{id}', [ShippingController::class, 'update'])->name('admin.shipping.update');
     Route::get('/shipping-delete/{id}', [ShippingController::class, 'delete'])->name('admin.shipping.delete');
+
+    Route::get('/order-list', [OrderController::class, 'index'])->name('admin.order.list');
+    Route::get('/order-edit/{id}', [OrderController::class, 'edit'])->name('admin.order.edit');
+    Route::post('/order-update-status/{id}', [OrderController::class, 'update'])->name('admin.order.update');
+    Route::get('/order-delete/{id}', [OrderController::class, 'delete'])->name('admin.order.delete');
+    Route::get('/order-invoice/{id}', [OrderController::class, 'invoice'])->name('admin.order.invoice');
 });
 
 
@@ -130,6 +137,7 @@ Route::group(['middleware'=>['auth', 'checkAdmin'],'prefix'=>'admin'],function()
 
 //Frontend
 Route::view('/invoice', 'invoice');
+
 Route::get('/', [DashboardController::class, 'dashboard'])->name('frontend.dashboard');
 Route::get('/wishlist', [DashboardController::class, 'wishlist'])->name('frontend.wishlist');
 Route::get('/product/wishlist/{id}', [DashboardController::class, 'addWishlist'])->name('product.wishlist');

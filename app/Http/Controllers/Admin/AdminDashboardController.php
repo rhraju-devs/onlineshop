@@ -50,12 +50,12 @@ class AdminDashboardController extends Controller
         // Toastr::success('Admin Config, Cache, View and Route Suggggggggggggccessfully Clear :)', 'Clear', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);
         // $data = request()->session()->all();
         // dd($data);
-        $check = Artisan::call('config:cache');
-        $check = Artisan::call('config:clear');
-        $check = Artisan::call('cache:clear');
-        $check = Artisan::call('view:clear');
-        $check = Artisan::call('route:cache');
-        $check = Artisan::call('route:clear');
+        $check = Artisan::call('optimize:clear');
+        // $check = Artisan::call('config:clear');
+        // $check = Artisan::call('cache:clear');
+        // $check = Artisan::call('view:clear');
+        // $check = Artisan::call('route:cache');
+        // $check = Artisan::call('route:clear');
        
         if(isset($check)){
             Toastr::success('Admin Config, Cache, View and Route Successfully Clear :)', 'Clear', ["positionClass"=> "toast-top-right", "closeButton" => true,"progressBar" => true,  "preventDuplicates" => true,]);

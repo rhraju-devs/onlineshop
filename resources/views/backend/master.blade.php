@@ -8,11 +8,11 @@
 
 <body class="">
     <!-- [ Pre-loader ] start -->
-    <div class="loader-bg">
+    <!-- <div class="loader-bg">
         <div class="loader-track">
             <div class="loader-fill"></div>
         </div>
-    </div>
+    </div> -->
     <!-- [ Pre-loader ] End -->
     <!-- [ navigation menu ] start -->
     @include('backend.admin.fixed.sidebar')

@@ -19,12 +19,14 @@ return new class extends Migration
             $table->string('lastname');
             $table->integer('user_id');
             $table->string('email');
+            $table->double('transition_id')->nullable();
             $table->string('phone');
             $table->string('address');
             $table->integer('zip');
             $table->double('shipping', 6, 2)->default(0);
             $table->double('total_price',10,2)->default(0);
-            $table->string('status')->default('active');
+            $table->enum('payment_method', ['cod', 'ssl']);
+            $table->enum('status',['pending', 'approved', 'cancel', 'delivered', 'received'])->default('pending');
             $table->timestamps();
         });
     }
