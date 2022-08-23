@@ -33,7 +33,10 @@ class OrderController extends Controller
     public function invoice($id)
     {
         // dd($id);
-        $orders = OrderDetail::with('orderDetails')->find($id);
-        dd($orders);
+        $orders = OrderDetail::with(['orderDetails', 'getProduct'])->find($id);
+        $orders = OrderDetail::with(['orderDetails', 'getProduct'])->where('order_id', $orders->orderDetails->id)->get();
+        // $orders=Order::with('userGet')->get();
+        // dd($orders);
+        return view('backend.admin.order.list.invoice', compact('orders'));
     }
 }

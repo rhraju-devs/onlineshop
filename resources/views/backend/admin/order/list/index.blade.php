@@ -83,8 +83,26 @@
                                                         <td scope="col">{{$data->orderDetails->shipping}}</td>
                                                         <td scope="col">{{$data->subtotal}}</td>
                                                         <td scope="col">{{$data->orderDetails->total_price}}</td>
-                                                        <td scope="col">{{$data->orderDetails->payment_method}}</td>
-                                                        <td scope="col">{{$data->orderDetails->status}}</td>
+                                                        <td scope="col">
+                                                            @if($data->orderDetails->payment_method == 'cod')
+                                                                <span class="badge rounded-pill badge-primary text-uppercase">{{$data->orderDetails->payment_method}}</span>
+                                                            @elseif($data->orderDetails->payment_method == 'ssl')
+                                                                <span class="badge rounded-pill badge-info text-uppercase">{{$data->orderDetails->payment_method}}</span>
+                                                            @endif
+                                                        </td>
+                                                        <td scope="col">
+                                                            @if($data->orderDetails->status=='pending')
+                                                                <span class="badge badge-primary text-uppercase">{{$data->orderDetails->status}}</span>
+                                                            @elseif($data->orderDetails->status=='approved')
+                                                                <span class="badge badge-info text-uppercase">{{$data->orderDetails->status}}</span>
+                                                            @elseif($data->orderDetails->status=='delivered')
+                                                                <span class="badge badge-success text-uppercase">{{$data->orderDetails->status}}</span>
+                                                            @elseif($data->orderDetails->status =='cancel')
+                                                                <span class="badge badge-danger text-uppercase">{{$data->orderDetails->status}}</span>
+                                                            @elseif($data->orderDetails->staus == 'received')
+                                                                <span class="badge badge-success text-uppercase">{{$data->orderDetails->status}}</span>
+                                                            @endif
+                                                        </td>
                                                         <td>
                                                         <a href="{{route('admin.order.invoice', $data->id)}}" data-toggle="tooltip" title="View" data-placement="bottom" class="btn btn-outline-success btn-sm"><img src="{{url('icon/eye.svg')}}" alt="" srcset=""></a>
                                                         <a href="{{route('admin.order.edit', $data->id)}}" data-toggle="tooltip" title="Edit" data-placement="bottom" class="btn btn-outline-warning btn-sm"><img src="{{url('icon/edit.svg')}}" alt="" srcset=""></a>
