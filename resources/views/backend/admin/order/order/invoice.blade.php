@@ -34,6 +34,7 @@
                                             src="{{'/uploads/settings/' . $settings[0]->logo}}" alt="Invoice logo"></div>
                                     @endif
                                 </div>
+                              
                                 <!-- col-lg-6 end here -->
                                 <div class="col-lg-6">
                                     <!-- col-lg-6 start here -->
@@ -53,26 +54,26 @@
                                     <div class="invoice-details mt25">
                                         <div class="well">
                                             <ul class="list-unstyled mb0">
-                                                <li><strong>Invoice</strong> #{{$orders[0]->order_id}}</li>
+                                                <li><strong>Invoice</strong> #{{$orders->order_id}}</li>
                                                 <li><strong>Invoice Date:</strong>
-                                                    {{$orders[0]->created_at->format('D, d F, Y')}}</li>
+                                                    {{$orders->created_at->format('D, d F, Y')}}</li>
                                                 <li><strong>Due Date:</strong> Thursday, December 1th, 2015</li>
                                                 <li><strong>Status:</strong>
-                                                    @if($orders[0]->orderDetails->status=='pending')
+                                                    @if($orders->status=='pending')
                                                     <span
-                                                        class="badge badge-primary text-uppercase">{{$orders[0]->orderDetails->status}}</span>
-                                                    @elseif($orders[0]->orderDetails->status=='approved')
+                                                        class="badge badge-primary text-uppercase">{{$orders->status}}</span>
+                                                    @elseif($orders->status=='approved')
                                                     <span
-                                                        class="badge badge-info text-uppercase">{{$orders[0]->orderDetails->status}}</span>
-                                                    @elseif($orders[0]->orderDetails->status=='delivered')
+                                                        class="badge badge-info text-uppercase">{{$orders->status}}</span>
+                                                    @elseif($orders->status=='delivered')
                                                     <span
-                                                        class="badge badge-success text-uppercase">{{$orders[0]->orderDetails->status}}</span>
-                                                    @elseif($orders[0]->orderDetails->status =='cancel')
+                                                        class="badge badge-success text-uppercase">{{$orders->status}}</span>
+                                                    @elseif($orders->status =='cancel')
                                                     <span
-                                                        class="badge badge-danger text-uppercase">{{$orders[0]->orderDetails->status}}</span>
-                                                    @elseif($orders[0]->orderDetails->staus == 'received')
+                                                        class="badge badge-danger text-uppercase">{{$orders->status}}</span>
+                                                    @elseif($orders->staus == 'received')
                                                     <span
-                                                        class="badge badge-success text-uppercase">{{$orders[0]->orderDetails->status}}</span>
+                                                        class="badge badge-success text-uppercase">{{$orders->status}}</span>
                                                     @endif
                                                 </li>
                                             </ul>
@@ -86,10 +87,10 @@
                                                     {{auth()->user()->lastname}}</span></li>
                                             <li><strong>Shipping Info : </strong></li>
                                             <li><strong>Name : </strong><span
-                                                    class="text-uppercase">{{$orders[0]->orderDetails->firstname}}
-                                                    {{$orders[0]->orderDetails->lastname}}</span></li>
+                                                    class="text-uppercase">{{$orders->firstname}}
+                                                    {{$orders->lastname}}</span></li>
                                             <li><strong>Address : </strong><span
-                                                    class="text-uppercase">{{$orders[0]->orderDetails->address}}</span></li>
+                                                    class="text-uppercase">{{$orders->address}}</span></li>
                                         </ul>
                                     </div>
                                     <div class="invoice-items">
@@ -107,15 +108,14 @@
                                                     @php
                                                     $sum = 0;
                                                     @endphp
-                                                    @foreach($orders as $key=>$data)
+                                                    @foreach($orders->orderDetails as $key=>$data)
                                                     <tr>
                                                         <td>{{$data->getProduct->product_name}}</td>
                                                         <td class="text-center">{{$data->quantity}}</td>
                                                         <td class="text-center">{{$data->unit_price}}</td>
                                                         <td class="text-center">{{$data->subtotal}}</td>
                                                         @php
-                                                        $sum = $sum + $data->subtotal;
-
+                                                            $sum = $sum + $data->subtotal;
                                                         @endphp
                                                     </tr>
                                                     @endforeach

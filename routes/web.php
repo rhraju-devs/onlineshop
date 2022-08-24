@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\OrderControllerDetails;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\ShippingController;
@@ -123,6 +124,13 @@ Route::group(['middleware'=>['auth', 'checkAdmin'],'prefix'=>'admin'],function()
     Route::post('/order-update-status/{id}', [OrderController::class, 'update'])->name('admin.order.update');
     Route::get('/order-delete/{id}', [OrderController::class, 'delete'])->name('admin.order.delete');
     Route::get('/order-invoice/{id}', [OrderController::class, 'invoice'])->name('admin.order.invoice');
+    Route::get('/order-invoice-dompdf/{id}', [OrderController::class, 'dompdf'])->name('admin.order.dompdf');
+    Route::get('/order-full-pdf-list',[OrderController::class, 'fullpdf'])->name('admin.order.fulldompdf');
+
+    Route::get('/order-details-list', [OrderControllerDetails::class, 'index'])->name('admin.orderdetails.list');
+    Route::get('/order-details-invoice/{id}', [OrderControllerDetails::class, 'invoice'])->name('admin.orderdetails.invoice');
+    Route::get('/order-details-invoice-dompdf/{id}', [OrderControllerDetails::class, 'dompdf'])->name('admin.orderdetails.dompdf');
+    
 });
 
 

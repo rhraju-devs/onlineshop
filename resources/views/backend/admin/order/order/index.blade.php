@@ -54,13 +54,7 @@
                                                     <th scope="col">Email</th>
                                                     <th scope="col">User Id</th>
                                                     <th scope="col">Order Id</th>
-                                                    <th scope="col">Product Id</th>
-                                                    <th scope="col">Transition Id</th>
-                                                    <th scope="col">Address</th>
-                                                    <th scope="col">Quantity</th>
-                                                    <th scope="col">Price</th>
                                                     <th scope="col">Shipping</th>
-                                                    <th scope="col">Subtotal</th>
                                                     <th scope="col">Total</th>
                                                     <th scope="col">Payment Method</th>
                                                     <th scope="col">Status</th>
@@ -72,45 +66,39 @@
 
                                                     <tr>
                                                         <td scope="col">{{$key+1}}</td>
-                                                        <td scope="col">{{$data->orderDetails->firstname}} {{$data->orderDetails->lastname}}</td>
-                                                        <td scope="col">{{$data->orderDetails->email}}</td>
-                                                        <td scope="col">{{$data->orderDetails->user_id}}</td>
-                                                        <td scope="col">#{{$data->order_id}}</td>
-                                                        <td scope="col">{{$data->product_id}}</td>
-                                                        <td scope="col">{{$data->orderDetails->transition_id}}</td>
-                                                        <td scope="col">{{$data->orderDetails->address}}</td>
-                                                        <td scope="col">{{$data->quantity}}</td>
-                                                        <td scope="col">{{$data->unit_price}}</td>
-                                                        <td scope="col">{{$data->orderDetails->shipping}}</td>
-                                                        <td scope="col">{{$data->subtotal}}</td>
-                                                        <td scope="col">{{$data->orderDetails->total_price}}</td>
+                                                        <td scope="col">{{$data->firstname}} {{$data->lastname}}</td>
+                                                        <td scope="col">{{$data->email}}</td>
+                                                        <td scope="col">{{$data->user_id}}</td>
+                                                        <td scope="col">#{{$data->id}}</td>
+                                                        <td scope="col">{{$data->shipping}}</td>
+                                                        <td scope="col">{{$data->total_price}}</td>
                                                         <td scope="col">
-                                                            @if($data->orderDetails->payment_method == 'cod')
-                                                                <span class="badge rounded-pill badge-primary text-uppercase">{{$data->orderDetails->payment_method}}</span>
-                                                            @elseif($data->orderDetails->payment_method == 'ssl')
-                                                                <span class="badge rounded-pill badge-info text-uppercase">{{$data->orderDetails->payment_method}}</span>
+                                                            @if($data->payment_method == 'cod')
+                                                                <span class="badge rounded-pill badge-primary text-uppercase">{{$data->payment_method}}</span>
+                                                            @elseif($data->payment_method == 'ssl')
+                                                                <span class="badge rounded-pill badge-info text-uppercase">{{$data->payment_method}}</span>
                                                             @endif
                                                         </td>
                                                         <td scope="col">
-                                                            @if($data->orderDetails->status=='pending')
-                                                                <span class="badge badge-primary text-uppercase">{{$data->orderDetails->status}}</span>
-                                                            @elseif($data->orderDetails->status=='approved')
-                                                                <span class="badge badge-info text-uppercase">{{$data->orderDetails->status}}</span>
-                                                            @elseif($data->orderDetails->status=='delivered')
-                                                                <span class="badge badge-success text-uppercase">{{$data->orderDetails->status}}</span>
-                                                            @elseif($data->orderDetails->status =='cancel')
-                                                                <span class="badge badge-danger text-uppercase">{{$data->orderDetails->status}}</span>
-                                                            @elseif($data->orderDetails->staus == 'received')
-                                                                <span class="badge badge-success text-uppercase">{{$data->orderDetails->status}}</span>
+                                                            @if($data->status=='pending')
+                                                                <span class="badge badge-primary text-uppercase">{{$data->status}}</span>
+                                                            @elseif($data->status=='approved')
+                                                                <span class="badge badge-info text-uppercase">{{$data->status}}</span>
+                                                            @elseif($data->status=='delivered')
+                                                                <span class="badge badge-success text-uppercase">{{$data->status}}</span>
+                                                            @elseif($data->status =='cancel')
+                                                                <span class="badge badge-danger text-uppercase">{{$data->status}}</span>
+                                                            @elseif($data->staus == 'received')
+                                                                <span class="badge badge-success text-uppercase">{{$data->status}}</span>
                                                             @endif
                                                         </td>
                                                         <td>
-                                                        <a href="{{route('admin.order.invoice', $data->id)}}" data-toggle="tooltip" title="View" data-placement="bottom" class="btn btn-outline-success btn-sm"><img src="{{url('icon/eye.svg')}}" alt="" srcset=""></a>
+                                                        <a href="{{route('admin.orderdetails.invoice', $data->id)}}" data-toggle="tooltip" title="View" data-placement="bottom" class="btn btn-outline-success btn-sm"><img src="{{url('icon/eye.svg')}}" alt="" srcset=""></a>
 
-                                                        <a href="{{route('admin.order.dompdf', $data->id)}}" data-toggle="tooltip" title="DomPDF" data-placement="bottom" class="btn btn-outline-success btn-sm"><img src="{{url('icon/pdf.svg')}}" alt="" srcset=""></a>
+                                                        <a href="{{route('admin.orderdetails.dompdf', $data->id)}}" data-toggle="tooltip" title="DomPDF" data-placement="bottom" class="btn btn-outline-success btn-sm"><img src="{{url('icon/pdf.svg')}}" alt="" srcset=""></a>
                                                         
-                                                        <a href="{{route('admin.order.edit', $data->id)}}" data-toggle="tooltip" title="Edit" data-placement="bottom" class="btn btn-outline-warning btn-sm"><img src="{{url('icon/edit.svg')}}" alt="" srcset=""></a>
-                                                        <a href="{{route('admin.order.delete', $data->id)}}" data-toggle="tooltip" title="Delete" data-placement="bottom" class="btn btn-outline-danger btn-sm"><img src="{{url('icon/delete.svg')}}" alt="" srcset=""></a>
+                                                        <a href="" data-toggle="tooltip" title="Edit" data-placement="bottom" class="btn btn-outline-warning btn-sm"><img src="{{url('icon/edit.svg')}}" alt="" srcset=""></a>
+                                                        <a href="" data-toggle="tooltip" title="Delete" data-placement="bottom" class="btn btn-outline-danger btn-sm"><img src="{{url('icon/delete.svg')}}" alt="" srcset=""></a>
                                                         </td>
                                                     </tr>
                                                     @endforeach
@@ -122,13 +110,7 @@
                                                     <th scope="col">Email</th>
                                                     <th scope="col">User Id</th>
                                                     <th scope="col">Order Id</th>
-                                                    <th scope="col">Product Id</th>
-                                                    <th scope="col">Transition Id</th>
-                                                    <th scope="col">Address</th>
-                                                    <th scope="col">quantity</th>
-                                                    <th scope="col">Price</th>
                                                     <th scope="col">Shipping</th>
-                                                    <th scope="col">Subtotal</th>
                                                     <th scope="col">Total</th>
                                                     <th scope="col">Payment Method</th>
                                                     <th scope="col">Status</th>

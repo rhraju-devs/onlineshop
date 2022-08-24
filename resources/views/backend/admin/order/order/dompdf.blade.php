@@ -31,7 +31,7 @@
                                     <!-- col-lg-6 start here -->
                                     @if ($settings->count()>0)
                                     <div class="invoice-logo"><img width="130" height="50"
-                                            src="{{'/uploads/settings/' . $settings[0]->logo}}" alt="Invoice logo"></div>
+                                            src="{{asset('/uploads/settings/'.$settings[0]->logo)}}" alt=""></div>
                                     @endif
                                 </div>
                                 <!-- col-lg-6 end here -->
@@ -53,26 +53,30 @@
                                     <div class="invoice-details mt25">
                                         <div class="well">
                                             <ul class="list-unstyled mb0">
-                                                <li><strong>Invoice</strong> #{{$orders[0]->order_id}}</li>
+                                                <li><strong>Invoice</strong> #
+                                                {{$orders->id}}
+                                            </li>
                                                 <li><strong>Invoice Date:</strong>
-                                                    {{$orders[0]->created_at->format('D, d F, Y')}}</li>
+                                                    {{$orders->created_at->format('D, d F, Y')}}
+                                                </li>
+
                                                 <li><strong>Due Date:</strong> Thursday, December 1th, 2015</li>
                                                 <li><strong>Status:</strong>
-                                                    @if($orders[0]->orderDetails->status=='pending')
+                                                    @if($orders->status=='pending')
                                                     <span
-                                                        class="badge badge-primary text-uppercase">{{$orders[0]->orderDetails->status}}</span>
-                                                    @elseif($orders[0]->orderDetails->status=='approved')
+                                                        class="badge badge-primary text-uppercase">{{$orders->status}}</span>
+                                                    @elseif($orders->status=='approved')
                                                     <span
-                                                        class="badge badge-info text-uppercase">{{$orders[0]->orderDetails->status}}</span>
-                                                    @elseif($orders[0]->orderDetails->status=='delivered')
+                                                        class="badge badge-info text-uppercase">{{$orders->status}}</span>
+                                                    @elseif($orders->status=='delivered')
                                                     <span
-                                                        class="badge badge-success text-uppercase">{{$orders[0]->orderDetails->status}}</span>
-                                                    @elseif($orders[0]->orderDetails->status =='cancel')
+                                                        class="badge badge-success text-uppercase">{{$orders->status}}</span>
+                                                    @elseif($orders->status =='cancel')
                                                     <span
-                                                        class="badge badge-danger text-uppercase">{{$orders[0]->orderDetails->status}}</span>
-                                                    @elseif($orders[0]->orderDetails->staus == 'received')
+                                                        class="badge badge-danger text-uppercase">{{$orders->status}}</span>
+                                                    @elseif($orders->status == 'received')
                                                     <span
-                                                        class="badge badge-success text-uppercase">{{$orders[0]->orderDetails->status}}</span>
+                                                        class="badge badge-success text-uppercase">{{$orders->status}}</span>
                                                     @endif
                                                 </li>
                                             </ul>
@@ -86,10 +90,10 @@
                                                     {{auth()->user()->lastname}}</span></li>
                                             <li><strong>Shipping Info : </strong></li>
                                             <li><strong>Name : </strong><span
-                                                    class="text-uppercase">{{$orders[0]->orderDetails->firstname}}
-                                                    {{$orders[0]->orderDetails->lastname}}</span></li>
+                                                    class="text-uppercase">{{$orders->firstname}}
+                                                    {{$orders->lastname}}</span></li>
                                             <li><strong>Address : </strong><span
-                                                    class="text-uppercase">{{$orders[0]->orderDetails->address}}</span></li>
+                                                    class="text-uppercase">{{$orders->address}}</span></li>
                                         </ul>
                                     </div>
                                     <div class="invoice-items">
@@ -97,6 +101,7 @@
                                             <table class="table table-bordered">
                                                 <thead>
                                                     <tr>
+                                                        <th class="per70 text-center">S.L</th>
                                                         <th class="per70 text-center">Product</th>
                                                         <th class="per5 text-center">Qty</th>
                                                         <th class="per5 text-center">Unit Price</th>
@@ -107,47 +112,45 @@
                                                     @php
                                                     $sum = 0;
                                                     @endphp
-                                                    @foreach($orders as $key=>$data)
+                                                   @foreach($orders->orderDetails as $key=>$data)
+                                                  
                                                     <tr>
-                                                        <td>{{$data->getProduct->product_name}}</td>
+                                                        <td>{{$key+1}}</td>
+                                                        <td class="text-center">{{$data->getProduct->product_name}}</td>
                                                         <td class="text-center">{{$data->quantity}}</td>
                                                         <td class="text-center">{{$data->unit_price}}</td>
                                                         <td class="text-center">{{$data->subtotal}}</td>
                                                         @php
-                                                        $sum = $sum + $data->subtotal;
-
+                                                            $sum = $sum + $data->subtotal;
                                                         @endphp
                                                     </tr>
                                                     @endforeach
                                                 </tbody>
                                                 <tfoot>
                                                     <tr>
-                                                        <th colspan="3" class="text-right">Sub Total:</th>
-                                                        <th class="text-center">BDT {{number_format($sum, 2)}} ৳</th>
+                                                        <th colspan="4" class="text-right">Sub Total:</th>
+                                                        <th class="text-center">BDT {{number_format($sum, 2)}} Tk.</th>
                                                     </tr>
                                                     <tr>
-                                                        <th colspan="3" class="text-right">10% VAT:</th>
+                                                        <th colspan="4" class="text-right">10% VAT:</th>
                                                         @php
                                                         $invoice_vat = ((10*$sum)/100);
                                                         @endphp
-                                                        <th class="text-center">BDT {{number_format($invoice_vat, 2)}} ৳
+                                                        <th class="text-center">BDT {{number_format($invoice_vat, 2)}} Tk.
                                                         </th>
                                                     </tr>
                                                     <tr>
-                                                        <th colspan="3" class="text-right">Cuppon:</th>
-                                                        <th class="text-center">BDT 0 ৳</th>
+                                                        <th colspan="4" class="text-right">Cuppon:</th>
+                                                        <th class="text-center">BDT 0 Tk.</th>
                                                     </tr>
                                                     <tr>
-                                                        <th colspan="3" class="text-right">Total:</th>
-                                                        <th class="text-center">BDT {{$sum+$invoice_vat}} ৳</th>
+                                                        <th colspan="4" class="text-right">Total:</th>
+                                                        <th class="text-center">BDT {{$sum+$invoice_vat}} Tk.</th>
                                                     </tr>
                                                 </tfoot>
                                             </table>
                                         </div>
                                     </div>
-
-
-
 
                                 </div>
                                 <!-- col-lg-12 end here -->
@@ -163,7 +166,7 @@
 
 
         <div class="invoice-footer mt25">
-                                        <p class="text-center">Generated on {{now()->format('D, d F, Y')}}  <button class="btn  btn-default ml15" onclick="printdiv()">Print</button></p>
+                                        <p class="text-center">Generated on {{now()->format('D, d F, Y')}}  </p>
                                         <!-- <a href="#"
                                                 class="btn btn-default ml15"><i class="fa fa-print mr5"
                                                    ></i> Print</a -->
@@ -178,31 +181,7 @@
 
     </style>
 
-    <script type="text/javascript">
-
-    </script>
-    <script>
-        function printdiv() {
-            let printContents = document.getElementById('print').innerHTML;
-            let originalContents = document.body.innerHTML;
-            document.body.innerHTML = printContents;
-            window.print();
-            document.body.innerHTML = originalContents;
-        }
-
-    </script>
 </body>
 
 </html>
-<!-- invoice code end -->
-<!-- 
-                            </div>
-                        </div>
-                    </div>
 
-                </div>
-            </div>
-
-    </div>
-
-endsection -->
