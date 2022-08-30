@@ -29,7 +29,8 @@
                 <div class="col-12">
                     <div class="checkout_details_area clearfix">
                         <h5 class="mb-4">Checkout Details</h5>
-                        <form action="{{route('frontend.checkout.store')}}" method="post">
+                        <!-- <form action="{{--route('frontend.checkout.store')--}}" method="post">transaction -->
+                        <form action="{{route('transaction')}}" method="post">transaction
                             @csrf
                             <div class="row">
                                 <div class="col-md-6 mb-3">
@@ -77,7 +78,7 @@
 
                                 <div class="col-md-6 mb-3">
                                     <button type="reset" class="btn btn-primary mt-2 ml-2">Reset</button>
-                                     <button type="submit" class="btn btn-primary mt-2 ml-2">Submit</button>
+                                     <button type="submit" class="btn btn-primary mt-2 ml-2">Payment</button>
                                 </div>
 
                             </div>

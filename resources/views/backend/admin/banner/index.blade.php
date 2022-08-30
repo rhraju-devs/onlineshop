@@ -74,9 +74,11 @@
                                                         <td scope="col">{{$banner->offer}}</td>
                                                         <td scope="col">{{$banner->status}}</td>
                                                         <td>
-                                                        <a href="{{route('admin.banner.show', $banner->id)}}" data-toggle="tooltip" title="View" data-placement="bottom" class="btn btn-outline-success btn-sm"><img src="{{url('icon/eye.svg')}}" alt="" srcset=""></a>
-                                                        <a href="{{route('admin.banner.edit', $banner->id)}}" data-toggle="tooltip" title="Edit" data-placement="bottom" class="btn btn-outline-warning btn-sm"><img src="{{url('icon/edit.svg')}}" alt="" srcset=""></a>
-                                                        <a href="{{route('admin.banner.delete', $banner->id)}}" data-toggle="tooltip" title="Delete" data-placement="bottom" class="btn btn-outline-danger btn-sm"><img src="{{url('icon/delete.svg')}}" alt="" srcset=""></a>
+                                                            <a href="{{route('admin.banner.show', $banner->id)}}" data-toggle="tooltip" title="View" data-placement="bottom" class="btn btn-outline-success btn-sm"><img src="{{url('icon/eye.svg')}}" alt="" srcset=""></a>
+
+                                                            <a href="{{route('admin.banner.edit', $banner->id)}}" data-toggle="tooltip" title="Edit" data-placement="bottom" class="btn btn-outline-warning btn-sm"><img src="{{url('icon/edit.svg')}}" alt="" srcset=""></a>
+                                                            
+                                                            <a href="{{route('admin.banner.delete', $banner->id)}}" data-toggle="tooltip" title="Delete" data-placement="bottom" class="btn btn-outline-danger btn-sm"><img src="{{url('icon/delete.svg')}}" alt="" srcset=""></a>
                                                         </td>
                                                     </tr>
                                                     @endforeach

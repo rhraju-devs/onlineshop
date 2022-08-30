@@ -21,9 +21,11 @@ use App\Http\Controllers\Frontend\BrandController as FrontendBrand;
 use App\Http\Controllers\Customer\CustomerController as Customer;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\DashboardController;
+use App\Http\Controllers\Customer\CustomerDashboardController;
 use Illuminate\Support\Facades\Artisan;
 // use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use App\Http\Controllers\Frontend\CheckoutController;
+use App\Http\Controllers\SslCommerzPaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -119,14 +121,15 @@ Route::group(['middleware'=>['auth', 'checkAdmin'],'prefix'=>'admin'],function()
     Route::put('/shipping-update/{id}', [ShippingController::class, 'update'])->name('admin.shipping.update');
     Route::get('/shipping-delete/{id}', [ShippingController::class, 'delete'])->name('admin.shipping.delete');
 
+    //order details
     Route::get('/order-list', [OrderController::class, 'index'])->name('admin.order.list');
     Route::get('/order-edit/{id}', [OrderController::class, 'edit'])->name('admin.order.edit');
     Route::post('/order-update-status/{id}', [OrderController::class, 'update'])->name('admin.order.update');
     Route::get('/order-delete/{id}', [OrderController::class, 'delete'])->name('admin.order.delete');
     Route::get('/order-invoice/{id}', [OrderController::class, 'invoice'])->name('admin.order.invoice');
-    Route::get('/order-invoice-dompdf/{id}', [OrderController::class, 'dompdf'])->name('admin.order.dompdf');
-    Route::get('/order-full-pdf-list',[OrderController::class, 'fullpdf'])->name('admin.order.fulldompdf');
 
+
+    //order list 
     Route::get('/order-details-list', [OrderControllerDetails::class, 'index'])->name('admin.orderdetails.list');
     Route::get('/order-details-invoice/{id}', [OrderControllerDetails::class, 'invoice'])->name('admin.orderdetails.invoice');
     Route::get('/order-details-invoice-dompdf/{id}', [OrderControllerDetails::class, 'dompdf'])->name('admin.orderdetails.dompdf');
@@ -201,7 +204,25 @@ Route::post('/vendor-login',[FrontendVendor::class,'login'])->name('vendor.login
 Route::get('/vendor-logout',[FrontendVendor::class,'logout'])->name('vendor.logout');
 
 
-//Multiple Image Upload
+// SSLCOMMERZ Start
+Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
+Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
+
+Route::post('/pay', [SslCommerzPaymentController::class, 'index'])->name('transaction');
+Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
+
+Route::post('/success', [SslCommerzPaymentController::class, 'success']);
+Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
+Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
+
+Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
+//SSLCOMMERZ END
+
+
+//Customer Dashboard
+Route::get('/customer/profile/', [CustomerDashboardController::class, 'dashboard'])->name('frontend.customer.dashboard');
+Route::get('/customer/order-list/', [CustomerDashboardController::class, 'orderlist'])->name('frontend.customer.orderlist');
+//Customer Dashboard
 
 
 

@@ -13,6 +13,7 @@ use App\Notifications\SuccessfulRegistration;
 use Illuminate\Notifications\Messages\VonageMessage;
 use Illuminate\Notifications\Notification;
 use Illuminate\Notifications\Vonage;
+use App\helper;
 
 class CustomerController extends Controller
 {
@@ -70,6 +71,7 @@ class CustomerController extends Controller
 
     public function edit($id)
     {
+
         $customer = User::find($id);
         return view('backend.admin.customer.edit', compact('customer'));  
     }
@@ -144,20 +146,13 @@ class CustomerController extends Controller
     {
         $customer = User::find($id);
         $customer->notify(new SuccessfulRegistration());
-
-        $basic  = new \Vonage\Client\Credentials\Basic("20fb412f", "BXQ1IWzxb9tXg15L");
-        $client = new \Vonage\Client($basic);
-
-        $response = $client->sms()->send(
-            new \Vonage\SMS\Message\SMS("8801521471117",'onlinestore', 'A text message sent using the Nexmo SMS API')
-        );
-        
-        $message = $response->current();
-        
-        if ($message->getStatus() == 0) {
+        $sms=smsSend($customer->phone,'','');
+ 
+   
+        if ($sms) {
             echo "The message was sent successfully\n";
         } else {
-            echo "The message failed with status: " . $message->getStatus() . "\n";
+            echo "The message failed with status: ";
         }
         return "success";
     }

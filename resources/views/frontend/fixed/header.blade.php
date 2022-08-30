@@ -274,9 +274,8 @@
                                             {{auth()->user()->firstname}} {{auth()->user()->lastname}}
                                         @endif
                                     </li>
-                                    <li><a href="my-account.html">My Account</a></li>
-                                    <li><a href="order-list.html">Orders List</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
+                                    <li><a href="{{route('frontend.customer.dashboard')}}">My Account</a></li>
+                                    <li><a href="{{route('frontend.customer.orderlist')}}">Orders List</a></li>
                                     <li>
                                         @if(auth()->check())
                                             <a href="{{route('customer.logout')}}"><i class="icofont-logout"></i>Logout</a>

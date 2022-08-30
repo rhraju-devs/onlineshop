@@ -23,34 +23,12 @@ class OrderControllerDetails extends Controller
 
     public function dompdf(Request $request, $id)
     {
-        // dd('hi');
         $orders = Order::with('orderDetails')->find($id);
-        // dd($orders);
-        // $status = $orders->orderDetails->status;
-        // $firstname = $orders->orderDetails->firstname;
-        // $lastname = $orders->orderDetails->lastname;
-        // $address = $orders->orderDetails->address;
-        // $order_create = $orders->orderDetails->created_at->format('D, d F, Y');
-        // $order_id = $orders->orderDetails->id;
-        // $order = Order::with(['orderDetails', 'getProduct'])->where('order_id', $order_id)->get()->toArray();
-        // $product_name = $orders->getProduct->product_name;
-        // $product_quantity =$orders->quantity;
-        // $product_price = $orders->unit_price;
-        // $subtotal = $orders->subtotal;
-        // dd($product_name, $product_quantity, $product_price, $subtotal);
-    //    foreach($orders as $key=>$orderData){
-    //     $orderData;
-
-    //    }
-    //    dd($orders);
         $data = [
             'orders' => $orders,
         ];
-
         view()->share('data',$data);
         $pdf = Pdf::loadView('backend.admin.order.order.dompdf', $data)->setOptions(['defaultFont' => 'sans-serif'])->setOptions(['isRemoteEnabled'=> true]);
-        // return $pdf->download('invoice.pdf');
         return $pdf->stream('invoice.pdf');
-
     }
 }

@@ -189,4 +189,13 @@ class DashboardController extends Controller
     }
 
 
+    public function toVonage($notifiable)
+    {
+
+        return (new VonageMessage)
+                    ->content('Your SMS message content')
+                    ->from('15554443333');
+    }
+
+
 }

@@ -38,7 +38,6 @@
                                     <div class="row my-3">
                                         <div class="col-md-6 col-lg-6">
                                             <!-- <a class="btn btn-outline-info" href="">Order</a> -->
-                                            <a href="{{route('admin.order.fulldompdf')}}" data-toggle="tooltip" title="DomPDF" data-placement="bottom" class="btn btn-outline-success btn-sm"><img src="{{url('icon/pdf.svg')}}" alt="" srcset=""></a>
                                         </div>
                                         <div class="col-md-6 col-lg-6">
                                             <p class="fw-bold align-right">Total Order : ( {{(\App\Models\Order::all()->count())}} )</p>
@@ -106,8 +105,6 @@
                                                         </td>
                                                         <td>
                                                         <a href="{{route('admin.order.invoice', $data->id)}}" data-toggle="tooltip" title="View" data-placement="bottom" class="btn btn-outline-success btn-sm"><img src="{{url('icon/eye.svg')}}" alt="" srcset=""></a>
-
-                                                        <a href="{{route('admin.order.dompdf', $data->id)}}" data-toggle="tooltip" title="DomPDF" data-placement="bottom" class="btn btn-outline-success btn-sm"><img src="{{url('icon/pdf.svg')}}" alt="" srcset=""></a>
                                                         
                                                         <a href="{{route('admin.order.edit', $data->id)}}" data-toggle="tooltip" title="Edit" data-placement="bottom" class="btn btn-outline-warning btn-sm"><img src="{{url('icon/edit.svg')}}" alt="" srcset=""></a>
                                                         <a href="{{route('admin.order.delete', $data->id)}}" data-toggle="tooltip" title="Delete" data-placement="bottom" class="btn btn-outline-danger btn-sm"><img src="{{url('icon/delete.svg')}}" alt="" srcset=""></a>

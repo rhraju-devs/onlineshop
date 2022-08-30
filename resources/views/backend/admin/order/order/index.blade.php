@@ -38,7 +38,7 @@
                                     <div class="row my-3">
                                         <div class="col-md-6 col-lg-6">
                                             <!-- <a class="btn btn-outline-info" href="">Order</a> -->
-                                            <a href="{{route('admin.order.fulldompdf')}}" data-toggle="tooltip" title="DomPDF" data-placement="bottom" class="btn btn-outline-success btn-sm"><img src="{{url('icon/pdf.svg')}}" alt="" srcset=""></a>
+                                            <a href="" data-toggle="tooltip" title="DomPDF" data-placement="bottom" class="btn btn-outline-success btn-sm"><img src="{{url('icon/pdf.svg')}}" alt="" srcset=""></a>
                                         </div>
                                         <div class="col-md-6 col-lg-6">
                                             <p class="fw-bold align-right">Total Order : ( {{(\App\Models\Order::all()->count())}} )</p>

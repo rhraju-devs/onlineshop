@@ -157,6 +157,7 @@
 
                     <ul class="pcoded-submenu">
                         <li><a href="{{route('admin.orderdetails.list')}}">Order List</a></li>
+                        <li><a href="{{route('admin.order.list')}}">OrderDetails List</a></li>
                         <li><a href="">Order Approved</a></li>
                         <li><a href="">Order Rejected</a></li>
                         <li><a href="">Order Delivered</a></li>

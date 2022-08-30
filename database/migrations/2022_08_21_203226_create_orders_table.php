@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('lastname');
             $table->integer('user_id');
             $table->string('email');
-            $table->double('transition_id')->nullable();
+            $table->string('transition_id')->nullable();
             $table->string('phone');
             $table->string('address');
             $table->integer('zip');
