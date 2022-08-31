@@ -29,6 +29,7 @@
                         <li><a href="downloads.html">Downloads</a></li>
                         <li><a href="{{route('frontend.customer.address')}}">Addresses</a></li>
                         <li><a href="{{route('frontend.customer.details')}}">Account Details</a></li>
+                        <li><a href="{{route('frontend.customer.change.password')}}">Change Password</a></li>
                         <li><a href="{{route('customer.logout')}}">Logout</a></li>
                     </ul>
                 </div>

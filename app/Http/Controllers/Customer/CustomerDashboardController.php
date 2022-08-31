@@ -6,6 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use Barryvdh\DomPDF\Facade\Pdf as PDF;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 
 class CustomerDashboardController extends Controller
 {
@@ -50,5 +54,32 @@ class CustomerDashboardController extends Controller
     {
         $order = Order::with('orderDetails')->find($id)->delete();
         return redirect()->back();
+    }
+
+    public function changePassword()
+    {
+        return view('frontend.dashboard.changepassword');
+    }
+
+    public function passwordUpdate(Request $request)
+    {
+        // dd($request->all());
+        $rules = $request->validate([
+            'old_password' => 'required',
+            'password' => 'required|confirmed',
+        ]);
+// dd($rules);
+
+        if(Hash::check($request->old_password, auth()->user()->password))
+        {
+            User::whereId(auth()->user()->id)->update([
+                'password' => bcrypt($request->password),
+            ]);
+            return redirect()->route('frontend.customer.dashboard');
+        }
+        else{
+            return redirect()->back();
+        }
+
     }
 }

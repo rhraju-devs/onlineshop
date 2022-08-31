@@ -229,6 +229,8 @@ Route::get('/customer/account/details/', [CustomerDashboardController::class, 'd
 Route::get('/customer/account/edit/', [CustomerDashboardController::class, 'detailsEdit'])->name('frontend.customer.detailsedit');
 Route::post('/customer/account/details/store/', [CustomerDashboardController::class, 'detailsStore'])->name('frontend.customer.detailsstore');
 Route::get('/customer/address/', [CustomerDashboardController::class, 'address'])->name('frontend.customer.address');
+Route::get('/customer/change-password/', [CustomerDashboardController::class, 'changePassword'])->name('frontend.customer.change.password');
+Route::post('/customer/password/update', [CustomerDashboardController::class, 'passwordUpdate'])->name('frontend.customer.update.password');
 //Customer Dashboard
 
 
