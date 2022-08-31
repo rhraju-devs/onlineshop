@@ -231,6 +231,7 @@ class SslCommerzNotification extends AbstractSslCommerz
 
     protected function setSuccessUrl()
     {
+    
         $this->successUrl = url('/') . $this->config['success_url'];
     }
 

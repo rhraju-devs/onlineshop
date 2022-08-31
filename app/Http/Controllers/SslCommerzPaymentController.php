@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use DB;
-use Illuminate\Http\Request;
-use App\Library\SslCommerz\SslCommerzNotification;
-
 use App\Models\Order;
 use App\Models\OrderDetail;
+use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\DB;
+use App\Library\SslCommerz\SslCommerzNotification;
 
 class SslCommerzPaymentController extends Controller
 {
@@ -32,13 +32,13 @@ class SslCommerzPaymentController extends Controller
 
 
         $post_data = array();
-        $post_data['total_amount'] = $cart_totalwith_vat; # You cant not pay less than 10
+        $post_data['total_amount'] = $cart_totalwith_vat + $request->shipping; # You cant not pay less than 10
         $post_data['currency'] = "BDT";
         $post_data['tran_id'] = uniqid(); // tran_id must be unique
 
         # CUSTOMER INFORMATION
         $post_data['cus_name'] = auth()->user()->firstname . auth()->user()->lastname;
-        $post_data['cus_email'] = auth()->user()->eamil;
+        $post_data['cus_email'] = $request->email;
         $post_data['cus_add1'] = auth()->user()->address;
         $post_data['cus_add2'] = "";
         $post_data['cus_city'] = "";
@@ -98,7 +98,7 @@ class SslCommerzPaymentController extends Controller
                 'transition_id' => $post_data['tran_id'],
                 'total_price' => $request->shipping + $cart_totalwith_vat,
             ]);
-
+            
             // insert details into order details table
             foreach ($carts as $cart)
             {
@@ -110,10 +110,14 @@ class SslCommerzPaymentController extends Controller
                     'subtotal'=>$cart['product_qty'] * $cart['product_price'] ,
                 ]);
             }
-            session()->forget('cart');
+          
+            
+           session()->forget('cart');
+         
             session()->forget('cart_total');
 
         }
+      
         $sslc = new SslCommerzNotification();
         # initiate(Transaction Data , false: Redirect to SSLCOMMERZ gateway/ true: Show all the Payement gateway here )
         $payment_options = $sslc->makePayment($post_data, 'hosted');
@@ -122,7 +126,7 @@ class SslCommerzPaymentController extends Controller
             print_r($payment_options);
             $payment_options = array();
         }
-
+//
     }
 
     public function payViaAjax(Request $request)
@@ -193,61 +197,48 @@ class SslCommerzPaymentController extends Controller
             print_r($payment_options);
             $payment_options = array();
         }
-
     }
 
-    public function success(Request $request)
-    {
-        echo "Transaction is Successful";
+public function success(Request $request)
+{
+    // dd($request->all());           
+    session()->forget('cart');
+         
+    session()->forget('cart_total');
+    $tran_id = $request->input('tran_id');
+    // dd($tran_id);
+    $amount = $request->input('amount');
+    $currency = $request->input('currency');
 
-        $tran_id = $request->input('tran_id');
-        $amount = $request->input('amount');
-        $currency = $request->input('currency');
+    $sslc = new SslCommerzNotification();
 
-        $sslc = new SslCommerzNotification();
+    #Check order status in order tabel against the transaction id or order id.
+    $order_details = order::where('transition_id', $tran_id)->first();
 
-        #Check order status in order tabel against the transaction id or order id.
-        $order_detials = DB::table('orders')
-            ->where('transaction_id', $tran_id)
-            ->select('transaction_id', 'status', 'currency', 'amount')->first();
+    if ($order_details->status == 'pending') {
+        $validation = $sslc->orderValidate($request->all(), $tran_id, $amount, $currency);
 
-        if ($order_detials->status == 'Pending') {
-            $validation = $sslc->orderValidate($request->all(), $tran_id, $amount, $currency);
-
-            if ($validation == TRUE) {
-                /*
-                That means IPN did not work or IPN URL was not set in your merchant panel. Here you need to update order status
-                in order table as Processing or Complete.
-                Here you can also sent sms or email for successfull transaction to customer
-                */
-                $update_product = DB::table('orders')
-                    ->where('transaction_id', $tran_id)
-                    ->update(['status' => 'Processing']);
-
-                echo "<br >Transaction is successfully Completed";
-            } else {
-                /*
-                That means IPN did not work or IPN URL was not set in your merchant panel and Transation validation failed.
-                Here you need to update order status as Failed in order table.
-                */
-                $update_product = DB::table('orders')
-                    ->where('transaction_id', $tran_id)
-                    ->update(['status' => 'Failed']);
-                echo "validation Fail";
-            }
-        } else if ($order_detials->status == 'Processing' || $order_detials->status == 'Complete') {
+        if ($validation == TRUE) {
             /*
-             That means through IPN Order status already updated. Now you can just show the customer that transaction is completed. No need to udate database.
-             */
-            echo "Transaction is successfully Completed";
+            That means IPN did not work or IPN URL was not set in your merchant panel. Here you need to update order status
+            in order table as Processing or Complete.
+            Here you can also sent sms or email for successfull transaction to customer
+            */
+            $order_details->update([
+                'status' => 'success'
+            ]);
         } else {
-            #That means something wrong happened. You can redirect customer to your product page.
-            echo "Invalid Transaction";
+            /*
+            That means IPN did not work or IPN URL was not set in your merchant panel and Transation validation failed.
+            Here you need to update order status as Failed in order table.
+            */
+            $order_details->update([
+                'status' => 'failed'
+            ]);
         }
-
-
     }
-
+    return redirect()->route('frontend.dashboard')->with('message', 'Payment Successfull');
+}
     public function fail(Request $request)
     {
         $tran_id = $request->input('tran_id');

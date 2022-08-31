@@ -26,7 +26,7 @@ return new class extends Migration
             $table->double('shipping', 6, 2)->default(0);
             $table->double('total_price',10,2)->default(0);
             $table->enum('payment_method', ['cod', 'ssl']);
-            $table->enum('status',['pending', 'approved', 'cancel', 'delivered', 'received'])->default('pending');
+            $table->enum('status',['approved', 'cancel', 'delivered', 'received', 'success', 'pending', 'failed', 'complete','processing'])->default('pending');
             $table->timestamps();
         });
     }

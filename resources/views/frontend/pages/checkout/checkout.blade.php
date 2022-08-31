@@ -30,7 +30,7 @@
                     <div class="checkout_details_area clearfix">
                         <h5 class="mb-4">Checkout Details</h5>
                         <!-- <form action="{{--route('frontend.checkout.store')--}}" method="post">transaction -->
-                        <form action="{{route('transaction')}}" method="post">transaction
+                        <form action="{{url('/pay')}}" method="post">
                             @csrf
                             <div class="row">
                                 <div class="col-md-6 mb-3">

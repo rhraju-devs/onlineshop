@@ -63,7 +63,6 @@
                                             </thead>
                                             <tbody class="table-group-divider">
                                                 @foreach($orders as $key=>$data)
-
                                                     <tr>
                                                         <td scope="col">{{$key+1}}</td>
                                                         <td scope="col">{{$data->firstname}} {{$data->lastname}}</td>

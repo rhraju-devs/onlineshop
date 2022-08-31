@@ -205,11 +205,11 @@ Route::get('/vendor-logout',[FrontendVendor::class,'logout'])->name('vendor.logo
 
 
 // SSLCOMMERZ Start
-Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
-Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
+// Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
+// Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
 
 Route::post('/pay', [SslCommerzPaymentController::class, 'index'])->name('transaction');
-Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
+// Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
 
 Route::post('/success', [SslCommerzPaymentController::class, 'success']);
 Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
@@ -222,6 +222,13 @@ Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
 //Customer Dashboard
 Route::get('/customer/profile/', [CustomerDashboardController::class, 'dashboard'])->name('frontend.customer.dashboard');
 Route::get('/customer/order-list/', [CustomerDashboardController::class, 'orderlist'])->name('frontend.customer.orderlist');
+Route::get('/customer/order-invoice/{id}', [CustomerDashboardController::class, 'invoice'])->name('frontend.customer.invoice');
+Route::get('/customer/order-pdf/{id}', [CustomerDashboardController::class, 'dompdf'])->name('frontend.customer.pdf');
+Route::get('/customer/order-delete/{id}', [CustomerDashboardController::class, 'delete'])->name('forntend.customer.delete');
+Route::get('/customer/account/details/', [CustomerDashboardController::class, 'details'])->name('frontend.customer.details');
+Route::get('/customer/account/edit/', [CustomerDashboardController::class, 'detailsEdit'])->name('frontend.customer.detailsedit');
+Route::post('/customer/account/details/store/', [CustomerDashboardController::class, 'detailsStore'])->name('frontend.customer.detailsstore');
+Route::get('/customer/address/', [CustomerDashboardController::class, 'address'])->name('frontend.customer.address');
 //Customer Dashboard
 
 
