@@ -20705,6 +20705,7 @@ pre[class*=language-]:before {
 
 .pcoded-navbar .scroll-div.navbar-content {
     height: 100%;
+    overflow-y: scroll;
 }
 
 .pcoded-navbar .header-logo {
@@ -21695,6 +21696,7 @@ pre[class*=language-]:before {
 
     .pcoded-navbar .scroll-div.navbar-content {
         height: 100%;
+        overflow-y: scroll;
     }
 
     .pcoded-navbar ~ .pcoded-header,

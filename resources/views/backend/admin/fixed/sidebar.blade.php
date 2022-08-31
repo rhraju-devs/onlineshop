@@ -6,7 +6,7 @@
             <div class="">
                 <div class="main-menu-header">
 
-                    <img class="img-radius" src="" class="img-radius" alt="">
+                    <img class="img-radius" src="{{url('backend\assets\images\user\avatar-1.png')}}" class="img-radius" alt="">
                     <div class="user-details">
                         <div id="more-details"><i class="fa fa-caret-down"></i>{{auth()->user()->firstname}}
                             {{auth()->user()->lastname}}</div>
@@ -26,7 +26,7 @@
 
             <ul class="nav pcoded-inner-navbar ">
                 <li class="nav-item pcoded-menu-caption">
-                    <label>Navigation</label>
+                    <label>Dashboard</label>
                 </li>
                 <li class="nav-item">
                     <a href="{{route('admin.dashboard')}}" class="nav-link "><span class="pcoded-micon"><i
@@ -35,7 +35,7 @@
                 <!-- //product Section -->
                 <li class="nav-item pcoded-hasmenu">
                     <a href="#!" class="nav-link "><span class="pcoded-micon"><i
-                                class="feather icon-layout"></i></span><span class="pcoded-mtext">Product</span><span
+                                class="feather icon-shopping-cart"></i></span><span class="pcoded-mtext">Product</span><span
                             class="badge badge-primary ml-3">@if($products->count() >
                             0){{$products->count()}}@endif</span></a>
                     <ul class="pcoded-submenu">
@@ -46,7 +46,7 @@
                 <!-- //Category Section -->
                 <li class="nav-item pcoded-hasmenu">
                     <a href="#!" class="nav-link "><span class="pcoded-micon"><i
-                                class="feather icon-layout"></i></span><span class="pcoded-mtext">Category</span><span
+                                class="feather icon-zap"></i></span><span class="pcoded-mtext">Category</span><span
                             class="badge badge-primary ml-3">@if($categories->count() >
                             0){{$categories->count()}}@endif</span></a>
                     <ul class="pcoded-submenu">
@@ -59,7 +59,7 @@
                 <!-- //brand section -->
                 <li class="nav-item pcoded-hasmenu">
                     <a href="#!" class="nav-link "><span class="pcoded-micon"><i
-                                class="feather icon-layout"></i></span><span class="pcoded-mtext">Brand</span><span
+                                class="feather icon-target"></i></span><span class="pcoded-mtext">Brand</span><span
                             class="badge badge-primary ml-3">@if($brands->count() >
                             0){{$brands->count()}}@endif</span></a>
 
@@ -71,7 +71,7 @@
 
                 <li class="nav-item pcoded-hasmenu">
                     <a href="#!" class="nav-link "><span class="pcoded-micon"><i
-                                class="feather icon-layout"></i></span><span class="pcoded-mtext">Banner</span><span
+                                class="feather icon-tablet"></i></span><span class="pcoded-mtext">Banner</span><span
                             class="badge badge-primary ml-3">@if($banners->count() >
                             0){{$banners->count()}}@endif</span></a>
 
@@ -89,7 +89,7 @@
                 <li class="nav-item pcoded-hasmenu">
 
                     <a href="#!" class="nav-link "><span class="pcoded-micon"><i
-                                class="feather icon-box"></i></span><span class="pcoded-mtext">Customer</span><span
+                                class="feather icon-user"></i></span><span class="pcoded-mtext">Customer</span><span
                             class="badge badge-primary ml-3">@if($customers->count() >
                             0){{$customers->count()}}@endif</span></a>
                     <ul class="pcoded-submenu">
@@ -100,7 +100,7 @@
 
                 <li class="nav-item pcoded-hasmenu">
                     <a href="#!" class="nav-link "><span class="pcoded-micon"><i
-                                class="feather icon-box"></i></span><span class="pcoded-mtext">Vendor</span><span
+                                class="feather icon-users"></i></span><span class="pcoded-mtext">Vendor</span><span
                             class="badge badge-primary ml-3">@if($vendors->count() >
                             0){{$vendors->count()}}@endif</span></a>
                     <ul class="pcoded-submenu">
@@ -118,7 +118,7 @@
 
                 <li class="nav-item pcoded-hasmenu">
                     <a href="#!" class="nav-link "><span class="pcoded-micon"><i
-                                class="feather icon-box"></i></span><span class="pcoded-mtext">Shipping</span><span
+                                class="feather icon-clipboard"></i></span><span class="pcoded-mtext">Shipping</span><span
                             class="badge badge-primary ml-3">@if($shipping->count() >
                             0){{$shipping->count()}}@endif</span></a>
                     <ul class="pcoded-submenu">
@@ -133,7 +133,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{route('admin.setting.details')}}" class="nav-link "><span class="pcoded-micon"><i
-                                class="feather icon-file-text"></i></span><span class="pcoded-mtext">Setting</span></a>
+                                class="feather icon-settings"></i></span><span class="pcoded-mtext">Setting</span></a>
                 </li>
                 <!-- Setting End -->
                 <!-- admin.optimization Start -->
@@ -142,7 +142,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{route('admin.optimization')}}" class="nav-link "><span class="pcoded-micon"><i
-                                class="feather icon-file-text"></i></span><span
+                                class="feather icon-slack"></i></span><span
                             class="pcoded-mtext">Optimization</span></a>
                 </li>
                 <!-- admin.optimization End -->
@@ -152,7 +152,7 @@
                 </li>
                 <li class="nav-item pcoded-hasmenu">
                     <a href="#!" class="nav-link "><span class="pcoded-micon"><i
-                                class="feather icon-layout"></i></span><span class="pcoded-mtext">Order</span><span
+                                class="feather icon-briefcase"></i></span><span class="pcoded-mtext">Order</span><span
                             class="badge badge-primary ml-3">2</span></a>
 
                     <ul class="pcoded-submenu">
@@ -173,7 +173,7 @@
 
                 <li class="nav-item">
                     <a href="{{route('admin.logout')}}" class="nav-link "><span class="pcoded-micon"><i
-                                class="feather icon-file-text"></i></span><span class="pcoded-mtext">Logout</span></a>
+                                class="feather icon-upload"></i></span><span class="pcoded-mtext">Logout</span></a>
                 </li>
                 <!-- Logout End -->
 

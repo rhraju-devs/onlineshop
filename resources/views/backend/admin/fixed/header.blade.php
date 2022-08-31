@@ -103,7 +103,7 @@
                     <div class="dropdown-menu dropdown-menu-right profile-notification">
                         <div class="pro-head">
 
-                            <img style="width: 50px; height:50px" src="" class="img-radius"
+                            <img style="width: 50px; height:50px" src="{{url('backend\assets\images\user\avatar-1.png')}}" class="img-radius"
                                 alt="">
                             <span>Name</span>
                             <a href="{{route('admin.logout')}}" class="dud-logout" title="Logout">

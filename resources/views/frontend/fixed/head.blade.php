@@ -8,7 +8,7 @@
     <title>Online Shopping BD || Home</title>
 
     <!-- Favicon  -->
-    <link rel="icon" href="{{url('img/core-img/favicon.ico')}}">
+    <link rel="icon" href="{{url('icon/icon.png')}}">
 
     <link rel="stylesheet" href="{{url('frontend/assets/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{url('frontend/assets/css/classy-nav.min.css')}}">
@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{url('frontend/assets/css/magnific-popup.css')}}">
     <link rel="stylesheet" href="{{url('frontend/assets/css/fontawesome-all.min.css')}}">
     <link rel="stylesheet" href="{{url('frontend/assets/css/icofont.min.css')}}">
+
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="{{url('frontend/assets/css/style.css')}}">
