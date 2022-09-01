@@ -16,7 +16,7 @@ class AdminDashboardController extends Controller
 {
     public function dashboard()
     {
-        return view('backend.admin.dashboard.example');
+        return view('backend.admin.dashboard.dashboard');
     }
     public function login()
     {

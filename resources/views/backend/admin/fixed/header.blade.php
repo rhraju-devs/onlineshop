@@ -105,7 +105,7 @@
 
                             <img style="width: 50px; height:50px" src="{{url('backend\assets\images\user\avatar-1.png')}}" class="img-radius"
                                 alt="">
-                            <span>Name</span>
+                            <span class="text-capitalize">{{auth()->user()->firstname}} {{auth()->user()->lastname}}</span>
                             <a href="{{route('admin.logout')}}" class="dud-logout" title="Logout">
                                 <i class="feather icon-log-out"></i>
                             </a>

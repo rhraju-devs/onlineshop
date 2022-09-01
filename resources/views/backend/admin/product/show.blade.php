@@ -1,7 +1,28 @@
 @extends('backend.master')
-@section('css')
 
+@section('admin_breadcrumb')
+            <!-- [ breadcrumb ] start -->
+            <div class="page-header">
+                <div class="page-block">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="page-header-title">
+                                <h5 class="m-b-10">Admin Dashboard</h5>
+                            </div>
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}"><i class="feather icon-home"></i></a>
+                                </li>
+                                <li class="breadcrumb-item"><a href="{{route('admin.product.list')}}">Product</a></li>
+                                <li class="breadcrumb-item"><a href="#">Product View</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- [ breadcrumb ] end -->
 @endsection
+
+
 @section('admin_dashboard_content')
 
 <div class="row">

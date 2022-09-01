@@ -8,8 +8,8 @@
 
                     <img class="img-radius" src="{{url('backend\assets\images\user\avatar-1.png')}}" class="img-radius" alt="">
                     <div class="user-details">
-                        <div id="more-details"><i class="fa fa-caret-down"></i>{{auth()->user()->firstname}}
-                            {{auth()->user()->lastname}}</div>
+                        <div id="more-details"><i class="fa fa-caret-down"></i><span class="text-capitalize">{{auth()->user()->firstname}} {{auth()->user()->lastname}}</span>
+                        </div>
                     </div>
                 </div>
                 <div class="collapse" id="nav-user-link">

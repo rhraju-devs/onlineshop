@@ -1,4 +1,4 @@
-<title>soengsouy.com</title>
+<title>OnlineShop || Admin Dashboard</title>
 
 <!-- Meta -->
 <meta charset="utf-8">
