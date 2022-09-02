@@ -352,6 +352,7 @@
                         <button type="reset" class="btn btn-primary close">Cancel</button>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
+                    <a href="{{route('frontend.customer.email.check')}}">Reset Password Link</a>
                 </div>
 
 

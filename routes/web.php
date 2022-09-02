@@ -2,30 +2,31 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\Admin\AdminDashboardController;
-use App\Http\Controllers\Admin\BannerController;
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\Admin\BrandController;
-use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\OrderController;
-use App\Http\Controllers\Admin\OrderControllerDetails;
+use App\Http\Controllers\Admin\BannerController;
+use App\Http\Controllers\Admin\VendorController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SettingController;
-use App\Http\Controllers\Admin\ShippingController;
-use App\Http\Controllers\Admin\VendorController;
-use App\Http\Controllers\Frontend\CustomerController as FrontendCustomer;
-use App\Http\Controllers\Frontend\VendorController as FrontendVendor;
-use App\Http\Controllers\Frontend\ProductController as FrontendProduct;
-use App\Http\Controllers\Frontend\CategoryController as FrontendCategory;
-use App\Http\Controllers\Frontend\BrandController as FrontendBrand;
-use App\Http\Controllers\Customer\CustomerController as Customer;
 use App\Http\Controllers\Frontend\CartController;
-use App\Http\Controllers\Frontend\DashboardController;
-use App\Http\Controllers\Customer\CustomerDashboardController;
-use Illuminate\Support\Facades\Artisan;
-// use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\CustomerController;
+use App\Http\Controllers\Admin\ShippingController;
 use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\SslCommerzPaymentController;
+use App\Http\Controllers\Admin\OrderControllerDetails;
+use App\Http\Controllers\Frontend\DashboardController;
+use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Frontend\ForgetPasswordController;
+use App\Http\Controllers\Customer\CustomerDashboardController;
+use App\Http\Controllers\Customer\CustomerController as Customer;
+use App\Http\Controllers\Frontend\BrandController as FrontendBrand;
+use App\Http\Controllers\Frontend\VendorController as FrontendVendor;
+// use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use App\Http\Controllers\Frontend\ProductController as FrontendProduct;
+use App\Http\Controllers\Frontend\CategoryController as FrontendCategory;
+use App\Http\Controllers\Frontend\CustomerController as FrontendCustomer;
 
 /*
 |--------------------------------------------------------------------------
@@ -232,6 +233,15 @@ Route::get('/customer/address/', [CustomerDashboardController::class, 'address']
 Route::get('/customer/change-password/', [CustomerDashboardController::class, 'changePassword'])->name('frontend.customer.change.password');
 Route::post('/customer/password/update', [CustomerDashboardController::class, 'passwordUpdate'])->name('frontend.customer.update.password');
 //Customer Dashboard
+
+
+// Reset Password with Link
+Route::get('/customer/reset-password/email/form/', [ForgetPasswordController::class, 'emailCheckForm'])->name('frontend.customer.email.check');
+Route::post('/customer/reset-password/email/form/store', [ForgetPasswordController::class, 'emailCheckFormStore'])->name('frontend.customer.email.check.store');
+Route::get('/customer/reset-new-password/form/{token}', [ForgetPasswordController::class, 'newPassword'])->name('frontend.customer.newresetpassword');
+Route::post('/customer/reset-new-password/form/store', [ForgetPasswordController::class, 'newPasswordStore'])->name('frontend.customer.newrestpasswordstore');
+
+//Reset Password with link
 
 
 
